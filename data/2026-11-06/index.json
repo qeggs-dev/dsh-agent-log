@@ -1,10 +1,32 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-11-06",
   "weekday": "周五",
   "entries": 4,
   "overview": "data/2026-11-06/overview.svg",
+  "items": [
+    {
+      "id": "20261106-001",
+      "title": "cordis-host **加密与接入层已完成到「协议全通」**…",
+      "project": "Cordis 宿主 App（Android 端 agent 运行时）"
+    },
+    {
+      "id": "20261106-002",
+      "title": "cordis-host **会话级临时接入已打通**(M1 收尾)",
+      "project": "Cordis 宿主 App（Android 端 agent 运行时）"
+    },
+    {
+      "id": "20261106-003",
+      "title": "新插件「打断等待」",
+      "project": "DSH 插件：后台任务等待控制（dsh-job-wait）"
+    },
+    {
+      "id": "20261106-004",
+      "title": "可读预设「列出预设是空的／一直加载中」已修",
+      "project": "DSH 插件：可读预设（dsh-readable-preset）"
+    }
+  ],
   "projects": [
     {
       "name": "Cordis 宿主 App（Android 端 agent 运行时）",

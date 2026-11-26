@@ -1,10 +1,47 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-11-21",
   "weekday": "周六",
   "entries": 7,
   "overview": "data/2026-11-21/overview.svg",
+  "items": [
+    {
+      "id": "20261121-001",
+      "title": "dsh-relay Docker 验证（2026-11-21，本…",
+      "project": "DSH 插件：远端中继（dsh-relay）"
+    },
+    {
+      "id": "20261121-002",
+      "title": "新增 DSH 插件 @local/dsh-new-page（工作…",
+      "project": "DSH 插件：自定义标签页（dsh-new-page）"
+    },
+    {
+      "id": "20261121-003",
+      "title": "dsh-new-page 0.2.0 追加数据池（commit 7a84cf4）",
+      "project": "DSH 插件：自定义标签页（dsh-new-page）"
+    },
+    {
+      "id": "20261121-004",
+      "title": "dsh-new-page 0.2.1（commit 见 git…",
+      "project": "DSH 插件：自定义标签页（dsh-new-page）"
+    },
+    {
+      "id": "20261121-006",
+      "title": "dsh-new-page 0.3.0（commit 17a7c4…",
+      "project": "DSH 插件：自定义标签页（dsh-new-page）"
+    },
+    {
+      "id": "20261121-007",
+      "title": "dsh-new-page 0.3.1（commit 见 git…",
+      "project": "DSH 插件：自定义标签页（dsh-new-page）"
+    },
+    {
+      "id": "20261121-005",
+      "title": "新增并安装 `@local/subagent-access`（`…",
+      "project": "subagent-access"
+    }
+  ],
   "projects": [
     {
       "name": "DSH 插件：远端中继（dsh-relay）",

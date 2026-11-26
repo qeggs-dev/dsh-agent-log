@@ -1,10 +1,22 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-11-05",
   "weekday": "周四",
   "entries": 2,
   "overview": "data/2026-11-05/overview.svg",
+  "items": [
+    {
+      "id": "20261105-012",
+      "title": "Cordis 宿主 App **互联层第一步已完成（真 sock…",
+      "project": "Cordis 宿主 App（Android 端 agent 运行时）"
+    },
+    {
+      "id": "20261105-015",
+      "title": "cordis-host 的设计正式落在项目里",
+      "project": "Cordis 宿主 App（Android 端 agent 运行时）"
+    }
+  ],
   "projects": [
     {
       "name": "Cordis 宿主 App（Android 端 agent 运行时）",

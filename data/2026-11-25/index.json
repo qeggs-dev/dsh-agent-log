@@ -1,10 +1,72 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-11-25",
   "weekday": "周三",
   "entries": 12,
   "overview": "data/2026-11-25/overview.svg",
+  "items": [
+    {
+      "id": "20261125-002",
+      "title": "1.1 完成（2026-11-25，agent-tree，提交…",
+      "project": "手机 Agent App（代理树）"
+    },
+    {
+      "id": "20261125-003",
+      "title": "阶段 2a 完成（2026-11-25，agent-tree，提…",
+      "project": "手机 Agent App（代理树）"
+    },
+    {
+      "id": "20261125-004",
+      "title": "阶段 2b 完成（2026-11-25，agent-tree，提…",
+      "project": "手机 Agent App（代理树）"
+    },
+    {
+      "id": "20261125-005",
+      "title": "阶段 3b 完成（2026-11-25，agent-tree，提…",
+      "project": "手机 Agent App（代理树）"
+    },
+    {
+      "id": "20261125-006",
+      "title": "阶段 3c 完成（2026-11-25，agent-tree，提…",
+      "project": "手机 Agent App（代理树）"
+    },
+    {
+      "id": "20261125-007",
+      "title": "阶段 3d 完成（2026-11-25，agent-tree，提…",
+      "project": "手机 Agent App（代理树）"
+    },
+    {
+      "id": "20261125-008",
+      "title": "阶段 3e 完成（2026-11-25，agent-tree，提…",
+      "project": "手机 Agent App（代理树）"
+    },
+    {
+      "id": "20261125-009",
+      "title": "阶段 3a 完成（2026-11-25，agent-tree，提…",
+      "project": "手机 Agent App（代理树）"
+    },
+    {
+      "id": "20261125-010",
+      "title": "dsh-new-page 0.8.0（commit 46dbef…",
+      "project": "DSH 插件：自定义标签页（dsh-new-page）"
+    },
+    {
+      "id": "20261125-011",
+      "title": "dsh-new-page 0.8.1（commit d4ba6f…",
+      "project": "DSH 插件：自定义标签页（dsh-new-page）"
+    },
+    {
+      "id": "20261125-012",
+      "title": "dsh-new-page 0.9.0（commit 9c6e6c…",
+      "project": "DSH 插件：自定义标签页（dsh-new-page）"
+    },
+    {
+      "id": "20261125-013",
+      "title": "mod-audit 拖包后只显示根节点并报 “Function…",
+      "project": "mod-audit"
+    }
+  ],
   "projects": [
     {
       "name": "手机 Agent App（代理树）",

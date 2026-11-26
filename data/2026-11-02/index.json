@@ -1,10 +1,17 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-11-02",
   "weekday": "周一",
   "entries": 1,
   "overview": "data/2026-11-02/overview.svg",
+  "items": [
+    {
+      "id": "20261102-001",
+      "title": "新增项目 **dlcore** 于 `〈工作区〉/dlcore/…",
+      "project": "dlcore（Go 多来源分片下载内核）"
+    }
+  ],
   "projects": [
     {
       "name": "dlcore（Go 多来源分片下载内核）",

@@ -1,10 +1,42 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-10-18",
   "weekday": "周日",
   "entries": 6,
   "overview": "data/2026-10-18/overview.svg",
+  "items": [
+    {
+      "id": "20261018-002",
+      "title": "桌面版 DSH 已从 0.2.0-rc.2 升到 **0.2.1…",
+      "project": "DSH Agent Preset"
+    },
+    {
+      "id": "20261018-001",
+      "title": "DataServer 项目位于 `〈项目目录〉/QQBot/Da…",
+      "project": "DataServer（QQBot 静态数据服务）"
+    },
+    {
+      "id": "20261018-003",
+      "title": "桌面版 DSH 的窗口几何**壳层完全不记忆**",
+      "project": "桌面版窗口尺寸（dsh-window-keeper）"
+    },
+    {
+      "id": "20261018-004",
+      "title": "已装 Host 插件 **`@local/dsh-window-…",
+      "project": "桌面版窗口尺寸（dsh-window-keeper）"
+    },
+    {
+      "id": "20261018-006",
+      "title": "桌面版 DSH 的窗口能力位置（回答「框架能不能检测分辨率/尺寸变化」的根据）",
+      "project": "桌面版窗口尺寸（dsh-window-keeper）"
+    },
+    {
+      "id": "20261018-005",
+      "title": "DSH 的 pwsh 沙箱子进程是**低完整性 + 受限令牌**…",
+      "project": "桌面版窗口尺寸（dsh-window-keeper）"
+    }
+  ],
   "projects": [
     {
       "name": "DSH Agent Preset",

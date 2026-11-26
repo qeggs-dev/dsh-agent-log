@@ -1,10 +1,32 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-10-15",
   "weekday": "周四",
   "entries": 4,
   "overview": "data/2026-10-15/overview.svg",
+  "items": [
+    {
+      "id": "20261015-006",
+      "title": "用户三个想法的合流，现在有一句可对外的说法",
+      "project": "用户真正想做的项目：带身份和注册表的 shell 作业控制"
+    },
+    {
+      "id": "20261015-007",
+      "title": "上述框架的**核心已由他在两个同系列（同一系列、不同组件）的项目…",
+      "project": "用户真正想做的项目：带身份和注册表的 shell 作业控制"
+    },
+    {
+      "id": "20261015-008",
+      "title": "决策（用户 2026-10-15 确认）",
+      "project": "决策"
+    },
+    {
+      "id": "20261015-009",
+      "title": "已定的设计纪律（全部从用户自己的经验推出，他同意可作为规范第一条）",
+      "project": "决策"
+    }
+  ],
   "projects": [
     {
       "name": "用户真正想做的项目：带身份和注册表的 shell 作业控制",

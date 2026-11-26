@@ -1,10 +1,22 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-11-20",
   "weekday": "周五",
   "entries": 2,
   "overview": "data/2026-11-20/overview.svg",
+  "items": [
+    {
+      "id": "20261120-001",
+      "title": "可读预设 1.1.0：加载时把预设的 persona 提示词作为上下文注入",
+      "project": "DSH 插件：可读预设（dsh-readable-preset）"
+    },
+    {
+      "id": "20261120-003",
+      "title": "dsh-relay 按用户给的协议重写为 v0.2（提交 551…",
+      "project": "DSH 插件：远端中继（dsh-relay）"
+    }
+  ],
   "projects": [
     {
       "name": "DSH 插件：可读预设（dsh-readable-preset）",

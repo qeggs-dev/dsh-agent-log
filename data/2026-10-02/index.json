@@ -1,10 +1,42 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-10-02",
   "weekday": "周五",
   "entries": 6,
   "overview": "data/2026-10-02/overview.svg",
+  "items": [
+    {
+      "id": "20261002-002",
+      "title": "0.1.0-rc.5 → 0.2.0-rc.2 的 `grantWrite` 幂等跳过条件收紧了，这是卡死\"该只付一次却付了\"的直接原因",
+      "project": "DSH Agent Preset"
+    },
+    {
+      "id": "20261002-003",
+      "title": "本机 NTFS 上「以可写方式打开文件再关闭」**不会**更新…",
+      "project": "DSH Agent Preset"
+    },
+    {
+      "id": "20261002-006",
+      "title": "工作区 `dsh-stall-monitor\\` 现在同时是**…",
+      "project": "DSH Agent Preset"
+    },
+    {
+      "id": "20261002-010",
+      "title": "新增桌面版预设**讨论模式**（config.id `discu…",
+      "project": "DSH Agent Preset"
+    },
+    {
+      "id": "20261002-011",
+      "title": "`generate.mjs --append` 曾会静默删掉 profile patch 尾部的 `- id: agent-preset-registry`",
+      "project": "DSH Agent Preset"
+    },
+    {
+      "id": "20261002-005",
+      "title": "待办（**修复目标已于 2026-10-02 选定并交付**，仅…",
+      "project": "待办"
+    }
+  ],
   "projects": [
     {
       "name": "DSH Agent Preset",

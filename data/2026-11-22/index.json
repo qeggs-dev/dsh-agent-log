@@ -1,10 +1,32 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-11-22",
   "weekday": "周日",
   "entries": 4,
   "overview": "data/2026-11-22/overview.svg",
+  "items": [
+    {
+      "id": "20261122-001",
+      "title": "dsh-new-page 0.5.0（commit 21bb97…",
+      "project": "DSH 插件：自定义标签页（dsh-new-page）"
+    },
+    {
+      "id": "20261122-003",
+      "title": "dsh-new-page 0.6.0（commit 870c0e…",
+      "project": "DSH 插件：自定义标签页（dsh-new-page）"
+    },
+    {
+      "id": "20261122-002",
+      "title": "mock_chatui（聊天记录工坊）",
+      "project": "聊天记录工坊（mock_chatui）"
+    },
+    {
+      "id": "20261122-006",
+      "title": "新增 DSH 桌面插件 **@local/approval-in…",
+      "project": "DSH 插件：审批拦截（approval-intercept）"
+    }
+  ],
   "projects": [
     {
       "name": "DSH 插件：自定义标签页（dsh-new-page）",

@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { renderMarkdown, escapeHtml, resolveSrc } from '../assets/markdown.js';
+import { renderMarkdown, escapeHtml, resolveSrc, splitItems } from '../assets/markdown.js';
 
 // 转义
 assert.equal(escapeHtml('<b>&"'), '&lt;b&gt;&amp;&quot;');
@@ -94,4 +94,11 @@ assert.ok(renderMarkdown('<!-- 2026-11-26 -->').includes('&lt;!--'));
 assert.equal(renderMarkdown(''), '');
 assert.equal(renderMarkdown(null), '');
 
-console.log('markdown renderer: 15 groups ok');
+// 条目切块：只按 id 注释切，标题不在这里推导
+const chunks = splitItems('<!-- 20261126-007 -->\n\n## 标题行\n\n正文\n\n<!-- 20261126-009 -->\n\n第二块\n');
+assert.deepEqual(chunks, [
+  { id: '20261126-007', body: '正文' },
+  { id: '20261126-009', body: '第二块' },
+]);
+
+console.log('markdown renderer: 16 groups ok');

@@ -1,10 +1,27 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-11-10",
   "weekday": "周二",
   "entries": 3,
   "overview": "data/2026-11-10/overview.svg",
+  "items": [
+    {
+      "id": "20261110-001",
+      "title": "`tencent-connect/dsh-qqbot`",
+      "project": "dsh-qqbot（腾讯官方的 QQ 接入插件）"
+    },
+    {
+      "id": "20261110-007",
+      "title": "扫码页补上摄像头（站内扫码）",
+      "project": "dsh-ui-port-mirror（界面端口镜像）"
+    },
+    {
+      "id": "20261110-004",
+      "title": "新增桌面插件 **`@local/dsh-screenshot`…",
+      "project": "DSH 插件：整屏截图（dsh-screenshot）"
+    }
+  ],
   "projects": [
     {
       "name": "dsh-qqbot（腾讯官方的 QQ 接入插件）",

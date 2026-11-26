@@ -1,10 +1,62 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-11-18",
   "weekday": "周三",
   "entries": 10,
   "overview": "data/2026-11-18/overview.svg",
+  "items": [
+    {
+      "id": "20261118-001",
+      "title": "DSLike Chat 聊天页白屏根因（2026-11-18）",
+      "project": "DSLike Chat"
+    },
+    {
+      "id": "20261118-003",
+      "title": "DSLike Chat 0.3.0（2026-11-18）发布",
+      "project": "DSLike Chat"
+    },
+    {
+      "id": "20261118-004",
+      "title": "DSLike Chat 0.3.1（2026-11-18，web…",
+      "project": "DSLike Chat"
+    },
+    {
+      "id": "20261118-006",
+      "title": "DSLike Chat 样式包改为按主题提供包图标与整页封面（2…",
+      "project": "DSLike Chat"
+    },
+    {
+      "id": "20261118-005",
+      "title": "新增 DSH 客户端插件 Token 总用量（包名 `@loca…",
+      "project": "DSH 插件：Token 总用量（dsh-usage-total）"
+    },
+    {
+      "id": "20261118-007",
+      "title": "DSLike Chat 更名为 Aurora Chat（2026-11-18）",
+      "project": "Aurora Chat"
+    },
+    {
+      "id": "20261118-011",
+      "title": "待办（0.4）",
+      "project": "Aurora Chat"
+    },
+    {
+      "id": "20261118-013",
+      "title": "Aurora Chat 路线图（2026-11-18 用户确认）",
+      "project": "Aurora Chat"
+    },
+    {
+      "id": "20261118-008",
+      "title": "新增 DSH Host 插件 **子智能体广播**（包 `@lo…",
+      "project": "DSH 插件：子智能体广播（subagent-broadcast）"
+    },
+    {
+      "id": "20261118-010",
+      "title": "用户要求（2026-11-18，原话「不要以审批为准，应该以权限…",
+      "project": "决策"
+    }
+  ],
   "projects": [
     {
       "name": "DSLike Chat",

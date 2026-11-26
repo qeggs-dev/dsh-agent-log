@@ -1,10 +1,32 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-11-23",
   "weekday": "周一",
   "entries": 4,
   "overview": "data/2026-11-23/overview.svg",
+  "items": [
+    {
+      "id": "20261123-001",
+      "title": "DSH-SSH 的 ssh_fork 不再把已存凭据发给页面（2…",
+      "project": "决策"
+    },
+    {
+      "id": "20261123-005",
+      "title": "DSH-SSH 的 ssh_shell 变量参数 vars（20…",
+      "project": "决策"
+    },
+    {
+      "id": "20261123-007",
+      "title": "dsh-new-page 0.6.1（commit 7e7f41…",
+      "project": "DSH 插件：自定义标签页（dsh-new-page）"
+    },
+    {
+      "id": "20261123-008",
+      "title": "dsh-new-page 0.7.0 让 np_screensh…",
+      "project": "DSH 插件：自定义标签页（dsh-new-page）"
+    }
+  ],
   "projects": [
     {
       "name": "决策",

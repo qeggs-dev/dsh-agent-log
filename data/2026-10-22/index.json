@@ -1,10 +1,87 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-10-22",
   "weekday": "周四",
   "entries": 15,
   "overview": "data/2026-10-22/overview.svg",
+  "items": [
+    {
+      "id": "20261022-002",
+      "title": "新增项目 **Requester** 于 `〈工作区〉/requ…",
+      "project": "Requester（HTTP 编排客户端）"
+    },
+    {
+      "id": "20261022-003",
+      "title": "`node --test` 的默认隔离模式在「受限沙箱（workspace-write）」下必失败，在 danger-full-access 下正常",
+      "project": "Requester（HTTP 编排客户端）"
+    },
+    {
+      "id": "20261022-005",
+      "title": "Requester 上抓到的真死锁（设计缺陷，已修）",
+      "project": "Requester（HTTP 编排客户端）"
+    },
+    {
+      "id": "20261022-006",
+      "title": "**本机 Electron 进程建不了 `%APPDATA%\\R…",
+      "project": "Requester（HTTP 编排客户端）"
+    },
+    {
+      "id": "20261022-007",
+      "title": "Requester **请求级历史已交付并真机验收**（单测 6…",
+      "project": "Requester（HTTP 编排客户端）"
+    },
+    {
+      "id": "20261022-008",
+      "title": "Requester 的 **Cookie 自动管理已实现并真机验…",
+      "project": "Requester（HTTP 编排客户端）"
+    },
+    {
+      "id": "20261022-009",
+      "title": "用户对「单独的页面 + 2/3 屏幕」的原意是：Cookie 管理是主窗口内的整块切页、而 2/3 指的是主窗口尺寸",
+      "project": "Requester（HTTP 编排客户端）"
+    },
+    {
+      "id": "20261022-010",
+      "title": "Requester 已出 NSIS 安装包并真机验收",
+      "project": "Requester（HTTP 编排客户端）"
+    },
+    {
+      "id": "20261022-011",
+      "title": "Requester 按子代理的「本机特异性代码」审查修掉 5 条（审查结论",
+      "project": "Requester（HTTP 编排客户端）"
+    },
+    {
+      "id": "20261022-015",
+      "title": "Requester 的请求编辑器最终形态：基础编辑在右栏侧边栏、底部「详情 ›」进整页页签",
+      "project": "Requester（HTTP 编排客户端）"
+    },
+    {
+      "id": "20261022-016",
+      "title": "Requester 的运行默认改成「遇错就停」",
+      "project": "Requester（HTTP 编排客户端）"
+    },
+    {
+      "id": "20261022-017",
+      "title": "Requester 加了 JSON 请求体编辑器（树形 + 源码双视图，Unicode / ANSI 只差转义）",
+      "project": "Requester（HTTP 编排客户端）"
+    },
+    {
+      "id": "20261022-018",
+      "title": "Requester 的「运行整组」改成跑「最外层分支」，不再无条件跑根节点",
+      "project": "Requester（HTTP 编排客户端）"
+    },
+    {
+      "id": "20261022-014",
+      "title": "Requester 的界面文案过了一遍「专业化」审校",
+      "project": "Requester（HTTP 编排客户端）"
+    },
+    {
+      "id": "20261022-013",
+      "title": "Requester 打包已交付",
+      "project": "Requester（HTTP 编排客户端）"
+    }
+  ],
   "projects": [
     {
       "name": "Requester（HTTP 编排客户端）",

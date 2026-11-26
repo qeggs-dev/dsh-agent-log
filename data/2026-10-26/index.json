@@ -1,10 +1,92 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-10-26",
   "weekday": "周一",
   "entries": 16,
   "overview": "data/2026-10-26/overview.svg",
+  "items": [
+    {
+      "id": "20261026-008",
+      "title": "子代理接缝的权限机制（本次读 0.2.1-rc.3 的 `dsh-subagent/lib/index.js` 实测得出，做同类插件必须知道）",
+      "project": "子代理接缝：权限与创建窗口（机制记录）"
+    },
+    {
+      "id": "20261026-011",
+      "title": "会话桥接追加三个工具",
+      "project": "DSH 插件：会话桥接（dsh-session-bridge）"
+    },
+    {
+      "id": "20261026-012",
+      "title": "`list_sessions` 改为默认「全部列表」",
+      "project": "DSH 插件：会话桥接（dsh-session-bridge）"
+    },
+    {
+      "id": "20261026-010",
+      "title": "新插件「会话桥接」",
+      "project": "DSH 插件：会话桥接（dsh-session-bridge）"
+    },
+    {
+      "id": "20261026-009",
+      "title": "最终交付：工作区级普通会话 + 权限上限",
+      "project": "DSH 插件：受限会话（dsh-scoped-session）"
+    },
+    {
+      "id": "20261026-001",
+      "title": "新项目 **RPE（Role Play Engine）**，形态是 DSH 插件",
+      "project": "RPE（Role Play Engine，DSH 插件）"
+    },
+    {
+      "id": "20261026-002",
+      "title": "RPE 的一条运行版硬约束（`cordis_inspect_qu…",
+      "project": "RPE（Role Play Engine，DSH 插件）"
+    },
+    {
+      "id": "20261026-003",
+      "title": "RPE 核对的四条运行版事实（0.2.1-rc.3，`cordi…",
+      "project": "RPE（Role Play Engine，DSH 插件）"
+    },
+    {
+      "id": "20261026-004",
+      "title": "双预设 spike 结论（读 `dsh-agent-preset-registry/lib/index.js` 得出，未安装任何东西）",
+      "project": "RPE（Role Play Engine，DSH 插件）"
+    },
+    {
+      "id": "20261026-005",
+      "title": "RPE M0a/M0b 已交付并装机",
+      "project": "RPE（Role Play Engine，DSH 插件）"
+    },
+    {
+      "id": "20261026-006",
+      "title": "RPE 的两个机制结论 + doctor 通道",
+      "project": "RPE（Role Play Engine，DSH 插件）"
+    },
+    {
+      "id": "20261026-013",
+      "title": "RPE M0 验收完成（双向，不需要用户动手）",
+      "project": "RPE（Role Play Engine，DSH 插件）"
+    },
+    {
+      "id": "20261026-027",
+      "title": "RPE M1a 完成（纯逻辑 + 真机检索验证）",
+      "project": "RPE（Role Play Engine，DSH 插件）"
+    },
+    {
+      "id": "20261026-020",
+      "title": "界面端口镜像补了常驻开关",
+      "project": "RPE（Role Play Engine，DSH 插件）"
+    },
+    {
+      "id": "20261026-021",
+      "title": "端口镜像改成事件推送（SSE），不再是轮询",
+      "project": "RPE（Role Play Engine，DSH 插件）"
+    },
+    {
+      "id": "20261026-028",
+      "title": "新插件「Active memory」",
+      "project": "Active memory（DSH 插件）"
+    }
+  ],
   "projects": [
     {
       "name": "子代理接缝：权限与创建窗口（机制记录）",

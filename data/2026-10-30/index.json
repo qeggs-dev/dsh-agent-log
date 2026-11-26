@@ -1,10 +1,32 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-10-30",
   "weekday": "周五",
   "entries": 4,
   "overview": "data/2026-10-30/overview.svg",
+  "items": [
+    {
+      "id": "20261030-001",
+      "title": "新插件「JS 库缓存」",
+      "project": "DSH 插件：JS 库缓存（dsh-lib-cache）"
+    },
+    {
+      "id": "20261030-002",
+      "title": "新插件「Mermaid 渲染」",
+      "project": "DSH 插件：JS 库缓存（dsh-lib-cache）"
+    },
+    {
+      "id": "20261030-005",
+      "title": "dsh-mermaid 的形态与验收方式",
+      "project": "DSH 插件：JS 库缓存（dsh-lib-cache）"
+    },
+    {
+      "id": "20261030-007",
+      "title": "dsh-mermaid 已加缩放/平移",
+      "project": "DSH 插件：JS 库缓存（dsh-lib-cache）"
+    }
+  ],
   "projects": [
     {
       "name": "DSH 插件：JS 库缓存（dsh-lib-cache）",

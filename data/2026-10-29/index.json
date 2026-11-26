@@ -1,10 +1,22 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-10-29",
   "weekday": "周四",
   "entries": 2,
   "overview": "data/2026-10-29/overview.svg",
+  "items": [
+    {
+      "id": "20261029-002",
+      "title": "插件「会话包」v2（重做版）",
+      "project": "DSH 插件：会话包（dsh-session-package）"
+    },
+    {
+      "id": "20261029-001",
+      "title": "插件「继续 / 默许」",
+      "project": "DSH 插件：继续任务（dsh-continue-task）"
+    }
+  ],
   "projects": [
     {
       "name": "DSH 插件：会话包（dsh-session-package）",

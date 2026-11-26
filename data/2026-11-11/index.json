@@ -1,10 +1,37 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-11-11",
   "weekday": "周三",
   "entries": 5,
   "overview": "data/2026-11-11/overview.svg",
+  "items": [
+    {
+      "id": "20261110-009",
+      "title": "点「刷新二维码」后面板显示「已停止/未监听」的 bug",
+      "project": "dsh-ui-port-mirror（界面端口镜像）"
+    },
+    {
+      "id": "20261110-010",
+      "title": "壳的脱敏活跃度上报 + 空闲关会话",
+      "project": "dsh-ui-port-mirror（界面端口镜像）"
+    },
+    {
+      "id": "20261111-001",
+      "title": "镜像关开失效 + 断开灰屏",
+      "project": "dsh-ui-port-mirror（界面端口镜像）"
+    },
+    {
+      "id": "20261111-004",
+      "title": "扫码页的镜头变焦（不是二维码铺满）",
+      "project": "dsh-ui-port-mirror（界面端口镜像）"
+    },
+    {
+      "id": "20261111-005",
+      "title": "快速重启 + 提权（两个桌面插件，已装机并实测）",
+      "project": "dsh-ui-port-mirror（界面端口镜像）"
+    }
+  ],
   "projects": [
     {
       "name": "dsh-ui-port-mirror（界面端口镜像）",

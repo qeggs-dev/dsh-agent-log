@@ -31,8 +31,8 @@ import shutil
 import sqlite3
 import sys
 
-SCHEMA_VERSION = 3
-GENERATOR = "build_data.py 3.0.0"
+SCHEMA_VERSION = 4
+GENERATOR = "build_data.py 3.1.0"
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 ROOT_INDEX = ROOT / "index.json"
@@ -211,9 +211,16 @@ def sanitize(text: str) -> str:
 
 
 def entry_block(item: dict, images: list[str]) -> str:
-    """一条条目 → Markdown：隐藏的 id 注释 + 标题 + 正文 + 相对链接的配图。"""
-    title, body = split_title(sanitize(item["content"]))
-    parts = [f"<!-- {item['id']} -->", f"## {title}"]
+    """一条条目 → Markdown：隐藏的 id 注释 + 正文 + 相对链接的配图。
+
+    标题只从 `item["title"]`（数据通道）取，不从正文里解析；
+    这里仍写一行 `## 标题` 只是为了在 GitHub 上直接读 md 时有层次。
+    """
+    title = item.get("title") or ""
+    body = item.get("body") or ""
+    parts = [f"<!-- {item['id']} -->"]
+    if title:
+        parts.append(f"## {title}")
     if body:
         parts.append(reflow(body))
     for alt, rel in images:
@@ -226,7 +233,7 @@ def render_body(items: list[dict]) -> str:
     return "\n\n".join(blocks).strip() + "\n"
 
 
-def day_index(date: str, projects: list[dict]) -> dict:
+def day_index(date: str, projects: list[dict], items: list[dict]) -> dict:
     total = sum(len(p["ids"]) for p in projects)
     return {
         "schemaVersion": SCHEMA_VERSION,
@@ -235,6 +242,9 @@ def day_index(date: str, projects: list[dict]) -> dict:
         "weekday": weekday_cn(date),
         "entries": total,
         "overview": f"data/{date}/overview.svg",
+        "items": [
+            {"id": i["id"], "title": i["title"], "project": i["project"]} for i in items
+        ],
         "projects": [
             {
                 "name": p["name"],
@@ -351,7 +361,7 @@ def build_day(date: str, sections: dict[str, list[dict]], attachments_root: path
     """返回 (当日索引, {文件名: 文本})；需要复制的图片追加进 copies。"""
     used_slugs: set[str] = set()
     used_files: set[str] = set()
-    projects, files = [], {}
+    projects, files, items_meta = [], {}, []
 
     for name, items in sections.items():
         slug = slugify(name, used_slugs)
@@ -369,6 +379,9 @@ def build_day(date: str, sections: dict[str, list[dict]], attachments_root: path
                 copies.append((src, dst))
                 item["images"].append((att["description"] or "配图", filename))
 
+            item["title"], item["body"] = split_title(sanitize(item["content"]))
+            items_meta.append({"id": item["id"], "title": item["title"], "project": name})
+
         tags = [t for i in items for t in i["tags"]]
         projects.append({
             "name": name,
@@ -378,7 +391,7 @@ def build_day(date: str, sections: dict[str, list[dict]], attachments_root: path
         })
         files[f"{slug}.md"] = render_body(items)
 
-    index = day_index(date, projects)
+    index = day_index(date, projects, items_meta)
     files["overview.svg"] = overview_svg(
         date, [{"name": p["slug"], "entries": len(p["ids"])} for p in projects]
     )
@@ -518,12 +531,14 @@ def rebuild_search_index(now: str) -> dict:
     entries = []
     for child in sorted(DATA_DIR.glob("*/index.json"), reverse=True):
         idx = json.loads(child.read_text(encoding="utf-8"))
+        titles = {e["id"]: e.get("title", "") for e in idx.get("items", [])}
         for project in idx["projects"]:
             body_path = ROOT / project["body"]
             if not body_path.exists():
                 continue
             for item_id, block in iter_md_items(body_path.read_text(encoding="utf-8")):
-                title, rest = item_title_body(block)
+                fallback, rest = item_title_body(block)
+                title = titles.get(item_id) or fallback
                 entries.append({
                     "d": idx["date"],
                     "i": item_id,
@@ -609,16 +624,16 @@ def self_test() -> int:
     assert split_title("Android 壳阶段 A/B 通过。APK：路径") == (
         "Android 壳阶段 A/B 通过", "APK：路径")
 
-    # 条目块：id 注释 + 标题 + 正文 + 相对链接的图
-    block = entry_block({"id": "20261126-007", "content": "**标题**：正文"},
+    # 条目块：标题来自数据字段，不解析正文
+    block = entry_block({"id": "20261126-007", "title": "标题", "body": "正文"},
                         [("截图", "evo-1.png")])
     assert block.startswith("<!-- 20261126-007 -->"), block
     assert "\n## 标题\n" in block
     assert "![截图](evo-1.png)" in block
 
     body = render_body([
-        {"id": "20261126-007", "content": "**一**：甲"},
-        {"id": "20261126-009", "content": "**二**：乙"},
+        {"id": "20261126-007", "title": "一", "body": "甲"},
+        {"id": "20261126-009", "title": "二", "body": "乙"},
     ])
     assert body.count("<!--") == 2 and "## 一" in body and "## 二" in body
 
@@ -628,12 +643,14 @@ def self_test() -> int:
     assert svg.startswith("<svg") and svg.rstrip().endswith("</svg>")
     assert "a&lt;b" in svg and "2 条" in svg
 
-    # 索引字段
+    # 索引字段：标题走独立的数据通道
     idx = day_index("2026-11-26", [{"name": "p", "slug": "p", "ids": ["20261126-007"],
-                                    "keywords": ["k"]}])
+                                    "keywords": ["k"]}],
+                    [{"id": "20261126-007", "title": "标题", "project": "p"}])
     assert idx["schemaVersion"] == SCHEMA_VERSION
     assert idx["overview"] == "data/2026-11-26/overview.svg"
     assert idx["projects"][0]["body"] == "data/2026-11-26/p.md"
+    assert idx["items"] == [{"id": "20261126-007", "title": "标题", "project": "p"}]
 
     # 搜索索引的切块
     md = ("<!-- 20261126-001 -->\n\n## 标题一\n\n正文一\n\n"

@@ -1,10 +1,77 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-11-14",
   "weekday": "周六",
   "entries": 13,
   "overview": "data/2026-11-14/overview.svg",
+  "items": [
+    {
+      "id": "20261114-008",
+      "title": "决策（2026-11-14，用户明确两次）",
+      "project": "决策"
+    },
+    {
+      "id": "20261114-011",
+      "title": "决策（2026-11-14，用户要求「要做什么事情首先去扫描 r…",
+      "project": "决策"
+    },
+    {
+      "id": "20261114-014",
+      "title": "决策（2026-11-14，用户要求）",
+      "project": "决策"
+    },
+    {
+      "id": "20261114-009",
+      "title": "承 20261112-002/003",
+      "project": "DSH 插件：后台任务等待控制（dsh-job-wait）"
+    },
+    {
+      "id": "20261114-017",
+      "title": "新增插件 **`@local/watchdog`**（工作区 `…",
+      "project": "DSH 插件：文件看门狗（watchdog）"
+    },
+    {
+      "id": "20261114-018",
+      "title": "dsh-window-keeper 在 2026-11-14 D…",
+      "project": "桌面版窗口尺寸（dsh-window-keeper）"
+    },
+    {
+      "id": "20261114-026",
+      "title": "mcdl **发布 0.2.0**（用户要求提升版本号以便区分新旧包）",
+      "project": "MC Downloader（mcdl）"
+    },
+    {
+      "id": "20261114-027",
+      "title": "mcdl 的构建产物已按**工作区约定**归位（用户要求「构建能…",
+      "project": "MC Downloader（mcdl）"
+    },
+    {
+      "id": "20261114-028",
+      "title": "mcdl 新增**窗口大小/位置记忆**（用户要求「记住上一次窗口大小」）",
+      "project": "MC Downloader（mcdl）"
+    },
+    {
+      "id": "20261114-029",
+      "title": "MC 裸机项目（用户 2026-11-14 拍板）",
+      "project": "MC 裸机（Minecraft appliance）"
+    },
+    {
+      "id": "20261114-030",
+      "title": "MC 裸机 M1 基线（2026-11-14 实测，Windows 宿主）",
+      "project": "MC 裸机（Minecraft appliance）"
+    },
+    {
+      "id": "20261114-031",
+      "title": "界面端口镜像：扫码后需电脑确认 + 可记住设备",
+      "project": "dsh-ui-port-mirror（界面端口镜像）"
+    },
+    {
+      "id": "20261114-033",
+      "title": "新增 DSH 插件 **`@local/dsh-title`（会…",
+      "project": "会话标题（dsh-title）"
+    }
+  ],
   "projects": [
     {
       "name": "决策",

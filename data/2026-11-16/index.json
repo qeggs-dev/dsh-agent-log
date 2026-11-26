@@ -1,10 +1,47 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-11-16",
   "weekday": "周一",
   "entries": 7,
   "overview": "data/2026-11-16/overview.svg",
+  "items": [
+    {
+      "id": "20261116-001",
+      "title": "离线导航地图 App 的两条算法/交互要求（2026-11-16 用户提出）",
+      "project": "离线导航地图（Android）"
+    },
+    {
+      "id": "20261116-002",
+      "title": "离线导航地图 App 的存储与惯性规则（2026-11-16 用户确认）",
+      "project": "离线导航地图（Android）"
+    },
+    {
+      "id": "20261116-003",
+      "title": "`capture_screen` 增加多窗口模式，并按工作区规则…",
+      "project": "DSH 插件：整屏截图（dsh-screenshot）"
+    },
+    {
+      "id": "20261116-004",
+      "title": "决策（2026-11-16，用户先要求「添加 ssh-edit…",
+      "project": "决策"
+    },
+    {
+      "id": "20261116-013",
+      "title": "规则检索改为双轨（2026-11-16 用户要求「同时扫描包含任…",
+      "project": "决策"
+    },
+    {
+      "id": "20261116-008",
+      "title": "dsh-agent-stop 插件（0.1.0，2026-11-16 完成、安装并验证）",
+      "project": "DSH 插件：Agent 循环暂停（dsh-agent-stop）"
+    },
+    {
+      "id": "20261116-009",
+      "title": "dsh-lib-cache 加 npm 源（0.2.0，提交 2436133）",
+      "project": "DSH 插件：JS 库缓存（dsh-lib-cache）"
+    }
+  ],
   "projects": [
     {
       "name": "离线导航地图（Android）",

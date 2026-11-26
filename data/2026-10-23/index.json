@@ -1,10 +1,62 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-10-23",
   "weekday": "周五",
   "entries": 10,
   "overview": "data/2026-10-23/overview.svg",
+  "items": [
+    {
+      "id": "20261023-037",
+      "title": "新增桌面版预设**调查模式**（config.id `inves…",
+      "project": "DSH Agent Preset"
+    },
+    {
+      "id": "20261023-038",
+      "title": "三个「整活」预设已归档",
+      "project": "DSH Agent Preset"
+    },
+    {
+      "id": "20261023-034",
+      "title": "dsh-temp-root 已从旧写法改成新版 bundle 写法",
+      "project": "DSH 插件：temp 目录根（dsh-temp-root）"
+    },
+    {
+      "id": "20261023-035",
+      "title": "桌面 profile 的 temp-root 现状",
+      "project": "DSH 插件：temp 目录根（dsh-temp-root）"
+    },
+    {
+      "id": "20261023-036",
+      "title": "换 temp-root 行/实现的坑（本次差点踩中）",
+      "project": "DSH 插件：temp 目录根（dsh-temp-root）"
+    },
+    {
+      "id": "20261023-020",
+      "title": "修掉 Requester「运行一次后新建块选不中 / 侧边栏卡在上一个块」",
+      "project": "Requester（HTTP 编排客户端）"
+    },
+    {
+      "id": "20261023-032",
+      "title": "repeater-backend 新增 `excludeWork…",
+      "project": "Repeater 后端插件（repeater-backend）"
+    },
+    {
+      "id": "20261023-027",
+      "title": "决策（QQBot 旁听）",
+      "project": "决策"
+    },
+    {
+      "id": "20261023-030",
+      "title": "决策（repeater-backend v0.3，取代 024）",
+      "project": "决策"
+    },
+    {
+      "id": "20261023-031",
+      "title": "待办（repeater-backend v0.4 之后，见 02…",
+      "project": "待办"
+    }
+  ],
   "projects": [
     {
       "name": "DSH Agent Preset",

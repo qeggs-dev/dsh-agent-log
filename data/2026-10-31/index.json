@@ -1,10 +1,22 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-10-31",
   "weekday": "周六",
   "entries": 2,
   "overview": "data/2026-10-31/overview.svg",
+  "items": [
+    {
+      "id": "20261031-001",
+      "title": "DataServer/Backend/Nonebot 补齐文件系统接口",
+      "project": "DataServer（QQBot 静态数据服务）"
+    },
+    {
+      "id": "20261031-002",
+      "title": "Backend `core/tool_caller/tools/…",
+      "project": "DataServer（QQBot 静态数据服务）"
+    }
+  ],
   "projects": [
     {
       "name": "DataServer（QQBot 静态数据服务）",

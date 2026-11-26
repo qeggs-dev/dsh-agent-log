@@ -1,10 +1,87 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-11-15",
   "weekday": "周日",
   "entries": 15,
   "overview": "data/2026-11-15/overview.svg",
+  "items": [
+    {
+      "id": "20261115-002",
+      "title": "决策（2026-11-15，用户要求）",
+      "project": "决策"
+    },
+    {
+      "id": "20261115-007",
+      "title": "决策修订（2026-11-15，用户要求「修改 AGENTS.md 指令要求",
+      "project": "决策"
+    },
+    {
+      "id": "20261115-009",
+      "title": "决策/进展（2026-11-15，用户要求「dsh-ssh 的功…",
+      "project": "决策"
+    },
+    {
+      "id": "20261115-003",
+      "title": "Session Utils 接口决定（2026-11-15）",
+      "project": "Session Utils"
+    },
+    {
+      "id": "20261115-010",
+      "title": "Session Utils 新增 `session_cancel…",
+      "project": "Session Utils"
+    },
+    {
+      "id": "20261115-011",
+      "title": "Session Utils 的 `session_wait` 现…",
+      "project": "Session Utils"
+    },
+    {
+      "id": "20261115-004",
+      "title": "承 20261114-009",
+      "project": "DSH 插件：后台任务等待控制（dsh-job-wait）"
+    },
+    {
+      "id": "20261115-005",
+      "title": "新增插件 dsh-developer-console（包名 @l…",
+      "project": "DSH 插件：开发者控制台（dsh-developer-console）"
+    },
+    {
+      "id": "20261115-006",
+      "title": "dsh-ui-port-mirror 打包成「给 Agent 的 skill bundle」（0.2.0）",
+      "project": "dsh-ui-port-mirror（界面端口镜像）"
+    },
+    {
+      "id": "20261115-008",
+      "title": "`trash` 工具加必填 `description`（R-005 合规），并把模型可见文案全部改成英文（R-006）",
+      "project": "DSH 插件：回收站删除（take-out-trash）"
+    },
+    {
+      "id": "20261115-012",
+      "title": "新插件 diff-edit（工具 `diff_edit`）",
+      "project": "DSH 插件：差异编辑（diff-edit）"
+    },
+    {
+      "id": "20261115-014",
+      "title": "dsh-opener 打包成「给 Agent 的 skill bundle」（0.1.0，2026-11-15）",
+      "project": "dsh-opener（开屏动画）"
+    },
+    {
+      "id": "20261115-015",
+      "title": "新项目",
+      "project": "离线导航地图（Android）"
+    },
+    {
+      "id": "20261115-016",
+      "title": "离线导航地图 App 的交互约定与数据现实（2026-11-15 用户口述）",
+      "project": "离线导航地图（Android）"
+    },
+    {
+      "id": "20261115-017",
+      "title": "离线导航地图 App 的形态转向（2026-11-15，用户主动提出）",
+      "project": "离线导航地图（Android）"
+    }
+  ],
   "projects": [
     {
       "name": "决策",

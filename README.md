@@ -29,7 +29,7 @@ SKILL.md                          操作手册（给 agent 看的：怎么加一
 每份产物都带版本戳：
 
 ```json
-{ "schemaVersion": 3, "generator": "build_data.py 3.0.0" }
+{ "schemaVersion": 4, "generator": "build_data.py 3.0.0" }
 ```
 
 - `schemaVersion` 只在**破坏性变更**时加一——加一意味着外壳必须同时改
@@ -41,7 +41,7 @@ SKILL.md                          操作手册（给 agent 看的：怎么加一
 
 ```json
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "generator": "build_data.py 3.0.0",
   "updated": "2026-11-26T21:34:00+08:00",
   "latest": { "id": "20261126-012", "date": "2026-11-26", "project": "变形拼图（morph-puzzle）" },
@@ -56,12 +56,13 @@ SKILL.md                          操作手册（给 agent 看的：怎么加一
 
 ```json
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "generator": "build_data.py 3.0.0",
   "date": "2026-11-26",
   "weekday": "周四",
   "entries": 7,
   "overview": "data/2026-11-26/overview.svg",
+  "items": [{ "id": "20261126-007", "title": "演化沙盒 evo-world 新建", "project": "演化沙盒（evo-world）" }],
   "projects": [
     { "name": "演化沙盒（evo-world）", "body": "data/2026-11-26/evo-world.md",
       "entries": 3, "ids": ["20261126-007", "…"], "keywords": ["evo-world", "…"] }

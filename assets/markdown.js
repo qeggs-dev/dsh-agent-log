@@ -36,7 +36,9 @@ export function renderInline(text, base = '') {
   return inline(String(text ?? ''), base);
 }
 
-// 把一份正文按条目切开：`<!-- id -->` 是一条的边界，`## 标题` 是它的标题。
+// 把一份正文按条目切开：`<!-- id -->` 是一条的边界。
+// 标题**不**从这里推导——它在当日索引的 items 里，是独立的数据通道；
+// 这里只是把 md 里那行 `## 标题` 去掉（那是给 GitHub 直接读文件用的）。
 export function splitItems(text) {
   const lines = String(text ?? '').replace(/\r\n?/g, '\n').split('\n');
   const chunks = [];
@@ -56,18 +58,11 @@ export function splitItems(text) {
 
   return chunks
     .map((chunk) => {
-      const body = chunk.lines.join('\n').trim();
-      const rows = body.split('\n');
+      const rows = chunk.lines.join('\n').split('\n');
       let start = 0;
       while (start < rows.length && !rows[start].trim()) start += 1;
-      let title = '';
-      if (/^##\s+/.test(rows[start] || '')) {
-        title = rows[start].replace(/^##\s+/, '').trim();
-        start += 1;
-      }
-      const rest = rows.slice(start).join('\n').trim();
-      if (!title) title = rest.split('\n')[0].slice(0, 40) || '(无标题)';
-      return { id: chunk.id, title, body: rest };
+      if (/^##\s+/.test(rows[start] || '')) start += 1;
+      return { id: chunk.id, body: rows.slice(start).join('\n').trim() };
     })
     .filter((item) => item.id || item.body);
 }

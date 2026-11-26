@@ -1,10 +1,62 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-11-26",
   "weekday": "周四",
   "entries": 10,
   "overview": "data/2026-11-26/overview.svg",
+  "items": [
+    {
+      "id": "20261126-001",
+      "title": "image-delta（@local/image-delta v0.1.0）新建并安装",
+      "project": "DSH 插件：图片差异对比（image-delta）"
+    },
+    {
+      "id": "20261126-002",
+      "title": "待办（功能基本完成后）",
+      "project": "手机 Agent App（代理树）"
+    },
+    {
+      "id": "20261126-003",
+      "title": "diff-edit 0.2.0：新增 `patch_diff` 工具与 `diffEdit` 服务（2026-11-26）",
+      "project": "DSH 插件：差异编辑（diff-edit）"
+    },
+    {
+      "id": "20261126-004",
+      "title": "规则（2026-11-26，用户要求「搜索记忆前，先列出所有的关键词」）",
+      "project": "决策"
+    },
+    {
+      "id": "20261126-005",
+      "title": "规则（2026-11-26，用户要求）",
+      "project": "决策"
+    },
+    {
+      "id": "20261126-007",
+      "title": "演化沙盒 evo-world 新建（2026-11-26）",
+      "project": "演化沙盒（evo-world）"
+    },
+    {
+      "id": "20261126-008",
+      "title": "待办（evo-world，紧接 id",
+      "project": "演化沙盒（evo-world）"
+    },
+    {
+      "id": "20261126-009",
+      "title": "evo-world v3：两界 + 信息素 + 饮食基因（2026-11-26，取代三界版）",
+      "project": "演化沙盒（evo-world）"
+    },
+    {
+      "id": "20261126-010",
+      "title": "evo-world 食物网平衡（2026-11-26，承 id:20261126-009）",
+      "project": "演化沙盒（evo-world）"
+    },
+    {
+      "id": "20261126-012",
+      "title": "变形拼图 morph-puzzle 新建（2026-11-26）",
+      "project": "变形拼图（morph-puzzle）"
+    }
+  ],
   "projects": [
     {
       "name": "DSH 插件：图片差异对比（image-delta）",

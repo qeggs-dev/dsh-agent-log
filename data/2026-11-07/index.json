@@ -1,10 +1,32 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-11-07",
   "weekday": "周六",
   "entries": 4,
   "overview": "data/2026-11-07/overview.svg",
+  "items": [
+    {
+      "id": "20261107-001",
+      "title": "桌面版致命恢复会「搬走」整个 profile patch，这就是自建预设消失的真因",
+      "project": "DSH Agent Preset"
+    },
+    {
+      "id": "20261107-002",
+      "title": "用户先决定**不恢复** 2026-11-06 崩溃恢复时搬走的…",
+      "project": "DSH Agent Preset"
+    },
+    {
+      "id": "20261107-004",
+      "title": "新增桌面版插件 **`@local/dsh-preset-swi…",
+      "project": "DSH Agent Preset"
+    },
+    {
+      "id": "20261107-003",
+      "title": "DSH 浮层的「毛玻璃」是三件套，只写背景色会变成透明",
+      "project": "DSH 插件：可读预设（dsh-readable-preset）"
+    }
+  ],
   "projects": [
     {
       "name": "DSH Agent Preset",

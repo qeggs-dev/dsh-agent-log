@@ -1,10 +1,37 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-11-17",
   "weekday": "周二",
   "entries": 5,
   "overview": "data/2026-11-17/overview.svg",
+  "items": [
+    {
+      "id": "20261117-002",
+      "title": "决策（2026-11-17，用户要求「子进程改为进程池管理，这样…",
+      "project": "决策"
+    },
+    {
+      "id": "20261117-003",
+      "title": "Session Utils 标题支持（2026-11-17）",
+      "project": "Session Utils"
+    },
+    {
+      "id": "20261117-004",
+      "title": "**change-style 插件（2026-11-17，`〈工…",
+      "project": "DSH 插件：外观样式（change-style）"
+    },
+    {
+      "id": "20261117-005",
+      "title": "通知卡片插件 notice（2026-11-17，`〈工作区〉/…",
+      "project": "DSH 插件：通知卡片（notice）"
+    },
+    {
+      "id": "20261117-010",
+      "title": "dsh-super-workspace 的工作区菜单项「外部工作…",
+      "project": "dsh-super-workspace"
+    }
+  ],
   "projects": [
     {
       "name": "决策",

@@ -1,10 +1,52 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-11-04",
   "weekday": "周三",
   "entries": 8,
   "overview": "data/2026-11-04/overview.svg",
+  "items": [
+    {
+      "id": "20261104-001",
+      "title": "新增项目 **Cordis 宿主 App**（暂定目录 `〈工作…",
+      "project": "Cordis 宿主 App（Android 端 agent 运行时）"
+    },
+    {
+      "id": "20261104-003",
+      "title": "Cordis 宿主 App **MVP 已交付并全绿**（`〈工…",
+      "project": "Cordis 宿主 App（Android 端 agent 运行时）"
+    },
+    {
+      "id": "20261104-007",
+      "title": "cordis 4.0.0-rc.12 的三条硬规则（全部实测，探针在 `cordis-host/probe/`）",
+      "project": "Cordis 宿主 App（Android 端 agent 运行时）"
+    },
+    {
+      "id": "20261104-008",
+      "title": "Cordis 宿主 App **M1 第一步已完成**",
+      "project": "Cordis 宿主 App（Android 端 agent 运行时）"
+    },
+    {
+      "id": "20261104-009",
+      "title": "Cordis 宿主 App 的双端互联协议已定稿并落地第一批纯模块",
+      "project": "Cordis 宿主 App（Android 端 agent 运行时）"
+    },
+    {
+      "id": "20261104-010",
+      "title": "Cordis 宿主 App 的**字符集设置界面需求**（用户…",
+      "project": "Cordis 宿主 App（Android 端 agent 运行时）"
+    },
+    {
+      "id": "20261104-006",
+      "title": "工作区根 `super_workspace.json` 已按记忆…",
+      "project": "DSH Agent Preset"
+    },
+    {
+      "id": "20261104-002",
+      "title": "决策（Cordis 宿主 App，四条技术选型，均为用户 202…",
+      "project": "决策"
+    }
+  ],
   "projects": [
     {
       "name": "Cordis 宿主 App（Android 端 agent 运行时）",

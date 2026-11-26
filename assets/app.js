@@ -115,11 +115,19 @@ async function loadDay(date) {
   if (!meta) throw new Error(`索引里没有 ${date}`);
   const index = await loadJson(meta.index);
   const bodies = await Promise.all(index.projects.map((p) => loadText(p.body)));
+
+  // 标题来自当日索引的 items（数据通道），不从 Markdown 结构里解析
+  const titles = new Map((index.items || []).map((e) => [e.id, e.title]));
   const items = [];
   index.projects.forEach((project, i) => {
     const base = project.body.slice(0, project.body.lastIndexOf('/') + 1);
-    for (const item of splitItems(bodies[i])) {
-      items.push({ ...item, base, project: project.name });
+    for (const piece of splitItems(bodies[i])) {
+      items.push({
+        ...piece,
+        title: titles.get(piece.id) || '(无标题)',
+        base,
+        project: project.name,
+      });
     }
   });
   return { index, items, meta };

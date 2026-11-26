@@ -1,10 +1,62 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-10-20",
   "weekday": "周二",
   "entries": 10,
   "overview": "data/2026-10-20/overview.svg",
+  "items": [
+    {
+      "id": "20261020-001",
+      "title": "新增项目 **PCML（Py Console Minecraft…",
+      "project": "PCML（Py Console Minecraft Launcher）"
+    },
+    {
+      "id": "20261020-002",
+      "title": "PCML 的既定技术选择（用户口述，**无依赖底线、以快速开发为优先**）",
+      "project": "PCML（Py Console Minecraft Launcher）"
+    },
+    {
+      "id": "20261020-003",
+      "title": "PCML 的**分工**",
+      "project": "PCML（Py Console Minecraft Launcher）"
+    },
+    {
+      "id": "20261020-004",
+      "title": "PCML 技术栈已定（用户 2026-10-20 口述）",
+      "project": "PCML（Py Console Minecraft Launcher）"
+    },
+    {
+      "id": "20261020-005",
+      "title": "PCML 的两条技术判断（我提出，用户未反驳也未确认）",
+      "project": "PCML（Py Console Minecraft Launcher）"
+    },
+    {
+      "id": "20261020-007",
+      "title": "PCML 下载器的**并发参数语义由用户本人在 2026-10-…",
+      "project": "PCML（Py Console Minecraft Launcher）"
+    },
+    {
+      "id": "20261020-008",
+      "title": "本机外网**吞吐极低但连接数不受限**（2026-10-20 实…",
+      "project": "PCML（Py Console Minecraft Launcher）"
+    },
+    {
+      "id": "20261020-009",
+      "title": "PCML 下载器的**输出形状由用户定**",
+      "project": "PCML（Py Console Minecraft Launcher）"
+    },
+    {
+      "id": "20261020-010",
+      "title": "PCML 下载器代码结构（用户要求「逻辑简单、复杂逻辑搬出去、不…",
+      "project": "PCML（Py Console Minecraft Launcher）"
+    },
+    {
+      "id": "20261020-006",
+      "title": "PCML 砍掉「异步控制台接口」（用户 2026-10-20 一…",
+      "project": "PCML（Py Console Minecraft Launcher）"
+    }
+  ],
   "projects": [
     {
       "name": "PCML（Py Console Minecraft Launcher）",

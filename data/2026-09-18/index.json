@@ -1,10 +1,137 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-09-18",
   "weekday": "周五",
   "entries": 25,
   "overview": "data/2026-09-18/overview.svg",
+  "items": [
+    {
+      "id": "20260918-001",
+      "title": "VES（Virtual Environment System）源…",
+      "project": "VES"
+    },
+    {
+      "id": "20260918-002",
+      "title": "启动 VES 用工作区根目录的 `ves.bat`，该批处理等价…",
+      "project": "VES"
+    },
+    {
+      "id": "20260918-003",
+      "title": "VES 启动后进入 `>` 交互提示符，`help` 打印全部命令",
+      "project": "VES"
+    },
+    {
+      "id": "20260918-004",
+      "title": "VES 需要真实 TTY",
+      "project": "VES"
+    },
+    {
+      "id": "20260918-005",
+      "title": "VES 当前状态",
+      "project": "VES"
+    },
+    {
+      "id": "20260918-033",
+      "title": "VES 支持命令行模式",
+      "project": "VES"
+    },
+    {
+      "id": "20260918-034",
+      "title": "`install`/`uninstall` 一次只接受**一个*…",
+      "project": "VES"
+    },
+    {
+      "id": "20260918-035",
+      "title": "VES 的进程退出码不可信",
+      "project": "VES"
+    },
+    {
+      "id": "20260918-036",
+      "title": "`freeze <env>` 在命令行模式下**不打印任何结果*…",
+      "project": "VES"
+    },
+    {
+      "id": "20260918-037",
+      "title": "VES 的环境基目录取 `Path.cwd() / \"envs\"…",
+      "project": "VES"
+    },
+    {
+      "id": "20260918-038",
+      "title": "VES 未捕获的异常会先把 traceback 写到 `trac…",
+      "project": "VES"
+    },
+    {
+      "id": "20260918-024",
+      "title": "VES 的 net 环境位于 `〈工作区〉/envs/net/.…",
+      "project": "net 环境与操作手台"
+    },
+    {
+      "id": "20260918-025",
+      "title": "net 环境已装依赖（实测版本）",
+      "project": "net 环境与操作手台"
+    },
+    {
+      "id": "20260918-026",
+      "title": "工作区操作手台由 `console.bat`（纯 ASCII 启…",
+      "project": "net 环境与操作手台"
+    },
+    {
+      "id": "20260918-027",
+      "title": "操作手台各子命令职责",
+      "project": "net 环境与操作手台"
+    },
+    {
+      "id": "20260918-028",
+      "title": "实测性能（net 环境，3000 条记录）",
+      "project": "net 环境与操作手台"
+    },
+    {
+      "id": "20260918-029",
+      "title": "关键约束",
+      "project": "net 环境与操作手台"
+    },
+    {
+      "id": "20260918-030",
+      "title": "操作手台使用陷阱",
+      "project": "net 环境与操作手台"
+    },
+    {
+      "id": "20260918-031",
+      "title": "`ves.bat shell net` 在无 TTY 环境下也可执行",
+      "project": "net 环境与操作手台"
+    },
+    {
+      "id": "20260918-032",
+      "title": "0o700 权限的目录（包括 `tempfile.mkdtemp…",
+      "project": "net 环境与操作手台"
+    },
+    {
+      "id": "20260918-039",
+      "title": "工作区根新增 `to_venv.bat`",
+      "project": "net 环境与操作手台"
+    },
+    {
+      "id": "20260918-040",
+      "title": "工作区根 `.venv` 是 Python 3.11.9，装有…",
+      "project": "net 环境与操作手台"
+    },
+    {
+      "id": "20260918-042",
+      "title": "手台自身刻意未改（用户当日决定「不管它了」），实测痛点供日后重估",
+      "project": "net 环境与操作手台"
+    },
+    {
+      "id": "20260918-041",
+      "title": "决策",
+      "project": "决策"
+    },
+    {
+      "id": "20260918-020",
+      "title": "待办",
+      "project": "待办"
+    }
+  ],
   "projects": [
     {
       "name": "VES",

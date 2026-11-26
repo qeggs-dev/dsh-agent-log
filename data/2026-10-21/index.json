@@ -1,10 +1,182 @@
 {
-  "schemaVersion": 3,
-  "generator": "build_data.py 3.0.0",
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.1.0",
   "date": "2026-10-21",
   "weekday": "周三",
   "entries": 34,
   "overview": "data/2026-10-21/overview.svg",
+  "items": [
+    {
+      "id": "20261021-001",
+      "title": "新增项目 **AD Downloader** 于 `〈工作区〉/…",
+      "project": "AD Downloader（adl）"
+    },
+    {
+      "id": "20261021-002",
+      "title": "AD Downloader 的三参数语义（用户定义）",
+      "project": "AD Downloader（adl）"
+    },
+    {
+      "id": "20261021-003",
+      "title": "AD Downloader 任务包（ADv1）的三处刻意设计",
+      "project": "AD Downloader（adl）"
+    },
+    {
+      "id": "20261021-004",
+      "title": "本机启动 Electron 应用的两个坑（实测，不是配置问题）",
+      "project": "AD Downloader（adl）"
+    },
+    {
+      "id": "20261021-005",
+      "title": "npm 11.19 **默认不执行依赖的 install scr…",
+      "project": "AD Downloader（adl）"
+    },
+    {
+      "id": "20261021-006",
+      "title": "AD Downloader 打包链路已跑通",
+      "project": "AD Downloader（adl）"
+    },
+    {
+      "id": "20261021-007",
+      "title": "AD Downloader 资源新增 `path` 字段（相对下…",
+      "project": "AD Downloader（adl）"
+    },
+    {
+      "id": "20261021-008",
+      "title": "AD Downloader 界面重做为**无边框窗口 + 自绘窗…",
+      "project": "AD Downloader（adl）"
+    },
+    {
+      "id": "20261021-009",
+      "title": "本机验证 Electron 界面的两条实测事实",
+      "project": "AD Downloader（adl）"
+    },
+    {
+      "id": "20261021-010",
+      "title": "AD Downloader 新增**界面上新建任务包**（`新建…",
+      "project": "AD Downloader（adl）"
+    },
+    {
+      "id": "20261021-011",
+      "title": "AD Downloader 做了**分发加固**（用户原话「至少…",
+      "project": "AD Downloader（adl）"
+    },
+    {
+      "id": "20261021-012",
+      "title": "上面第 ⑤ 条**第一版写错了并当场被端到端抓到**",
+      "project": "AD Downloader（adl）"
+    },
+    {
+      "id": "20261021-013",
+      "title": "AD Downloader 玻璃卡片在 0.32 透明度的照片背…",
+      "project": "AD Downloader（adl）"
+    },
+    {
+      "id": "20261021-014",
+      "title": "AD Downloader 界面卡的**根因是 `app.dis…",
+      "project": "AD Downloader（adl）"
+    },
+    {
+      "id": "20261021-015",
+      "title": "AD Downloader 新增**卡片自适应亮暗**",
+      "project": "AD Downloader（adl）"
+    },
+    {
+      "id": "20261021-016",
+      "title": "上条的补充（用户反馈「新建任务包页面没有适配亮色」）",
+      "project": "AD Downloader（adl）"
+    },
+    {
+      "id": "20261021-017",
+      "title": "AD Downloader 改为**多任务组并发**（用户定义",
+      "project": "AD Downloader（adl）"
+    },
+    {
+      "id": "20261021-018",
+      "title": "上一轮踩的两个坑",
+      "project": "AD Downloader（adl）"
+    },
+    {
+      "id": "20261021-019",
+      "title": "三个子代理对 AD Downloader 做了只读审计（渲染层…",
+      "project": "AD Downloader（adl）"
+    },
+    {
+      "id": "20261021-020",
+      "title": "上述审计**明确未修**的项（不是遗漏，是取舍）",
+      "project": "AD Downloader（adl）"
+    },
+    {
+      "id": "20261021-021",
+      "title": "新增项目 **MC Downloader**（`〈工作区〉/mcdl/`）",
+      "project": "MC Downloader（mcdl）"
+    },
+    {
+      "id": "20261021-023",
+      "title": "mcdl 对 ADv1 的三条硬规矩",
+      "project": "MC Downloader（mcdl）"
+    },
+    {
+      "id": "20261021-024",
+      "title": "mcdl 实测数据（同日）",
+      "project": "MC Downloader（mcdl）"
+    },
+    {
+      "id": "20261021-025",
+      "title": "mcdl 抓到的**真 bug（已修）**",
+      "project": "MC Downloader（mcdl）"
+    },
+    {
+      "id": "20261021-026",
+      "title": "mcdl 打包链路",
+      "project": "MC Downloader（mcdl）"
+    },
+    {
+      "id": "20261021-027",
+      "title": "ADL 审计里**明确延后的 4 项已全部处理**（单测 50 → 57）",
+      "project": "MC Downloader（mcdl）"
+    },
+    {
+      "id": "20261021-028",
+      "title": "ADL core 的公开 API 在本轮有多处破坏性变化，`mcdl` 直接 import 这些模块，升级后必须重新 typecheck",
+      "project": "MC Downloader（mcdl）"
+    },
+    {
+      "id": "20261021-029",
+      "title": "ADL 资源新增 **`hash` 校验字段**",
+      "project": "MC Downloader（mcdl）"
+    },
+    {
+      "id": "20261021-032",
+      "title": "mcdl 的下载器改为**自研流式**（用户明确「不要直接复用…",
+      "project": "MC Downloader（mcdl）"
+    },
+    {
+      "id": "20261021-035",
+      "title": "mcdl 新增 **Fabric / Forge / NeoFo…",
+      "project": "MC Downloader（mcdl）"
+    },
+    {
+      "id": "20261021-036",
+      "title": "Forge/NeoForge 安装的真实障碍与解法（本轮最关键的发现）",
+      "project": "MC Downloader（mcdl）"
+    },
+    {
+      "id": "20261021-037",
+      "title": "mcdl 加载器的**源可达性实测**（决定\"选哪个源\"）",
+      "project": "MC Downloader（mcdl）"
+    },
+    {
+      "id": "20261021-039",
+      "title": "mcdl 新增「用 ADL 下载」（用户要求",
+      "project": "MC Downloader（mcdl）"
+    },
+    {
+      "id": "20261021-031",
+      "title": "待办",
+      "project": "待办"
+    }
+  ],
   "projects": [
     {
       "name": "AD Downloader（adl）",
