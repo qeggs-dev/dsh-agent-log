@@ -24,8 +24,17 @@
   <nav id="days" aria-label="日期"></nav>
 </aside>
 
+<aside id="entries" aria-label="当日条目">
+  <div class="entries-head">
+    <h2 id="dayDate"></h2>
+    <p id="dayMeta" class="muted"></p>
+    <img id="overview" class="overview" alt="当日概览" hidden>
+  </div>
+  <nav id="items"></nav>
+</aside>
+
 <main id="main">
-  <article id="day">
+  <article id="entry">
     <p class="muted">加载中…</p>
   </article>
 </main>

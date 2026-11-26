@@ -73,6 +73,11 @@ def section_name(section_key: str, group_label: str | None) -> str:
     return {"SEC:03": "决策", "SEC:04": "待办"}.get(section_key, section_key)
 
 
+def _strip_lead(text: str) -> str:
+    """去掉标题后面残留的句号 / 冒号 / 空白。"""
+    return text.lstrip().lstrip("。：:").strip()
+
+
 def split_title(content: str) -> tuple[str, str]:
     """从正文里取一条标题：`**…**：` 开头优先，其次是「前缀：」结构，最后退回首句。
 
@@ -84,13 +89,15 @@ def split_title(content: str) -> tuple[str, str]:
     if m and len(m.group(1)) <= 80:
         title = m.group(1).strip().rstrip("：:").strip()
         if title:
-            return title, text[m.end():].strip()
+            return title, _strip_lead(text[m.end():])
 
-    colon = re.search(r"[：:]", text[:40])
+    # 冒号前缀只在第一句之内成立，避免把「A。B：C」当成标题
+    head = re.split(r"[。\n]", text, 1)[0]
+    colon = re.search(r"[：:]", head[:40])
     if colon:
-        title = text[:colon.start()].strip()
+        title = head[:colon.start()].strip()
         if 2 <= len(title) <= 48:
-            return title, text[colon.end():].strip()
+            return title, _strip_lead(text[colon.end():])
 
     first = re.split(r"[。\n]", text, 1)[0]
     if len(first) <= 40:
@@ -147,40 +154,38 @@ def day_index(date: str, projects: list[dict]) -> dict:
 
 # ---------------------------------------------------------------- 概览图
 
-OVERVIEW_W = 720
-OVERVIEW_LABEL = 236
-OVERVIEW_ROW = 26
-OVERVIEW_TOP = 62
+OVERVIEW_W = 360
+OVERVIEW_LABEL = 150
+OVERVIEW_ROW = 22
+OVERVIEW_TOP = 8
 
 
 def overview_svg(date: str, projects: list[dict]) -> str:
-    """当日概览：每个板块一条横杠，长度=条目数。透明底，深浅色都能看。"""
-    height = OVERVIEW_TOP + OVERVIEW_ROW * max(len(projects), 1) + 14
+    """当日概览：每个板块一条横杠，长度=条目数。宽度按侧栏第二列设计。"""
+    height = OVERVIEW_TOP + OVERVIEW_ROW * max(len(projects), 1) + 10
     total = sum(p["entries"] for p in projects)
     max_n = max((p["entries"] for p in projects), default=1)
-    bar_max = OVERVIEW_W - OVERVIEW_LABEL - 64
+    bar_max = OVERVIEW_W - OVERVIEW_LABEL - 46
 
     out = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{OVERVIEW_W}" height="{height}" '
         f'viewBox="0 0 {OVERVIEW_W} {height}" role="img" '
         f'font-family="system-ui, -apple-system, Segoe UI, Microsoft YaHei, sans-serif">',
-        f'<text x="0" y="20" font-size="14" font-weight="600" fill="#8a7a64">'
-        f'{html.escape(date)} · {weekday_cn(date)} · {len(projects)} 个板块 / {total} 条</text>',
     ]
     for i, p in enumerate(projects):
         y = OVERVIEW_TOP + i * OVERVIEW_ROW
-        name = p["name"] if len(p["name"]) <= 18 else p["name"][:17] + "…"
+        name = p["name"] if len(p["name"]) <= 16 else p["name"][:15] + "…"
         width = max(4, round(bar_max * p["entries"] / max_n))
         out.append(
-            f'<text x="0" y="{y + 13}" font-size="12" fill="#8a7a64">'
+            f'<text x="0" y="{y + 11}" font-size="10" fill="#8a7a64">'
             f'{html.escape(name)}</text>'
         )
         out.append(
-            f'<rect x="{OVERVIEW_LABEL}" y="{y + 2}" width="{width}" height="12" rx="3" '
+            f'<rect x="{OVERVIEW_LABEL}" y="{y + 3}" width="{width}" height="9" rx="4" '
             f'fill="#e8a800" opacity="0.7"/>'
         )
         out.append(
-            f'<text x="{OVERVIEW_LABEL + width + 8}" y="{y + 13}" font-size="11" '
+            f'<text x="{OVERVIEW_LABEL + width + 6}" y="{y + 12}" font-size="10" '
             f'fill="#b3a48c">{p["entries"]} 条</text>'
         )
     out.append("</svg>")
@@ -279,7 +284,7 @@ def build_day(date: str, sections: dict[str, list[dict]], attachments_root: path
 
     index = day_index(date, projects)
     files["overview.svg"] = overview_svg(
-        date, [{"name": p["name"], "entries": len(p["ids"])} for p in projects]
+        date, [{"name": p["slug"], "entries": len(p["ids"])} for p in projects]
     )
     return index, files
 
@@ -448,6 +453,11 @@ def self_test() -> int:
     # 「前缀：正文」结构，前缀当标题、正文不重复前缀
     assert split_title("dsh-desktop-shell：把 dsh web 装进窗口") == (
         "dsh-desktop-shell", "把 dsh web 装进窗口")
+    # 标题后面残留的句号要去掉
+    assert split_title("**标题**。正文") == ("标题", "正文")
+    # 冒号不能跨句：句号之后的前缀不算
+    assert split_title("Android 壳阶段 A/B 通过。APK：路径") == (
+        "Android 壳阶段 A/B 通过", "APK：路径")
 
     # 条目块：id 注释 + 标题 + 正文 + 相对链接的图
     block = entry_block({"id": "20261126-007", "content": "**标题**：正文"},
@@ -466,7 +476,7 @@ def self_test() -> int:
     svg = overview_svg("2026-11-26", [
         {"name": "a<b", "entries": 2}, {"name": "中文板块", "entries": 1}])
     assert svg.startswith("<svg") and svg.rstrip().endswith("</svg>")
-    assert "a&lt;b" in svg and "2 条" in svg and "2026-11-26" in svg
+    assert "a&lt;b" in svg and "2 条" in svg
 
     # 索引字段
     idx = day_index("2026-11-26", [{"name": "p", "slug": "p", "ids": ["20261126-007"],

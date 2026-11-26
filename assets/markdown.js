@@ -32,6 +32,46 @@ function inline(raw, base) {
     );
 }
 
+export function renderInline(text, base = '') {
+  return inline(String(text ?? ''), base);
+}
+
+// 把一份正文按条目切开：`<!-- id -->` 是一条的边界，`## 标题` 是它的标题。
+export function splitItems(text) {
+  const lines = String(text ?? '').replace(/\r\n?/g, '\n').split('\n');
+  const chunks = [];
+  let cur = null;
+
+  for (const line of lines) {
+    const m = line.trim().match(ID_COMMENT);
+    if (m) {
+      if (cur) chunks.push(cur);
+      cur = { id: m[1], lines: [] };
+      continue;
+    }
+    if (!cur) cur = { id: null, lines: [] };
+    cur.lines.push(line);
+  }
+  if (cur) chunks.push(cur);
+
+  return chunks
+    .map((chunk) => {
+      const body = chunk.lines.join('\n').trim();
+      const rows = body.split('\n');
+      let start = 0;
+      while (start < rows.length && !rows[start].trim()) start += 1;
+      let title = '';
+      if (/^##\s+/.test(rows[start] || '')) {
+        title = rows[start].replace(/^##\s+/, '').trim();
+        start += 1;
+      }
+      const rest = rows.slice(start).join('\n').trim();
+      if (!title) title = rest.split('\n')[0].slice(0, 40) || '(无标题)';
+      return { id: chunk.id, title, body: rest };
+    })
+    .filter((item) => item.id || item.body);
+}
+
 export function renderMarkdown(src, opts = {}) {
   const base = opts.base || '';
   const lines = String(src ?? '').replace(/\r\n?/g, '\n').split('\n');

@@ -22,6 +22,9 @@ scripts/build-preview.py   打成单文件 preview.html
 tests/markdown.test.mjs    渲染器测试
 ```
 
+界面是三栏：**日期 → 当日条目索引 → 单条正文**。路由 `#/<date>/<entry-id>`，
+切换条目只重绘正文；`#/<date>` 落在当天第一条。左侧两栏在 ≤900px 时收成横向滚动条。
+
 ## 日常：新增一天
 
 1. 确认要发的条目已进白名单（这是唯一的授权入口）：

@@ -1,7 +1,7 @@
-// 固定外壳：读根索引 → 读当日索引 → 读各板块 Markdown → 渲染。
-// 页面本身不随数据变化；只有 index.json 需要每次校验，其余文件按日期不可变。
+// 固定外壳：日期栏 → 当日条目索引 → 单条正文。
+// 页面不随数据变化；只有 index.json 需要每次校验，其余文件按日期不可变。
 
-import { renderMarkdown, escapeHtml } from './markdown.js';
+import { renderMarkdown, renderInline, splitItems, escapeHtml } from './markdown.js';
 
 const INDEX_URL = 'index.json';
 const TITLE = '工作区日志';
@@ -9,9 +9,15 @@ const TITLE = '工作区日志';
 // 单文件预览用：preview.html 把整站塞进 __DEVLOG_FS__，省掉 HTTP 服务
 const FS = window.__DEVLOG_FS__ || null;
 
-const state = { index: null, day: null };
+const state = { index: null, day: null, current: null };
 const $days = document.getElementById('days');
-const $day = document.getElementById('day');
+const $entries = document.getElementById('entries');
+const $dayDate = document.getElementById('dayDate');
+const $dayMeta = document.getElementById('dayMeta');
+const $overview = document.getElementById('overview');
+const $items = document.getElementById('items');
+const $entry = document.getElementById('entry');
+const $main = document.getElementById('main');
 const $updated = document.getElementById('updated');
 const $latest = document.getElementById('latest');
 
@@ -76,6 +82,8 @@ window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && !$settings.hidden) toggleSettings(false);
 });
 
+// ---------------------------------------------------------------- 取数
+
 function fsGet(url) {
   if (!FS) return undefined;
   const key = url.split('?')[0];
@@ -103,8 +111,17 @@ async function loadDay(date) {
   if (!meta) throw new Error(`索引里没有 ${date}`);
   const index = await loadJson(meta.index);
   const bodies = await Promise.all(index.projects.map((p) => loadText(p.body)));
-  return { index, bodies, meta };
+  const items = [];
+  index.projects.forEach((project, i) => {
+    const base = project.body.slice(0, project.body.lastIndexOf('/') + 1);
+    for (const item of splitItems(bodies[i])) {
+      items.push({ ...item, base, project: project.name });
+    }
+  });
+  return { index, items, meta };
 }
+
+// ---------------------------------------------------------------- 渲染
 
 function renderSidebar() {
   $days.replaceChildren();
@@ -129,52 +146,87 @@ function renderHeader() {
   $updated.textContent = `更新于 ${formatStamp(state.index.updated)}`;
 }
 
-function pagerLink(direction) {
-  const days = state.index.days;
-  const i = days.findIndex((d) => d.date === state.day.index.date);
-  const j = direction === 'older' ? i + 1 : i - 1;
-  if (j < 0 || j >= days.length) return '<span class="disabled"></span>';
-  const arrow = direction === 'older' ? '←' : '→';
-  return `<a href="#/${days[j].date}">${arrow} ${days[j].date}</a>`;
-}
+function renderEntries() {
+  const { index, items } = state.day;
 
-function renderDay() {
-  const { index, bodies } = state.day;
-  const parts = [];
-
-  parts.push(`<h2>${escapeHtml(index.date)}</h2>`);
-  parts.push(
-    `<div class="meta"><span>${escapeHtml(index.weekday || '')}</span>` +
-      `<span class="chip">${index.projects.length} 个板块 · ${index.entries} 条</span></div>`
-  );
+  $dayDate.textContent = index.date;
+  $dayMeta.textContent = `${index.weekday || ''} · ${index.projects.length} 个板块 · ${items.length} 条`;
 
   if (index.overview) {
-    parts.push(
-      `<img class="overview" src="${escapeHtml(index.overview)}" alt="当日概览" loading="lazy">`
-    );
+    $overview.src = index.overview;
+    $overview.hidden = false;
+  } else {
+    $overview.hidden = true;
   }
 
-  index.projects.forEach((project, i) => {
-    const kw = (project.keywords || [])
-      .map((k) => `<span>${escapeHtml(k)}</span>`)
-      .join('');
-    const base = project.body.slice(0, project.body.lastIndexOf('/') + 1);
-    parts.push(`<section class="project"><h3>${escapeHtml(project.name)}</h3>`);
-    if (kw) parts.push(`<div class="kw">${kw}</div>`);
-    parts.push(renderMarkdown(bodies[i], { base }));
-    parts.push('</section>');
-  });
+  $items.replaceChildren();
+  let lastProject = null;
+  for (const item of items) {
+    if (item.project !== lastProject) {
+      const group = document.createElement('p');
+      group.className = 'group-name';
+      group.textContent = item.project;
+      $items.append(group);
+      lastProject = item.project;
+    }
+    const a = document.createElement('a');
+    a.className = 'entry-link';
+    a.href = `#/${index.date}/${item.id || ''}`;
+    if (state.current && item.id === state.current.id) a.setAttribute('aria-current', 'true');
+    const title = document.createElement('span');
+    title.className = 't';
+    title.textContent = item.title;
+    a.append(title);
+    if (item.id) {
+      const eid = document.createElement('span');
+      eid.className = 'eid';
+      eid.textContent = item.id;
+      a.append(eid);
+    }
+    $items.append(a);
+  }
+}
 
-  parts.push(`<div class="pager">${pagerLink('older')}${pagerLink('newer')}</div>`);
+function pagerLink(direction) {
+  const items = state.day.items;
+  const i = items.findIndex((x) => state.current && x.id === state.current.id);
+  const j = direction === 'prev' ? i - 1 : i + 1;
+  if (j < 0 || j >= items.length) return '<span class="disabled"></span>';
+  const label = direction === 'prev' ? '← 上一条' : '下一条 →';
+  return `<a href="#/${state.day.index.date}/${items[j].id}">${label}</a>`;
+}
 
-  $day.innerHTML = parts.join('\n');
-  document.title = `${index.date} · ${TITLE}`;
-  document.getElementById('main').scrollTop = 0;
+function renderEntry() {
+  const { index, items } = state.day;
+  const item = state.current;
+
+  if (!item) {
+    $entry.innerHTML = '<p class="muted">这一天还没有条目。</p>';
+    document.title = TITLE;
+    return;
+  }
+
+  const idx = items.findIndex((x) => x.id === item.id) + 1;
+  $entry.innerHTML = [
+    `<p class="kicker">${escapeHtml(item.project)} · ${escapeHtml(index.date)}` +
+      `<span class="kicker-chip">第 ${idx} / ${items.length} 条</span></p>`,
+    `<h2>${renderInline(item.title)}</h2>`,
+    item.id ? `<p class="entry-id">✦ ${escapeHtml(item.id)}</p>` : '',
+    `<div class="entry-card">${renderMarkdown(item.body, { base: item.base })}</div>`,
+    `<div class="pager">${pagerLink('prev')}${pagerLink('next')}</div>`,
+  ].join('\n');
+
+  document.title = `${item.title} · ${index.date} · ${TITLE}`;
+  $main.scrollTop = 0;
+  const active = $items.querySelector('a[aria-current="true"]');
+  if (active) active.scrollIntoView({ block: 'nearest' });
 }
 
 function showError(err) {
-  $day.innerHTML = `<p class="error">${escapeHtml(err.message || String(err))}</p>`;
+  $entry.innerHTML = `<p class="error">${escapeHtml(err.message || String(err))}</p>`;
 }
+
+// ---------------------------------------------------------------- 路由
 
 async function route() {
   try {
@@ -187,24 +239,46 @@ async function route() {
     }
 
     const raw = decodeURIComponent(location.hash.replace(/^#\/?/, '')).trim();
-    if (raw && !/^\d{4}-\d{2}-\d{2}$/.test(raw)) throw new Error(`日期格式不对：${raw}`);
+    const [datePart = '', entryPart = ''] = raw.split('/');
+    if (datePart && !/^\d{4}-\d{2}-\d{2}$/.test(datePart)) {
+      throw new Error(`日期格式不对：${datePart}`);
+    }
 
-    state.day = await loadDay(raw || state.index.days[0].date);
+    const date = datePart || state.index.days[0].date;
+    if (!state.day || state.day.index.date !== date) {
+      state.day = await loadDay(date);
+    }
+    state.current = state.day.items.find((x) => x.id === entryPart) || state.day.items[0] || null;
+
     renderSidebar();
-    renderDay();
+    renderEntries();
+    renderEntry();
   } catch (err) {
     showError(err);
   }
 }
 
 window.addEventListener('hashchange', route);
+
+// 站内链接统一走 hash 路由，避免 iframe / 预览环境里触发默认跳转
+document.addEventListener('click', (e) => {
+  const link = e.target.closest ? e.target.closest('a[href^="#/"]') : null;
+  if (!link) return;
+  e.preventDefault();
+  const target = link.getAttribute('href');
+  if (location.hash === target) route();
+  else location.hash = target;
+});
+
 window.addEventListener('keydown', (e) => {
-  if (!state.day || !state.index) return;
-  if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
-  const days = state.index.days;
-  const i = days.findIndex((d) => d.date === state.day.index.date);
-  const j = e.key === 'ArrowLeft' ? i + 1 : i - 1;
-  if (j >= 0 && j < days.length) location.hash = `#/${days[j].date}`;
+  if (!state.current) return;
+  const step = e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? -1
+    : (e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : 0);
+  if (!step) return;
+  const items = state.day.items;
+  const i = items.findIndex((x) => x.id === state.current.id);
+  const j = i + step;
+  if (j >= 0 && j < items.length) location.hash = `#/${state.day.index.date}/${items[j].id}`;
 });
 
 route();
