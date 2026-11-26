@@ -1,6 +1,6 @@
 <!-- 20261018-001 -->
 
-## DataServer 项目位于 `〈项目目录〉/QQBot/Da…
+## DataServer 项目位于 〈项目目录〉/QQBot/Da…
 
 DataServer 项目位于 `〈项目目录〉/QQBot/DataServer/develop`（Python 3.11.9 + FastAPI 0.143.2，poetry `package-mode=false`，venv 在 `.venv`，版本 1.0.0），把目录虚拟化成 HTTP 文件服务；
 

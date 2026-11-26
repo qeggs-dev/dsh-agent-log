@@ -1,6 +1,6 @@
 <!-- 20261126-003 -->
 
-## diff-edit 0.2.0：新增 `patch_diff` 工具与 `diffEdit` 服务（2026-11-26）
+## diff-edit 0.2.0：新增 patch_diff 工具与 diffEdit 服务（2026-11-26）
 
 用户要求「传入一个 diff 文件按文件应用修改，支持 reverse 反向 patch」，以及「新增插件接口让其它插件传入两个文件生成 diff 文件、并应用 diff 更改（或反向，传入 diff 字符串）」。
 

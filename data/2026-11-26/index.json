@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-11-26",
   "weekday": "周四",
   "entries": 10,
@@ -18,7 +18,7 @@
     },
     {
       "id": "20261126-003",
-      "title": "diff-edit 0.2.0：新增 `patch_diff` 工具与 `diffEdit` 服务（2026-11-26）",
+      "title": "diff-edit 0.2.0：新增 patch_diff 工具与 diffEdit 服务（2026-11-26）",
       "project": "DSH 插件：差异编辑（diff-edit）"
     },
     {

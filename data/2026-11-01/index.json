@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-11-01",
   "weekday": "周日",
   "entries": 7,
@@ -8,12 +8,12 @@
   "items": [
     {
       "id": "20261101-002",
-      "title": "新增桌面版插件 **`@local/dsh-tool-ask-a…",
+      "title": "新增桌面版插件 @local/dsh-tool-ask-a…",
       "project": "DSH Agent Preset"
     },
     {
       "id": "20261101-011",
-      "title": "新增桌面版插件 **`@local/dsh-readable-p…",
+      "title": "新增桌面版插件 @local/dsh-readable-p…",
       "project": "DSH Agent Preset"
     },
     {
@@ -38,7 +38,7 @@
     },
     {
       "id": "20261101-010",
-      "title": "决策",
+      "title": "决策：给 DSH 已有工具「加参数」时，优先另开一个独立工具*…",
       "project": "决策"
     }
   ],

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-11-17",
   "weekday": "周二",
   "entries": 5,
@@ -18,12 +18,12 @@
     },
     {
       "id": "20261117-004",
-      "title": "**change-style 插件（2026-11-17，`〈工…",
+      "title": "change-style 插件（2026-11-17，〈工…",
       "project": "DSH 插件：外观样式（change-style）"
     },
     {
       "id": "20261117-005",
-      "title": "通知卡片插件 notice（2026-11-17，`〈工作区〉/…",
+      "title": "通知卡片插件 notice（2026-11-17，〈工作区〉/…",
       "project": "DSH 插件：通知卡片（notice）"
     },
     {

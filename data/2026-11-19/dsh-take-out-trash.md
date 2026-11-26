@@ -1,6 +1,6 @@
 <!-- 20261119-006 -->
 
-## `trash` 增加 `path_pattern`（正则批量删除）与 `dry_run`（预演）
+## trash 增加 path_pattern（正则批量删除）与 dry_run（预演）
 
 （`dsh_plugins/take-out-trash`，commit `2f4b822` / `70ff6b2` / `51eb622`，已重启并在真实工作区实测）。
 
@@ -30,7 +30,7 @@
 
 <!-- 20261119-007 -->
 
-## `trash` 再加 `base_path`：模式只扫该目录，默认会话工作区；`base_path` 不在工作区时要审批
+## trash 再加 base_path：模式只扫该目录，默认会话工作区；base_path 不在工作区时要审批
 
 （用户 2026-11-19 逐字要求，`dsh_plugins/take-out-trash`，commit `07710a0`，已重启并实测）。
 

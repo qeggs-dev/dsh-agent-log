@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-11-06",
   "weekday": "周五",
   "entries": 4,
@@ -8,12 +8,12 @@
   "items": [
     {
       "id": "20261106-001",
-      "title": "cordis-host **加密与接入层已完成到「协议全通」**…",
+      "title": "cordis-host 加密与接入层已完成到「协议全通」…",
       "project": "Cordis 宿主 App（Android 端 agent 运行时）"
     },
     {
       "id": "20261106-002",
-      "title": "cordis-host **会话级临时接入已打通**(M1 收尾)",
+      "title": "cordis-host 会话级临时接入已打通(M1 收尾)",
       "project": "Cordis 宿主 App（Android 端 agent 运行时）"
     },
     {

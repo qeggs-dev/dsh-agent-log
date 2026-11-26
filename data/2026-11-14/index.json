@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-11-14",
   "weekday": "周六",
   "entries": 13,
@@ -28,7 +28,7 @@
     },
     {
       "id": "20261114-017",
-      "title": "新增插件 **`@local/watchdog`**（工作区 `…",
+      "title": "新增插件 @local/watchdog（工作区 …",
       "project": "DSH 插件：文件看门狗（watchdog）"
     },
     {
@@ -38,17 +38,17 @@
     },
     {
       "id": "20261114-026",
-      "title": "mcdl **发布 0.2.0**（用户要求提升版本号以便区分新旧包）",
+      "title": "mcdl 发布 0.2.0（用户要求提升版本号以便区分新旧包）",
       "project": "MC Downloader（mcdl）"
     },
     {
       "id": "20261114-027",
-      "title": "mcdl 的构建产物已按**工作区约定**归位（用户要求「构建能…",
+      "title": "mcdl 的构建产物已按工作区约定归位（用户要求「构建能…",
       "project": "MC Downloader（mcdl）"
     },
     {
       "id": "20261114-028",
-      "title": "mcdl 新增**窗口大小/位置记忆**（用户要求「记住上一次窗口大小」）",
+      "title": "mcdl 新增窗口大小/位置记忆（用户要求「记住上一次窗口大小」）",
       "project": "MC Downloader（mcdl）"
     },
     {
@@ -68,7 +68,7 @@
     },
     {
       "id": "20261114-033",
-      "title": "新增 DSH 插件 **`@local/dsh-title`（会…",
+      "title": "新增 DSH 插件 @local/dsh-title（会…",
       "project": "会话标题（dsh-title）"
     }
   ],

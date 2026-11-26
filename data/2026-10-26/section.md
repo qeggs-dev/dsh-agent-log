@@ -1,6 +1,6 @@
 <!-- 20261026-008 -->
 
-## 子代理接缝的权限机制（本次读 0.2.1-rc.3 的 `dsh-subagent/lib/index.js` 实测得出，做同类插件必须知道）
+## 子代理接缝的权限机制（本次读 0.2.1-rc.3 的 dsh-subagent/lib/index.js 实测得出，做同类插件必须知道）
 
 ①manager 在「未发布的创建窗口」里调 `captureDelegatedPolicyOverrides(parent)` → `appendDelegatedPolicyOverrides(childSession)`，写入 `sandbox/mode`（只取父会话的**显式 override**，不取部署默认）+ `approval/policy: never` + 视情况 `permission/preset`，事件都带 `source: 'delegation'`；
 

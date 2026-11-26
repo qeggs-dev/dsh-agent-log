@@ -1,6 +1,6 @@
 <!-- 20261119-001 -->
 
-## 建立插件 `dsh_plugins/official-proto…
+## 建立插件 dsh_plugins/official-proto…
 
 建立插件 `dsh_plugins/official-protocol-switch`（@local/official-protocol-switch，bundle 行 id `official-protocol-switch`，独立 git 仓库，初始提交 bd11d5a；
 

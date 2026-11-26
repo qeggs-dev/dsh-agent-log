@@ -1,6 +1,6 @@
 <!-- 20261115-012 -->
 
-## 新插件 diff-edit（工具 `diff_edit`）
+## 新插件 diff-edit（工具 diff_edit）
 
 2026-11-15 按用户要求新增，功能是**用统一 diff 改一个文本文件**，diff 引擎用 **jsdiff**（npm 包名 `diff`）。
 

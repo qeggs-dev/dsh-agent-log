@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-11-13",
   "weekday": "周五",
   "entries": 8,
@@ -8,12 +8,12 @@
   "items": [
     {
       "id": "20261113-001",
-      "title": "Session Utils 插件（`@local/dsh-ses…",
+      "title": "Session Utils 插件（@local/dsh-ses…",
       "project": "Session Utils"
     },
     {
       "id": "20261113-002",
-      "title": "Session Utils 的 `session_send` 与…",
+      "title": "Session Utils 的 session_send 与…",
       "project": "Session Utils"
     },
     {
@@ -23,7 +23,7 @@
     },
     {
       "id": "20261113-004",
-      "title": "新增桌面插件 **`@local/dsh-plugins-man…",
+      "title": "新增桌面插件 @local/dsh-plugins-man…",
       "project": "DSH 插件：插件批量管理（plugins-manager）"
     },
     {
@@ -33,17 +33,17 @@
     },
     {
       "id": "20261113-008",
-      "title": "新增 DSH 插件 **`@local/dsh-todo-lis…",
+      "title": "新增 DSH 插件 @local/dsh-todo-lis…",
       "project": "DSH 插件：TODO 列表（dsh-todo-list）"
     },
     {
       "id": "20261113-009",
-      "title": "dsh-sqlite 的六个工具都**要求** `descrip…",
+      "title": "dsh-sqlite 的六个工具都要求 descrip…",
       "project": "DSH 插件：SQLite 数据库（dsh-sqlite）"
     },
     {
       "id": "20261113-010",
-      "title": "新增 DSH 插件 **`@local/take-out-tra…",
+      "title": "新增 DSH 插件 @local/take-out-tra…",
       "project": "DSH 插件：回收站删除（take-out-trash）"
     }
   ],

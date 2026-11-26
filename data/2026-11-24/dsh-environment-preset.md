@@ -1,6 +1,6 @@
 <!-- 20261124-003 -->
 
-## **新增 DSH 插件 `@local/dsh-environm…
+## 新增 DSH 插件 @local/dsh-environm…
 
 **新增 DSH 插件 `@local/dsh-environment-preset`（环境预设，目录 dsh_plugins/environment-preset，独立 git 仓库，已装进 desktop profile 并实测）**：把一套可复用环境（插件源码 + AGENTS.md 规则 + 附件 + 安装 skill）打成一个 `.envpreset`，再解到工作区。
 

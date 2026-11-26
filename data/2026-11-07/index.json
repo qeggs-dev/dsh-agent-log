@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-11-07",
   "weekday": "周六",
   "entries": 4,
@@ -13,12 +13,12 @@
     },
     {
       "id": "20261107-002",
-      "title": "用户先决定**不恢复** 2026-11-06 崩溃恢复时搬走的…",
+      "title": "用户先决定不恢复 2026-11-06 崩溃恢复时搬走的…",
       "project": "DSH Agent Preset"
     },
     {
       "id": "20261107-004",
-      "title": "新增桌面版插件 **`@local/dsh-preset-swi…",
+      "title": "新增桌面版插件 @local/dsh-preset-swi…",
       "project": "DSH Agent Preset"
     },
     {

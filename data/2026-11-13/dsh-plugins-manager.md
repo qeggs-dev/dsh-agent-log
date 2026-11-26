@@ -1,6 +1,6 @@
 <!-- 20261113-004 -->
 
-## 新增桌面插件 **`@local/dsh-plugins-man…
+## 新增桌面插件 @local/dsh-plugins-man…
 
 新增桌面插件 **`@local/dsh-plugins-manager`（插件批量管理）**（源目录 `〈工作区〉/plugins-manager`，bundle 行 id `plugins-manager`，desktop profile，`install_bundle` 返回 `application: applied`、warnings 空）。
 

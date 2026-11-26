@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-10-23",
   "weekday": "周五",
   "entries": 10,
@@ -8,7 +8,7 @@
   "items": [
     {
       "id": "20261023-037",
-      "title": "新增桌面版预设**调查模式**（config.id `inves…",
+      "title": "新增桌面版预设调查模式（config.id inves…",
       "project": "DSH Agent Preset"
     },
     {
@@ -38,7 +38,7 @@
     },
     {
       "id": "20261023-032",
-      "title": "repeater-backend 新增 `excludeWork…",
+      "title": "repeater-backend 新增 excludeWork…",
       "project": "Repeater 后端插件（repeater-backend）"
     },
     {

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-11-12",
   "weekday": "周四",
   "entries": 17,
@@ -13,22 +13,22 @@
     },
     {
       "id": "20261112-003",
-      "title": "sleep 插件（`@local/dsh-tool-sleep`）加上生命周期钩子",
+      "title": "sleep 插件（@local/dsh-tool-sleep）加上生命周期钩子",
       "project": "DSH 插件：后台任务等待控制（dsh-job-wait）"
     },
     {
       "id": "20261112-001",
-      "title": "`capture_screen` 扩展为「整屏 / 单窗口」二选一",
+      "title": "capture_screen 扩展为「整屏 / 单窗口」二选一",
       "project": "DSH 插件：整屏截图（dsh-screenshot）"
     },
     {
       "id": "20261112-019",
-      "title": "`capture_screen` 增加 `cursor` 参数（…",
+      "title": "capture_screen 增加 cursor 参数（…",
       "project": "DSH 插件：整屏截图（dsh-screenshot）"
     },
     {
       "id": "20261112-006",
-      "title": "新增插件 **`@local/backend-resource`…",
+      "title": "新增插件 @local/backend-resource…",
       "project": "DSH 插件：后台资源管理（backend-resource）"
     },
     {
@@ -38,7 +38,7 @@
     },
     {
       "id": "20261112-007",
-      "title": "dsh-sqlite 增加 **`sqlite_lifespan…",
+      "title": "dsh-sqlite 增加 sqlite_lifespan…",
       "project": "DSH 插件：后台资源管理（backend-resource）"
     },
     {
@@ -68,22 +68,22 @@
     },
     {
       "id": "20261112-016",
-      "title": "侧边栏开关悬停出二维码（**停留 1 秒**才弹，防误触）",
+      "title": "侧边栏开关悬停出二维码（停留 1 秒才弹，防误触）",
       "project": "dsh-ui-port-mirror（界面端口镜像）"
     },
     {
       "id": "20261112-021",
-      "title": "Pr 2020 的 VST3 宿主会拒绝用 `juce::AudioProcessorValueTreeState`（APVTS）构建参数的插件",
+      "title": "Pr 2020 的 VST3 宿主会拒绝用 juce::AudioProcessorValueTreeState（APVTS）构建参数的插件",
       "project": "Premiere 音频工具（pr-audio）"
     },
     {
       "id": "20261112-022",
-      "title": "Pr 的 CEP manifest 里**宿主标识必须是 `PP…",
+      "title": "Pr 的 CEP manifest 里宿主标识必须是 PP…",
       "project": "Premiere 音频工具（pr-audio）"
     },
     {
       "id": "20261112-023",
-      "title": "`PR Stretch.vst3` 在 Pr 2020 里真正跑…",
+      "title": "PR Stretch.vst3 在 Pr 2020 里真正跑…",
       "project": "Premiere 音频工具（pr-audio）"
     },
     {

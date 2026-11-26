@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-10-15",
   "weekday": "周四",
   "entries": 4,
@@ -13,7 +13,7 @@
     },
     {
       "id": "20261015-007",
-      "title": "上述框架的**核心已由他在两个同系列（同一系列、不同组件）的项目…",
+      "title": "上述框架的核心已由他在两个同系列（同一系列、不同组件）的项目…",
       "project": "用户真正想做的项目：带身份和注册表的 shell 作业控制"
     },
     {

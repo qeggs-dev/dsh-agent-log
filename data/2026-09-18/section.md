@@ -1,6 +1,6 @@
 <!-- 20260918-041 -->
 
-## 决策
+## 决策：操作手台改用工作区根 .venv（Python 3.11…
 
 操作手台改用工作区根 `.venv`（Python 3.11.9），弃用 VES 的 `envs\net\.venv`（Python 3.14.3）；`console.bat` 的 `PY` 变量与提示语同步改指 `.venv`。
 

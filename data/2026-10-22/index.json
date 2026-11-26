@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-10-22",
   "weekday": "周四",
   "entries": 15,
@@ -8,12 +8,12 @@
   "items": [
     {
       "id": "20261022-002",
-      "title": "新增项目 **Requester** 于 `〈工作区〉/requ…",
+      "title": "新增项目 Requester 于 〈工作区〉/requ…",
       "project": "Requester（HTTP 编排客户端）"
     },
     {
       "id": "20261022-003",
-      "title": "`node --test` 的默认隔离模式在「受限沙箱（workspace-write）」下必失败，在 danger-full-access 下正常",
+      "title": "node --test 的默认隔离模式在「受限沙箱（workspace-write）」下必失败，在 danger-full-access 下正常",
       "project": "Requester（HTTP 编排客户端）"
     },
     {
@@ -23,17 +23,17 @@
     },
     {
       "id": "20261022-006",
-      "title": "**本机 Electron 进程建不了 `%APPDATA%\\R…",
+      "title": "本机 Electron 进程建不了 %APPDATA%\\R…",
       "project": "Requester（HTTP 编排客户端）"
     },
     {
       "id": "20261022-007",
-      "title": "Requester **请求级历史已交付并真机验收**（单测 6…",
+      "title": "Requester 请求级历史已交付并真机验收（单测 6…",
       "project": "Requester（HTTP 编排客户端）"
     },
     {
       "id": "20261022-008",
-      "title": "Requester 的 **Cookie 自动管理已实现并真机验…",
+      "title": "Requester 的 Cookie 自动管理已实现并真机验…",
       "project": "Requester（HTTP 编排客户端）"
     },
     {

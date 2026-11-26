@@ -1,6 +1,6 @@
 <!-- 20261121-005 -->
 
-## 新增并安装 `@local/subagent-access`（`…
+## 新增并安装 @local/subagent-access（…
 
 新增并安装 `@local/subagent-access`（`dsh_plugins/subagent-access/`，desktop profile 已 link 并在 bundles 里选中）。模型面向文本按 R-006 用英文，审批/notice 卡片用中文。
 

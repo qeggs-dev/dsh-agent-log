@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-10-21",
   "weekday": "周三",
   "entries": 34,
@@ -8,7 +8,7 @@
   "items": [
     {
       "id": "20261021-001",
-      "title": "新增项目 **AD Downloader** 于 `〈工作区〉/…",
+      "title": "新增项目 AD Downloader 于 〈工作区〉/…",
       "project": "AD Downloader（adl）"
     },
     {
@@ -28,7 +28,7 @@
     },
     {
       "id": "20261021-005",
-      "title": "npm 11.19 **默认不执行依赖的 install scr…",
+      "title": "npm 11.19 默认不执行依赖的 install scr…",
       "project": "AD Downloader（adl）"
     },
     {
@@ -38,12 +38,12 @@
     },
     {
       "id": "20261021-007",
-      "title": "AD Downloader 资源新增 `path` 字段（相对下…",
+      "title": "AD Downloader 资源新增 path 字段（相对下…",
       "project": "AD Downloader（adl）"
     },
     {
       "id": "20261021-008",
-      "title": "AD Downloader 界面重做为**无边框窗口 + 自绘窗…",
+      "title": "AD Downloader 界面重做为无边框窗口 + 自绘窗…",
       "project": "AD Downloader（adl）"
     },
     {
@@ -53,17 +53,17 @@
     },
     {
       "id": "20261021-010",
-      "title": "AD Downloader 新增**界面上新建任务包**（`新建…",
+      "title": "AD Downloader 新增界面上新建任务包（新建…",
       "project": "AD Downloader（adl）"
     },
     {
       "id": "20261021-011",
-      "title": "AD Downloader 做了**分发加固**（用户原话「至少…",
+      "title": "AD Downloader 做了分发加固（用户原话「至少…",
       "project": "AD Downloader（adl）"
     },
     {
       "id": "20261021-012",
-      "title": "上面第 ⑤ 条**第一版写错了并当场被端到端抓到**",
+      "title": "上面第 ⑤ 条第一版写错了并当场被端到端抓到",
       "project": "AD Downloader（adl）"
     },
     {
@@ -73,12 +73,12 @@
     },
     {
       "id": "20261021-014",
-      "title": "AD Downloader 界面卡的**根因是 `app.dis…",
+      "title": "AD Downloader 界面卡的根因是 app.dis…",
       "project": "AD Downloader（adl）"
     },
     {
       "id": "20261021-015",
-      "title": "AD Downloader 新增**卡片自适应亮暗**",
+      "title": "AD Downloader 新增卡片自适应亮暗",
       "project": "AD Downloader（adl）"
     },
     {
@@ -88,7 +88,7 @@
     },
     {
       "id": "20261021-017",
-      "title": "AD Downloader 改为**多任务组并发**（用户定义",
+      "title": "AD Downloader 改为多任务组并发（用户定义",
       "project": "AD Downloader（adl）"
     },
     {
@@ -103,12 +103,12 @@
     },
     {
       "id": "20261021-020",
-      "title": "上述审计**明确未修**的项（不是遗漏，是取舍）",
+      "title": "上述审计明确未修的项（不是遗漏，是取舍）",
       "project": "AD Downloader（adl）"
     },
     {
       "id": "20261021-021",
-      "title": "新增项目 **MC Downloader**（`〈工作区〉/mcdl/`）",
+      "title": "新增项目 MC Downloader（〈工作区〉/mcdl/）",
       "project": "MC Downloader（mcdl）"
     },
     {
@@ -123,7 +123,7 @@
     },
     {
       "id": "20261021-025",
-      "title": "mcdl 抓到的**真 bug（已修）**",
+      "title": "mcdl 抓到的真 bug（已修）",
       "project": "MC Downloader（mcdl）"
     },
     {
@@ -133,27 +133,27 @@
     },
     {
       "id": "20261021-027",
-      "title": "ADL 审计里**明确延后的 4 项已全部处理**（单测 50 → 57）",
+      "title": "ADL 审计里明确延后的 4 项已全部处理（单测 50 → 57）",
       "project": "MC Downloader（mcdl）"
     },
     {
       "id": "20261021-028",
-      "title": "ADL core 的公开 API 在本轮有多处破坏性变化，`mcdl` 直接 import 这些模块，升级后必须重新 typecheck",
+      "title": "ADL core 的公开 API 在本轮有多处破坏性变化，mcdl 直接 import 这些模块，升级后必须重新 typecheck",
       "project": "MC Downloader（mcdl）"
     },
     {
       "id": "20261021-029",
-      "title": "ADL 资源新增 **`hash` 校验字段**",
+      "title": "ADL 资源新增 hash 校验字段",
       "project": "MC Downloader（mcdl）"
     },
     {
       "id": "20261021-032",
-      "title": "mcdl 的下载器改为**自研流式**（用户明确「不要直接复用…",
+      "title": "mcdl 的下载器改为自研流式（用户明确「不要直接复用…",
       "project": "MC Downloader（mcdl）"
     },
     {
       "id": "20261021-035",
-      "title": "mcdl 新增 **Fabric / Forge / NeoFo…",
+      "title": "mcdl 新增 Fabric / Forge / NeoFo…",
       "project": "MC Downloader（mcdl）"
     },
     {
@@ -163,7 +163,7 @@
     },
     {
       "id": "20261021-037",
-      "title": "mcdl 加载器的**源可达性实测**（决定\"选哪个源\"）",
+      "title": "mcdl 加载器的源可达性实测（决定\"选哪个源\"）",
       "project": "MC Downloader（mcdl）"
     },
     {
@@ -173,7 +173,7 @@
     },
     {
       "id": "20261021-031",
-      "title": "待办",
+      "title": "待办：mcdl 的完整档资源对象没有真下过 —— 26.…",
       "project": "待办"
     }
   ],

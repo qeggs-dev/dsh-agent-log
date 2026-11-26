@@ -1,6 +1,6 @@
 <!-- 20261025-001 -->
 
-## 工作区新增本地插件 **Agent Bus**（`〈工作区〉/d…
+## 工作区新增本地插件 Agent Bus（〈工作区〉/d…
 
 工作区新增本地插件 **Agent Bus**（`〈工作区〉/dsh-agent-bus`，包名 `@local/dsh-agent-bus` v1.0.0；
 
@@ -28,7 +28,7 @@ A → lead 投递 `PING-LEAD`（消息落进 `session-dcaa5e05` 的 next-step in
 
 <!-- 20261025-002 -->
 
-## Agent Bus 追加**子智能体对话监听**（同一插件 `@…
+## Agent Bus 追加子智能体对话监听（同一插件 @…
 
 Agent Bus 追加**子智能体对话监听**（同一插件 `@local/dsh-agent-bus`，新增两个工具）：`spawn_subagent`（与内置 `subagent` 等价的派生逻辑，多一个 `listen` 参数：`none` / `input` / `output` / `both`）与 `listen_subagent`（对**直接子智能体**事后开启、更改或关闭监听，`listen: none` 停止）。
 

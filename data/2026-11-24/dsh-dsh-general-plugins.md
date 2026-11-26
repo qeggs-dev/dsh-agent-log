@@ -1,6 +1,6 @@
 <!-- 20261124-002 -->
 
-## 2026-11-24 新增并安装 DSH 插件 `@local/…
+## 2026-11-24 新增并安装 DSH 插件 @local/…
 
 2026-11-24 新增并安装 DSH 插件 `@local/dsh-general-plugins`（目录 dsh_plugins/dsh-general-plugins，独立 git 仓库）。
 

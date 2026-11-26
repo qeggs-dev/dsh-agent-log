@@ -10,7 +10,7 @@
 
 <!-- 20261115-010 -->
 
-## Session Utils 新增 `session_cancel…
+## Session Utils 新增 session_cancel…
 
 Session Utils 新增 `session_cancel_wait`（2026-11-15）：走 `@local/dsh-job-wait` 的统一取消注册表 `ctx.waitControl`（`ctx.inject(['waitControl'])`，只在它挂载时注册；
 
@@ -26,7 +26,7 @@ Session Utils 新增 `session_cancel_wait`（2026-11-15）：走 `@local/dsh-job
 
 <!-- 20261115-011 -->
 
-## Session Utils 的 `session_wait` 现…
+## Session Utils 的 session_wait 现…
 
 Session Utils 的 `session_wait` 现在会把自己注册进 `dsh-job-wait` 的 `ctx.waitControl`（`kind: "session-wait"`，仅在 hub 存在时）：阻塞期间 `GET /job-wait/state?session=<id>` 的 `waits` 里能看到它，所以本会话工具栏会出现「打断等待」按钮。
 

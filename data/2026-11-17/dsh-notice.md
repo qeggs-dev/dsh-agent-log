@@ -1,6 +1,6 @@
 <!-- 20261117-005 -->
 
-## 通知卡片插件 notice（2026-11-17，`〈工作区〉/…
+## 通知卡片插件 notice（2026-11-17，〈工作区〉/…
 
 通知卡片插件 notice（2026-11-17，`〈工作区〉/dsh_plugins/notice`，包名 `@local/dsh-notice`，已安装并 git 提交）：Host 注册 `notice` 工具（必填 description + notice，可选 title、color），通知存内存并通过 `/dsh-notice/state|action|events` 暴露；
 

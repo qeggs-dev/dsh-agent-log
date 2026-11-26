@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-11-05",
   "weekday": "周四",
   "entries": 2,
@@ -8,7 +8,7 @@
   "items": [
     {
       "id": "20261105-012",
-      "title": "Cordis 宿主 App **互联层第一步已完成（真 sock…",
+      "title": "Cordis 宿主 App 互联层第一步已完成（真 sock…",
       "project": "Cordis 宿主 App（Android 端 agent 运行时）"
     },
     {

@@ -1,6 +1,6 @@
 <!-- 20261110-004 -->
 
-## 新增桌面插件 **`@local/dsh-screenshot`…
+## 新增桌面插件 @local/dsh-screenshot…
 
 新增桌面插件 **`@local/dsh-screenshot`（整屏截图）**（源目录 `〈工作区〉/dsh-screenshot`，bundle 行 id `screenshot` / entry `include:screenshot`，`install_bundle` → `application: applied`、warnings 空）：唯一能力是一个模型工具 `capture_screen`（**没有 GUI、没有 HTTP 端点**），截取 **Windows 虚拟屏幕**（`SystemInformation.VirtualScreen`，含所有显示器）一次并存成 PNG。
 

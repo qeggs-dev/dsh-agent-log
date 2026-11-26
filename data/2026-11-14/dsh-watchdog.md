@@ -1,6 +1,6 @@
 <!-- 20261114-017 -->
 
-## 新增插件 **`@local/watchdog`**（工作区 `…
+## 新增插件 @local/watchdog（工作区 …
 
 新增插件 **`@local/watchdog`**（工作区 `dsh_plugins\watchdog\`，独立 git 仓库，row id `watchdog` / entry `include:watchdog`，`install_bundle` 以本地目录装入 desktop profile，`application: applied`）。
 

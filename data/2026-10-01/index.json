@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-10-01",
   "weekday": "周四",
   "entries": 9,
@@ -13,17 +13,17 @@
     },
     {
       "id": "20261001-005",
-      "title": "0.2.0-rc.2 的 persona 行（`@deepsee…",
+      "title": "0.2.0-rc.2 的 persona 行（@deepsee…",
       "project": "DSH Agent Preset"
     },
     {
       "id": "20261001-006",
-      "title": "已为桌面版新建**对话模式**（config.id `chat`…",
+      "title": "已为桌面版新建对话模式（config.id chat…",
       "project": "DSH Agent Preset"
     },
     {
       "id": "20261001-014",
-      "title": "桌面版 profile patch 的热生效边界（**实测修正**）",
+      "title": "桌面版 profile patch 的热生效边界（实测修正）",
       "project": "DSH Agent Preset"
     },
     {
@@ -33,17 +33,17 @@
     },
     {
       "id": "20261001-015",
-      "title": "`dsh-temp-root` 插件已加 `ensureFull…",
+      "title": "dsh-temp-root 插件已加 ensureFull…",
       "project": "DSH Agent Preset"
     },
     {
       "id": "20261001-016",
-      "title": "5 个旧模式已迁入桌面版（`@deepseek-ai/dsh-a…",
+      "title": "5 个旧模式已迁入桌面版（@deepseek-ai/dsh-a…",
       "project": "DSH Agent Preset"
     },
     {
       "id": "20261001-017",
-      "title": "预设迁移的工具与重跑方式（都在工作区 `dsh-desktop-…",
+      "title": "预设迁移的工具与重跑方式（都在工作区 dsh-desktop-…",
       "project": "DSH Agent Preset"
     },
     {

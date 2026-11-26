@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-10-10",
   "weekday": "周六",
   "entries": 4,
@@ -13,17 +13,17 @@
     },
     {
       "id": "20261010-006",
-      "title": "新增桌面版预设**吃瓜模式**（config.id `gossi…",
+      "title": "新增桌面版预设吃瓜模式（config.id gossi…",
       "project": "DSH Agent Preset"
     },
     {
       "id": "20261010-007",
-      "title": "用户当日对**吃瓜模式**追加要求（原话近义",
+      "title": "用户当日对吃瓜模式追加要求（原话近义",
       "project": "DSH Agent Preset"
     },
     {
       "id": "20261010-005",
-      "title": "调用上述生图接口的**使用建议**（用户告知）",
+      "title": "调用上述生图接口的使用建议（用户告知）",
       "project": "QQBot 本地生成服务（绘图 API）"
     }
   ],

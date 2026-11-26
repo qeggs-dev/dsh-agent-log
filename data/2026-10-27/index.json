@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-10-27",
   "weekday": "周二",
   "entries": 2,
@@ -8,12 +8,12 @@
   "items": [
     {
       "id": "20261027-001",
-      "title": "Backend 主服务器新增 `/workspace` API（…",
+      "title": "Backend 主服务器新增 /workspace API（…",
       "project": "DataServer（QQBot 静态数据服务）"
     },
     {
       "id": "20261027-002",
-      "title": "DataServer 新增 `POST /operations/…",
+      "title": "DataServer 新增 POST /operations/…",
       "project": "DataServer（QQBot 静态数据服务）"
     }
   ],

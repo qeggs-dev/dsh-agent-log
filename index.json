@@ -1,7 +1,7 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
-  "updated": "2026-11-26T22:58:08+08:00",
+  "generator": "build_data.py 3.2.0",
+  "updated": "2026-11-26T23:05:25+08:00",
   "latest": {
     "id": "20261126-012",
     "date": "2026-11-26",

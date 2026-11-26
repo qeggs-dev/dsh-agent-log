@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-09-18",
   "weekday": "周五",
   "entries": 25,
@@ -13,12 +13,12 @@
     },
     {
       "id": "20260918-002",
-      "title": "启动 VES 用工作区根目录的 `ves.bat`，该批处理等价…",
+      "title": "启动 VES 用工作区根目录的 ves.bat，该批处理等价…",
       "project": "VES"
     },
     {
       "id": "20260918-003",
-      "title": "VES 启动后进入 `>` 交互提示符，`help` 打印全部命令",
+      "title": "VES 启动后进入 > 交互提示符，help 打印全部命令",
       "project": "VES"
     },
     {
@@ -38,7 +38,7 @@
     },
     {
       "id": "20260918-034",
-      "title": "`install`/`uninstall` 一次只接受**一个*…",
+      "title": "install/uninstall 一次只接受一个*…",
       "project": "VES"
     },
     {
@@ -48,22 +48,22 @@
     },
     {
       "id": "20260918-036",
-      "title": "`freeze <env>` 在命令行模式下**不打印任何结果*…",
+      "title": "freeze <env> 在命令行模式下不打印任何结果*…",
       "project": "VES"
     },
     {
       "id": "20260918-037",
-      "title": "VES 的环境基目录取 `Path.cwd() / \"envs\"…",
+      "title": "VES 的环境基目录取 Path.cwd() / \"envs\"…",
       "project": "VES"
     },
     {
       "id": "20260918-038",
-      "title": "VES 未捕获的异常会先把 traceback 写到 `trac…",
+      "title": "VES 未捕获的异常会先把 traceback 写到 trac…",
       "project": "VES"
     },
     {
       "id": "20260918-024",
-      "title": "VES 的 net 环境位于 `〈工作区〉/envs/net/.…",
+      "title": "VES 的 net 环境位于 〈工作区〉/envs/net/.…",
       "project": "net 环境与操作手台"
     },
     {
@@ -73,7 +73,7 @@
     },
     {
       "id": "20260918-026",
-      "title": "工作区操作手台由 `console.bat`（纯 ASCII 启…",
+      "title": "工作区操作手台由 console.bat（纯 ASCII 启…",
       "project": "net 环境与操作手台"
     },
     {
@@ -88,7 +88,7 @@
     },
     {
       "id": "20260918-029",
-      "title": "关键约束",
+      "title": "关键约束：workspace-write 沙箱下建环境与装包必失败…",
       "project": "net 环境与操作手台"
     },
     {
@@ -98,22 +98,22 @@
     },
     {
       "id": "20260918-031",
-      "title": "`ves.bat shell net` 在无 TTY 环境下也可执行",
+      "title": "ves.bat shell net 在无 TTY 环境下也可执行",
       "project": "net 环境与操作手台"
     },
     {
       "id": "20260918-032",
-      "title": "0o700 权限的目录（包括 `tempfile.mkdtemp…",
+      "title": "0o700 权限的目录（包括 tempfile.mkdtemp…",
       "project": "net 环境与操作手台"
     },
     {
       "id": "20260918-039",
-      "title": "工作区根新增 `to_venv.bat`",
+      "title": "工作区根新增 to_venv.bat",
       "project": "net 环境与操作手台"
     },
     {
       "id": "20260918-040",
-      "title": "工作区根 `.venv` 是 Python 3.11.9，装有…",
+      "title": "工作区根 .venv 是 Python 3.11.9，装有…",
       "project": "net 环境与操作手台"
     },
     {
@@ -123,12 +123,12 @@
     },
     {
       "id": "20260918-041",
-      "title": "决策",
+      "title": "决策：操作手台改用工作区根 .venv（Python 3.11…",
       "project": "决策"
     },
     {
       "id": "20260918-020",
-      "title": "待办",
+      "title": "待办：第 0 节的 011–015 描述的是 dsh_start…",
       "project": "待办"
     }
   ],

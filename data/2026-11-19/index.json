@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-11-19",
   "weekday": "周四",
   "entries": 6,
@@ -8,7 +8,7 @@
   "items": [
     {
       "id": "20261119-001",
-      "title": "建立插件 `dsh_plugins/official-proto…",
+      "title": "建立插件 dsh_plugins/official-proto…",
       "project": "DSH 插件：官方协议切换（official-protocol-switch）"
     },
     {
@@ -18,22 +18,22 @@
     },
     {
       "id": "20261119-004",
-      "title": "记忆系统复刻包 memory-system-kit 1.0.0（工作区 `memory-system-kit/`）",
+      "title": "记忆系统复刻包 memory-system-kit 1.0.0（工作区 memory-system-kit/）",
       "project": "memory-system-kit"
     },
     {
       "id": "20261119-005",
-      "title": "**新增 DSH Host 插件「正则路径筛选」`dsh-reg…",
+      "title": "新增 DSH Host 插件「正则路径筛选」dsh-reg…",
       "project": "DSH 插件：正则路径筛选（dsh-regex-paths）"
     },
     {
       "id": "20261119-006",
-      "title": "`trash` 增加 `path_pattern`（正则批量删除）与 `dry_run`（预演）",
+      "title": "trash 增加 path_pattern（正则批量删除）与 dry_run（预演）",
       "project": "DSH 插件：回收站删除（take-out-trash）"
     },
     {
       "id": "20261119-007",
-      "title": "`trash` 再加 `base_path`：模式只扫该目录，默认会话工作区；`base_path` 不在工作区时要审批",
+      "title": "trash 再加 base_path：模式只扫该目录，默认会话工作区；base_path 不在工作区时要审批",
       "project": "DSH 插件：回收站删除（take-out-trash）"
     }
   ],

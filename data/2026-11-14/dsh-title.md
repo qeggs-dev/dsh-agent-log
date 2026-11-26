@@ -1,6 +1,6 @@
 <!-- 20261114-033 -->
 
-## 新增 DSH 插件 **`@local/dsh-title`（会…
+## 新增 DSH 插件 @local/dsh-title（会…
 
 新增 DSH 插件 **`@local/dsh-title`（会话标题）**（工作区 `dsh_plugins/title/`，独立 git 仓库，首提交 30d8c3b，bundle 行 id `title` / entry `include:title`，`install_bundle` 以本地目录装入 desktop profile → `application: applied`、warnings 空）：只注册一个模型工具 **`title`**。
 

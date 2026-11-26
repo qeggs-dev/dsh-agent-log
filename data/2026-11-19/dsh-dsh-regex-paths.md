@@ -1,6 +1,6 @@
 <!-- 20261119-005 -->
 
-## **新增 DSH Host 插件「正则路径筛选」`dsh-reg…
+## 新增 DSH Host 插件「正则路径筛选」dsh-reg…
 
 **新增 DSH Host 插件「正则路径筛选」`dsh-regex-paths`（2026-11-19，`〈工作区〉/dsh_plugins/dsh-regex-paths`，包 `@local/dsh-regex-paths` 1.0.0，bundle 行 id `regex-paths`，desktop profile 已安装且 fiber 状态 active，独立 git 仓库，提交 9adfbf8 / 00465aa）**：注册工具 `match_paths`，扫描一个目录树，只用一条 JS 正则匹配每个条目的**展开后绝对路径**（统一 `/` 分隔，不含 `./`、`../`、也不含反斜杠），命中的结果**只返回路径列表**，不读文件内容。
 

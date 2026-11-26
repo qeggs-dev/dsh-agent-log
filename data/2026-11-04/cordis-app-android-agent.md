@@ -1,6 +1,6 @@
 <!-- 20261104-001 -->
 
-## 新增项目 **Cordis 宿主 App**（暂定目录 `〈工作…
+## 新增项目 Cordis 宿主 App（暂定目录 〈工作…
 
 新增项目 **Cordis 宿主 App**（暂定目录 `〈工作区〉/cordis-host/`）：目标是在**一个 Android App 内同时跑三样东西**——Cordis 运行时、终端、Harness 式的自修改 Agent。
 
@@ -38,7 +38,7 @@ M0 解析器+MVP → 难题速验（pty 真交互 / 禁 `!!js` / 坏重载回滚
 
 <!-- 20261104-003 -->
 
-## Cordis 宿主 App **MVP 已交付并全绿**（`〈工…
+## Cordis 宿主 App MVP 已交付并全绿（〈工…
 
 Cordis 宿主 App **MVP 已交付并全绿**（`〈工作区〉/cordis-host/`，依赖只有 `cordis@4.0.0-rc.12` + `yaml@2.9.1`，21 项 `node --test --test-isolation=none "test/*.test.ts"` 全过，约 1.0s）。
 
@@ -64,7 +64,7 @@ Cordis 宿主 App **MVP 已交付并全绿**（`〈工作区〉/cordis-host/`，
 
 <!-- 20261104-007 -->
 
-## cordis 4.0.0-rc.12 的三条硬规则（全部实测，探针在 `cordis-host/probe/`）
+## cordis 4.0.0-rc.12 的三条硬规则（全部实测，探针在 cordis-host/probe/）
 
 ①**插件的返回值会被当作 effect 校验**——返回 `undefined`/函数（disposable）/Promise/可迭代对象都合法，返回普通对象（哪怕只是 `{hello(){}}` 或类实例）或数字则抛 `TypeError: Invalid effect`；
 
@@ -76,7 +76,7 @@ Cordis 宿主 App **MVP 已交付并全绿**（`〈工作区〉/cordis-host/`，
 
 <!-- 20261104-008 -->
 
-## Cordis 宿主 App **M1 第一步已完成**
+## Cordis 宿主 App M1 第一步已完成
 
 `src/host/pty.ts`（`PtyFactory` 接缝 + `nodePtyFactory()` 走 `createRequire` 懒加载、`memoryPtyFactory()` 假终端）+ `src/host/terminal.ts`（`ctx.terminal` 注册表 + 一个终端一个 fiber 的 `terminalPlugin`，dispose 即 kill）。
 
@@ -116,7 +116,7 @@ QR 只装配对材料（局域网地址+端口+一次性 token（默认 120s 过
 
 <!-- 20261104-010 -->
 
-## Cordis 宿主 App 的**字符集设置界面需求**（用户…
+## Cordis 宿主 App 的字符集设置界面需求（用户…
 
 Cordis 宿主 App 的**字符集设置界面需求**（用户 2026-11-04 定，UI 待 web 壳起来后实现）：**手机与 PC 是两套布局**——手机上每行格数少、大按钮、整页竖向滚动，且主视图应是「已排除字符列表 + 一个大按钮添加」，而不是让人在 95 格里逐点（横竖屏各一套列数）；
 

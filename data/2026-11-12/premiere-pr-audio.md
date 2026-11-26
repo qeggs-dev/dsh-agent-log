@@ -1,6 +1,6 @@
 <!-- 20261112-021 -->
 
-## Pr 2020 的 VST3 宿主会拒绝用 `juce::AudioProcessorValueTreeState`（APVTS）构建参数的插件
+## Pr 2020 的 VST3 宿主会拒绝用 juce::AudioProcessorValueTreeState（APVTS）构建参数的插件
 
 ，而且不给任何错误提示——插件管理器里只显示「工作不正常」，同时把 DLL 路径写进 `%APPDATA%\Adobe\Premiere Pro\14.0\DynamicAudioPlugInBlacklist.xml`。
 
@@ -20,7 +20,7 @@ Ghidra 旁证：Pr 在 `dvaaudiofilterhost.dll` 的 `VST3AudioFilter` 构造里�
 
 <!-- 20261112-022 -->
 
-## Pr 的 CEP manifest 里**宿主标识必须是 `PP…
+## Pr 的 CEP manifest 里宿主标识必须是 PP…
 
 Pr 的 CEP manifest 里**宿主标识必须是 `PPRO`，不是 `PR`**：写 `<Host Name="PR">` 会被 PlugPlug 判为「不支持本宿主」静默跳过，整项「窗口 → 扩展」变灰（菜单项存在但不可点）。
 
@@ -30,7 +30,7 @@ Pr 2020 使用 CEP 9，调试模式键是 `HKCU\SOFTWARE\Adobe\CSXS.9\PlayerDebu
 
 <!-- 20261112-023 -->
 
-## `PR Stretch.vst3` 在 Pr 2020 里真正跑…
+## PR Stretch.vst3 在 Pr 2020 里真正跑…
 
 `PR Stretch.vst3` 在 Pr 2020 里真正跑通的最终形态是 **无自定义编辑器版本**（v1，SHA256 `03A64976…B1603716`）：`hasEditor()=false`、`createEditor()` 返回 nullptr，其余全部保留（5 个裸参数、Signalsmith core、F0 检测、预延迟、延迟上报 3456、`processBlockBypassed`、手写 ValueTree 状态序列化、tail 0.25）。
 

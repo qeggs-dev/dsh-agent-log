@@ -1,7 +1,7 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
-  "updated": "2026-11-26T22:58:08+08:00",
+  "generator": "build_data.py 3.2.0",
+  "updated": "2026-11-26T23:05:25+08:00",
   "count": 341,
   "entries": [
     {
@@ -35,7 +35,7 @@
       "d": "2026-11-26",
       "i": "20261126-003",
       "p": "DSH 插件：差异编辑（diff-edit）",
-      "t": "diff-edit 0.2.0：新增 `patch_diff` 工具与 `diffEdit` 服务（2026-11-26）",
+      "t": "diff-edit 0.2.0：新增 patch_diff 工具与 diffEdit 服务（2026-11-26）",
       "k": [
         "diff-edit",
         "diffEdit",
@@ -334,7 +334,7 @@
       "d": "2026-11-24",
       "i": "20261124-001",
       "p": "DSH 插件：SQLite 数据库（dsh-sqlite）",
-      "t": "dsh-sqlite 0.2.0 新增第七个工具 `sqlite…",
+      "t": "dsh-sqlite 0.2.0 新增第七个工具 sqlite…",
       "k": [
         "apply",
         "dsh-sqlite",
@@ -349,7 +349,7 @@
       "d": "2026-11-24",
       "i": "20261124-002",
       "p": "DSH 插件：常规插件设置（dsh-general-plugins）",
-      "t": "2026-11-24 新增并安装 DSH 插件 `@local/…",
+      "t": "2026-11-24 新增并安装 DSH 插件 @local/…",
       "k": [
         "dsh-general-plugins",
         "generalplugins",
@@ -364,7 +364,7 @@
       "d": "2026-11-24",
       "i": "20261124-003",
       "p": "DSH 插件：环境预设（environment-preset）",
-      "t": "**新增 DSH 插件 `@local/dsh-environm…",
+      "t": "新增 DSH 插件 @local/dsh-environm…",
       "k": [
         "env_preset",
         "environment-preset",
@@ -814,7 +814,7 @@
       "d": "2026-11-22",
       "i": "20261122-006",
       "p": "DSH 插件：审批拦截（approval-intercept）",
-      "t": "新增 DSH 桌面插件 **@local/approval-in…",
+      "t": "新增 DSH 桌面插件 @local/approval-in…",
       "k": [
         "approval",
         "approval-intercept",
@@ -919,7 +919,7 @@
       "d": "2026-11-21",
       "i": "20261121-005",
       "p": "subagent-access",
-      "t": "新增并安装 `@local/subagent-access`（`…",
+      "t": "新增并安装 @local/subagent-access（…",
       "k": [
         "notice",
         "subagent-access",
@@ -964,7 +964,7 @@
       "d": "2026-11-19",
       "i": "20261119-001",
       "p": "DSH 插件：官方协议切换（official-protocol-switch）",
-      "t": "建立插件 `dsh_plugins/official-proto…",
+      "t": "建立插件 dsh_plugins/official-proto…",
       "k": [
         "bundle",
         "deepseek-official",
@@ -994,7 +994,7 @@
       "d": "2026-11-19",
       "i": "20261119-004",
       "p": "memory-system-kit",
-      "t": "记忆系统复刻包 memory-system-kit 1.0.0（工作区 `memory-system-kit/`）",
+      "t": "记忆系统复刻包 memory-system-kit 1.0.0（工作区 memory-system-kit/）",
       "k": [
         "dsh-sqlite",
         "install.py",
@@ -1009,7 +1009,7 @@
       "d": "2026-11-19",
       "i": "20261119-005",
       "p": "DSH 插件：正则路径筛选（dsh-regex-paths）",
-      "t": "**新增 DSH Host 插件「正则路径筛选」`dsh-reg…",
+      "t": "新增 DSH Host 插件「正则路径筛选」dsh-reg…",
       "k": [
         "dsh-regex-paths",
         "dsh_plugins",
@@ -1024,7 +1024,7 @@
       "d": "2026-11-19",
       "i": "20261119-006",
       "p": "DSH 插件：回收站删除（take-out-trash）",
-      "t": "`trash` 增加 `path_pattern`（正则批量删除）与 `dry_run`（预演）",
+      "t": "trash 增加 path_pattern（正则批量删除）与 dry_run（预演）",
       "k": [
         "dsh-plugin",
         "path_pattern",
@@ -1039,7 +1039,7 @@
       "d": "2026-11-19",
       "i": "20261119-007",
       "p": "DSH 插件：回收站删除（take-out-trash）",
-      "t": "`trash` 再加 `base_path`：模式只扫该目录，默认会话工作区；`base_path` 不在工作区时要审批",
+      "t": "trash 再加 base_path：模式只扫该目录，默认会话工作区；base_path 不在工作区时要审批",
       "k": [
         "dsh-plugin",
         "path_pattern",
@@ -1114,7 +1114,7 @@
       "d": "2026-11-18",
       "i": "20261118-005",
       "p": "DSH 插件：Token 总用量（dsh-usage-total）",
-      "t": "新增 DSH 客户端插件 Token 总用量（包名 `@loca…",
+      "t": "新增 DSH 客户端插件 Token 总用量（包名 @loca…",
       "k": [
         "client-plugin",
         "composer",
@@ -1174,7 +1174,7 @@
       "d": "2026-11-18",
       "i": "20261118-008",
       "p": "DSH 插件：子智能体广播（subagent-broadcast）",
-      "t": "新增 DSH Host 插件 **子智能体广播**（包 `@lo…",
+      "t": "新增 DSH Host 插件 子智能体广播（包 @lo…",
       "k": [
         "broadcast",
         "dsh-plugin",
@@ -1233,7 +1233,7 @@
       "d": "2026-11-17",
       "i": "20261117-004",
       "p": "DSH 插件：外观样式（change-style）",
-      "t": "**change-style 插件（2026-11-17，`〈工…",
+      "t": "change-style 插件（2026-11-17，〈工…",
       "k": [
         "approval",
         "change-style",
@@ -1248,7 +1248,7 @@
       "d": "2026-11-17",
       "i": "20261117-005",
       "p": "DSH 插件：通知卡片（notice）",
-      "t": "通知卡片插件 notice（2026-11-17，`〈工作区〉/…",
+      "t": "通知卡片插件 notice（2026-11-17，〈工作区〉/…",
       "k": [
         "dsh-plugin",
         "notice",
@@ -1307,7 +1307,7 @@
       "d": "2026-11-16",
       "i": "20261116-003",
       "p": "DSH 插件：整屏截图（dsh-screenshot）",
-      "t": "`capture_screen` 增加多窗口模式，并按工作区规则…",
+      "t": "capture_screen 增加多窗口模式，并按工作区规则…",
       "k": [
         "allwindows",
         "dsh-screenshot",
@@ -1442,7 +1442,7 @@
       "d": "2026-11-15",
       "i": "20261115-010",
       "p": "Session Utils",
-      "t": "Session Utils 新增 `session_cancel…",
+      "t": "Session Utils 新增 session_cancel…",
       "k": [
         "dsh",
         "session-utils",
@@ -1457,7 +1457,7 @@
       "d": "2026-11-15",
       "i": "20261115-011",
       "p": "Session Utils",
-      "t": "Session Utils 的 `session_wait` 现…",
+      "t": "Session Utils 的 session_wait 现…",
       "k": [
         "dsh",
         "session-utils",
@@ -1516,7 +1516,7 @@
       "d": "2026-11-15",
       "i": "20261115-008",
       "p": "DSH 插件：回收站删除（take-out-trash）",
-      "t": "`trash` 工具加必填 `description`（R-005 合规），并把模型可见文案全部改成英文（R-006）",
+      "t": "trash 工具加必填 description（R-005 合规），并把模型可见文案全部改成英文（R-006）",
       "k": [
         "compliance",
         "description",
@@ -1531,7 +1531,7 @@
       "d": "2026-11-15",
       "i": "20261115-012",
       "p": "DSH 插件：差异编辑（diff-edit）",
-      "t": "新插件 diff-edit（工具 `diff_edit`）",
+      "t": "新插件 diff-edit（工具 diff_edit）",
       "k": [
         "diff-edit",
         "dsh_plugins",
@@ -1561,7 +1561,7 @@
       "d": "2026-11-15",
       "i": "20261115-015",
       "p": "离线导航地图（Android）",
-      "t": "新项目",
+      "t": "新项目：离线导航地图 App（Android）",
       "k": [
         "android",
         "离线地图",
@@ -1662,7 +1662,7 @@
       "d": "2026-11-14",
       "i": "20261114-017",
       "p": "DSH 插件：文件看门狗（watchdog）",
-      "t": "新增插件 **`@local/watchdog`**（工作区 `…",
+      "t": "新增插件 @local/watchdog（工作区 …",
       "k": [
         "backend-resource",
         "chokidar",
@@ -1692,7 +1692,7 @@
       "d": "2026-11-14",
       "i": "20261114-026",
       "p": "MC Downloader（mcdl）",
-      "t": "mcdl **发布 0.2.0**（用户要求提升版本号以便区分新旧包）",
+      "t": "mcdl 发布 0.2.0（用户要求提升版本号以便区分新旧包）",
       "k": [
         "mcdl",
         "打包",
@@ -1707,7 +1707,7 @@
       "d": "2026-11-14",
       "i": "20261114-027",
       "p": "MC Downloader（mcdl）",
-      "t": "mcdl 的构建产物已按**工作区约定**归位（用户要求「构建能…",
+      "t": "mcdl 的构建产物已按工作区约定归位（用户要求「构建能…",
       "k": [
         "mcdl",
         "打包",
@@ -1722,7 +1722,7 @@
       "d": "2026-11-14",
       "i": "20261114-028",
       "p": "MC Downloader（mcdl）",
-      "t": "mcdl 新增**窗口大小/位置记忆**（用户要求「记住上一次窗口大小」）",
+      "t": "mcdl 新增窗口大小/位置记忆（用户要求「记住上一次窗口大小」）",
       "k": [
         "mcdl",
         "打包",
@@ -1767,7 +1767,7 @@
       "d": "2026-11-14",
       "i": "20261114-033",
       "p": "会话标题（dsh-title）",
-      "t": "新增 DSH 插件 **`@local/dsh-title`（会…",
+      "t": "新增 DSH 插件 @local/dsh-title（会…",
       "k": [
         "cordis",
         "dsh-title",
@@ -1782,7 +1782,7 @@
       "d": "2026-11-13",
       "i": "20261113-001",
       "p": "Session Utils",
-      "t": "Session Utils 插件（`@local/dsh-ses…",
+      "t": "Session Utils 插件（@local/dsh-ses…",
       "k": [
         "dsh",
         "session-utils",
@@ -1797,7 +1797,7 @@
       "d": "2026-11-13",
       "i": "20261113-002",
       "p": "Session Utils",
-      "t": "Session Utils 的 `session_send` 与…",
+      "t": "Session Utils 的 session_send 与…",
       "k": [
         "dsh",
         "session-utils",
@@ -1827,7 +1827,7 @@
       "d": "2026-11-13",
       "i": "20261113-004",
       "p": "DSH 插件：插件批量管理（plugins-manager）",
-      "t": "新增桌面插件 **`@local/dsh-plugins-man…",
+      "t": "新增桌面插件 @local/dsh-plugins-man…",
       "k": [
         "cordis",
         "dsh-plugins-manager",
@@ -1857,7 +1857,7 @@
       "d": "2026-11-13",
       "i": "20261113-008",
       "p": "DSH 插件：TODO 列表（dsh-todo-list）",
-      "t": "新增 DSH 插件 **`@local/dsh-todo-lis…",
+      "t": "新增 DSH 插件 @local/dsh-todo-lis…",
       "k": [
         "cordis",
         "dsh-plugin",
@@ -1872,7 +1872,7 @@
       "d": "2026-11-13",
       "i": "20261113-009",
       "p": "DSH 插件：SQLite 数据库（dsh-sqlite）",
-      "t": "dsh-sqlite 的六个工具都**要求** `descrip…",
+      "t": "dsh-sqlite 的六个工具都要求 descrip…",
       "k": [
         "description",
         "dsh-sqlite",
@@ -1887,7 +1887,7 @@
       "d": "2026-11-13",
       "i": "20261113-010",
       "p": "DSH 插件：回收站删除（take-out-trash）",
-      "t": "新增 DSH 插件 **`@local/take-out-tra…",
+      "t": "新增 DSH 插件 @local/take-out-tra…",
       "k": [
         "cross-platform",
         "dsh-plugin",
@@ -1917,7 +1917,7 @@
       "d": "2026-11-12",
       "i": "20261112-003",
       "p": "DSH 插件：后台任务等待控制（dsh-job-wait）",
-      "t": "sleep 插件（`@local/dsh-tool-sleep`）加上生命周期钩子",
+      "t": "sleep 插件（@local/dsh-tool-sleep）加上生命周期钩子",
       "k": [
         "active",
         "dsh-job-wait",
@@ -1932,7 +1932,7 @@
       "d": "2026-11-12",
       "i": "20261112-001",
       "p": "DSH 插件：整屏截图（dsh-screenshot）",
-      "t": "`capture_screen` 扩展为「整屏 / 单窗口」二选一",
+      "t": "capture_screen 扩展为「整屏 / 单窗口」二选一",
       "k": [
         "dsh-screenshot",
         "danger-full-access",
@@ -1947,7 +1947,7 @@
       "d": "2026-11-12",
       "i": "20261112-019",
       "p": "DSH 插件：整屏截图（dsh-screenshot）",
-      "t": "`capture_screen` 增加 `cursor` 参数（…",
+      "t": "capture_screen 增加 cursor 参数（…",
       "k": [
         "dsh-screenshot",
         "danger-full-access",
@@ -1962,7 +1962,7 @@
       "d": "2026-11-12",
       "i": "20261112-006",
       "p": "DSH 插件：后台资源管理（backend-resource）",
-      "t": "新增插件 **`@local/backend-resource`…",
+      "t": "新增插件 @local/backend-resource…",
       "k": [
         "backend-resource",
         "close",
@@ -1992,7 +1992,7 @@
       "d": "2026-11-12",
       "i": "20261112-007",
       "p": "DSH 插件：后台资源管理（backend-resource）",
-      "t": "dsh-sqlite 增加 **`sqlite_lifespan…",
+      "t": "dsh-sqlite 增加 sqlite_lifespan…",
       "k": [
         "backend-resource",
         "close",
@@ -2081,7 +2081,7 @@
       "d": "2026-11-12",
       "i": "20261112-016",
       "p": "dsh-ui-port-mirror（界面端口镜像）",
-      "t": "侧边栏开关悬停出二维码（**停留 1 秒**才弹，防误触）",
+      "t": "侧边栏开关悬停出二维码（停留 1 秒才弹，防误触）",
       "k": [
         "cordis",
         "qrcode",
@@ -2094,7 +2094,7 @@
       "d": "2026-11-12",
       "i": "20261112-021",
       "p": "Premiere 音频工具（pr-audio）",
-      "t": "Pr 2020 的 VST3 宿主会拒绝用 `juce::AudioProcessorValueTreeState`（APVTS）构建参数的插件",
+      "t": "Pr 2020 的 VST3 宿主会拒绝用 juce::AudioProcessorValueTreeState（APVTS）构建参数的插件",
       "k": [
         "pr-audio",
         "premiere",
@@ -2109,7 +2109,7 @@
       "d": "2026-11-12",
       "i": "20261112-022",
       "p": "Premiere 音频工具（pr-audio）",
-      "t": "Pr 的 CEP manifest 里**宿主标识必须是 `PP…",
+      "t": "Pr 的 CEP manifest 里宿主标识必须是 PP…",
       "k": [
         "pr-audio",
         "premiere",
@@ -2124,7 +2124,7 @@
       "d": "2026-11-12",
       "i": "20261112-023",
       "p": "Premiere 音频工具（pr-audio）",
-      "t": "`PR Stretch.vst3` 在 Pr 2020 里真正跑…",
+      "t": "PR Stretch.vst3 在 Pr 2020 里真正跑…",
       "k": [
         "pr-audio",
         "premiere",
@@ -2226,7 +2226,7 @@
       "d": "2026-11-10",
       "i": "20261110-001",
       "p": "dsh-qqbot（腾讯官方的 QQ 接入插件）",
-      "t": "`tencent-connect/dsh-qqbot`",
+      "t": "tencent-connect/dsh-qqbot",
       "k": [
         "cordis",
         "dsh",
@@ -2256,7 +2256,7 @@
       "d": "2026-11-10",
       "i": "20261110-004",
       "p": "DSH 插件：整屏截图（dsh-screenshot）",
-      "t": "新增桌面插件 **`@local/dsh-screenshot`…",
+      "t": "新增桌面插件 @local/dsh-screenshot…",
       "k": [
         "agent",
         "bundle",
@@ -2286,7 +2286,7 @@
       "d": "2026-11-07",
       "i": "20261107-002",
       "p": "DSH Agent Preset",
-      "t": "用户先决定**不恢复** 2026-11-06 崩溃恢复时搬走的…",
+      "t": "用户先决定不恢复 2026-11-06 崩溃恢复时搬走的…",
       "k": [
         "bundle",
         "preset",
@@ -2301,7 +2301,7 @@
       "d": "2026-11-07",
       "i": "20261107-004",
       "p": "DSH Agent Preset",
-      "t": "新增桌面版插件 **`@local/dsh-preset-swi…",
+      "t": "新增桌面版插件 @local/dsh-preset-swi…",
       "k": [
         "bundle",
         "preset",
@@ -2331,7 +2331,7 @@
       "d": "2026-11-06",
       "i": "20261106-001",
       "p": "Cordis 宿主 App（Android 端 agent 运行时）",
-      "t": "cordis-host **加密与接入层已完成到「协议全通」**…",
+      "t": "cordis-host 加密与接入层已完成到「协议全通」…",
       "k": [
         "android",
         "cordis-host",
@@ -2346,7 +2346,7 @@
       "d": "2026-11-06",
       "i": "20261106-002",
       "p": "Cordis 宿主 App（Android 端 agent 运行时）",
-      "t": "cordis-host **会话级临时接入已打通**(M1 收尾)",
+      "t": "cordis-host 会话级临时接入已打通(M1 收尾)",
       "k": [
         "android",
         "cordis-host",
@@ -2391,7 +2391,7 @@
       "d": "2026-11-05",
       "i": "20261105-012",
       "p": "Cordis 宿主 App（Android 端 agent 运行时）",
-      "t": "Cordis 宿主 App **互联层第一步已完成（真 sock…",
+      "t": "Cordis 宿主 App 互联层第一步已完成（真 sock…",
       "k": [
         "android",
         "cordis-host",
@@ -2421,7 +2421,7 @@
       "d": "2026-11-04",
       "i": "20261104-001",
       "p": "Cordis 宿主 App（Android 端 agent 运行时）",
-      "t": "新增项目 **Cordis 宿主 App**（暂定目录 `〈工作…",
+      "t": "新增项目 Cordis 宿主 App（暂定目录 〈工作…",
       "k": [
         "android",
         "cordis",
@@ -2436,7 +2436,7 @@
       "d": "2026-11-04",
       "i": "20261104-003",
       "p": "Cordis 宿主 App（Android 端 agent 运行时）",
-      "t": "Cordis 宿主 App **MVP 已交付并全绿**（`〈工…",
+      "t": "Cordis 宿主 App MVP 已交付并全绿（〈工…",
       "k": [
         "android",
         "cordis",
@@ -2451,7 +2451,7 @@
       "d": "2026-11-04",
       "i": "20261104-007",
       "p": "Cordis 宿主 App（Android 端 agent 运行时）",
-      "t": "cordis 4.0.0-rc.12 的三条硬规则（全部实测，探针在 `cordis-host/probe/`）",
+      "t": "cordis 4.0.0-rc.12 的三条硬规则（全部实测，探针在 cordis-host/probe/）",
       "k": [
         "android",
         "cordis",
@@ -2466,7 +2466,7 @@
       "d": "2026-11-04",
       "i": "20261104-008",
       "p": "Cordis 宿主 App（Android 端 agent 运行时）",
-      "t": "Cordis 宿主 App **M1 第一步已完成**",
+      "t": "Cordis 宿主 App M1 第一步已完成",
       "k": [
         "android",
         "cordis",
@@ -2496,7 +2496,7 @@
       "d": "2026-11-04",
       "i": "20261104-010",
       "p": "Cordis 宿主 App（Android 端 agent 运行时）",
-      "t": "Cordis 宿主 App 的**字符集设置界面需求**（用户…",
+      "t": "Cordis 宿主 App 的字符集设置界面需求（用户…",
       "k": [
         "android",
         "cordis",
@@ -2511,7 +2511,7 @@
       "d": "2026-11-04",
       "i": "20261104-006",
       "p": "DSH Agent Preset",
-      "t": "工作区根 `super_workspace.json` 已按记忆…",
+      "t": "工作区根 super_workspace.json 已按记忆…",
       "k": [
         "available",
         "cordis-host",
@@ -2540,7 +2540,7 @@
       "d": "2026-11-02",
       "i": "20261102-001",
       "p": "dlcore（Go 多来源分片下载内核）",
-      "t": "新增项目 **dlcore** 于 `〈工作区〉/dlcore/…",
+      "t": "新增项目 dlcore 于 〈工作区〉/dlcore/…",
       "k": [
         "active",
         "adv1",
@@ -2555,7 +2555,7 @@
       "d": "2026-11-01",
       "i": "20261101-002",
       "p": "DSH Agent Preset",
-      "t": "新增桌面版插件 **`@local/dsh-tool-ask-a…",
+      "t": "新增桌面版插件 @local/dsh-tool-ask-a…",
       "k": [
         "preset",
         "bundle",
@@ -2570,7 +2570,7 @@
       "d": "2026-11-01",
       "i": "20261101-011",
       "p": "DSH Agent Preset",
-      "t": "新增桌面版插件 **`@local/dsh-readable-p…",
+      "t": "新增桌面版插件 @local/dsh-readable-p…",
       "k": [
         "preset",
         "bundle",
@@ -2645,7 +2645,7 @@
       "d": "2026-11-01",
       "i": "20261101-010",
       "p": "决策",
-      "t": "决策",
+      "t": "决策：给 DSH 已有工具「加参数」时，优先另开一个独立工具*…",
       "k": [
         "app.asar",
         "checkout",
@@ -2674,7 +2674,7 @@
       "d": "2026-10-31",
       "i": "20261031-002",
       "p": "DataServer（QQBot 静态数据服务）",
-      "t": "Backend `core/tool_caller/tools/…",
+      "t": "Backend core/tool_caller/tools/…",
       "k": [
         "append",
         "dataserver",
@@ -2779,7 +2779,7 @@
       "d": "2026-10-28",
       "i": "20261028-003",
       "p": "DataServer（QQBot 静态数据服务）",
-      "t": "DataServer `GET /operations/read…",
+      "t": "DataServer GET /operations/read…",
       "k": [
         "content",
         "dataserver",
@@ -2794,7 +2794,7 @@
       "d": "2026-10-27",
       "i": "20261027-001",
       "p": "DataServer（QQBot 静态数据服务）",
-      "t": "Backend 主服务器新增 `/workspace` API（…",
+      "t": "Backend 主服务器新增 /workspace API（…",
       "k": [
         "dataserver",
         "workspace",
@@ -2809,7 +2809,7 @@
       "d": "2026-10-27",
       "i": "20261027-002",
       "p": "DataServer（QQBot 静态数据服务）",
-      "t": "DataServer 新增 `POST /operations/…",
+      "t": "DataServer 新增 POST /operations/…",
       "k": [
         "dataserver",
         "workspace",
@@ -2824,7 +2824,7 @@
       "d": "2026-10-26",
       "i": "20261026-008",
       "p": "子代理接缝：权限与创建窗口（机制记录）",
-      "t": "子代理接缝的权限机制（本次读 0.2.1-rc.3 的 `dsh-subagent/lib/index.js` 实测得出，做同类插件必须知道）",
+      "t": "子代理接缝的权限机制（本次读 0.2.1-rc.3 的 dsh-subagent/lib/index.js 实测得出，做同类插件必须知道）",
       "k": [
         "append",
         "danger-full-access",
@@ -2853,7 +2853,7 @@
       "d": "2026-10-26",
       "i": "20261026-012",
       "p": "DSH 插件：会话桥接（dsh-session-bridge）",
-      "t": "`list_sessions` 改为默认「全部列表」",
+      "t": "list_sessions 改为默认「全部列表」",
       "k": [
         "dsh-session-bridge",
         "host",
@@ -2898,7 +2898,7 @@
       "d": "2026-10-26",
       "i": "20261026-001",
       "p": "RPE（Role Play Engine，DSH 插件）",
-      "t": "新项目 **RPE（Role Play Engine）**，形态是 DSH 插件",
+      "t": "新项目 RPE（Role Play Engine），形态是 DSH 插件",
       "k": [
         "engine",
         "rpe",
@@ -2913,7 +2913,7 @@
       "d": "2026-10-26",
       "i": "20261026-002",
       "p": "RPE（Role Play Engine，DSH 插件）",
-      "t": "RPE 的一条运行版硬约束（`cordis_inspect_qu…",
+      "t": "RPE 的一条运行版硬约束（cordis_inspect_qu…",
       "k": [
         "engine",
         "rpe",
@@ -2928,7 +2928,7 @@
       "d": "2026-10-26",
       "i": "20261026-003",
       "p": "RPE（Role Play Engine，DSH 插件）",
-      "t": "RPE 核对的四条运行版事实（0.2.1-rc.3，`cordi…",
+      "t": "RPE 核对的四条运行版事实（0.2.1-rc.3，cordi…",
       "k": [
         "engine",
         "rpe",
@@ -2943,7 +2943,7 @@
       "d": "2026-10-26",
       "i": "20261026-004",
       "p": "RPE（Role Play Engine，DSH 插件）",
-      "t": "双预设 spike 结论（读 `dsh-agent-preset-registry/lib/index.js` 得出，未安装任何东西）",
+      "t": "双预设 spike 结论（读 dsh-agent-preset-registry/lib/index.js 得出，未安装任何东西）",
       "k": [
         "engine",
         "rpe",
@@ -3078,7 +3078,7 @@
       "d": "2026-10-25",
       "i": "20261025-004",
       "p": "DataServer（QQBot 静态数据服务）",
-      "t": "Backend `core/tool_caller/tools/…",
+      "t": "Backend core/tool_caller/tools/…",
       "k": [
         "dataserver",
         "list",
@@ -3093,7 +3093,7 @@
       "d": "2026-10-25",
       "i": "20261025-001",
       "p": "dsh-agent-bus",
-      "t": "工作区新增本地插件 **Agent Bus**（`〈工作区〉/d…",
+      "t": "工作区新增本地插件 Agent Bus（〈工作区〉/d…",
       "k": [
         "dsh-agent-bus",
         "agent",
@@ -3108,7 +3108,7 @@
       "d": "2026-10-25",
       "i": "20261025-002",
       "p": "dsh-agent-bus",
-      "t": "Agent Bus 追加**子智能体对话监听**（同一插件 `@…",
+      "t": "Agent Bus 追加子智能体对话监听（同一插件 @…",
       "k": [
         "dsh-agent-bus",
         "agent",
@@ -3123,7 +3123,7 @@
       "d": "2026-10-23",
       "i": "20261023-037",
       "p": "DSH Agent Preset",
-      "t": "新增桌面版预设**调查模式**（config.id `inves…",
+      "t": "新增桌面版预设调查模式（config.id inves…",
       "k": [
         "patch",
         "preset",
@@ -3213,7 +3213,7 @@
       "d": "2026-10-23",
       "i": "20261023-032",
       "p": "Repeater 后端插件（repeater-backend）",
-      "t": "repeater-backend 新增 `excludeWork…",
+      "t": "repeater-backend 新增 excludeWork…",
       "k": [
         "dsh_home",
         "enabled",
@@ -3272,7 +3272,7 @@
       "d": "2026-10-22",
       "i": "20261022-002",
       "p": "Requester（HTTP 编排客户端）",
-      "t": "新增项目 **Requester** 于 `〈工作区〉/requ…",
+      "t": "新增项目 Requester 于 〈工作区〉/requ…",
       "k": [
         "requester",
         "cookie",
@@ -3287,7 +3287,7 @@
       "d": "2026-10-22",
       "i": "20261022-003",
       "p": "Requester（HTTP 编排客户端）",
-      "t": "`node --test` 的默认隔离模式在「受限沙箱（workspace-write）」下必失败，在 danger-full-access 下正常",
+      "t": "node --test 的默认隔离模式在「受限沙箱（workspace-write）」下必失败，在 danger-full-access 下正常",
       "k": [
         "requester",
         "cookie",
@@ -3317,7 +3317,7 @@
       "d": "2026-10-22",
       "i": "20261022-006",
       "p": "Requester（HTTP 编排客户端）",
-      "t": "**本机 Electron 进程建不了 `%APPDATA%\\R…",
+      "t": "本机 Electron 进程建不了 %APPDATA%\\R…",
       "k": [
         "requester",
         "cookie",
@@ -3332,7 +3332,7 @@
       "d": "2026-10-22",
       "i": "20261022-007",
       "p": "Requester（HTTP 编排客户端）",
-      "t": "Requester **请求级历史已交付并真机验收**（单测 6…",
+      "t": "Requester 请求级历史已交付并真机验收（单测 6…",
       "k": [
         "requester",
         "cookie",
@@ -3347,7 +3347,7 @@
       "d": "2026-10-22",
       "i": "20261022-008",
       "p": "Requester（HTTP 编排客户端）",
-      "t": "Requester 的 **Cookie 自动管理已实现并真机验…",
+      "t": "Requester 的 Cookie 自动管理已实现并真机验…",
       "k": [
         "requester",
         "cookie",
@@ -3497,7 +3497,7 @@
       "d": "2026-10-21",
       "i": "20261021-001",
       "p": "AD Downloader（adl）",
-      "t": "新增项目 **AD Downloader** 于 `〈工作区〉/…",
+      "t": "新增项目 AD Downloader 于 〈工作区〉/…",
       "k": [
         "downloader",
         "electron",
@@ -3557,7 +3557,7 @@
       "d": "2026-10-21",
       "i": "20261021-005",
       "p": "AD Downloader（adl）",
-      "t": "npm 11.19 **默认不执行依赖的 install scr…",
+      "t": "npm 11.19 默认不执行依赖的 install scr…",
       "k": [
         "downloader",
         "electron",
@@ -3587,7 +3587,7 @@
       "d": "2026-10-21",
       "i": "20261021-007",
       "p": "AD Downloader（adl）",
-      "t": "AD Downloader 资源新增 `path` 字段（相对下…",
+      "t": "AD Downloader 资源新增 path 字段（相对下…",
       "k": [
         "downloader",
         "electron",
@@ -3602,7 +3602,7 @@
       "d": "2026-10-21",
       "i": "20261021-008",
       "p": "AD Downloader（adl）",
-      "t": "AD Downloader 界面重做为**无边框窗口 + 自绘窗…",
+      "t": "AD Downloader 界面重做为无边框窗口 + 自绘窗…",
       "k": [
         "downloader",
         "electron",
@@ -3632,7 +3632,7 @@
       "d": "2026-10-21",
       "i": "20261021-010",
       "p": "AD Downloader（adl）",
-      "t": "AD Downloader 新增**界面上新建任务包**（`新建…",
+      "t": "AD Downloader 新增界面上新建任务包（新建…",
       "k": [
         "downloader",
         "electron",
@@ -3647,7 +3647,7 @@
       "d": "2026-10-21",
       "i": "20261021-011",
       "p": "AD Downloader（adl）",
-      "t": "AD Downloader 做了**分发加固**（用户原话「至少…",
+      "t": "AD Downloader 做了分发加固（用户原话「至少…",
       "k": [
         "downloader",
         "electron",
@@ -3662,7 +3662,7 @@
       "d": "2026-10-21",
       "i": "20261021-012",
       "p": "AD Downloader（adl）",
-      "t": "上面第 ⑤ 条**第一版写错了并当场被端到端抓到**",
+      "t": "上面第 ⑤ 条第一版写错了并当场被端到端抓到",
       "k": [
         "downloader",
         "electron",
@@ -3692,7 +3692,7 @@
       "d": "2026-10-21",
       "i": "20261021-014",
       "p": "AD Downloader（adl）",
-      "t": "AD Downloader 界面卡的**根因是 `app.dis…",
+      "t": "AD Downloader 界面卡的根因是 app.dis…",
       "k": [
         "downloader",
         "electron",
@@ -3707,7 +3707,7 @@
       "d": "2026-10-21",
       "i": "20261021-015",
       "p": "AD Downloader（adl）",
-      "t": "AD Downloader 新增**卡片自适应亮暗**",
+      "t": "AD Downloader 新增卡片自适应亮暗",
       "k": [
         "downloader",
         "electron",
@@ -3737,7 +3737,7 @@
       "d": "2026-10-21",
       "i": "20261021-017",
       "p": "AD Downloader（adl）",
-      "t": "AD Downloader 改为**多任务组并发**（用户定义",
+      "t": "AD Downloader 改为多任务组并发（用户定义",
       "k": [
         "downloader",
         "electron",
@@ -3782,7 +3782,7 @@
       "d": "2026-10-21",
       "i": "20261021-020",
       "p": "AD Downloader（adl）",
-      "t": "上述审计**明确未修**的项（不是遗漏，是取舍）",
+      "t": "上述审计明确未修的项（不是遗漏，是取舍）",
       "k": [
         "downloader",
         "electron",
@@ -3797,7 +3797,7 @@
       "d": "2026-10-21",
       "i": "20261021-021",
       "p": "MC Downloader（mcdl）",
-      "t": "新增项目 **MC Downloader**（`〈工作区〉/mcdl/`）",
+      "t": "新增项目 MC Downloader（〈工作区〉/mcdl/）",
       "k": [
         "downloader",
         "mcdl",
@@ -3842,7 +3842,7 @@
       "d": "2026-10-21",
       "i": "20261021-025",
       "p": "MC Downloader（mcdl）",
-      "t": "mcdl 抓到的**真 bug（已修）**",
+      "t": "mcdl 抓到的真 bug（已修）",
       "k": [
         "downloader",
         "mcdl",
@@ -3872,7 +3872,7 @@
       "d": "2026-10-21",
       "i": "20261021-027",
       "p": "MC Downloader（mcdl）",
-      "t": "ADL 审计里**明确延后的 4 项已全部处理**（单测 50 → 57）",
+      "t": "ADL 审计里明确延后的 4 项已全部处理（单测 50 → 57）",
       "k": [
         "downloader",
         "mcdl",
@@ -3887,7 +3887,7 @@
       "d": "2026-10-21",
       "i": "20261021-028",
       "p": "MC Downloader（mcdl）",
-      "t": "ADL core 的公开 API 在本轮有多处破坏性变化，`mcdl` 直接 import 这些模块，升级后必须重新 typecheck",
+      "t": "ADL core 的公开 API 在本轮有多处破坏性变化，mcdl 直接 import 这些模块，升级后必须重新 typecheck",
       "k": [
         "downloader",
         "mcdl",
@@ -3902,7 +3902,7 @@
       "d": "2026-10-21",
       "i": "20261021-029",
       "p": "MC Downloader（mcdl）",
-      "t": "ADL 资源新增 **`hash` 校验字段**",
+      "t": "ADL 资源新增 hash 校验字段",
       "k": [
         "downloader",
         "mcdl",
@@ -3917,7 +3917,7 @@
       "d": "2026-10-21",
       "i": "20261021-032",
       "p": "MC Downloader（mcdl）",
-      "t": "mcdl 的下载器改为**自研流式**（用户明确「不要直接复用…",
+      "t": "mcdl 的下载器改为自研流式（用户明确「不要直接复用…",
       "k": [
         "downloader",
         "mcdl",
@@ -3932,7 +3932,7 @@
       "d": "2026-10-21",
       "i": "20261021-035",
       "p": "MC Downloader（mcdl）",
-      "t": "mcdl 新增 **Fabric / Forge / NeoFo…",
+      "t": "mcdl 新增 Fabric / Forge / NeoFo…",
       "k": [
         "downloader",
         "mcdl",
@@ -3962,7 +3962,7 @@
       "d": "2026-10-21",
       "i": "20261021-037",
       "p": "MC Downloader（mcdl）",
-      "t": "mcdl 加载器的**源可达性实测**（决定\"选哪个源\"）",
+      "t": "mcdl 加载器的源可达性实测（决定\"选哪个源\"）",
       "k": [
         "downloader",
         "mcdl",
@@ -3992,7 +3992,7 @@
       "d": "2026-10-21",
       "i": "20261021-031",
       "p": "待办",
-      "t": "待办",
+      "t": "待办：mcdl 的完整档资源对象没有真下过 —— 26.…",
       "k": [
         "download",
         "mcdl",
@@ -4006,7 +4006,7 @@
       "d": "2026-10-20",
       "i": "20261020-001",
       "p": "PCML（Py Console Minecraft Launcher）",
-      "t": "新增项目 **PCML（Py Console Minecraft…",
+      "t": "新增项目 PCML（Py Console Minecraft…",
       "k": [
         "minecraft",
         "pcml",
@@ -4021,7 +4021,7 @@
       "d": "2026-10-20",
       "i": "20261020-002",
       "p": "PCML（Py Console Minecraft Launcher）",
-      "t": "PCML 的既定技术选择（用户口述，**无依赖底线、以快速开发为优先**）",
+      "t": "PCML 的既定技术选择（用户口述，无依赖底线、以快速开发为优先）",
       "k": [
         "minecraft",
         "pcml",
@@ -4036,7 +4036,7 @@
       "d": "2026-10-20",
       "i": "20261020-003",
       "p": "PCML（Py Console Minecraft Launcher）",
-      "t": "PCML 的**分工**",
+      "t": "PCML 的分工",
       "k": [
         "minecraft",
         "pcml",
@@ -4081,7 +4081,7 @@
       "d": "2026-10-20",
       "i": "20261020-007",
       "p": "PCML（Py Console Minecraft Launcher）",
-      "t": "PCML 下载器的**并发参数语义由用户本人在 2026-10-…",
+      "t": "PCML 下载器的并发参数语义由用户本人在 2026-10-…",
       "k": [
         "minecraft",
         "pcml",
@@ -4096,7 +4096,7 @@
       "d": "2026-10-20",
       "i": "20261020-008",
       "p": "PCML（Py Console Minecraft Launcher）",
-      "t": "本机外网**吞吐极低但连接数不受限**（2026-10-20 实…",
+      "t": "本机外网吞吐极低但连接数不受限（2026-10-20 实…",
       "k": [
         "minecraft",
         "pcml",
@@ -4111,7 +4111,7 @@
       "d": "2026-10-20",
       "i": "20261020-009",
       "p": "PCML（Py Console Minecraft Launcher）",
-      "t": "PCML 下载器的**输出形状由用户定**",
+      "t": "PCML 下载器的输出形状由用户定",
       "k": [
         "minecraft",
         "pcml",
@@ -4156,7 +4156,7 @@
       "d": "2026-10-19",
       "i": "20261019-001",
       "p": "mod-audit（Minecraft 整合包冲突分析器）",
-      "t": "项目在 `〈工作区〉/mod-audit/`（git 仓库、`m…",
+      "t": "项目在 〈工作区〉/mod-audit/（git 仓库、m…",
       "k": [
         "mod-audit",
         "forge",
@@ -4171,7 +4171,7 @@
       "d": "2026-10-19",
       "i": "20261019-002",
       "p": "mod-audit（Minecraft 整合包冲突分析器）",
-      "t": "三家加载器的**版本语义完全不同，不能用一套通用逻辑**（已由三…",
+      "t": "三家加载器的版本语义完全不同，不能用一套通用逻辑（已由三…",
       "k": [
         "mod-audit",
         "forge",
@@ -4186,7 +4186,7 @@
       "d": "2026-10-19",
       "i": "20261019-003",
       "p": "mod-audit（Minecraft 整合包冲突分析器）",
-      "t": "Maven 侧两个**必踩且反直觉**的语义（都已实测）",
+      "t": "Maven 侧两个必踩且反直觉的语义（都已实测）",
       "k": [
         "mod-audit",
         "forge",
@@ -4231,7 +4231,7 @@
       "d": "2026-10-19",
       "i": "20261019-006",
       "p": "mod-audit（Minecraft 整合包冲突分析器）",
-      "t": "MC 版本/数据版本的**可信来源分级**（已实测）",
+      "t": "MC 版本/数据版本的可信来源分级（已实测）",
       "k": [
         "mod-audit",
         "forge",
@@ -4261,7 +4261,7 @@
       "d": "2026-10-19",
       "i": "20261019-008",
       "p": "mod-audit（Minecraft 整合包冲突分析器）",
-      "t": "UI 动效的**同名坑一天踩了四次**（侧边栏、注入点列表、高危…",
+      "t": "UI 动效的同名坑一天踩了四次（侧边栏、注入点列表、高危…",
       "k": [
         "mod-audit",
         "forge",
@@ -4276,7 +4276,7 @@
       "d": "2026-10-18",
       "i": "20261018-002",
       "p": "DSH Agent Preset",
-      "t": "桌面版 DSH 已从 0.2.0-rc.2 升到 **0.2.1…",
+      "t": "桌面版 DSH 已从 0.2.0-rc.2 升到 0.2.1…",
       "k": [
         "collab",
         "deepseek-ai",
@@ -4291,7 +4291,7 @@
       "d": "2026-10-18",
       "i": "20261018-001",
       "p": "DataServer（QQBot 静态数据服务）",
-      "t": "DataServer 项目位于 `〈项目目录〉/QQBot/Da…",
+      "t": "DataServer 项目位于 〈项目目录〉/QQBot/Da…",
       "k": [
         "dataserver",
         "delete",
@@ -4306,7 +4306,7 @@
       "d": "2026-10-18",
       "i": "20261018-003",
       "p": "桌面版窗口尺寸（dsh-window-keeper）",
-      "t": "桌面版 DSH 的窗口几何**壳层完全不记忆**",
+      "t": "桌面版 DSH 的窗口几何壳层完全不记忆",
       "k": [
         "dsh-window-keeper",
         "dsh",
@@ -4321,7 +4321,7 @@
       "d": "2026-10-18",
       "i": "20261018-004",
       "p": "桌面版窗口尺寸（dsh-window-keeper）",
-      "t": "已装 Host 插件 **`@local/dsh-window-…",
+      "t": "已装 Host 插件 @local/dsh-window-…",
       "k": [
         "dsh-window-keeper",
         "dsh",
@@ -4351,7 +4351,7 @@
       "d": "2026-10-18",
       "i": "20261018-005",
       "p": "桌面版窗口尺寸（dsh-window-keeper）",
-      "t": "DSH 的 pwsh 沙箱子进程是**低完整性 + 受限令牌**…",
+      "t": "DSH 的 pwsh 沙箱子进程是低完整性 + 受限令牌…",
       "k": [
         "dsh-window-keeper",
         "dsh",
@@ -4381,7 +4381,7 @@
       "d": "2026-10-15",
       "i": "20261015-007",
       "p": "用户真正想做的项目：带身份和注册表的 shell 作业控制",
-      "t": "上述框架的**核心已由他在两个同系列（同一系列、不同组件）的项目…",
+      "t": "上述框架的核心已由他在两个同系列（同一系列、不同组件）的项目…",
       "k": [
         "shell",
         "agent",
@@ -4441,7 +4441,7 @@
       "d": "2026-10-10",
       "i": "20261010-006",
       "p": "DSH Agent Preset",
-      "t": "新增桌面版预设**吃瓜模式**（config.id `gossi…",
+      "t": "新增桌面版预设吃瓜模式（config.id gossi…",
       "k": [
         "preset",
         "chat",
@@ -4456,7 +4456,7 @@
       "d": "2026-10-10",
       "i": "20261010-007",
       "p": "DSH Agent Preset",
-      "t": "用户当日对**吃瓜模式**追加要求（原话近义",
+      "t": "用户当日对吃瓜模式追加要求（原话近义",
       "k": [
         "preset",
         "chat",
@@ -4471,7 +4471,7 @@
       "d": "2026-10-10",
       "i": "20261010-005",
       "p": "QQBot 本地生成服务（绘图 API）",
-      "t": "调用上述生图接口的**使用建议**（用户告知）",
+      "t": "调用上述生图接口的使用建议（用户告知）",
       "k": [
         "alpha",
         "background",
@@ -4486,7 +4486,7 @@
       "d": "2026-10-02",
       "i": "20261002-002",
       "p": "DSH Agent Preset",
-      "t": "0.1.0-rc.5 → 0.2.0-rc.2 的 `grantWrite` 幂等跳过条件收紧了，这是卡死\"该只付一次却付了\"的直接原因",
+      "t": "0.1.0-rc.5 → 0.2.0-rc.2 的 grantWrite 幂等跳过条件收紧了，这是卡死\"该只付一次却付了\"的直接原因",
       "k": [
         "preset",
         "collab",
@@ -4501,7 +4501,7 @@
       "d": "2026-10-02",
       "i": "20261002-003",
       "p": "DSH Agent Preset",
-      "t": "本机 NTFS 上「以可写方式打开文件再关闭」**不会**更新…",
+      "t": "本机 NTFS 上「以可写方式打开文件再关闭」不会更新…",
       "k": [
         "preset",
         "collab",
@@ -4516,7 +4516,7 @@
       "d": "2026-10-02",
       "i": "20261002-006",
       "p": "DSH Agent Preset",
-      "t": "工作区 `dsh-stall-monitor\\` 现在同时是**…",
+      "t": "工作区 dsh-stall-monitor\\ 现在同时是…",
       "k": [
         "preset",
         "collab",
@@ -4531,7 +4531,7 @@
       "d": "2026-10-02",
       "i": "20261002-010",
       "p": "DSH Agent Preset",
-      "t": "新增桌面版预设**讨论模式**（config.id `discu…",
+      "t": "新增桌面版预设讨论模式（config.id discu…",
       "k": [
         "preset",
         "collab",
@@ -4546,7 +4546,7 @@
       "d": "2026-10-02",
       "i": "20261002-011",
       "p": "DSH Agent Preset",
-      "t": "`generate.mjs --append` 曾会静默删掉 profile patch 尾部的 `- id: agent-preset-registry`",
+      "t": "generate.mjs --append 曾会静默删掉 profile patch 尾部的 - id: agent-preset-registry",
       "k": [
         "preset",
         "collab",
@@ -4561,7 +4561,7 @@
       "d": "2026-10-02",
       "i": "20261002-005",
       "p": "待办",
-      "t": "待办（**修复目标已于 2026-10-02 选定并交付**，仅…",
+      "t": "待办（修复目标已于 2026-10-02 选定并交付，仅…",
       "k": [
         "ace",
         "app.asar",
@@ -4590,7 +4590,7 @@
       "d": "2026-10-01",
       "i": "20261001-005",
       "p": "DSH Agent Preset",
-      "t": "0.2.0-rc.2 的 persona 行（`@deepsee…",
+      "t": "0.2.0-rc.2 的 persona 行（@deepsee…",
       "k": [
         "preset",
         "patch",
@@ -4605,7 +4605,7 @@
       "d": "2026-10-01",
       "i": "20261001-006",
       "p": "DSH Agent Preset",
-      "t": "已为桌面版新建**对话模式**（config.id `chat`…",
+      "t": "已为桌面版新建对话模式（config.id chat…",
       "k": [
         "preset",
         "patch",
@@ -4620,7 +4620,7 @@
       "d": "2026-10-01",
       "i": "20261001-014",
       "p": "DSH Agent Preset",
-      "t": "桌面版 profile patch 的热生效边界（**实测修正**）",
+      "t": "桌面版 profile patch 的热生效边界（实测修正）",
       "k": [
         "preset",
         "patch",
@@ -4650,7 +4650,7 @@
       "d": "2026-10-01",
       "i": "20261001-015",
       "p": "DSH Agent Preset",
-      "t": "`dsh-temp-root` 插件已加 `ensureFull…",
+      "t": "dsh-temp-root 插件已加 ensureFull…",
       "k": [
         "preset",
         "patch",
@@ -4665,7 +4665,7 @@
       "d": "2026-10-01",
       "i": "20261001-016",
       "p": "DSH Agent Preset",
-      "t": "5 个旧模式已迁入桌面版（`@deepseek-ai/dsh-a…",
+      "t": "5 个旧模式已迁入桌面版（@deepseek-ai/dsh-a…",
       "k": [
         "preset",
         "patch",
@@ -4680,7 +4680,7 @@
       "d": "2026-10-01",
       "i": "20261001-017",
       "p": "DSH Agent Preset",
-      "t": "预设迁移的工具与重跑方式（都在工作区 `dsh-desktop-…",
+      "t": "预设迁移的工具与重跑方式（都在工作区 dsh-desktop-…",
       "k": [
         "preset",
         "patch",
@@ -4725,7 +4725,7 @@
       "d": "2026-09-18",
       "i": "20260918-002",
       "p": "VES",
-      "t": "启动 VES 用工作区根目录的 `ves.bat`，该批处理等价…",
+      "t": "启动 VES 用工作区根目录的 ves.bat，该批处理等价…",
       "k": [
         "ves",
         "ves.bat",
@@ -4740,7 +4740,7 @@
       "d": "2026-09-18",
       "i": "20260918-003",
       "p": "VES",
-      "t": "VES 启动后进入 `>` 交互提示符，`help` 打印全部命令",
+      "t": "VES 启动后进入 > 交互提示符，help 打印全部命令",
       "k": [
         "ves",
         "ves.bat",
@@ -4800,7 +4800,7 @@
       "d": "2026-09-18",
       "i": "20260918-034",
       "p": "VES",
-      "t": "`install`/`uninstall` 一次只接受**一个*…",
+      "t": "install/uninstall 一次只接受一个*…",
       "k": [
         "ves",
         "ves.bat",
@@ -4830,7 +4830,7 @@
       "d": "2026-09-18",
       "i": "20260918-036",
       "p": "VES",
-      "t": "`freeze <env>` 在命令行模式下**不打印任何结果*…",
+      "t": "freeze <env> 在命令行模式下不打印任何结果*…",
       "k": [
         "ves",
         "ves.bat",
@@ -4845,7 +4845,7 @@
       "d": "2026-09-18",
       "i": "20260918-037",
       "p": "VES",
-      "t": "VES 的环境基目录取 `Path.cwd() / \"envs\"…",
+      "t": "VES 的环境基目录取 Path.cwd() / \"envs\"…",
       "k": [
         "ves",
         "ves.bat",
@@ -4860,7 +4860,7 @@
       "d": "2026-09-18",
       "i": "20260918-038",
       "p": "VES",
-      "t": "VES 未捕获的异常会先把 traceback 写到 `trac…",
+      "t": "VES 未捕获的异常会先把 traceback 写到 trac…",
       "k": [
         "ves",
         "ves.bat",
@@ -4875,7 +4875,7 @@
       "d": "2026-09-18",
       "i": "20260918-024",
       "p": "net 环境与操作手台",
-      "t": "VES 的 net 环境位于 `〈工作区〉/envs/net/.…",
+      "t": "VES 的 net 环境位于 〈工作区〉/envs/net/.…",
       "k": [
         "orjson",
         "pydantic",
@@ -4905,7 +4905,7 @@
       "d": "2026-09-18",
       "i": "20260918-026",
       "p": "net 环境与操作手台",
-      "t": "工作区操作手台由 `console.bat`（纯 ASCII 启…",
+      "t": "工作区操作手台由 console.bat（纯 ASCII 启…",
       "k": [
         "orjson",
         "pydantic",
@@ -4950,7 +4950,7 @@
       "d": "2026-09-18",
       "i": "20260918-029",
       "p": "net 环境与操作手台",
-      "t": "关键约束",
+      "t": "关键约束：workspace-write 沙箱下建环境与装包必失败…",
       "k": [
         "orjson",
         "pydantic",
@@ -4980,7 +4980,7 @@
       "d": "2026-09-18",
       "i": "20260918-031",
       "p": "net 环境与操作手台",
-      "t": "`ves.bat shell net` 在无 TTY 环境下也可执行",
+      "t": "ves.bat shell net 在无 TTY 环境下也可执行",
       "k": [
         "orjson",
         "pydantic",
@@ -4995,7 +4995,7 @@
       "d": "2026-09-18",
       "i": "20260918-032",
       "p": "net 环境与操作手台",
-      "t": "0o700 权限的目录（包括 `tempfile.mkdtemp…",
+      "t": "0o700 权限的目录（包括 tempfile.mkdtemp…",
       "k": [
         "orjson",
         "pydantic",
@@ -5010,7 +5010,7 @@
       "d": "2026-09-18",
       "i": "20260918-039",
       "p": "net 环境与操作手台",
-      "t": "工作区根新增 `to_venv.bat`",
+      "t": "工作区根新增 to_venv.bat",
       "k": [
         "orjson",
         "pydantic",
@@ -5025,7 +5025,7 @@
       "d": "2026-09-18",
       "i": "20260918-040",
       "p": "net 环境与操作手台",
-      "t": "工作区根 `.venv` 是 Python 3.11.9，装有…",
+      "t": "工作区根 .venv 是 Python 3.11.9，装有…",
       "k": [
         "orjson",
         "pydantic",
@@ -5055,7 +5055,7 @@
       "d": "2026-09-18",
       "i": "20260918-041",
       "p": "决策",
-      "t": "决策",
+      "t": "决策：操作手台改用工作区根 .venv（Python 3.11…",
       "k": [
         "envs",
         "import",
@@ -5069,7 +5069,7 @@
       "d": "2026-09-18",
       "i": "20260918-020",
       "p": "待办",
-      "t": "待办",
+      "t": "待办：第 0 节的 011–015 描述的是 dsh_start…",
       "k": [
         "doctor",
         "dsh_starter.py",

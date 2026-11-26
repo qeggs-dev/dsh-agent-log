@@ -1,6 +1,6 @@
 <!-- 20261117-004 -->
 
-## **change-style 插件（2026-11-17，`〈工…
+## change-style 插件（2026-11-17，〈工…
 
 **change-style 插件（2026-11-17，`〈工作区〉/dsh_plugins/change-style`，包 `@local/dsh-change-style` v1.0.0，desktop profile 行 id `change-style`）**：Host-only，只注册工具 `change_style`。
 

@@ -22,7 +22,7 @@ Backend `DataClient` 同步新增 `exists`、`glob(..., recursive=False)`、`lis
 
 <!-- 20261025-004 -->
 
-## Backend `core/tool_caller/tools/…
+## Backend core/tool_caller/tools/…
 
 Backend `core/tool_caller/tools/workspace_tools` 已补齐为 11 个工具：`workspace_read` / `write` / `delete` / `exists` / `glob` / `rematch` / `list` / `info` / `mkdir` / `move` / `copy`（glob 与 rglob 已合并为 `workspace_glob` 的 `recursive` 参数；
 

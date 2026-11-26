@@ -1,6 +1,6 @@
 <!-- 20261112-001 -->
 
-## `capture_screen` 扩展为「整屏 / 单窗口」二选一
+## capture_screen 扩展为「整屏 / 单窗口」二选一
 
 新增两个**互斥**参数 `pid`（integer）与 `name`（映像名称 string，`.exe` 可带可不带、不区分大小写、禁止通配符与路径）；都不给＝整屏。
 
@@ -28,7 +28,7 @@ VS Code 窗口（pid 29452、2560×1400）被 DSH 窗口完全盖住时，`captu
 
 <!-- 20261112-019 -->
 
-## `capture_screen` 增加 `cursor` 参数（…
+## capture_screen 增加 cursor 参数（…
 
 `capture_screen` 增加 `cursor` 参数（默认 true，传 false 关闭）：截图时把会话鼠标指针画进图里。
 

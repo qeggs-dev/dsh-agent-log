@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-11-22",
   "weekday": "周日",
   "entries": 4,
@@ -23,7 +23,7 @@
     },
     {
       "id": "20261122-006",
-      "title": "新增 DSH 桌面插件 **@local/approval-in…",
+      "title": "新增 DSH 桌面插件 @local/approval-in…",
       "project": "DSH 插件：审批拦截（approval-intercept）"
     }
   ],

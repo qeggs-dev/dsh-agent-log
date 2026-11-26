@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-11-18",
   "weekday": "周三",
   "entries": 10,
@@ -28,7 +28,7 @@
     },
     {
       "id": "20261118-005",
-      "title": "新增 DSH 客户端插件 Token 总用量（包名 `@loca…",
+      "title": "新增 DSH 客户端插件 Token 总用量（包名 @loca…",
       "project": "DSH 插件：Token 总用量（dsh-usage-total）"
     },
     {
@@ -48,7 +48,7 @@
     },
     {
       "id": "20261118-008",
-      "title": "新增 DSH Host 插件 **子智能体广播**（包 `@lo…",
+      "title": "新增 DSH Host 插件 子智能体广播（包 @lo…",
       "project": "DSH 插件：子智能体广播（subagent-broadcast）"
     },
     {

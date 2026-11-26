@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-10-25",
   "weekday": "周日",
   "entries": 4,
@@ -13,17 +13,17 @@
     },
     {
       "id": "20261025-004",
-      "title": "Backend `core/tool_caller/tools/…",
+      "title": "Backend core/tool_caller/tools/…",
       "project": "DataServer（QQBot 静态数据服务）"
     },
     {
       "id": "20261025-001",
-      "title": "工作区新增本地插件 **Agent Bus**（`〈工作区〉/d…",
+      "title": "工作区新增本地插件 Agent Bus（〈工作区〉/d…",
       "project": "dsh-agent-bus"
     },
     {
       "id": "20261025-002",
-      "title": "Agent Bus 追加**子智能体对话监听**（同一插件 `@…",
+      "title": "Agent Bus 追加子智能体对话监听（同一插件 @…",
       "project": "dsh-agent-bus"
     }
   ],

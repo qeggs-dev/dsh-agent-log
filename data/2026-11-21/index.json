@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-11-21",
   "weekday": "周六",
   "entries": 7,
@@ -38,7 +38,7 @@
     },
     {
       "id": "20261121-005",
-      "title": "新增并安装 `@local/subagent-access`（`…",
+      "title": "新增并安装 @local/subagent-access（…",
       "project": "subagent-access"
     }
   ],

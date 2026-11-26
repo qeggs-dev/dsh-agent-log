@@ -32,7 +32,7 @@ import sqlite3
 import sys
 
 SCHEMA_VERSION = 4
-GENERATOR = "build_data.py 3.1.0"
+GENERATOR = "build_data.py 3.2.0"
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 ROOT_INDEX = ROOT / "index.json"
@@ -81,7 +81,16 @@ def _strip_lead(text: str) -> str:
     return text.lstrip().lstrip("。：:").strip()
 
 
+def clean_title(title: str) -> str:
+    """标题是纯文本：去掉 ** 与反引号，避免截断后留下半截标记。"""
+    return title.replace("**", "").replace("`", "").strip().rstrip("。；，、：:. ")
+
+
 def split_title(content: str) -> tuple[str, str]:
+    title, body = _split_title_raw(content)
+    return clean_title(title), body
+
+def _split_title_raw(content: str) -> tuple[str, str]:
     """从正文里取一条标题：`**…**：` 开头优先，其次是「前缀：」结构，最后退回首句。
 
     返回 (标题, 去掉标题前缀后的正文)；正文不会丢内容，截断只在最后一种情况发生。
@@ -100,7 +109,14 @@ def split_title(content: str) -> tuple[str, str]:
     if colon:
         title = head[:colon.start()].strip()
         if 2 <= len(title) <= 48:
-            return title, _strip_lead(text[colon.end():])
+            rest = _strip_lead(text[colon.end():])
+            # 「待办：」「决策：」这类只剩栏目标签，接上正文第一句才好认
+            if len(title) <= 4 and rest:
+                lead = re.split(r"(?<=[。；])", rest, 1)[0].strip()
+                if len(lead) > 30:
+                    lead = lead[:30].rstrip() + "…"
+                title = f"{title}：{lead}"[:48]
+            return title, rest
 
     first = re.split(r"[。\n]", text, 1)[0]
     if len(first) <= 40:
@@ -623,6 +639,10 @@ def self_test() -> int:
     # 冒号不能跨句：句号之后的前缀不算
     assert split_title("Android 壳阶段 A/B 通过。APK：路径") == (
         "Android 壳阶段 A/B 通过", "APK：路径")
+    # 只剩「待办 / 决策」这种栏目标签时，接上正文第一句
+    short_label, _ = split_title("待办：第 0 节的 011–015 描述的是旧启动器")
+    assert short_label.startswith("待办：第 0 节"), short_label
+    assert len(short_label) <= 48
 
     # 条目块：标题来自数据字段，不解析正文
     block = entry_block({"id": "20261126-007", "title": "标题", "body": "正文"},

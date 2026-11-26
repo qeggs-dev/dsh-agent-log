@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-11-15",
   "weekday": "周日",
   "entries": 15,
@@ -28,12 +28,12 @@
     },
     {
       "id": "20261115-010",
-      "title": "Session Utils 新增 `session_cancel…",
+      "title": "Session Utils 新增 session_cancel…",
       "project": "Session Utils"
     },
     {
       "id": "20261115-011",
-      "title": "Session Utils 的 `session_wait` 现…",
+      "title": "Session Utils 的 session_wait 现…",
       "project": "Session Utils"
     },
     {
@@ -53,12 +53,12 @@
     },
     {
       "id": "20261115-008",
-      "title": "`trash` 工具加必填 `description`（R-005 合规），并把模型可见文案全部改成英文（R-006）",
+      "title": "trash 工具加必填 description（R-005 合规），并把模型可见文案全部改成英文（R-006）",
       "project": "DSH 插件：回收站删除（take-out-trash）"
     },
     {
       "id": "20261115-012",
-      "title": "新插件 diff-edit（工具 `diff_edit`）",
+      "title": "新插件 diff-edit（工具 diff_edit）",
       "project": "DSH 插件：差异编辑（diff-edit）"
     },
     {
@@ -68,7 +68,7 @@
     },
     {
       "id": "20261115-015",
-      "title": "新项目",
+      "title": "新项目：离线导航地图 App（Android）",
       "project": "离线导航地图（Android）"
     },
     {

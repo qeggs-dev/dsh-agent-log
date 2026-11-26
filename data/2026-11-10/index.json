@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-11-10",
   "weekday": "周二",
   "entries": 3,
@@ -8,7 +8,7 @@
   "items": [
     {
       "id": "20261110-001",
-      "title": "`tencent-connect/dsh-qqbot`",
+      "title": "tencent-connect/dsh-qqbot",
       "project": "dsh-qqbot（腾讯官方的 QQ 接入插件）"
     },
     {
@@ -18,7 +18,7 @@
     },
     {
       "id": "20261110-004",
-      "title": "新增桌面插件 **`@local/dsh-screenshot`…",
+      "title": "新增桌面插件 @local/dsh-screenshot…",
       "project": "DSH 插件：整屏截图（dsh-screenshot）"
     }
   ],

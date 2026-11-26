@@ -1,6 +1,6 @@
 <!-- 20261113-001 -->
 
-## Session Utils 插件（`@local/dsh-ses…
+## Session Utils 插件（@local/dsh-ses…
 
 Session Utils 插件（`@local/dsh-session-utils`，目录 `〈工作区〉/dsh-session-utils`）提供 10 个 Agent 工具：workspace_list / session_exists / session_create / session_list / session_send / session_wait / session_cancel_sleep / session_fork / session_archive / session_move。
 
@@ -12,7 +12,7 @@ DSH 升级后 `sessionController.inspect` 已被移除，冷读改走 `ctx.sessi
 
 <!-- 20261113-002 -->
 
-## Session Utils 的 `session_send` 与…
+## Session Utils 的 session_send 与…
 
 Session Utils 的 `session_send` 与 `session_create` 首条消息走 DSH 的插件推送入口（消息带 `source: { kind: 'agent-message', form: 'relay', senderSessionId }`，经 `agent.followup()` / `agent.steer()` 投递；
 

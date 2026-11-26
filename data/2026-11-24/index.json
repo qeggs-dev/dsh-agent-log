@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-11-24",
   "weekday": "周二",
   "entries": 25,
@@ -8,17 +8,17 @@
   "items": [
     {
       "id": "20261124-001",
-      "title": "dsh-sqlite 0.2.0 新增第七个工具 `sqlite…",
+      "title": "dsh-sqlite 0.2.0 新增第七个工具 sqlite…",
       "project": "DSH 插件：SQLite 数据库（dsh-sqlite）"
     },
     {
       "id": "20261124-002",
-      "title": "2026-11-24 新增并安装 DSH 插件 `@local/…",
+      "title": "2026-11-24 新增并安装 DSH 插件 @local/…",
       "project": "DSH 插件：常规插件设置（dsh-general-plugins）"
     },
     {
       "id": "20261124-003",
-      "title": "**新增 DSH 插件 `@local/dsh-environm…",
+      "title": "新增 DSH 插件 @local/dsh-environm…",
       "project": "DSH 插件：环境预设（environment-preset）"
     },
     {

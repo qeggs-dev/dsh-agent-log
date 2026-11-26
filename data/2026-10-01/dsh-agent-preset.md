@@ -8,7 +8,7 @@
 
 <!-- 20261001-005 -->
 
-## 0.2.0-rc.2 的 persona 行（`@deepsee…
+## 0.2.0-rc.2 的 persona 行（@deepsee…
 
 0.2.0-rc.2 的 persona 行（`@deepseek-ai/dsh-persona`）config 键为 `prefix`（**必填**）/ `suffix`（默认空串）/ `complete`（默认 false）/ `includeRuntimeContext`（默认 true），旧版的 `text` 键已不存在；
 
@@ -16,7 +16,7 @@
 
 <!-- 20261001-006 -->
 
-## 已为桌面版新建**对话模式**（config.id `chat`…
+## 已为桌面版新建对话模式（config.id chat…
 
 已为桌面版新建**对话模式**（config.id `chat`，patch 行 id `preset-chat`，order 9）于 `profiles\desktop\cordis.patch.yml`：`plugins` 只有一条 persona（`complete: true`、`includeRuntimeContext: false`），故该模式工具表为空；
 
@@ -24,7 +24,7 @@ persona 文案声明本会话不挂任何工具、只能输出文字，并说明
 
 <!-- 20261001-014 -->
 
-## 桌面版 profile patch 的热生效边界（**实测修正**）
+## 桌面版 profile patch 的热生效边界（实测修正）
 
 ①**新增行**（顶层 `- insert:`）HMR 立刻应用——注入后 live 树里马上出现 `include:preset-chat`、`include:temp-root`；
 
@@ -54,7 +54,7 @@ persona 现由工作区文件 `dsh-desktop-presets\personas\collab.txt` 维护�
 
 <!-- 20261001-015 -->
 
-## `dsh-temp-root` 插件已加 `ensureFull…
+## dsh-temp-root 插件已加 ensureFull…
 
 `dsh-temp-root` 插件已加 `ensureFullControl`（默认 true）：采纳 temp 根前用 `icacls <root> /grant "<DOMAIN\user>:(OI)(CI)F"` 补当前用户 FullControl（已存在或继承到就跳过；
 
@@ -66,7 +66,7 @@ persona 现由工作区文件 `dsh-desktop-presets\personas\collab.txt` 维护�
 
 <!-- 20261001-016 -->
 
-## 5 个旧模式已迁入桌面版（`@deepseek-ai/dsh-a…
+## 5 个旧模式已迁入桌面版（@deepseek-ai/dsh-a…
 
 5 个旧模式已迁入桌面版（`@deepseek-ai/dsh-agent-preset` 行，追加在 `profiles\desktop\cordis.patch.yml` 里由脚本生成的段落）：`collab` 协作模式 order 10、`plan` 规划模式 11、`introvert` 内向模式 12、`pity` 卖惨模式 13、`slacker` 撂挑子模式 14（`chat` 对话模式是 9）；
 
@@ -80,7 +80,7 @@ profile patch 里用户自建的内容现在是 chat + temp-root + spill-local �
 
 <!-- 20261001-017 -->
 
-## 预设迁移的工具与重跑方式（都在工作区 `dsh-desktop-…
+## 预设迁移的工具与重跑方式（都在工作区 dsh-desktop-…
 
 预设迁移的工具与重跑方式（都在工作区 `dsh-desktop-presets\`）：`generate.mjs`（`node generate.mjs [--append]`）从 unpkg 取/缓存 `standard.patch.yml`，把它的 `plugins:` 列表按**顶层行**切片，每个模式只替换 persona 并增删指定行，产出 `generated.patch.yml`；
 

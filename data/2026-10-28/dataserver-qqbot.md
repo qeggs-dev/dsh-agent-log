@@ -1,6 +1,6 @@
 <!-- 20261028-003 -->
 
-## DataServer `GET /operations/read…
+## DataServer GET /operations/read…
 
 DataServer `GET /operations/read/{path}` 支持标准 `Range` 请求头：`206 Partial Content` + `Content-Range`，非法/越界 416，`FileManager.read(start,length)` 只读区间；
 

@@ -1,6 +1,6 @@
 <!-- 20261115-008 -->
 
-## `trash` 工具加必填 `description`（R-005 合规），并把模型可见文案全部改成英文（R-006）
+## trash 工具加必填 description（R-005 合规），并把模型可见文案全部改成英文（R-006）
 
 （`〈工作区〉/dsh_plugins/take-out-trash`，commit `6b94379`，重启加载后已实测）。
 

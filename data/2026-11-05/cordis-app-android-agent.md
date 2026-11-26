@@ -1,6 +1,6 @@
 <!-- 20261105-012 -->
 
-## Cordis 宿主 App **互联层第一步已完成（真 sock…
+## Cordis 宿主 App 互联层第一步已完成（真 sock…
 
 Cordis 宿主 App **互联层第一步已完成（真 socket 两端对话）**：新增 `src/proto/peer.ts` —— `POST /pair` 用二维码 token 换对方公钥（`PairingServer.redeem`，第二个连接得 `already-paired`），`/peer`（WebSocket）每帧一个签名信封交给 `Transport.receive`；
 

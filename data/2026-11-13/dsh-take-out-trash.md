@@ -1,6 +1,6 @@
 <!-- 20261113-010 -->
 
-## 新增 DSH 插件 **`@local/take-out-tra…
+## 新增 DSH 插件 @local/take-out-tra…
 
 新增 DSH 插件 **`@local/take-out-trash`（回收站删除）**（源目录 `〈工作区〉/take-out-trash`，bundle 行 id `take-out-trash`，desktop profile，`install_bundle` 以本地目录装入返回 `application: applied`、warnings 空，entry `include:take-out-trash` active，未声明 Config（status absent））。
 

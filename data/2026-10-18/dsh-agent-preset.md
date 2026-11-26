@@ -1,6 +1,6 @@
 <!-- 20261018-002 -->
 
-## 桌面版 DSH 已从 0.2.0-rc.2 升到 **0.2.1…
+## 桌面版 DSH 已从 0.2.0-rc.2 升到 0.2.1…
 
 桌面版 DSH 已从 0.2.0-rc.2 升到 **0.2.1-rc.2**（`app.asar` 内 `dsh/package.json` 与抽查的 `@deepseek-ai/*` 均为 0.2.1-rc.2），**内置提示词变量只剩 `provider` 与 `model`，`cwd` 已被移除**：0.2.0 的 dsh-system-prompt README 写「循环提供 model 与 cwd」，0.2.1 改为「provider 和 model」并明文要求从 preset 的 persona 中删掉 `Your working directory is {{cwd}}.`；
 

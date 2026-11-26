@@ -1,6 +1,6 @@
 <!-- 20261021-001 -->
 
-## 新增项目 **AD Downloader** 于 `〈工作区〉/…
+## 新增项目 AD Downloader 于 〈工作区〉/…
 
 新增项目 **AD Downloader** 于 `〈工作区〉/adl/`（TS + Electron 44 + esbuild，UI 无框架）：多资源分片并发下载器，任务包为 ADv1 JSON。
 
@@ -40,7 +40,7 @@
 
 <!-- 20261021-005 -->
 
-## npm 11.19 **默认不执行依赖的 install scr…
+## npm 11.19 默认不执行依赖的 install scr…
 
 npm 11.19 **默认不执行依赖的 install script**（输出 `npm warn install-scripts ... not yet covered by allowScripts`），故 `npm install` 之后 Electron 与 esbuild 的二进制都不存在；
 
@@ -68,7 +68,7 @@ npm 11.19 **默认不执行依赖的 install script**（输出 `npm warn install
 
 <!-- 20261021-007 -->
 
-## AD Downloader 资源新增 `path` 字段（相对下…
+## AD Downloader 资源新增 path 字段（相对下…
 
 AD Downloader 资源新增 `path` 字段（相对下载目录的子目录，如 `images/2026`）：`dest` 优先于 `path`，且**只有 `dest` 需要用户确认**（`path` 由构造保证跑不出下载目录）。
 
@@ -86,7 +86,7 @@ AD Downloader 资源新增 `path` 字段（相对下载目录的子目录，如 
 
 <!-- 20261021-008 -->
 
-## AD Downloader 界面重做为**无边框窗口 + 自绘窗…
+## AD Downloader 界面重做为无边框窗口 + 自绘窗…
 
 AD Downloader 界面重做为**无边框窗口 + 自绘窗口三键**（`frame:false` + `thickFrame:true`，IPC `adl:win-minimize|toggle-maximize|close|is-maximized` + 最大化状态反向推送），这是让应用顶栏与窗口按钮同一行的唯一办法；
 
@@ -110,7 +110,7 @@ AD Downloader 界面重做为**无边框窗口 + 自绘窗口三键**（`frame:f
 
 <!-- 20261021-010 -->
 
-## AD Downloader 新增**界面上新建任务包**（`新建…
+## AD Downloader 新增界面上新建任务包（新建…
 
 AD Downloader 新增**界面上新建任务包**（`新建任务包` 按钮 → 玻璃弹窗）：任务名 / 全局代理 / 批量粘贴 URL（每行一个、可统一指定子目录）/ 逐行可改文件名与子目录 / 保存并载入。
 
@@ -124,7 +124,7 @@ AD Downloader 新增**界面上新建任务包**（`新建任务包` 按钮 → 
 
 <!-- 20261021-011 -->
 
-## AD Downloader 做了**分发加固**（用户原话「至少…
+## AD Downloader 做了分发加固（用户原话「至少…
 
 AD Downloader 做了**分发加固**（用户原话「至少要分发的话对方不一定有我们这样的环境」）：①`app.requestSingleInstanceLock()` + `second-instance` 把已有窗口拉到前台，避免两个进程抢同一输出目录与 `.state.json`；
 
@@ -142,7 +142,7 @@ AD Downloader 做了**分发加固**（用户原话「至少要分发的话对�
 
 <!-- 20261021-012 -->
 
-## 上面第 ⑤ 条**第一版写错了并当场被端到端抓到**
+## 上面第 ⑤ 条第一版写错了并当场被端到端抓到
 
 最初在 start 里对「输出目录不存在」直接报错，而原来是靠 `ensureParentDir` 自动创建的，等于回归掉了自动化与新机器的路径。正确做法是 `mkdir(recursive:true)` 再报错。
 
@@ -160,7 +160,7 @@ AD Downloader 玻璃卡片在 0.32 透明度的照片背景上**边界看不清*
 
 <!-- 20261021-014 -->
 
-## AD Downloader 界面卡的**根因是 `app.dis…
+## AD Downloader 界面卡的根因是 app.dis…
 
 AD Downloader 界面卡的**根因是 `app.disableHardwareAcceleration()`**：那是早先为在受限环境里启动而加的，等于把所有 `backdrop-filter` 按到 CPU 上。
 
@@ -176,7 +176,7 @@ AD Downloader 界面卡的**根因是 `app.disableHardwareAcceleration()`**：�
 
 <!-- 20261021-015 -->
 
-## AD Downloader 新增**卡片自适应亮暗**
+## AD Downloader 新增卡片自适应亮暗
 
 把背景图按 CSS 同款填充规则画进 72px 宽的小 canvas（≈视口缩略图）读格点亮度，再按卡片 `getBoundingClientRect()` 取平均、叠上暗化层，超 0.42 切 `data-tone="light"`。
 
@@ -202,7 +202,7 @@ AD Downloader 界面卡的**根因是 `app.disableHardwareAcceleration()`**：�
 
 <!-- 20261021-017 -->
 
-## AD Downloader 改为**多任务组并发**（用户定义
+## AD Downloader 改为多任务组并发（用户定义
 
 一个任务包 = 一个组，可多包并行）：新增 `src/core/manager.ts`（GroupManager 持有唯一的 `FairLimiter` + 组注册表），Engine 从单体降为"一个组"。
 
@@ -244,7 +244,7 @@ AD Downloader 界面卡的**根因是 `app.disableHardwareAcceleration()`**：�
 
 <!-- 20261021-020 -->
 
-## 上述审计**明确未修**的项（不是遗漏，是取舍）
+## 上述审计明确未修的项（不是遗漏，是取舍）
 
 ①续传不校验远端内容身份 —— `lastModified` 采集了却没写进状态、也不发 `If-Range`，服务端无 ETag 且内容变了但字节数不变时会拼出两代混合文件；②abort 监听器只 once 不摘除，长任务里线性累积会刷 `MaxListenersExceededWarning`；
 

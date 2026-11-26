@@ -1,6 +1,6 @@
 <!-- 20261110-001 -->
 
-## `tencent-connect/dsh-qqbot`
+## tencent-connect/dsh-qqbot
 
 是腾讯 QQ 官方出的 DSH 接入插件（MIT、TypeScript、npm `@tencent-connect/dsh-qqbot`，2026-08-14 建库，查时 v0.5.5 / 569 star / 46 open issues）。
 

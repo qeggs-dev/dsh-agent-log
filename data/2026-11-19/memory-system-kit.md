@@ -1,6 +1,6 @@
 <!-- 20261119-004 -->
 
-## 记忆系统复刻包 memory-system-kit 1.0.0（工作区 `memory-system-kit/`）
+## 记忆系统复刻包 memory-system-kit 1.0.0（工作区 memory-system-kit/）
 
 用户要求「打包工作区的记忆规则（不是记忆内容），以便其它 DSH 快速复刻我们的记忆系统」。
 

@@ -6,13 +6,13 @@ VES（Virtual Environment System）源码位于 `〈项目目录〉/Python/VES`�
 
 <!-- 20260918-002 -->
 
-## 启动 VES 用工作区根目录的 `ves.bat`，该批处理等价…
+## 启动 VES 用工作区根目录的 ves.bat，该批处理等价…
 
 启动 VES 用工作区根目录的 `ves.bat`，该批处理等价于执行 `python 〈项目目录〉/Python/VES/ves.py`；工作区里只有这个启动器，没有 VES 源码
 
 <!-- 20260918-003 -->
 
-## VES 启动后进入 `>` 交互提示符，`help` 打印全部命令
+## VES 启动后进入 > 交互提示符，help 打印全部命令
 
 create、chbase、ifr、shell、repl、install、uninstall、copy、cmdls、freeze、list、remove、delete、print、title、set_var、set_const、get_var、remove_var、set_var_from_ret、set_const_from_ret、jump、je、jne、jlt、jgt、jle、jge、jt、jf、execute、recursive、help、exit；
 
@@ -40,7 +40,7 @@ create、chbase、ifr、shell、repl、install、uninstall、copy、cmdls、free
 
 <!-- 20260918-034 -->
 
-## `install`/`uninstall` 一次只接受**一个*…
+## install/uninstall 一次只接受一个*…
 
 `install`/`uninstall` 一次只接受**一个**包（签名 `(env_name, package)`），装多个包必须分多次调用；要一次装多包需用 `ifr <env> [requirements_file]`，该文件默认 `./requirements.txt`（相对 cwd）
 
@@ -54,18 +54,18 @@ create、chbase、ifr、shell、repl、install、uninstall、copy、cmdls、free
 
 <!-- 20260918-036 -->
 
-## `freeze <env>` 在命令行模式下**不打印任何结果*…
+## freeze <env> 在命令行模式下不打印任何结果*…
 
 `freeze <env>` 在命令行模式下**不打印任何结果**（返回值被忽略，只有传 `output_file` 参数才落盘），要拿依赖清单直接调 `envs\<env>\.venv\Scripts\pip.exe freeze`
 
 <!-- 20260918-037 -->
 
-## VES 的环境基目录取 `Path.cwd() / "envs"…
+## VES 的环境基目录取 Path.cwd() / "envs"…
 
 VES 的环境基目录取 `Path.cwd() / "envs"`，所以必须在工作区根目录运行 `ves.bat`，否则环境会建到别的 cwd 之下；运行期间可用 `chbase <新路径>` 改，但仅对当前进程有效
 
 <!-- 20260918-038 -->
 
-## VES 未捕获的异常会先把 traceback 写到 `trac…
+## VES 未捕获的异常会先把 traceback 写到 trac…
 
 VES 未捕获的异常会先把 traceback 写到 `traceback/[%Y-%m-%d-%H-%M-%S]_Traceback.txt`（相对 cwd，父目录不存在则自动创建）再向上抛；这是排查 VES 内部异常的第一现场，`〈项目目录〉/Python/VES/traceback/` 下已有实例文件

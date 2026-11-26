@@ -1,6 +1,6 @@
 <!-- 20261023-037 -->
 
-## 新增桌面版预设**调查模式**（config.id `inves…
+## 新增桌面版预设调查模式（config.id inves…
 
 新增桌面版预设**调查模式**（config.id `investigate`，patch 行 id `preset-investigate`，order 18；
 

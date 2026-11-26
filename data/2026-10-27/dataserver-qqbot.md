@@ -1,6 +1,6 @@
 <!-- 20261027-001 -->
 
-## Backend 主服务器新增 `/workspace` API（…
+## Backend 主服务器新增 /workspace API（…
 
 Backend 主服务器新增 `/workspace` API（`core/api/_apis/_workspace_api`）：1:1 映射 `DataClient` 的公开操作，直接调用 `runtime.data_client` 的方法（`get_file` / `get_text` / `list_dir` / `glob` / `rematch` / `get_info` / `exists` / `write_file` / `delete`），返回客户端原始结果，不做通用反向代理；
 
@@ -12,7 +12,7 @@ API 文档在 `docs/api_table/workspace_api/`（12 个端点页 + index），并
 
 <!-- 20261027-002 -->
 
-## DataServer 新增 `POST /operations/…
+## DataServer 新增 POST /operations/…
 
 DataServer 新增 `POST /operations/mkdir/{path}`（自动补齐父目录）、`move`（只移动索引节点，文件 ID/payload 不变，同父目录换名即重命名）、`copy`（递归克隆并为每个文件分配新 UUID、复制 payload）；
 

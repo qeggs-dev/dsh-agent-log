@@ -1,6 +1,6 @@
 <!-- 20261023-032 -->
 
-## repeater-backend 新增 `excludeWork…
+## repeater-backend 新增 excludeWork…
 
 repeater-backend 新增 `excludeWorkspaces`，默认配置里已把本工作区 `〈工作区〉` 列进去（用户明确：不希望这个工作区用于对话）：被排除的目录**连候选都不是**——不 stat、不读 cfg、不挂 watcher，即使里面放 `enabled = true` 也不起服务；
 

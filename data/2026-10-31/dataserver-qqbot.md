@@ -10,7 +10,7 @@ develop 配置已加入全部 22 个 workspace 工具；running 已同步。
 
 <!-- 20261031-002 -->
 
-## Backend `core/tool_caller/tools/…
+## Backend core/tool_caller/tools/…
 
 Backend `core/tool_caller/tools/realspace_tools` 提供 22 个现实路径工具（read/write/append/truncate/touch/edit/delete/exists/is_file/is_dir/glob/rematch/list/info/mkdir/move/copy/get_url/hash/du/tree/copy_range），直接使用 `pathlib` 操作本地文件，不经过 DataServer/DataClient；
 

@@ -1,6 +1,6 @@
 <!-- 20261002-005 -->
 
-## 待办（**修复目标已于 2026-10-02 选定并交付**，仅…
+## 待办（修复目标已于 2026-10-02 选定并交付，仅…
 
 待办（**修复目标已于 2026-10-02 选定并交付**，仅剩上游代码修复未做）：DSH 事件循环卡死走「外部预付费」路线，工具在工作区 `dsh-stall-monitor\prepay-acl.ps1|.cmd|.mjs`——用桌面版自带的 `AclWriteGrant` + `workspaceWriteSid`，在 **DSH 之外**做与宿主 `materializeAclGrant` 完全相同的 grant（`grant.add(path, true)`），把几十秒的全树传播移出事件循环；
 

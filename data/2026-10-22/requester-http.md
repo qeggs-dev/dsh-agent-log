@@ -1,6 +1,6 @@
 <!-- 20261022-002 -->
 
-## 新增项目 **Requester** 于 `〈工作区〉/requ…
+## 新增项目 Requester 于 〈工作区〉/requ…
 
 新增项目 **Requester** 于 `〈工作区〉/requester/`（TS，**Node 原生直跑 `.ts`、零依赖**，UI 尚未开始；M1 只交付引擎核心 + 44 项 `node --test` 用例全过）。
 
@@ -28,7 +28,7 @@
 
 <!-- 20261022-003 -->
 
-## `node --test` 的默认隔离模式在「受限沙箱（workspace-write）」下必失败，在 danger-full-access 下正常
+## node --test 的默认隔离模式在「受限沙箱（workspace-write）」下必失败，在 danger-full-access 下正常
 
 （同日两种模式都实测过，44 项用例：前者 `Error: spawn EPERM` errno -4048、一条用例都没跑；后者默认隔离 846ms 全过）。原因是默认隔离会给每个测试文件 spawn 子进程并走管道 stdio，受限令牌下起不了子进程。
 
@@ -52,7 +52,7 @@
 
 <!-- 20261022-006 -->
 
-## **本机 Electron 进程建不了 `%APPDATA%\R…
+## 本机 Electron 进程建不了 %APPDATA%\R…
 
 **本机 Electron 进程建不了 `%APPDATA%\Requester`（EPERM）——根因就是 `20261021-041` 那条：工作区整棵树带 `Mandatory Label\Low Mandatory Level`，而 Low IL 进程写不进 Medium 的 `%APPDATA%\Roaming`**（**我当天先判定为「原因未查明」，是错的**：我当时用 `Get-Acl` 查 mandatory label 得到空值，但 `Get-Acl` 的 Access 列表**不含完整性标签**，必须用 `icacls` 才看得到——`icacls` 对工作区根显示 `Mandatory Label\Low Mandatory Level:(OI)(CI)(NW)`、对 `node_modules\electron\dist\electron.exe` 显示 `(I)(NW)`；
 
@@ -64,7 +64,7 @@
 
 <!-- 20261022-007 -->
 
-## Requester **请求级历史已交付并真机验收**（单测 6…
+## Requester 请求级历史已交付并真机验收（单测 6…
 
 Requester **请求级历史已交付并真机验收**（单测 67 → **80 项全过**）。
 
@@ -86,7 +86,7 @@ Requester **请求级历史已交付并真机验收**（单测 67 → **80 项�
 
 <!-- 20261022-008 -->
 
-## Requester 的 **Cookie 自动管理已实现并真机验…
+## Requester 的 Cookie 自动管理已实现并真机验…
 
 Requester 的 **Cookie 自动管理已实现并真机验收**（单测 96 → **101 项全过**）。用户 2026-10-22 拍板的语义：①**每次运行开始时把整张 jar 压进快照栈**（栈深 = 运行次数，上限 20）；
 

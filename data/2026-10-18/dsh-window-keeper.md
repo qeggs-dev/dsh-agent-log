@@ -1,6 +1,6 @@
 <!-- 20261018-003 -->
 
-## 桌面版 DSH 的窗口几何**壳层完全不记忆**
+## 桌面版 DSH 的窗口几何壳层完全不记忆
 
 `lib/main.js` 的 `createWindow()` 写死 `width:1280, height:820, minWidth:520, minHeight:600`，全文件没有 `window-state`/`getNormalBounds` 之类的回读逻辑（唯一的 `getBounds` 属于付费页子视图），壳自己的 `%APPDATA%\@deepseek-ai\dsh-desktop\desktop\settings.json` 只校验 `updates.allowTestAuthPopupWindow` 一个键。
 
@@ -8,7 +8,7 @@
 
 <!-- 20261018-004 -->
 
-## 已装 Host 插件 **`@local/dsh-window-…
+## 已装 Host 插件 @local/dsh-window-…
 
 已装 Host 插件 **`@local/dsh-window-keeper`**（工作区 `dsh_plugins\dsh-window-keeper\`（2026-11-13 迁入），桌面 profile，行 id `window-keeper`，`plugin_manager install_bundle` 安装）解决窗口记忆：用 Koffi 调 user32 找主窗口（类名 `Chrome_WidgetWin_1` + 无 owner + `WS_THICKFRAME` + 进程 exe 等于 `process.execPath`，据此排除 IME、托盘、`Chrome_WidgetWin_0` 与固定尺寸欢迎窗），用 `SetWinEventHook` 订阅窗口事件（全程不轮询）、**事件停下 3 秒后**才读 `GetWindowPlacement` 的 `rcNormalPosition`（最大化时仍是还原矩形）与最大化标志写入 `%APPDATA%\@deepseek-ai\dsh-desktop\desktop\window-state.json`（2026-11-14 起；
 
@@ -36,6 +36,6 @@ Cordis 是插件/服务框架、没有 window/display 概念，插件又跑在 H
 
 <!-- 20261018-005 -->
 
-## DSH 的 pwsh 沙箱子进程是**低完整性 + 受限令牌**…
+## DSH 的 pwsh 沙箱子进程是低完整性 + 受限令牌…
 
 DSH 的 pwsh 沙箱子进程是**低完整性 + 受限令牌**，跨进程 `SetWindowPos` 对它返回 `Win32 5（拒绝访问）`（UIPI）；同一操作由 **Host 进程**（中完整性、无受限令牌）执行则成功。所以「从插件里改桌面窗口」可行、从 `pwsh` 工具里改不可行，验证时要认准是哪个进程在做

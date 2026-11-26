@@ -1,6 +1,6 @@
 <!-- 20261113-009 -->
 
-## dsh-sqlite 的六个工具都**要求** `descrip…
+## dsh-sqlite 的六个工具都要求 descrip…
 
 dsh-sqlite 的六个工具都**要求** `description`（schema 里 required，运行时缺失或空白直接报错）：一行说明「哪个文件 + 为什么」（如 `MEMORY.db - 核对调用行`），≤500 字符，非字符串报错；**没有别名参数**，旧的 `reason` 已移除且会被忽略。
 

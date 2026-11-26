@@ -20,7 +20,7 @@ rpe「角色扮演」这类由 bundle 自带的预设则不在此列，它随 bu
 
 <!-- 20261107-002 -->
 
-## 用户先决定**不恢复** 2026-11-06 崩溃恢复时搬走的…
+## 用户先决定不恢复 2026-11-06 崩溃恢复时搬走的…
 
 用户先决定**不恢复** 2026-11-06 崩溃恢复时搬走的 profile patch（理由：那次「清理」正好合意），只要求补回**对话模式**；
 
@@ -36,7 +36,7 @@ chat 的完整声明仍留在 `cordis.patch.yml.bak-1793979631010` 第 598–628
 
 <!-- 20261107-004 -->
 
-## 新增桌面版插件 **`@local/dsh-preset-swi…
+## 新增桌面版插件 @local/dsh-preset-swi…
 
 新增桌面版插件 **`@local/dsh-preset-switch`（「预设切换」）**（源目录 `〈工作区〉/dsh-preset-switch`，bundle 行 id `preset-switch`，desktop profile，`install_bundle` 返回 applied、warnings 空）：会话中途**切换主 Agent Preset** 的模型工具 `switch_agent_preset`（参数只有 `id`，省略＝配置里的默认预设）。
 

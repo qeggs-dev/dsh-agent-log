@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-10-28",
   "weekday": "周三",
   "entries": 1,
@@ -8,7 +8,7 @@
   "items": [
     {
       "id": "20261028-003",
-      "title": "DataServer `GET /operations/read…",
+      "title": "DataServer GET /operations/read…",
       "project": "DataServer（QQBot 静态数据服务）"
     }
   ],

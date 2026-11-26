@@ -1,6 +1,6 @@
 <!-- 20261112-006 -->
 
-## 新增插件 **`@local/backend-resource`…
+## 新增插件 @local/backend-resource…
 
 新增插件 **`@local/backend-resource`**（工作区 `〈工作区〉/backend-resource/`，v1.0.0，bundle 行 id `backend-resource` / entry `include:backend-resource`，`install_bundle` 以本地目录装入 desktop profile → `application: applied`、warnings 空）：用户要求「像 DSH 后台任务那样管理后台资源，并提供与后台任务一样的可关闭 UI，提供插件接口可以注册任何 JS 对象并注册取消回调」。
 
@@ -98,7 +98,7 @@ chip 计数 + 可关闭面板（点面板外 / Esc / 滚动 / 右上角 × 都�
 
 <!-- 20261112-007 -->
 
-## dsh-sqlite 增加 **`sqlite_lifespan…
+## dsh-sqlite 增加 sqlite_lifespan…
 
 dsh-sqlite 增加 **`sqlite_lifespan_control`**（`op: open|create|close`，第六个工具）：`open` 传 `path` 只打开**已存在**的文件（不存在则报错并提示 create），返回资源 ID 并保持连接，重复 open 同路径返回同一 ID 且 `alreadyOpen: true`；
 

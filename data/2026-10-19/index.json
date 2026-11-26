@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-10-19",
   "weekday": "周一",
   "entries": 8,
@@ -8,17 +8,17 @@
   "items": [
     {
       "id": "20261019-001",
-      "title": "项目在 `〈工作区〉/mod-audit/`（git 仓库、`m…",
+      "title": "项目在 〈工作区〉/mod-audit/（git 仓库、m…",
       "project": "mod-audit（Minecraft 整合包冲突分析器）"
     },
     {
       "id": "20261019-002",
-      "title": "三家加载器的**版本语义完全不同，不能用一套通用逻辑**（已由三…",
+      "title": "三家加载器的版本语义完全不同，不能用一套通用逻辑（已由三…",
       "project": "mod-audit（Minecraft 整合包冲突分析器）"
     },
     {
       "id": "20261019-003",
-      "title": "Maven 侧两个**必踩且反直觉**的语义（都已实测）",
+      "title": "Maven 侧两个必踩且反直觉的语义（都已实测）",
       "project": "mod-audit（Minecraft 整合包冲突分析器）"
     },
     {
@@ -33,7 +33,7 @@
     },
     {
       "id": "20261019-006",
-      "title": "MC 版本/数据版本的**可信来源分级**（已实测）",
+      "title": "MC 版本/数据版本的可信来源分级（已实测）",
       "project": "mod-audit（Minecraft 整合包冲突分析器）"
     },
     {
@@ -43,7 +43,7 @@
     },
     {
       "id": "20261019-008",
-      "title": "UI 动效的**同名坑一天踩了四次**（侧边栏、注入点列表、高危…",
+      "title": "UI 动效的同名坑一天踩了四次（侧边栏、注入点列表、高危…",
       "project": "mod-audit（Minecraft 整合包冲突分析器）"
     }
   ],

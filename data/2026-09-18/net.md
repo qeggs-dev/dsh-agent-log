@@ -1,6 +1,6 @@
 <!-- 20260918-024 -->
 
-## VES 的 net 环境位于 `〈工作区〉/envs/net/.…
+## VES 的 net 环境位于 〈工作区〉/envs/net/.…
 
 VES 的 net 环境位于 `〈工作区〉/envs/net/.venv`，其解释器是 `envs\net\.venv\Scripts\python.exe`（Python 3.14.3），由 `ves.bat create net` 创建；用 `ves.bat list` 可查看当前存在的环境
 
@@ -12,7 +12,7 @@ pydantic 2.13.5、orjson 3.12.0、httpx 0.28.1、requests 2.34.2、aiohttp 3.14.
 
 <!-- 20260918-026 -->
 
-## 工作区操作手台由 `console.bat`（纯 ASCII 启…
+## 工作区操作手台由 console.bat（纯 ASCII 启…
 
 工作区操作手台由 `console.bat`（纯 ASCII 启动器，会设 PYTHONUTF8=1）与 `net_console.py` 组成，用**工作区根 `.venv`**（Python 3.11.9）解释器运行（2026-09-18 修订：原为 VES 的 net 环境，改动理由见 20260918-041）；
 
@@ -34,7 +34,7 @@ orjson 比标准库 json 的 dumps 快 9.38 倍、loads 快 2.51 倍，序列化
 
 <!-- 20260918-029 -->
 
-## 关键约束
+## 关键约束：workspace-write 沙箱下建环境与装包必失败…
 
 workspace-write 沙箱下建环境与装包**必失败**——`tempfile.mkdtemp()` 建的目录（0o700）会被拒绝访问，导致 ensurepip 报 PermissionError、pip 无输出卡死（改 TEMP/TMP 到工作区也无效）；
 
@@ -50,13 +50,13 @@ workspace-write 沙箱下建环境与装包**必失败**——`tempfile.mkdtemp(
 
 <!-- 20260918-031 -->
 
-## `ves.bat shell net` 在无 TTY 环境下也可执行
+## ves.bat shell net 在无 TTY 环境下也可执行
 
 内部跑 `powershell -NoLogo -NoExit -File activate.ps1`，stdin 管道立即 EOF，约 1.6 秒后正常退出（exit 0），提示符出现 `(net)` 前缀证明激活已生效；但该会话无法交互使用
 
 <!-- 20260918-032 -->
 
-## 0o700 权限的目录（包括 `tempfile.mkdtemp…
+## 0o700 权限的目录（包括 tempfile.mkdtemp…
 
 0o700 权限的目录（包括 `tempfile.mkdtemp()` 的全部产物）在 workspace-write 下除了不可写、不可列，还**不可删除**——`Remove-Item -Recurse -Force` 与 `icacls /reset` 均报 Access denied，故这类目录一旦生成就会永久残留，只能从沙箱外清理；
 
@@ -64,7 +64,7 @@ workspace-write 沙箱下建环境与装包**必失败**——`tempfile.mkdtemp(
 
 <!-- 20260918-039 -->
 
-## 工作区根新增 `to_venv.bat`
+## 工作区根新增 to_venv.bat
 
 转发到根 `.venv` 里任意工具，用法是先 `set "L=pip.exe"` 再 `to_venv.bat --version`，`L` 默认 `python.exe`，内部路径用 `%~dp0.venv\Scripts\%L%` 故任意 cwd 都可用；
 
@@ -72,7 +72,7 @@ workspace-write 沙箱下建环境与装包**必失败**——`tempfile.mkdtemp(
 
 <!-- 20260918-040 -->
 
-## 工作区根 `.venv` 是 Python 3.11.9，装有…
+## 工作区根 .venv 是 Python 3.11.9，装有…
 
 工作区根 `.venv` 是 Python 3.11.9，装有 orjson 3.12.0 / httpx 0.28.1 / pydantic 2.13.5 / requests 2.34.2 / numpy 2.4.6 / pandas 3.0.6；
 

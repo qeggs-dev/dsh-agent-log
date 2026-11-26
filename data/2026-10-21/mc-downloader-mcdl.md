@@ -1,6 +1,6 @@
 <!-- 20261021-021 -->
 
-## 新增项目 **MC Downloader**（`〈工作区〉/mcdl/`）
+## 新增项目 MC Downloader（〈工作区〉/mcdl/）
 
 列出 Minecraft 原版（Java）版本、算出文件清单，二选一——**导出 ADv1 任务包**交给 AD Downloader，或**自己下载**。用户当天先明确"直接下载＝软件自己下"，随后又明确**不要复用 ADL 的下载引擎**（见 032），所以下载器是自研的。
 
@@ -42,7 +42,7 @@ TS + Electron 44 + esbuild，UI 无框架。
 
 <!-- 20261021-025 -->
 
-## mcdl 抓到的**真 bug（已修）**
+## mcdl 抓到的真 bug（已修）
 
 `1.12.2` 的 `net.java.jinput:jinput-platform:2.0.5` 只有 `downloads.classifiers`（natives）、没有 `artifact`，我按 maven 坐标推出了一个基础 jar → 下载时 HTTP 404 `The specified blob does not exist`。
 
@@ -70,7 +70,7 @@ CLI 共四个动作：`--plan` / `--export` / `--download` / `--smoke-check`，�
 
 <!-- 20261021-027 -->
 
-## ADL 审计里**明确延后的 4 项已全部处理**（单测 50 → 57）
+## ADL 审计里明确延后的 4 项已全部处理（单测 50 → 57）
 
 ①**续传身份校验**——`.state.json` 增加 `lastModified`，`sameResource` 改为「etag 或 lastModified **至少一个两边都在且相等**」才允许续（原来是"任一侧 null 就当相同"，等于默认信任），续传请求带 `If-Range`，服务端回 200 即按整份重下；
 
@@ -82,7 +82,7 @@ CLI 共四个动作：`--plan` / `--export` / `--download` / `--smoke-check`，�
 
 <!-- 20261021-028 -->
 
-## ADL core 的公开 API 在本轮有多处破坏性变化，`mcdl` 直接 import 这些模块，升级后必须重新 typecheck
+## ADL core 的公开 API 在本轮有多处破坏性变化，mcdl 直接 import 这些模块，升级后必须重新 typecheck
 
 `ResolvedTask` 新增必填 `limit`（`number | null`）；`ResourceProgress` 新增必填 `parts`；
 
@@ -96,7 +96,7 @@ CLI 共四个动作：`--plan` / `--export` / `--download` / `--smoke-check`，�
 
 <!-- 20261021-029 -->
 
-## ADL 资源新增 **`hash` 校验字段**
+## ADL 资源新增 hash 校验字段
 
 `"hash": { "sha1": "...", "sha256": "..." }`，写几种验几种、**全部通过才算成功**。
 
@@ -108,7 +108,7 @@ CLI 共四个动作：`--plan` / `--export` / `--download` / `--smoke-check`，�
 
 <!-- 20261021-032 -->
 
-## mcdl 的下载器改为**自研流式**（用户明确「不要直接复用…
+## mcdl 的下载器改为自研流式（用户明确「不要直接复用…
 
 mcdl 的下载器改为**自研流式**（用户明确「不要直接复用 ADL 的下载引擎」）：`src/core/downloader.ts`，不碰 Range、不分片、不续传；每个资源一条连接，**同时最多 16 个资源**（`MAX_CONCURRENCY` 硬上限，界面可调 1–16），在飞连接数 = 正在下的资源数。
 
@@ -124,7 +124,7 @@ Minecraft 绝大多数是几 KB–几百 KB 的小文件，切片在这种尺寸
 
 <!-- 20261021-035 -->
 
-## mcdl 新增 **Fabric / Forge / NeoFo…
+## mcdl 新增 Fabric / Forge / NeoFo…
 
 mcdl 新增 **Fabric / Forge / NeoForge 的下载与自动安装**（用户要求；源预设官方 + BMCLAPI）。
 
@@ -166,7 +166,7 @@ installer 下完文件后要跑一串 processors，其中 `DOWNLOAD_MOJMAPS` 会
 
 <!-- 20261021-037 -->
 
-## mcdl 加载器的**源可达性实测**（决定"选哪个源"）
+## mcdl 加载器的源可达性实测（决定"选哪个源"）
 
 **NeoForge 官方 maven `maven.neoforged.net` 从本机完全连不上**（连接 42 秒超时，`neoforged.net` 也超时），而 `bmclapi2.bangbang93.com/maven/net/neoforged/neoforge/21.1.209/...installer.jar` 是 **200**（落到 mirror.nyist.edu.cn）——所以 NeoForge 只能走 BMCLAPI。
 

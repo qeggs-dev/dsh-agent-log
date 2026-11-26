@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generator": "build_data.py 3.1.0",
+  "generator": "build_data.py 3.2.0",
   "date": "2026-11-16",
   "weekday": "周一",
   "entries": 7,
@@ -18,7 +18,7 @@
     },
     {
       "id": "20261116-003",
-      "title": "`capture_screen` 增加多窗口模式，并按工作区规则…",
+      "title": "capture_screen 增加多窗口模式，并按工作区规则…",
       "project": "DSH 插件：整屏截图（dsh-screenshot）"
     },
     {

@@ -1,6 +1,6 @@
 <!-- 20261106-001 -->
 
-## cordis-host **加密与接入层已完成到「协议全通」**…
+## cordis-host 加密与接入层已完成到「协议全通」…
 
 cordis-host **加密与接入层已完成到「协议全通」**,`node --test` **146 项全绿**,另有 3 个冒烟(`peer-smoke` / `web-smoke` / `e2e-smoke`)全部 PASS。
 
@@ -12,7 +12,7 @@ cordis-host **加密与接入层已完成到「协议全通」**,`node --test` *
 
 <!-- 20261106-002 -->
 
-## cordis-host **会话级临时接入已打通**(M1 收尾)
+## cordis-host 会话级临时接入已打通(M1 收尾)
 
 `src/proto/access.ts` 的 ticket 同时带 **URL(授权 token)与 PSK(加密)**,且 **PSK 不在 URL 里**——抓包看到请求行也拿不到密钥;`payload()` 把 `{url, psk, nodeId, publicKey}` 一起交给二维码。
 

@@ -1,6 +1,6 @@
 <!-- 20261026-001 -->
 
-## 新项目 **RPE（Role Play Engine）**，形态是 DSH 插件
+## 新项目 RPE（Role Play Engine），形态是 DSH 插件
 
 用户 2026-10-26 定下的三个前提：①进入方式是**「新建 Session 时打开 RPE 开关、让该 Session 进入 RolePlay 模式」**（明确没有选斜杠命令入口）；②**核心问题是「设计一套能根据场景主动把信息注入到 AI 的系统」**，即角色记忆与上下文注入，不是多角色并行；
 
@@ -8,7 +8,7 @@
 
 <!-- 20261026-002 -->
 
-## RPE 的一条运行版硬约束（`cordis_inspect_qu…
+## RPE 的一条运行版硬约束（cordis_inspect_qu…
 
 RPE 的一条运行版硬约束（`cordis_inspect_query` 实测）：`ctx.systemPrompt.context({ text })` 的 `AssembleContext` 只有 `{ scope?, signal? }`，**拿不到对话内容**；
 
@@ -18,7 +18,7 @@ RPE 的一条运行版硬约束（`cordis_inspect_query` 实测）：`ctx.system
 
 <!-- 20261026-003 -->
 
-## RPE 核对的四条运行版事实（0.2.1-rc.3，`cordi…
+## RPE 核对的四条运行版事实（0.2.1-rc.3，cordi…
 
 RPE 核对的四条运行版事实（0.2.1-rc.3，`cordis_inspect_query` + 包 README 实测）：①**preset 是静态 entry list，没有「包含另一个 preset」的语法**（`plugins` 是字面数组；
 
@@ -34,7 +34,7 @@ RPE 核对的四条运行版事实（0.2.1-rc.3，`cordis_inspect_query` + 包 R
 
 <!-- 20261026-004 -->
 
-## 双预设 spike 结论（读 `dsh-agent-preset-registry/lib/index.js` 得出，未安装任何东西）
+## 双预设 spike 结论（读 dsh-agent-preset-registry/lib/index.js 得出，未安装任何东西）
 
 ①一个 Agent 只绑一个 preset —— `join()` 用 `bindScopeParent(key, generation.key)` 给 agent 的 scope 设**唯一父 scope**，换 preset 走 `binding.parent.rebind(generation.key)`（覆盖，不是叠加）；
 

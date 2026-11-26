@@ -36,7 +36,7 @@ Host 模块被进程缓存，改 `index.js` 必须**重启 App**（`install_bund
 
 <!-- 20261112-003 -->
 
-## sleep 插件（`@local/dsh-tool-sleep`）加上生命周期钩子
+## sleep 插件（@local/dsh-tool-sleep）加上生命周期钩子
 
 （用户明确授权「可以修改 sleep 插件」）。
 

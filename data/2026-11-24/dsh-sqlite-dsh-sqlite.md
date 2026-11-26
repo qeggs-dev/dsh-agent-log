@@ -1,6 +1,6 @@
 <!-- 20261124-001 -->
 
-## dsh-sqlite 0.2.0 新增第七个工具 `sqlite…
+## dsh-sqlite 0.2.0 新增第七个工具 sqlite…
 
 dsh-sqlite 0.2.0 新增第七个工具 `sqlite_script`（文件级操作，路径受沙箱约束，读上限 8 MiB、写上限 32 MiB）：`apply` 应用 .sql 脚本（与 sqlite_exec 同规则：默认单事务、ATTACH/VACUUM INTO/writable_schema/PRAGMA foreign_keys= 一律拒绝）、`dump` 导出 schema/data/all 为 .sql（文件头带 PRAGMA defer_foreign_keys=ON + BEGIN，可原样 apply 到新库；
 
