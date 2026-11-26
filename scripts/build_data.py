@@ -36,6 +36,8 @@ GENERATOR = "build_data.py 3.0.0"
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 ROOT_INDEX = ROOT / "index.json"
+SEARCH_INDEX = ROOT / "search.json"
+SEARCH_EXCERPT = 4000
 
 # 默认读同仓上一级的记忆库；换机器用 --db 或 DEVLOG_DB
 DEFAULT_DB = os.environ.get("DEVLOG_DB") or str(ROOT.parent / "MEMORY.db")
@@ -43,6 +45,7 @@ DEFAULT_ATTACHMENTS = str(ROOT.parent / "MEMORYS_ATTACHMENTS")
 
 WEEKDAYS = ("周一", "周二", "周三", "周四", "周五", "周六", "周日")
 ID_RE = re.compile(r"^[0-9]{8}-[0-9]{3}$")
+ID_LINE_RE = re.compile(r"^<!--\s*([0-9]{8}-[0-9]{3})\s*-->$", re.M)
 ASCII_TOKEN_RE = re.compile(r"[A-Za-z][A-Za-z0-9._-]*")
 BOLD_LEAD_RE = re.compile(r"^\*\*(.+?)\*\*\s*[：:]?\s*", re.S)
 IMAGE_EXT = (".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg")
@@ -328,6 +331,7 @@ def rebuild_root_index(db_path: str, now: str, rows: list[dict] | None = None) -
         "generator": GENERATOR,
         "updated": now,
         "latest": latest_from_rows(rows) if rows else (latest_entry(db_path) if days else None),
+        "search": "search.json",
         "days": days,
     }
 
@@ -395,7 +399,53 @@ def cmd_build(db_path: str, date: str | None, ids: list[str] | None,
     root = rebuild_root_index(db_path, dt.datetime.now().astimezone().isoformat(timespec="seconds"), rows)
     dump_json(ROOT_INDEX, root)
     print(f"index.json: {len(root['days'])} 天，最新 {root['latest']['id'] if root['latest'] else '—'}")
+
+    search = rebuild_search_index(root["updated"])
+    dump_json(SEARCH_INDEX, search)
+    print(f"search.json: {search['count']} 条")
     return 0
+
+
+def iter_md_items(text: str) -> list[tuple[str, str]]:
+    """按 `<!-- id -->` 把一份正文切成 (id, 正文块)。"""
+    parts = ID_LINE_RE.split(text)
+    return [(parts[i], parts[i + 1].strip()) for i in range(1, len(parts) - 1, 2)]
+
+
+def item_title_body(block: str) -> tuple[str, str]:
+    """正文块 → (标题, 去掉标题行的正文)。"""
+    lines = block.split("\n")
+    if lines and lines[0].startswith("## "):
+        return lines[0][3:].strip(), "\n".join(lines[1:]).strip()
+    return split_title(block)
+
+
+def rebuild_search_index(now: str) -> dict:
+    """全量重建 search.json：标题 / 项目 / 关键词 / 正文摘要，供前端本地搜索。"""
+    entries = []
+    for child in sorted(DATA_DIR.glob("*/index.json"), reverse=True):
+        idx = json.loads(child.read_text(encoding="utf-8"))
+        for project in idx["projects"]:
+            body_path = ROOT / project["body"]
+            if not body_path.exists():
+                continue
+            for item_id, block in iter_md_items(body_path.read_text(encoding="utf-8")):
+                title, rest = item_title_body(block)
+                entries.append({
+                    "d": idx["date"],
+                    "i": item_id,
+                    "p": project["name"],
+                    "t": title,
+                    "k": project.get("keywords", [])[:6],
+                    "x": re.sub(r"\s+", " ", rest)[:SEARCH_EXCERPT],
+                })
+    return {
+        "schemaVersion": SCHEMA_VERSION,
+        "generator": GENERATOR,
+        "updated": now,
+        "count": len(entries),
+        "entries": entries,
+    }
 
 
 def cmd_check(db_path: str) -> int:
@@ -491,6 +541,13 @@ def self_test() -> int:
     assert idx["schemaVersion"] == SCHEMA_VERSION
     assert idx["overview"] == "data/2026-11-26/overview.svg"
     assert idx["projects"][0]["body"] == "data/2026-11-26/p.md"
+
+    # 搜索索引的切块
+    md = ("<!-- 20261126-001 -->\n\n## 标题一\n\n正文一\n\n"
+          "<!-- 20261126-002 -->\n\n## 标题二\n\n正文二\n")
+    items = iter_md_items(md)
+    assert [i for i, _ in items] == ["20261126-001", "20261126-002"], items
+    assert item_title_body(items[0][1]) == ("标题一", "正文一"), item_title_body(items[0][1])
 
     print("self-test ok")
     return 0

@@ -4,12 +4,13 @@
 import { renderMarkdown, renderInline, splitItems, escapeHtml } from './markdown.js';
 
 const INDEX_URL = 'index.json';
+const SEARCH_URL = 'search.json';
 const TITLE = '工作区日志';
 
 // 单文件预览用：preview.html 把整站塞进 __DEVLOG_FS__，省掉 HTTP 服务
 const FS = window.__DEVLOG_FS__ || null;
 
-const state = { index: null, day: null, current: null };
+const state = { index: null, day: null, current: null, search: null, query: '' };
 const $days = document.getElementById('days');
 const $entries = document.getElementById('entries');
 const $dayDate = document.getElementById('dayDate');
@@ -20,6 +21,7 @@ const $entry = document.getElementById('entry');
 const $main = document.getElementById('main');
 const $updated = document.getElementById('updated');
 const $latest = document.getElementById('latest');
+const $search = document.getElementById('searchInput');
 
 // ---------------------------------------------------------------- 设置与主题
 // 主题四档：yellow 是 :root 默认，paper / dark 覆盖变量，system 跟随系统。
@@ -146,11 +148,78 @@ function renderHeader() {
   $updated.textContent = `更新于 ${formatStamp(state.index.updated)}`;
 }
 
+async function ensureSearch() {
+  if (state.search) return;
+  state.search = await loadJson(state.index.search || SEARCH_URL, { fresh: true });
+}
+
+function searchEntries(query) {
+  const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+  if (!terms.length || !state.search) return [];
+  const hits = [];
+
+  for (const entry of state.search.entries) {
+    const t = (entry.t || '').toLowerCase();
+    const p = (entry.p || '').toLowerCase();
+    const k = (entry.k || []).join(' ').toLowerCase();
+    const x = (entry.x || '').toLowerCase();
+    const id = (entry.i || '').toLowerCase();
+
+    let score = 0;
+    let ok = true;
+    for (const term of terms) {
+      if (t.includes(term)) score += 10;
+      else if (k.includes(term)) score += 5;
+      else if (p.includes(term)) score += 3;
+      else if (id.includes(term)) score += 3;
+      else if (x.includes(term)) score += 1;
+      else { ok = false; break; }
+    }
+    if (ok) hits.push({ entry, score });
+  }
+
+  hits.sort((a, b) => b.score - a.score || (a.entry.d < b.entry.d ? 1 : -1));
+  return hits.slice(0, 60).map((h) => h.entry);
+}
+
+function renderResults(query) {
+  const results = searchEntries(query);
+  $overview.hidden = true;
+  $items.replaceChildren();
+
+  const head = document.createElement('p');
+  head.className = 'group-name';
+  head.textContent = results.length ? `${results.length} 条结果` : '没有匹配的条目';
+  $items.append(head);
+
+  for (const r of results) {
+    const a = document.createElement('a');
+    a.className = 'entry-link result';
+    a.href = `#/${r.d}/${r.i}`;
+    const date = document.createElement('span');
+    date.className = 'r-date';
+    date.textContent = r.d;
+    const title = document.createElement('span');
+    title.className = 't';
+    title.innerHTML = renderInline(r.t);
+    const proj = document.createElement('span');
+    proj.className = 'eid';
+    proj.textContent = r.p;
+    a.append(date, title, proj);
+    $items.append(a);
+  }
+}
+
 function renderEntries() {
   const { index, items } = state.day;
 
   $dayDate.textContent = index.date;
   $dayMeta.textContent = `${index.weekday || ''} · ${index.projects.length} 个板块 · ${items.length} 条`;
+
+  if (state.query.trim()) {
+    renderResults(state.query);
+    return;
+  }
 
   if (index.overview) {
     $overview.src = index.overview;
@@ -175,7 +244,7 @@ function renderEntries() {
     if (state.current && item.id === state.current.id) a.setAttribute('aria-current', 'true');
     const title = document.createElement('span');
     title.className = 't';
-    title.textContent = item.title;
+    title.innerHTML = renderInline(item.title);
     a.append(title);
     if (item.id) {
       const eid = document.createElement('span');
@@ -244,6 +313,12 @@ async function route() {
       throw new Error(`日期格式不对：${datePart}`);
     }
 
+    // 导航时退出搜索态，第二栏回到当天条目
+    if (state.query) {
+      state.query = '';
+      $search.value = '';
+    }
+
     const date = datePart || state.index.days[0].date;
     if (!state.day || state.day.index.date !== date) {
       state.day = await loadDay(date);
@@ -271,6 +346,12 @@ document.addEventListener('click', (e) => {
 });
 
 window.addEventListener('keydown', (e) => {
+  if (e.key === '/' && document.activeElement !== $search) {
+    e.preventDefault();
+    $search.focus();
+    return;
+  }
+  if (document.activeElement === $search) return;
   if (!state.current) return;
   const step = e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? -1
     : (e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : 0);
@@ -279,6 +360,27 @@ window.addEventListener('keydown', (e) => {
   const i = items.findIndex((x) => x.id === state.current.id);
   const j = i + step;
   if (j >= 0 && j < items.length) location.hash = `#/${state.day.index.date}/${items[j].id}`;
+});
+
+$search.addEventListener('input', async () => {
+  state.query = $search.value;
+  if (state.query.trim()) {
+    try {
+      await ensureSearch();
+    } catch (err) {
+      showError(err);
+      return;
+    }
+  }
+  if (state.day) renderEntries();
+});
+
+$search.addEventListener('keydown', (e) => {
+  if (e.key !== 'Escape') return;
+  $search.value = '';
+  state.query = '';
+  if (state.day) renderEntries();
+  $search.blur();
 });
 
 route();

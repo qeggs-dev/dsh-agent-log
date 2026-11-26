@@ -515,3 +515,31 @@ code {
 #entry > h2, .item p, .item li, .item h4, .entry-link .t {
   overflow-wrap: anywhere;
 }
+
+/* ---------- 搜索 ---------- */
+.search-input {
+  width: 100%;
+  margin: 2px 0 10px;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  font-size: 12px;
+}
+
+.search-input:focus { outline: none; border-color: var(--accent); }
+.search-input::placeholder { color: var(--muted); font-size: 11px; }
+
+.entry-link.result .r-date {
+  display: block;
+  font: 10px/1.6 ui-monospace, Consolas, monospace;
+  color: var(--muted);
+  letter-spacing: .02em;
+}
+
+.entry-link.result .eid { margin-top: 1px; }
+
+/* hidden 属性要压过组件自己的 display */
+[hidden] { display: none !important; }

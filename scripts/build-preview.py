@@ -71,6 +71,9 @@ def bundle_js() -> str:
 def collect_fs() -> dict[str, str]:
     """文本文件 → {相对路径: 内容}；图片不进来，改成引用处的 data URI。"""
     files = {"index.json": (ROOT / "index.json").read_text(encoding="utf-8")}
+    search = ROOT / "search.json"
+    if search.exists():
+        files["search.json"] = search.read_text(encoding="utf-8")
     for path in sorted((ROOT / "data").rglob("*")):
         if not path.is_file() or path.suffix.lower() in MIME:
             continue
@@ -121,6 +124,8 @@ def self_test() -> None:
     assert "resolveSrc" in js, "渲染器没有一起打包"
     # 图片必须变成 data URI，不能留相对路径（预览没有 HTTP 根）
     assert "data:image/" in html or not IMAGE_RE.search(html), "图片没有内联"
+    if (ROOT / "search.json").exists():
+        assert '"search.json"' in html or "search.json" in html, "搜索索引没有内联"
     print("self-test ok")
 
 

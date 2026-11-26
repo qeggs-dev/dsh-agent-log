@@ -11,7 +11,8 @@ description: 维护「工作区日志」站点——把 MEMORY.db 里通过公�
 ## 结构
 
 ```
-index.json                 根索引：days[] + latest（最新条目）
+index.json                 根索引：days[] + latest（最新条目）+ search
+search.json                全文搜索索引：标题 / 项目 / 关键词 / 正文（生成器全量重建）
 data/<date>/index.json     当日索引：projects[] → 正文链接、ids、关键词、overview
 data/<date>/<slug>.md      正文：每条一个 `## 标题`，条目 id 藏在 HTML 注释里
 data/<date>/<slug>-*.png   正文配图，与 md 同目录，md 用相对路径引用
@@ -24,6 +25,10 @@ tests/markdown.test.mjs    渲染器测试
 
 界面是三栏：**日期 → 当日条目索引 → 单条正文**。路由 `#/<date>/<entry-id>`，
 切换条目只重绘正文；`#/<date>` 落在当天第一条。左侧两栏在 ≤900px 时收成横向滚动条。
+
+第二栏顶部有搜索框（`/` 键聚焦）。搜索是**纯前端**的：首次输入时懒加载 `search.json`，
+在标题 / 项目 / 关键词 / 正文里做子串匹配，按命中位置加权排序（标题 > 关键词 > 项目 > 正文），
+点结果跳到对应条目。索引由生成器每次全量重建，不需要手工维护。
 
 ## 日常：新增一天
 
