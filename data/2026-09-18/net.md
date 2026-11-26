@@ -1,10 +1,8 @@
 <!-- 20260918-024 -->
 
-## VES 的 net 环境位于 `D
+## VES 的 net 环境位于 `〈工作区〉/envs/net/.…
 
-\Projects\Deepseek_Harness_Workspace\envs\net\.venv`，其解释器是 `envs\net\.venv\Scripts\python.exe`（Python 3.14.3），由 `ves.bat create net` 创建；
-
-用 `ves.bat list` 可查看当前存在的环境
+VES 的 net 环境位于 `〈工作区〉/envs/net/.venv`，其解释器是 `envs\net\.venv\Scripts\python.exe`（Python 3.14.3），由 `ves.bat create net` 创建；用 `ves.bat list` 可查看当前存在的环境
 
 <!-- 20260918-025 -->
 
@@ -62,7 +60,7 @@ workspace-write 沙箱下建环境与装包**必失败**——`tempfile.mkdtemp(
 
 0o700 权限的目录（包括 `tempfile.mkdtemp()` 的全部产物）在 workspace-write 下除了不可写、不可列，还**不可删除**——`Remove-Item -Recurse -Force` 与 `icacls /reset` 均报 Access denied，故这类目录一旦生成就会永久残留，只能从沙箱外清理；
 
-工作区 `D:\Projects\Deepseek_Harness_Workspace\.tmp\` 下现存 11 个此类空目录（c_mode700、mode700、fresh_*、tmp* 等）是沙箱诊断遗留，不是故障
+工作区 `〈工作区〉/.tmp/` 下现存 11 个此类空目录（c_mode700、mode700、fresh_*、tmp* 等）是沙箱诊断遗留，不是故障
 
 <!-- 20260918-039 -->
 

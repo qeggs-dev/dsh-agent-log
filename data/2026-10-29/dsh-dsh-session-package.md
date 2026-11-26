@@ -2,7 +2,7 @@
 
 ## 插件「会话包」v2（重做版）
 
-（`D:\Projects\Deepseek_Harness_Workspace\dsh-session-package`，包 `@local/dsh-session-package` v1.0.0，desktop profile bundle，entry `include:session-package`，`application: applied`）：**只做单会话导出 + 拖放导入**。
+（`〈工作区〉/dsh-session-package`，包 `@local/dsh-session-package` v1.0.0，desktop profile bundle，entry `include:session-package`，`application: applied`）：**只做单会话导出 + 拖放导入**。
 
 导出＝会话列表「…」菜单 **order 500（放在最下面，避开有快捷键的项）** 的「导出会话包 (.dhs)」，下载 `dsh-session-<id>.dhs`（默认带子会话与附件）；
 

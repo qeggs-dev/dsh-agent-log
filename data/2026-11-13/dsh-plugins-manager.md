@@ -2,7 +2,7 @@
 
 ## 新增桌面插件 **`@local/dsh-plugins-man…
 
-新增桌面插件 **`@local/dsh-plugins-manager`（插件批量管理）**（源目录 `D:\Projects\Deepseek_Harness_Workspace\plugins-manager`，bundle 行 id `plugins-manager`，desktop profile，`install_bundle` 返回 `application: applied`、warnings 空）。
+新增桌面插件 **`@local/dsh-plugins-manager`（插件批量管理）**（源目录 `〈工作区〉/plugins-manager`，bundle 行 id `plugins-manager`，desktop profile，`install_bundle` 返回 `application: applied`、warnings 空）。
 
 入口是设置 → Plugins 里的新标签页：Client 注册 `settings.plugins.tab`，id `batch`、order 20，label 随 locale 显示「批量管理 / Batch」；
 

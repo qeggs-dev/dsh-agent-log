@@ -2,7 +2,7 @@
 
 ## 插件「shell .env 加载」
 
-（`D:\Projects\Deepseek_Harness_Workspace\dsh-pwsh-dotenv`，包 `@local/dsh-pwsh-dotenv` v1.0.0，desktop profile bundle，行 id `pwsh-dotenv` / entry `include:pwsh-dotenv`，`application: applied`、`fiberPhase: active`）：**注册一个独立工具 `pwsh_dotenv`**——跑 PowerShell 时把该次命令工作目录下的 `.env` 载入环境。
+（`〈工作区〉/dsh-pwsh-dotenv`，包 `@local/dsh-pwsh-dotenv` v1.0.0，desktop profile bundle，行 id `pwsh-dotenv` / entry `include:pwsh-dotenv`，`application: applied`、`fiberPhase: active`）：**注册一个独立工具 `pwsh_dotenv`**——跑 PowerShell 时把该次命令工作目录下的 `.env` 载入环境。
 
 **原 `pwsh` 工具完全未改**（不拦注册、不改原型、不碰别人的定义）。参数只有 `command` / `description` / `workdir` / `timeoutMs`；
 

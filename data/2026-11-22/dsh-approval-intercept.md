@@ -2,7 +2,7 @@
 
 ## 新增 DSH 桌面插件 **@local/approval-in…
 
-新增 DSH 桌面插件 **@local/approval-intercept（审批拦截）**：源目录 `D:\Projects\Deepseek_Harness_Workspace\dsh_plugins\approval-intercept`（独立 git 仓库，初始提交 6f82ef6），bundle 行 id `approval-intercept`，`install_bundle` → `application: applied`、warnings 空。
+新增 DSH 桌面插件 **@local/approval-intercept（审批拦截）**：源目录 `〈工作区〉/dsh_plugins/approval-intercept`（独立 git 仓库，初始提交 6f82ef6），bundle 行 id `approval-intercept`，`install_bundle` → `application: applied`、warnings 空。
 
 ### 目的
 

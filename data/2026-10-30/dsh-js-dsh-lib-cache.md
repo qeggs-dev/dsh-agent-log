@@ -2,7 +2,7 @@
 
 ## 新插件「JS 库缓存」
 
-（`D:\Projects\Deepseek_Harness_Workspace\dsh-lib-cache`，包 `@local/dsh-lib-cache` v0.1.0，desktop profile bundle，entry `include:lib-cache`，`application: applied`、`fiberPhase: active`）：用户三次收窄后的最终形态——**不注册工具、不做 UI，只提供插件接口**，语义是「**传入 url 和 id，返回可直接 import 的库文件**」。
+（`〈工作区〉/dsh-lib-cache`，包 `@local/dsh-lib-cache` v0.1.0，desktop profile bundle，entry `include:lib-cache`，`application: applied`、`fiberPhase: active`）：用户三次收窄后的最终形态——**不注册工具、不做 UI，只提供插件接口**，语义是「**传入 url 和 id，返回可直接 import 的库文件**」。
 
 Host 服务 `libCache`：`fetch(url, id, {version})` 下载并缓存、返回 `{id, version, file, bytes, sha256, contentType, source, etag, path, route, url}`；
 
@@ -38,7 +38,7 @@ Client 半的真实加载——新增 `dsh.client` 声明要重载一次 App 才
 
 ## 新插件「Mermaid 渲染」
 
-（`D:\Projects\Deepseek_Harness_Workspace\dsh-mermaid`，包 `@local/dsh-mermaid` v0.1.0，desktop profile bundle，行 id `mermaid`）：Host 半把 mermaid **12.2.0** 的浏览器构建 `dist/mermaid.min.js`（**5,494,801 B**，sha256 `a8a6a6f8…`，单文件、末尾 `globalThis["mermaid"]=…`，无相对 import）预下载进 dsh-lib-cache（id `mermaid`），再注册 `POST /mermaid/report` 与 `GET /mermaid/state`；
+（`〈工作区〉/dsh-mermaid`，包 `@local/dsh-mermaid` v0.1.0，desktop profile bundle，行 id `mermaid`）：Host 半把 mermaid **12.2.0** 的浏览器构建 `dist/mermaid.min.js`（**5,494,801 B**，sha256 `a8a6a6f8…`，单文件、末尾 `globalThis["mermaid"]=…`，无相对 import）预下载进 dsh-lib-cache（id `mermaid`），再注册 `POST /mermaid/report` 与 `GET /mermaid/state`；
 
 Client 半用 `ctx.get('libCache').script('mermaid')` 载入后渲染图表。
 

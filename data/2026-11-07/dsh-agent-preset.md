@@ -38,7 +38,7 @@ chat 的完整声明仍留在 `cordis.patch.yml.bak-1793979631010` 第 598–628
 
 ## 新增桌面版插件 **`@local/dsh-preset-swi…
 
-新增桌面版插件 **`@local/dsh-preset-switch`（「预设切换」）**（源目录 `D:\Projects\Deepseek_Harness_Workspace\dsh-preset-switch`，bundle 行 id `preset-switch`，desktop profile，`install_bundle` 返回 applied、warnings 空）：会话中途**切换主 Agent Preset** 的模型工具 `switch_agent_preset`（参数只有 `id`，省略＝配置里的默认预设）。
+新增桌面版插件 **`@local/dsh-preset-switch`（「预设切换」）**（源目录 `〈工作区〉/dsh-preset-switch`，bundle 行 id `preset-switch`，desktop profile，`install_bundle` 返回 applied、warnings 空）：会话中途**切换主 Agent Preset** 的模型工具 `switch_agent_preset`（参数只有 `id`，省略＝配置里的默认预设）。
 
 实现链＝`agentPresets.resolve(id)` → 拒 `broken` → **`recompose(agent.ctx, id)`**（绕过 select 的「会话已开始就锁」）→ 用 `acquireScope(id)` + `tools.schemas(scope)` 读切换前后的工具表（含全局层）→ **`agent.inject(createUserMessage({...}))`** 投递一条 `[preset-switch]` **插件通知**（`source: {kind:'preset-switch', form:'notice', summary}`），内容是 旧→新 预设、工具增删与当前工具表、以及新预设的**完整声明（含 persona）**；
 

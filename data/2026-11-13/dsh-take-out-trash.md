@@ -2,7 +2,7 @@
 
 ## 新增 DSH 插件 **`@local/take-out-tra…
 
-新增 DSH 插件 **`@local/take-out-trash`（回收站删除）**（源目录 `D:\Projects\Deepseek_Harness_Workspace\take-out-trash`，bundle 行 id `take-out-trash`，desktop profile，`install_bundle` 以本地目录装入返回 `application: applied`、warnings 空，entry `include:take-out-trash` active，未声明 Config（status absent））。
+新增 DSH 插件 **`@local/take-out-trash`（回收站删除）**（源目录 `〈工作区〉/take-out-trash`，bundle 行 id `take-out-trash`，desktop profile，`install_bundle` 以本地目录装入返回 `application: applied`、warnings 空，entry `include:take-out-trash` active，未声明 Config（status absent））。
 
 只提供一个模型工具 **`trash`**（`paths: string[]`，1–200 项，绝对路径或相对会话工作区；
 
@@ -26,7 +26,7 @@
 
 找到 → `trashed`，找不到 → `unverified`（明确写「已移除但未确认进入回收站」）。输出 `TRASH_OK <base64 json>` / `TRASH_ERROR <base64 文本>`，两者都 exit 0（避免 stderr 读不到）。
 
-**macOS / Linux**：macOS 先 `osascript` 让 Finder delete 并复查路径，再用 `~/.Trash` 同卷移动兜底；
+**macOS / Linux**：macOS 先 `osascript` 让 Finder delete 并复查路径，再用 `〈用户目录〉/.Trash` 同卷移动兜底；
 
 Linux 直接按 freedesktop 规范写 `.trashinfo`（`Path` / `DeletionDate`，跨卷用 `<topdir>/.Trash/<uid>` 或 `<topdir>/.Trash-<uid>`，Path 相对 topdir）并移入 `files/`。
 

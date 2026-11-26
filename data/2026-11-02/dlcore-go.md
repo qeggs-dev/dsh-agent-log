@@ -1,8 +1,8 @@
 <!-- 20261102-001 -->
 
-## 新增项目 **dlcore** 于 `D
+## 新增项目 **dlcore** 于 `〈工作区〉/dlcore/…
 
-\Projects\Deepseek_Harness_Workspace\dlcore\`（Go 1.27.3，零外部依赖，约 2100 行）：多来源分片下载内核。
+新增项目 **dlcore** 于 `〈工作区〉/dlcore/`（Go 1.27.3，零外部依赖，约 2100 行）：多来源分片下载内核。
 
 用户 2026-11-02 拍板「**专用设计，尽可能不被 API 影响高性能结构**」——不兼容 ADv1、不含 aria2 层，`internal/core` 里没有任何外部协议概念（无 gid / bitfield / status 枚举）。
 
@@ -24,7 +24,7 @@ GET+Range 探测（不用 HEAD）、`Content-Range` 逐片校验、长度不一�
 
 ①`handlePrepare` 无条件设 active，会把「探测阶段按的暂停」吞掉；②状态文件原是调度循环内同步写，本机过滤驱动下实测让一条 `Pause` 命令延迟 **180ms**，已改为快照 + 独立 writer goroutine、退出时同步刷最后一份。
 
-**产物位置**按 20261101-003：构建到 `G:\work\dlcore\out\`、可执行副本在 `G:\work\dlcore\run\`。
+**产物位置**按 20261101-003：构建到 `〈工作目录〉/dlcore/out/`、可执行副本在 `〈工作目录〉/dlcore/run/`。
 
 ### 已知限制
 

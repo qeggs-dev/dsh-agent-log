@@ -1,8 +1,8 @@
 <!-- 20261104-001 -->
 
-## 新增项目 **Cordis 宿主 App**（暂定目录 `D
+## 新增项目 **Cordis 宿主 App**（暂定目录 `〈工作…
 
-\Projects\Deepseek_Harness_Workspace\cordis-host\`）：目标是在**一个 Android App 内同时跑三样东西**——Cordis 运行时、终端、Harness 式的自修改 Agent。
+新增项目 **Cordis 宿主 App**（暂定目录 `〈工作区〉/cordis-host/`）：目标是在**一个 Android App 内同时跑三样东西**——Cordis 运行时、终端、Harness 式的自修改 Agent。
 
 ### 关键技术事实
 
@@ -34,13 +34,13 @@ M0 解析器+MVP → 难题速验（pty 真交互 / 禁 `!!js` / 坏重载回滚
 
 ### 环境
 
-本机无 Android SDK、无 gradle，JDK 18（AGP 要 17/21，建议并装 21），adb 在 `D:\ADB\adb.exe`；npm 缓存在沙箱外会 EPERM，需指到工作区内。
+本机无 Android SDK、无 gradle，JDK 18（AGP 要 17/21，建议并装 21），adb 在 `〈本机路径〉`；npm 缓存在沙箱外会 EPERM，需指到工作区内。
 
 <!-- 20261104-003 -->
 
-## Cordis 宿主 App **MVP 已交付并全绿**（`D
+## Cordis 宿主 App **MVP 已交付并全绿**（`〈工…
 
-\Projects\Deepseek_Harness_Workspace\cordis-host\`，依赖只有 `cordis@4.0.0-rc.12` + `yaml@2.9.1`，21 项 `node --test --test-isolation=none "test/*.test.ts"` 全过，约 1.0s）。
+Cordis 宿主 App **MVP 已交付并全绿**（`〈工作区〉/cordis-host/`，依赖只有 `cordis@4.0.0-rc.12` + `yaml@2.9.1`，21 项 `node --test --test-isolation=none "test/*.test.ts"` 全过，约 1.0s）。
 
 ### 已实现
 
@@ -84,7 +84,7 @@ M0 解析器+MVP → 难题速验（pty 真交互 / 禁 `!!js` / 坏重载回滚
 
 ### 真 pty 验收通过
 
-`verify/m1/terminal-real.ts` 在 `G:\work\cordis-host\run` 里经 `super_workspace_exec` 跑真 pwsh，得到 `exitCode 0 / sawMarker / sawCols`，dispose 后 `registrySize 0`——即「终端服务能驱动真 ConPTY 且不留残留」已被端到端证明；
+`verify/m1/terminal-real.ts` 在 `〈工作目录〉/cordis-host/run` 里经 `super_workspace_exec` 跑真 pwsh，得到 `exitCode 0 / sawMarker / sawCols`，dispose 后 `registrySize 0`——即「终端服务能驱动真 ConPTY 且不留残留」已被端到端证明；
 
 `node --test` 全部用假终端，不依赖 spawn。
 

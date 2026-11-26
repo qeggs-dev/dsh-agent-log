@@ -2,7 +2,7 @@
 
 ## 新增 DSH 客户端插件 Token 总用量（包名 `@loca…
 
-新增 DSH 客户端插件 Token 总用量（包名 `@local/dsh-usage-total`，源码 `D:\Projects\Deepseek_Harness_Workspace\dsh_plugins\dsh-usage-total`，独立 git 仓库，提交 39ed6fc / a7ed982，bundle 行 id `dsh-usage-total`，已 install_bundle 装入 desktop profile 并 live 生效）。
+新增 DSH 客户端插件 Token 总用量（包名 `@local/dsh-usage-total`，源码 `〈工作区〉/dsh_plugins/dsh-usage-total`，独立 git 仓库，提交 39ed6fc / a7ed982，bundle 行 id `dsh-usage-total`，已 install_bundle 装入 desktop profile 并 live 生效）。
 
 ### 需求
 

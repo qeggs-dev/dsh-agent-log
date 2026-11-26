@@ -2,7 +2,7 @@
 
 ## Session Utils 插件（`@local/dsh-ses…
 
-Session Utils 插件（`@local/dsh-session-utils`，目录 `D:\Projects\Deepseek_Harness_Workspace\dsh-session-utils`）提供 10 个 Agent 工具：workspace_list / session_exists / session_create / session_list / session_send / session_wait / session_cancel_sleep / session_fork / session_archive / session_move。
+Session Utils 插件（`@local/dsh-session-utils`，目录 `〈工作区〉/dsh-session-utils`）提供 10 个 Agent 工具：workspace_list / session_exists / session_create / session_list / session_send / session_wait / session_cancel_sleep / session_fork / session_archive / session_move。
 
 **所有工具都接受可选 `workspace_id`（id/标题/路径）：给出时目标会话必须属于该工作区，并作为这次调用的跨工作区授权，不再需要 allowCrossWorkspace**（用户 2026-11-13 明确选择「显式指定即授权」）；省略时按调用者工作区。操作性工具对非完全权限发起方每次一次审批；
 

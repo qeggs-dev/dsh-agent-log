@@ -12,7 +12,7 @@ GDL 第三个下载后端（三段长条按钮 GDL/ADL/直接、-pps 事件进�
 
 ### 产物
 
-`D:\Projects\MC-Downloader-build\MC-Downloader-0.2.0-Setup.exe`（106.40 MB，FileVersion/ProductVersion=0.2.0，CompanyName=MC Downloader，SHA256 `94eb0f8e4898de0c6951a7e0919427e61b875597ed1a8495d70384b5d427ca23`）+ blockmap；
+`〈项目目录〉/MC-Downloader-build/MC-Downloader-0.2.0-Setup.exe`（106.40 MB，FileVersion/ProductVersion=0.2.0，CompanyName=MC Downloader，SHA256 `94eb0f8e4898de0c6951a7e0919427e61b875597ed1a8495d70384b5d427ca23`）+ blockmap；
 
 `win-unpacked` 368 MB；打包后 smoke exit 0；asar 内部 version 已确认为 0.2.0（无 0.1.0 残留）。旧的 0.1.0 安装包已删，避免同名混淆。
 
@@ -20,13 +20,11 @@ GDL 第三个下载后端（三段长条按钮 GDL/ADL/直接、-pps 事件进�
 
 ## mcdl 的构建产物已按**工作区约定**归位（用户要求「构建能…
 
-mcdl 的构建产物已按**工作区约定**归位（用户要求「构建能不能遵循一下工作区约定」，指 AGENTS.md「其他工作区」+ 记忆 20261101-003/005）：新建 `G:\work\projects\mcdl\{out,run}`，把 0.2.0 全套产物从 `D:\Projects\MC-Downloader-build` 移到 **`G:\work\projects\mcdl\out\`**（`MC-Downloader-0.2.0-Setup.exe` 106.4 MB、blockmap、`win-unpacked\`、builder-debug.yml），旧目录已删；
+mcdl 的构建产物已按**工作区约定**归位（用户要求「构建能不能遵循一下工作区约定」，指 AGENTS.md「其他工作区」+ 记忆 20261101-003/005）：新建 `〈项目目录〉/mcdl/{out,run}`，把 0.2.0 全套产物从 `〈项目目录〉/MC-Downloader-build` 移到 **`〈项目目录〉/mcdl/out/`**（`MC-Downloader-0.2.0-Setup.exe` 106.4 MB、blockmap、`win-unpacked\`、builder-debug.yml），旧目录已删；
 
-`run\` 预留给「可执行副本 + 独立 userData」（GUI 测试用）。新位置 smoke exit 0，哈希不变（`94eb0f8e…`）。
+`run\` 预留给「可执行副本 + 独立 userData」（GUI 测试用）。新位置 smoke exit 0，哈希不变（`94eb0f8e…`）。今后构建命令固定为 `electron-builder --win nsis --config.directories.output=〈项目目录〉/mcdl/out`；
 
-今后构建命令固定为 `electron-builder --win nsis --config.directories.output=G:\work\projects\mcdl\out`；README 打包段已同步（含 out/run 与第二工作区只做实验场的说明；
-
-旧示例路径 D:\build\mcdl-out 已换掉）。
+README 打包段已同步（含 out/run 与第二工作区只做实验场的说明；旧示例路径 〈本机路径〉 已换掉）。
 
 <!-- 20261114-028 -->
 
@@ -44,8 +42,6 @@ mcdl 的构建产物已按**工作区约定**归位（用户要求「构建能�
 
 初始 1240x820 → SetWindowPos 到 1100x700 @ (140,110) → 关窗 → json 精确保存这四个值 → 重启恢复 1100x700；最大化后再关窗 → json `maximized:true`（正常尺寸仍保留 1240x820）→ 重启 IsZoomed=True。
 
-测试后已删掉状态文件恢复默认。
-
-安装包重打（含本功能）：`G:\work\projects\mcdl\out\MC-Downloader-0.2.0-Setup.exe` 106.40 MB，SHA256 `ff52a2d0032d712b740f06f2953a9ef5118dc21c9a514ab3c62c6ac86c34b6be`；
+测试后已删掉状态文件恢复默认。安装包重打（含本功能）：`〈项目目录〉/mcdl/out/MC-Downloader-0.2.0-Setup.exe` 106.40 MB，SHA256 `ff52a2d0032d712b740f06f2953a9ef5118dc21c9a514ab3c62c6ac86c34b6be`；
 
 README 顶部功能列表已补一条。

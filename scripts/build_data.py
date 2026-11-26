@@ -173,9 +173,46 @@ def reflow(text: str, width: int = 160) -> str:
     return "\n\n".join(out)
 
 
+# 本机路径 / 环境相关前缀 → 通用占位符（保留有用的相对部分，去掉机器信息）
+PATH_RULES: list[tuple[re.Pattern[str], str]] = [
+    (re.compile(r"[A-Za-z]:\\Projects\\Deepseek_Harness_Workspace", re.I), "〈工作区〉"),
+    (re.compile(r"[A-Za-z]:\\Projects\\DSH_Normal_Workspace", re.I), "〈第二工作区〉"),
+    (re.compile(r"[A-Za-z]:\\Projects\\", re.I), "〈项目目录〉/"),
+    (re.compile(r"[A-Za-z]:\\Interesting_projects\\", re.I), "〈源码目录〉/"),
+    (re.compile(r"[A-Za-z]:\\work\\projects\\", re.I), "〈项目目录〉/"),
+    (re.compile(r"[A-Za-z]:\\work\\", re.I), "〈工作目录〉/"),
+    (re.compile(r"[A-Za-z]:\\Deepseek_Harness_Temp", re.I), "〈临时目录〉"),
+    (re.compile(r"[A-Za-z]:\\Temp(?=[\\\s`'\"]|$)", re.I), "〈临时目录〉"),
+    (re.compile(r"[A-Za-z]:\\Users\\[^\\\s`'\"]+", re.I), "〈用户目录〉"),
+    (re.compile(r"[A-Za-z]:\\Apps\\", re.I), "〈安装目录〉/"),
+    (re.compile(r"[A-Za-z]:\\Program Files(?: \(x86\))?\\", re.I), "〈安装目录〉/"),
+    (re.compile(r"[A-Za-z]:\\Windows\\", re.I), "〈系统目录〉/"),
+    (re.compile(r"[A-Za-z]:\\[^\s`'\"()<>|，。；：]*"), "〈本机路径〉"),
+    (re.compile(r"~[/\\]"), "〈用户目录〉/"),
+]
+
+TOKEN_PATH = re.compile(r"(〈[^〉]+〉[^\s`'\"()<>|，。；：]*)")
+
+
+def _slash(match: re.Match[str]) -> str:
+    return match.group(1).replace("\\", "/")
+
+
+def sanitize(text: str) -> str:
+    """去掉本机特定路径，只留能公开的部分。
+
+    已知前缀换成占位符并保留相对路径（`〈工作区〉/evo-world/`），
+    其余盘符路径一律换成 `〈本机路径〉`；`~/` 换成 `〈用户目录〉/`。
+    """
+    out = text
+    for pattern, repl in PATH_RULES:
+        out = pattern.sub(repl, out)
+    return TOKEN_PATH.sub(_slash, out)
+
+
 def entry_block(item: dict, images: list[str]) -> str:
     """一条条目 → Markdown：隐藏的 id 注释 + 标题 + 正文 + 相对链接的配图。"""
-    title, body = split_title(item["content"])
+    title, body = split_title(sanitize(item["content"]))
     parts = [f"<!-- {item['id']} -->", f"## {title}"]
     if body:
         parts.append(reflow(body))
@@ -617,6 +654,16 @@ def self_test() -> int:
     label, body = take_label("**实测**（宿主内）：这里是一段足够长的正文内容。")
     assert label == "实测" and body.startswith("宿主内："), (label, body)
     assert take_label("普通的一句话，没有标签。")[0] is None
+
+    # 本机路径脱敏：去掉机器信息、保留能公开的相对部分
+    assert sanitize(r"落在 D:\Projects\Deepseek_Harness_Workspace\evo-world\ 里") == (
+        "落在 〈工作区〉/evo-world/ 里"
+    )
+    assert sanitize(r"`C:\Users\Administrator-Local\.dsh\x`") == "`〈用户目录〉/.dsh/x`"
+    assert sanitize("见 ~/.ssh/id_ed25519") == "见 〈用户目录〉/.ssh/id_ed25519"
+    assert sanitize(r"R:\Temp") == "〈临时目录〉"
+    assert sanitize(r"装在 D:\Apps\Adobe\Pr") == "装在 〈安装目录〉/Adobe/Pr"
+    assert sanitize(r"奇怪的位置 E:\somewhere\x") == "奇怪的位置 〈本机路径〉"
 
     print("self-test ok")
     return 0

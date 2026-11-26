@@ -2,7 +2,7 @@
 
 ## 新增桌面版插件 **`@local/dsh-tool-ask-a…
 
-新增桌面版插件 **`@local/dsh-tool-ask-approval`**（源目录 `D:\Projects\Deepseek_Harness_Workspace\dsh-tool-ask-approval`，bundle 行 id `tool-ask-approval`，desktop profile，`install_bundle` 返回 `application: applied`，warnings 为空）：把 Host 审批接缝 `ctx.approval.request` 原样包成模型工具 `request_approval`——参数只有一个 `content`（任意文本，作为 `reason` 原样成为浏览器审批卡片正文），返回 `{ outcome }` ∈ `allowed-once` / `rejected` / `cancelled` / `unavailable`；
+新增桌面版插件 **`@local/dsh-tool-ask-approval`**（源目录 `〈工作区〉/dsh-tool-ask-approval`，bundle 行 id `tool-ask-approval`，desktop profile，`install_bundle` 返回 `application: applied`，warnings 为空）：把 Host 审批接缝 `ctx.approval.request` 原样包成模型工具 `request_approval`——参数只有一个 `content`（任意文本，作为 `reason` 原样成为浏览器审批卡片正文），返回 `{ outcome }` ∈ `allowed-once` / `rejected` / `cancelled` / `unavailable`；
 
 **工具自身不改任何权限或会话状态**，批准与拒绝都算调用成功（结果文案直接说明）。
 
@@ -22,7 +22,7 @@
 
 ## 新增桌面版插件 **`@local/dsh-readable-p…
 
-新增桌面版插件 **`@local/dsh-readable-preset`（「可读预设」）**（源目录 `D:\Projects\Deepseek_Harness_Workspace\dsh-readable-preset`，bundle 行 id `readable-preset`，desktop profile，`install_bundle` 返回 applied、warnings 空）：把 AgentPreset 当文件来读/装/卸。
+新增桌面版插件 **`@local/dsh-readable-preset`（「可读预设」）**（源目录 `〈工作区〉/dsh-readable-preset`，bundle 行 id `readable-preset`，desktop profile，`install_bundle` 返回 applied、warnings 空）：把 AgentPreset 当文件来读/装/卸。
 
 ### 三个全局工具
 

@@ -8,4 +8,4 @@
 
 ③`break` / `buffer` 只有形状没有语义（`cancel_count: 0`、恒 404），真取消要对 Session 调 `sessionController.cancel`，且会波及同 Session 的其它调用方；④流式是「每步一条完整消息」而不是逐 token；
 
-⑤实机验证留下两个真实 Session（`.tmp-live` 已删；答案「收到」那条挂在 `D:\Projects\Deepseek_Harness_Workspace` 下），要清理得在 GUI 里删。
+⑤实机验证留下两个真实 Session（`.tmp-live` 已删；答案「收到」那条挂在 `〈工作区〉` 下），要清理得在 GUI 里删。

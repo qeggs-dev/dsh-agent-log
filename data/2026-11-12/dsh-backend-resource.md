@@ -2,7 +2,7 @@
 
 ## 新增插件 **`@local/backend-resource`…
 
-新增插件 **`@local/backend-resource`**（工作区 `D:\Projects\Deepseek_Harness_Workspace\backend-resource\`，v1.0.0，bundle 行 id `backend-resource` / entry `include:backend-resource`，`install_bundle` 以本地目录装入 desktop profile → `application: applied`、warnings 空）：用户要求「像 DSH 后台任务那样管理后台资源，并提供与后台任务一样的可关闭 UI，提供插件接口可以注册任何 JS 对象并注册取消回调」。
+新增插件 **`@local/backend-resource`**（工作区 `〈工作区〉/backend-resource/`，v1.0.0，bundle 行 id `backend-resource` / entry `include:backend-resource`，`install_bundle` 以本地目录装入 desktop profile → `application: applied`、warnings 空）：用户要求「像 DSH 后台任务那样管理后台资源，并提供与后台任务一样的可关闭 UI，提供插件接口可以注册任何 JS 对象并注册取消回调」。
 
 ### Host 半
 

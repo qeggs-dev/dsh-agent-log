@@ -2,7 +2,7 @@
 
 ## 最终交付：工作区级普通会话 + 权限上限
 
-（`D:\Projects\Deepseek_Harness_Workspace\dsh-scoped-session`，包 `@local/dsh-scoped-session` v1.0.0，desktop profile bundle，行 id `scoped-session`，`application: applied`；
+（`〈工作区〉/dsh-scoped-session`，包 `@local/dsh-scoped-session` v1.0.0，desktop profile bundle，行 id `scoped-session`，`application: applied`；
 
 前一个 `@local/dsh-scoped-subagent` 已卸载并删除目录，见归档 007）。
 

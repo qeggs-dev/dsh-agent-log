@@ -2,7 +2,7 @@
 
 ## 新增 DSH Host 插件 **子智能体广播**（包 `@lo…
 
-新增 DSH Host 插件 **子智能体广播**（包 `@local/subagent-broadcast`，源码 `D:\Projects\Deepseek_Harness_Workspace\dsh_plugins\subagent-broadcast`，独立 git 仓库，提交 44de070）。
+新增 DSH Host 插件 **子智能体广播**（包 `@local/subagent-broadcast`，源码 `〈工作区〉/dsh_plugins/subagent-broadcast`，独立 git 仓库，提交 44de070）。
 
 注册工具 `subagent_broadcast`：必填 `description`（≤500 字符单行，审计用途，结果带 Purpose 行）、`message`（≤16000 字符，可多行）、`members`（字符串 "all" 或非空子智能体 session id 数组；
 

@@ -2,7 +2,7 @@
 
 ## 新增 DSH 插件 **`@local/dsh-todo-lis…
 
-新增 DSH 插件 **`@local/dsh-todo-list`（TODO 列表）**（源目录 `D:\Projects\Deepseek_Harness_Workspace\dsh-todo-list`，bundle 行 id `todo-list`，desktop profile，`install_bundle` 返回 `application: applied`、warnings 空，四个工具当场出现在工具表）。
+新增 DSH 插件 **`@local/dsh-todo-list`（TODO 列表）**（源目录 `〈工作区〉/dsh-todo-list`，bundle 行 id `todo-list`，desktop profile，`install_bundle` 返回 `application: applied`、warnings 空，四个工具当场出现在工具表）。
 
 ### 四个模型工具
 

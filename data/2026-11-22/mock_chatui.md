@@ -2,7 +2,7 @@
 
 ## mock_chatui（聊天记录工坊）
 
-项目位于 D:\Projects\Deepseek_Harness_Workspace\mock_chatui。
+项目位于 〈工作区〉/mock_chatui。
 
 ### 多页静态网页
 

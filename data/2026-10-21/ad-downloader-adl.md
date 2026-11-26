@@ -1,8 +1,8 @@
 <!-- 20261021-001 -->
 
-## 新增项目 **AD Downloader** 于 `D
+## 新增项目 **AD Downloader** 于 `〈工作区〉/…
 
-\Projects\Deepseek_Harness_Workspace\adl\`（TS + Electron 44 + esbuild，UI 无框架）：多资源分片并发下载器，任务包为 ADv1 JSON。
+新增项目 **AD Downloader** 于 `〈工作区〉/adl/`（TS + Electron 44 + esbuild，UI 无框架）：多资源分片并发下载器，任务包为 ADv1 JSON。
 
 核心层 `src/core/` 不依赖 Electron（ranges / net / transfer / scheduler / sink / state / taskfile / engine），27 项 `node --test` 单测全过；
 

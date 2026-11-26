@@ -30,4 +30,4 @@ state 的 `sleepAvailable`/`sleepEvents` 换成 `providers`，cancel 的 `byKind
 
 ### 另一处变化
 
-工作区重组，本地插件从根目录移到 `D:\Projects\Deepseek_Harness_Workspace\dsh_plugins\<name>`，profile 的 link 已指向新路径。
+工作区重组，本地插件从根目录移到 `〈工作区〉/dsh_plugins/<name>`，profile 的 link 已指向新路径。

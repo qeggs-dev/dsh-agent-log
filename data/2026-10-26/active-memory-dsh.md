@@ -2,7 +2,7 @@
 
 ## 新插件「Active memory」
 
-（`D:\Projects\Deepseek_Harness_Workspace\dsh-active-memory`，包 `@local/dsh-active-memory` v1.0.0，desktop profile bundle，entry `include:active-memory`，`application: applied`）：主动记录 + 被动读取。
+（`〈工作区〉/dsh-active-memory`，包 `@local/dsh-active-memory` v1.0.0，desktop profile bundle，entry `include:active-memory`，`application: applied`）：主动记录 + 被动读取。
 
 `memory_record` 按 mode 存 RolePlay（emotion/scene/event）或 Work（item/solution/fallback/communication）；
 

@@ -2,7 +2,7 @@
 
 ## 可读预设「列出预设是空的／一直加载中」已修
 
-（源目录 `D:\Projects\Deepseek_Harness_Workspace\dsh-readable-preset`，版本 1.0.1）。
+（源目录 `〈工作区〉/dsh-readable-preset`，版本 1.0.1）。
 
 ### 症状
 

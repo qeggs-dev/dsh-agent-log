@@ -58,7 +58,7 @@
 
 ## 新插件「会话桥接」
 
-（`D:\Projects\Deepseek_Harness_Workspace\dsh-session-bridge`，包 `@local/dsh-session-bridge` v1.0.0，desktop profile bundle，行 id `session-bridge`，`application: applied`）：一半是 Client（输入框左侧 `conversation.input.left` 里 id `session-id-copy` order 10 的紧凑控件「会话 ID」，点击复制当前 Session ID，就地显示「已复制/复制失败」1.6 秒，悬停标题带完整 id），一半是 Host 工具 `read_session({ sessionId, limit?, includeToolCalls? })`。
+（`〈工作区〉/dsh-session-bridge`，包 `@local/dsh-session-bridge` v1.0.0，desktop profile bundle，行 id `session-bridge`，`application: applied`）：一半是 Client（输入框左侧 `conversation.input.left` 里 id `session-id-copy` order 10 的紧凑控件「会话 ID」，点击复制当前 Session ID，就地显示「已复制/复制失败」1.6 秒，悬停标题带完整 id），一半是 Host 工具 `read_session({ sessionId, limit?, includeToolCalls? })`。
 
 ### 三条运行版事实
 
@@ -82,7 +82,7 @@
 
 ### 已实测
 
-读本工作区的 `session-89937820-…`（2 条）与 `session-9a9a7f3b-…`（4 条，含 `write`/`read` 工具行）正常；读 `D:\Projects\QQBot\DSH\Workspace` 下的会话被拒并给出原因；不存在的 id 报「找不到会话」。
+读本工作区的 `session-89937820-…`（2 条）与 `session-9a9a7f3b-…`（4 条，含 `write`/`read` 工具行）正常；读 `〈项目目录〉/QQBot/DSH/Workspace` 下的会话被拒并给出原因；不存在的 id 报「找不到会话」。
 
 ### 未验证
 

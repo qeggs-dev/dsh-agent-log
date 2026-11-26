@@ -2,7 +2,7 @@
 
 ## `trash` 工具加必填 `description`（R-005 合规），并把模型可见文案全部改成英文（R-006）
 
-（`D:\Projects\Deepseek_Harness_Workspace\dsh_plugins\take-out-trash`，commit `6b94379`，重启加载后已实测）。
+（`〈工作区〉/dsh_plugins/take-out-trash`，commit `6b94379`，重启加载后已实测）。
 
 ### 新参数
 

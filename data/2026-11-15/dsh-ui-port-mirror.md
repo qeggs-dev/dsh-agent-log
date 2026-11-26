@@ -10,7 +10,7 @@ zip 根是 `dsh-ui-port-mirror\`，4 条目：`SKILL.md`（frontmatter name/desc
 
 安装= `plugin_manager install_bundle` 指向 tgz 绝对路径，目录安装会记成 link: 并随目录存亡）、`references\lan-access.md`、`references\verification.md`、`plugin\dsh-ui-port-mirror-0.2.0.tgz`；
 
-整包解压进 skill 根（`~/.dsh/skills`、项目 `.dsh/skills`）即按「目录包 SKILL.md、深度一层」被发现。
+整包解压进 skill 根（`〈用户目录〉/.dsh/skills`、项目 `.dsh/skills`）即按「目录包 SKILL.md、深度一层」被发现。
 
 **打包源在仓库 `packaging\`**：`packaging\skill\` 是手写 SKILL.md 与 references，`packaging\build.ps1` 先 `pnpm pack`（读 `files` 白名单）再把三段 stage 成 zip；
 

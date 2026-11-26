@@ -2,7 +2,7 @@
 
 ## 新增插件 dsh-developer-console（包名 @l…
 
-新增插件 dsh-developer-console（包名 @local/dsh-developer-console，目录 D:\Projects\Deepseek_Harness_Workspace\dsh_plugins\dsh-developer-console，已 git 初始化、5 个提交），提供模型工具 developer_console：把一段 JavaScript 投递到每个已连接的 DSH 页面控制台（页面 DevTools）执行，并按页面回传完成值或异常。
+新增插件 dsh-developer-console（包名 @local/dsh-developer-console，目录 〈工作区〉/dsh_plugins/dsh-developer-console，已 git 初始化、5 个提交），提供模型工具 developer_console：把一段 JavaScript 投递到每个已连接的 DSH 页面控制台（页面 DevTools）执行，并按页面回传完成值或异常。
 
 用户明确要求「内容」= 执行 JavaScript 并回传结果、投递给所有在线页面。
 

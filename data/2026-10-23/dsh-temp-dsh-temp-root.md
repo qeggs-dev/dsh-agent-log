@@ -26,17 +26,17 @@
 
 profile 自己的 `cordis.patch.yml` 的 temp 段只剩注释与 `- id: spill-local` 的 root 覆盖，旧手写 `file://` 行已删。
 
-重启后实测 `TMPDIR=D:\Deepseek_Harness_Temp`、`TEMP`/`TMP`= 它下面的 `dsh-<rand>` scratch，pwsh 与写文件均正常。**bundle patch 不在 HMR 监听范围**（只有 profile 自己的 patch 是），改它要重启。
+重启后实测 `TMPDIR=〈临时目录〉`、`TEMP`/`TMP`= 它下面的 `dsh-<rand>` scratch，pwsh 与写文件均正常。**bundle patch 不在 HMR 监听范围**（只有 profile 自己的 patch 是），改它要重启。
 
 <!-- 20261023-036 -->
 
 ## 换 temp-root 行/实现的坑（本次差点踩中）
 
-两个 temp-root 实例同时活着时，**先卸载的那个会把 env 还原成自己 apply 前的值** —— `restore()` 只判断「当前值是否仍等于自己写的 root」，两个实例写的 root 相同就区分不开，于是进程退回 `R:\Temp`（沙箱与所有受限调用全挂）。
+两个 temp-root 实例同时活着时，**先卸载的那个会把 env 还原成自己 apply 前的值** —— `restore()` 只判断「当前值是否仍等于自己写的 root」，两个实例写的 root 相同就区分不开，于是进程退回 `〈临时目录〉`（沙箱与所有受限调用全挂）。
 
 ### 本次实际顺序
 
-①profile patch 里把旧行 id 改名 `temp-root` → `temp-root-legacy`（避免与 bundle 行同 id）②`install_bundle` ③删掉旧行（此时 env 确实被还原成 `R:\Temp`）④立刻重启，由 bundle 行在 boot 时重新采纳。
+①profile patch 里把旧行 id 改名 `temp-root` → `temp-root-legacy`（避免与 bundle 行同 id）②`install_bundle` ③删掉旧行（此时 env 确实被还原成 `〈临时目录〉`）④立刻重启，由 bundle 行在 boot 时重新采纳。
 
 ### 更稳的顺序
 

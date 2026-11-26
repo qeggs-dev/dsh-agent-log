@@ -20,6 +20,6 @@
 
 点卡片本体（只是跳转）不算决定，会再问一次、最多两次；超时（默认 300s）或回合中断按取消；没有 notice 插件时整条机制关闭（策略保持 never）。
 
-实跑（notice-probe-2，越权写 G:\work\projects\_subagent-access-notice-test.txt）：确实弹出「子代理请求审批」卡片、300s 未作答 → 卡片超时、请求按 cancelled、写入保持被拒、文件未创建（fail-closed 验证通过）；
+实跑（notice-probe-2，越权写 〈项目目录〉/_subagent-access-notice-test.txt）：确实弹出「子代理请求审批」卡片、300s 未作答 → 卡片超时、请求按 cancelled、写入保持被拒、文件未创建（fail-closed 验证通过）；
 
 「允许一次 → 真正写入」也已实跑（notice-probe-3：用户点「允许一次」后数秒内获批，文件写入成功、内容核对为 notice-test-ok，随后移入回收站）。44 个单测覆盖两个工具、自动恢复控制器与 notice 分支（假宿主）。

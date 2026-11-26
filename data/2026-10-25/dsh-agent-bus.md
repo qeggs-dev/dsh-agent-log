@@ -1,8 +1,8 @@
 <!-- 20261025-001 -->
 
-## 工作区新增本地插件 **Agent Bus**（`D
+## 工作区新增本地插件 **Agent Bus**（`〈工作区〉/d…
 
-\Projects\Deepseek_Harness_Workspace\dsh-agent-bus`，包名 `@local/dsh-agent-bus` v1.0.0；
+工作区新增本地插件 **Agent Bus**（`〈工作区〉/dsh-agent-bus`，包名 `@local/dsh-agent-bus` v1.0.0；
 
 已装进 desktop profile，patch 行 id `agent-bus` / entry `include:agent-bus`，`application: applied`）：补上内置 `send_message` 只能「直接父 ↔ 直接子」的缺口，让同一会话树里任意两个 Agent 直接通信。
 

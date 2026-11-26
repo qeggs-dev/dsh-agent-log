@@ -1,12 +1,10 @@
 <!-- 20261019-001 -->
 
-## 项目在 `D
+## 项目在 `〈工作区〉/mod-audit/`（git 仓库、`m…
 
-\Projects\Deepseek_Harness_Workspace\mod-audit\`（git 仓库、`main` 分支、无远端）。
+项目在 `〈工作区〉/mod-audit/`（git 仓库、`main` 分支、无远端）。形态是**纯静态分析器**：无框架无构建，`index.html` 直接引 `analyzer.js` / `version.js` / `app.js`，拖入游戏目录就地分析、不上传任何文件；
 
-形态是**纯静态分析器**：无框架无构建，`index.html` 直接引 `analyzer.js` / `version.js` / `app.js`，拖入游戏目录就地分析、不上传任何文件；另配 Electron 桌面壳（`desktop\`）出安装包。
-
-当前版本 0.16.0，产物在 `D:\mod-audit-dist\`，安装到 `%LOCALAPPDATA%\Programs\mod-audit-desktop\`。核心判断是「**模组之间的关系**好查、单个模组自身问题难查」，故只判配对关系，单模组问题降级为提示；
+另配 Electron 桌面壳（`desktop\`）出安装包。当前版本 0.16.0，产物在 `〈本机路径〉`，安装到 `%LOCALAPPDATA%\Programs\mod-audit-desktop\`。核心判断是「**模组之间的关系**好查、单个模组自身问题难查」，故只判配对关系，单模组问题降级为提示；
 
 所有结论措辞一律「可能」+ 页头页尾声明静态分析不保证准确
 

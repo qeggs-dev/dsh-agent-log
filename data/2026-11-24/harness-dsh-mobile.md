@@ -24,4 +24,4 @@ attachment-local 是惰性 requireSharp，只有图片入库才需要）、@vsco
 
 ⑥DSH 的 agent 工具在 web profile 里挂在 preset 上（standard/cordis/ptc），Android 需要自己的 mobile preset，把 pwsh 换成 sh/bash、搜索换成自带 rg。
 
-代码拟放 G:\work\projects\dsh-mobile（第三工作区，构建需要完全权限），当前 spike 产物在 .tmp\mobile-spike。
+代码拟放 〈项目目录〉/dsh-mobile（第三工作区，构建需要完全权限），当前 spike 产物在 .tmp\mobile-spike。

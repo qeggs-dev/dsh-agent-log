@@ -24,7 +24,7 @@ smoke 18 项全过（DELETE 被触发器拒绝、extra.time 偏移 date_ts、tou
 
 ### 无硬编码
 
-install.py 的源工作区路径来自 `references/provenance.md`，pnpm 由 PATH 或 `~/.dsh/dsh-runtimes` 自动发现（注意 PATH 上的 `pnpm.CMD` 不能被 node 直接执行，必须用 pnpm.mjs）；
+install.py 的源工作区路径来自 `references/provenance.md`，pnpm 由 PATH 或 `〈用户目录〉/.dsh/dsh-runtimes` 自动发现（注意 PATH 上的 `pnpm.CMD` 不能被 node 直接执行，必须用 pnpm.mjs）；
 
 build.py 自测把 kit 解压到临时目录、目标工作区换到 kit 内、时区改 +05:30、用假 profile 跑 install + check + 重跑幂等性，全部通过。
 

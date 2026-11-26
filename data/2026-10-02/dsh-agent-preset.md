@@ -8,7 +8,7 @@
 
 故**任何被旧版授权过的根，在新版下的第一次 grant 必然不跳过、必然重付一次全树传播**；源码注释自陈 "a root granted by an earlier build receives the deny on its next provision"。
 
-`D:\Projects\QQBot`（230,264 文件）与本工作区**均已付完**，三条条件经 `Get-Acl` 实测全部成立，此后走 O(1) 跳过
+`〈项目目录〉/QQBot`（230,264 文件）与本工作区**均已付完**，三条条件经 `Get-Acl` 实测全部成立，此后走 O(1) 跳过
 
 <!-- 20261002-003 -->
 
@@ -16,7 +16,7 @@
 
 本机 NTFS 上「以可写方式打开文件再关闭」**不会**更新 LastWriteTime（实测 `FileAccess::ReadWrite` + `FileShare::ReadWrite` 的 open/close 前后时间戳完全相同，只读方式同样不变），只有真正写入数据才会。
 
-因此 `D:\Deepseek_Harness_Temp\dsh-acl-locks\*.lock` 的 mtime **恒等于其创建时间**，可用来读「DSH 第一次保护该路径的时刻」（QQBot=2026-09-23 15:05:11，本工作区=2026-09-17 23:17:42），但**不能**用来判断"是否发生过 DACL 写"。
+因此 `〈临时目录〉/dsh-acl-locks/*.lock` 的 mtime **恒等于其创建时间**，可用来读「DSH 第一次保护该路径的时刻」（QQBot=2026-09-23 15:05:11，本工作区=2026-09-17 23:17:42），但**不能**用来判断"是否发生过 DACL 写"。
 
 据此，此前"锁目录无写入 ⇒ 那个时段没有 ACL 操作"的推理已作废，相关结论已从 `dsh-stall-monitor\FINDINGS.md` 撤回
 

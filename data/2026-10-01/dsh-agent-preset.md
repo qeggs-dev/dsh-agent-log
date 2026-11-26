@@ -58,7 +58,7 @@ persona 现由工作区文件 `dsh-desktop-presets\personas\collab.txt` 维护�
 
 `dsh-temp-root` 插件已加 `ensureFullControl`（默认 true）：采纳 temp 根前用 `icacls <root> /grant "<DOMAIN\user>:(OI)(CI)F"` 补当前用户 FullControl（已存在或继承到就跳过；
 
-失败只警告并打印可照抄的命令，**绝不抛异常**——抛了插件会失效、进程退回 `R:\Temp`，比留个可手工修的 ACL 更糟）。
+失败只警告并打印可照抄的命令，**绝不抛异常**——抛了插件会失效、进程退回 `〈临时目录〉`，比留个可手工修的 ACL 更糟）。
 
 两个手工验收脚本均 PASS：`dsh-temp-root\tests\ensure-full-control.manual.mjs`（纯 Node，造一个「只有 Authenticated Users: Modify」的探测目录）与 `dsh-temp-root\tests\ensure-ace-in-electron.mjs`（app 自带 Electron 44 里对真实 temp 根补 ACE）。
 

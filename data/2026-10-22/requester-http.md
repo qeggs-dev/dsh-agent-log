@@ -1,8 +1,8 @@
 <!-- 20261022-002 -->
 
-## 新增项目 **Requester** 于 `D
+## 新增项目 **Requester** 于 `〈工作区〉/requ…
 
-\Projects\Deepseek_Harness_Workspace\requester\`（TS，**Node 原生直跑 `.ts`、零依赖**，UI 尚未开始；M1 只交付引擎核心 + 44 项 `node --test` 用例全过）。
+新增项目 **Requester** 于 `〈工作区〉/requester/`（TS，**Node 原生直跑 `.ts`、零依赖**，UI 尚未开始；M1 只交付引擎核心 + 44 项 `node --test` 用例全过）。
 
 用户 2026-10-22 的定位演进是「Thunder Client 平替」→「发请求 / 记历史 / 分组 / 跑整组」→ 实际成型为**带任务注册表的 HTTP 编排引擎**（块模型与他的「带身份和注册表的 shell 作业控制」是同一套原语）。
 
@@ -20,7 +20,7 @@
 
 ### 参考实现
 
-`D:\Projects\QQBot\Nonebot\Repeater\Repeater\repeater\plugins\repeater_main\command_register`（`caller.py` 1805 行的 `CommandCaller` + `serial.py`/`parallel.py`/`cascade.py` 三个「控制流本身就是普通命令」的示范，比 `core/tool_caller` 那套成熟）；
+`〈项目目录〉/QQBot/Nonebot/Repeater/Repeater/repeater/plugins/repeater_main/command_register`（`caller.py` 1805 行的 `CommandCaller` + `serial.py`/`parallel.py`/`cascade.py` 三个「控制流本身就是普通命令」的示范，比 `core/tool_caller` 那套成熟）；
 
 ### 两处有意偏离
 
@@ -56,9 +56,7 @@
 
 **本机 Electron 进程建不了 `%APPDATA%\Requester`（EPERM）——根因就是 `20261021-041` 那条：工作区整棵树带 `Mandatory Label\Low Mandatory Level`，而 Low IL 进程写不进 Medium 的 `%APPDATA%\Roaming`**（**我当天先判定为「原因未查明」，是错的**：我当时用 `Get-Acl` 查 mandatory label 得到空值，但 `Get-Acl` 的 Access 列表**不含完整性标签**，必须用 `icacls` 才看得到——`icacls` 对工作区根显示 `Mandatory Label\Low Mandatory Level:(OI)(CI)(NW)`、对 `node_modules\electron\dist\electron.exe` 显示 `(I)(NW)`；
 
-同一次会话里 pwsh/node 能建是因为它们不是从 Low 目录启动的）。
-
-这与「渲染进程沙箱起不来」是**同一个根因**，所以也有同一个解：**把可执行文件放到正常目录（如 `D:\Projects\DSH_Normal_Workspace`）跑，就不需要 `--user-data-dir`、也不需要 `--no-sandbox`**。
+同一次会话里 pwsh/node 能建是因为它们不是从 Low 目录启动的）。这与「渲染进程沙箱起不来」是**同一个根因**，所以也有同一个解：**把可执行文件放到正常目录（如 `〈第二工作区〉`）跑，就不需要 `--user-data-dir`、也不需要 `--no-sandbox`**。
 
 结论性做法不变但定位要改：`main` 里用 `app.commandLine.getSwitchValue('user-data-dir')` 允许 Chromium 自带开关覆盖数据目录（**必须写在 `app.setPath('userData')` 之前并沿用该值**），本机从工作区直接跑时才带 `--user-data-dir=<工程>\.userdata`（已固化进 `launch.cmd`）；
 
@@ -134,7 +132,7 @@ Requester 的 **Cookie 自动管理已实现并真机验收**（单测 96 → **
 
 ## Requester 已出 NSIS 安装包并真机验收
 
-（`D:\Projects\DSH_Normal_Workspace\requester-out\Requester-0.1.0-Setup.exe`，106.40 MB，未签名 → SmartScreen 会拦）。
+（`〈第二工作区〉/requester-out/Requester-0.1.0-Setup.exe`，106.40 MB，未签名 → SmartScreen 会拦）。
 
 ### 打包链路
 
@@ -304,9 +302,7 @@ indent=0 走紧凑单行）、`parseJsonSource()`（取值用 `JSON.parse`，**�
 
 ## Requester 打包已交付
 
-（`D:\Projects\DSH_Normal_Workspace\requester-out\Requester-0.1.0-Setup.exe`，106.40 MB，未签名 → SmartScreen 会拦；
-
-`win-unpacked\Requester.exe --smoke-check` 打印 `SMOKE_OK` 且 exit 0）。
+（`〈第二工作区〉/requester-out/Requester-0.1.0-Setup.exe`，106.40 MB，未签名 → SmartScreen 会拦；`win-unpacked\Requester.exe --smoke-check` 打印 `SMOKE_OK` 且 exit 0）。
 
 ### 打包期新踩的坑
 

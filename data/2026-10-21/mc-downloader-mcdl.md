@@ -1,10 +1,8 @@
 <!-- 20261021-021 -->
 
-## 新增项目 **MC Downloader**（`D
+## 新增项目 **MC Downloader**（`〈工作区〉/mcdl/`）
 
-\Projects\Deepseek_Harness_Workspace\mcdl\`）：列出 Minecraft 原版（Java）版本、算出文件清单，二选一——**导出 ADv1 任务包**交给 AD Downloader，或**自己下载**。
-
-用户当天先明确"直接下载＝软件自己下"，随后又明确**不要复用 ADL 的下载引擎**（见 032），所以下载器是自研的。
+列出 Minecraft 原版（Java）版本、算出文件清单，二选一——**导出 ADv1 任务包**交给 AD Downloader，或**自己下载**。用户当天先明确"直接下载＝软件自己下"，随后又明确**不要复用 ADL 的下载引擎**（见 032），所以下载器是自研的。
 
 ### 技术
 

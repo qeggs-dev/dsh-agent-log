@@ -54,7 +54,7 @@ HTTP 用 `httpx`、CLI 用 `typer`（async 只在命令入口 `asyncio.run` 一�
 
 PCML 下载器的**并发参数语义由用户本人在 2026-10-20 定义**（覆盖我原先按字节解读的猜测）：`largest_subtask` = **单个资源最多开几条连接**（不是分片字节数），`max_concurrent_resource` = **同时并行的资源个数**，故最坏连接数 = 两者乘积（默认 64 × 16）；
 
-用户同时明确「下载器**只需要把结果扔出去**」——不落盘、不做 sha1 校验、不算原子写入，那属于调用方。落点 `D:\Projects\PCMLauncher\pcml\downloader\downloader.py`，`download()` 的多资源层与 `_sub_task()` 的单资源层都按此实现
+用户同时明确「下载器**只需要把结果扔出去**」——不落盘、不做 sha1 校验、不算原子写入，那属于调用方。落点 `〈项目目录〉/PCMLauncher/pcml/downloader/downloader.py`，`download()` 的多资源层与 `_sub_task()` 的单资源层都按此实现
 
 <!-- 20261020-008 -->
 
@@ -80,7 +80,7 @@ URL 队列**惰性消费**（N 个 worker 共享同一个迭代器，拿不到�
 
 PCML 下载器代码结构（用户要求「逻辑简单、复杂逻辑搬出去、不要常量表、全部写成参数」）：`pcml/downloader/` 下 `downloader.py`（只做编排）、`transfer.py`（唯一碰 HTTP：探测/单流/分段+续传重试/缓冲写）、`ranges.py`（纯函数：Content-Range 解析与分片规划）、`merge.py`（把多个 async generator 合成一条流，两层并发共用它）。
 
-回环测试脚本在 `D:\Deepseek_Harness_Temp\pcml-test\test_downloader.py`（20 项，`ThreadingHTTPServer` 手写 Range/断连/超时/503 场景），用工作区 venv `D:\Projects\Deepseek_Harness_Workspace\.venv` 跑
+回环测试脚本在 `〈临时目录〉/pcml-test/test_downloader.py`（20 项，`ThreadingHTTPServer` 手写 Range/断连/超时/503 场景），用工作区 venv `〈工作区〉/.venv` 跑
 
 <!-- 20261020-006 -->
 

@@ -246,7 +246,7 @@ Skill 存储是有规律的、不提供直接访问；全局记忆用填参式�
 
 kind ∈ note/task/finding/decision/question/artifact-ref；自定义表可建但要在 meta 注册 table:<name>，表名避开 meta/entries/sqlite_*；大对象不进 DB，放 workspace 并引用路径；
 
-meta 写 schema_version。约定作为稳定的运行时上下文块注入，不靠 prompt 热改。②默认工作区 = ~/.dsh/workspace/main；~ 在 Android 上解析为 App 私有 home（运行时显式设 HOME/DSH_HOME，DSH_HOME=~/.dsh）；
+meta 写 schema_version。约定作为稳定的运行时上下文块注入，不靠 prompt 热改。②默认工作区 = 〈用户目录〉/.dsh/workspace/main；~ 在 Android 上解析为 App 私有 home（运行时显式设 HOME/DSH_HOME，DSH_HOME=〈用户目录〉/.dsh）；
 
 ### 布局
 
@@ -262,15 +262,15 @@ workspace 放 App 私有还是用户可见目录（我倾向 App 私有 + SAF �
 
 ## 先私有后公开（2026-11-24，用户口述
 
-私有数据放 ~/.dsh/sub_agents/<agent_id>，工作区也是自己私有的；主要设计思路是先私有后公开；侧边栏内部文件管理器 + 导出到手机其它目录）。
+私有数据放 〈用户目录〉/.dsh/sub_agents/<agent_id>，工作区也是自己私有的；主要设计思路是先私有后公开；侧边栏内部文件管理器 + 导出到手机其它目录）。
 
 我形式化为系统级原则：Skill（Private 池 → Public 池，owner 审批）、Memory（私有工作记忆 DB → 全局公告板，report/append）、Files（私有 workspace → 公开项目 workspace，publish + owner 审批）。
 
 ### 布局
 
-~/.dsh/sub_agents/<agent_id>/{workspace,memory.db,session,skills}（子节点私有）；~/.dsh/workspace/main（公开项目，验收产物）；~/.dsh/public/memory.db（公告板）；
+〈用户目录〉/.dsh/sub_agents/<agent_id>/{workspace,memory.db,session,skills}（子节点私有）；〈用户目录〉/.dsh/workspace/main（公开项目，验收产物）；〈用户目录〉/.dsh/public/memory.db（公告板）；
 
-~/.dsh/tasks/<id>/（tree.db、归档）；~/.dsh/presets/。上一轮 workspace/main 明确为公开项目区，每个 agent 默认工作区改为自己的私有 workspace。
+〈用户目录〉/.dsh/tasks/<id>/（tree.db、归档）；〈用户目录〉/.dsh/presets/。上一轮 workspace/main 明确为公开项目区，每个 agent 默认工作区改为自己的私有 workspace。
 
 文件发布建议与 skill 写同一套门禁：子节点 publish({paths,message}) 从私有 workspace 到公开 workspace，root 审批；哈希检测冲突；root 作为 owner 可直接写公开 workspace；公开 workspace 是预览与导出对象。
 
@@ -278,13 +278,13 @@ workspace 放 App 私有还是用户可见目录（我倾向 App 私有 + SAF �
 
 ### 待定
 
-①根节点私有数据放 ~/.dsh/root/ 还是也放 sub_agents/root；②根的工作区是私有再 publish，还是直接就是 workspace/main（公开）；③公开 workspace 是单一 root-owned，还是每个父节点都有自己的公开 workspace（层级合并）。
+①根节点私有数据放 〈用户目录〉/.dsh/root/ 还是也放 sub_agents/root；②根的工作区是私有再 publish，还是直接就是 workspace/main（公开）；③公开 workspace 是单一 root-owned，还是每个父节点都有自己的公开 workspace（层级合并）。
 
 <!-- 20261124-025 -->
 
 ## 导出范围（2026-11-24，用户
 
-从 workspace 下选，最高只能导出整个工作区）：内部文件管理器/导出的根是 Workspaces，不是 ~/.dsh；可选公开项目 workspace/main 与各 agent 的 sub_agents/<id>/workspace；最高导出单位 = 一个完整 workspace；
+从 workspace 下选，最高只能导出整个工作区）：内部文件管理器/导出的根是 Workspaces，不是 〈用户目录〉/.dsh；可选公开项目 workspace/main 与各 agent 的 sub_agents/<id>/workspace；最高导出单位 = 一个完整 workspace；
 
 不能导出 memory.db / session / skills，也不能一次导出多个 workspace；整机备份是另一个 admin 功能，不混进这个 UI。
 
@@ -330,7 +330,7 @@ A/B 用户未点，我按 A 收：root 有私有 workspace，publish 到公开 w
 
 ## 实现进展（2026-11-24，agent-tree 阶段 1，…
 
-实现进展（2026-11-24，agent-tree 阶段 1，提交 a3c88ff）：目录 D:\Projects\Deepseek_Harness_Workspace\agent-tree（独立 git 仓库），纯 Node 24 ESM、无外部依赖、node:sqlite（本机 24.22.3 无需 --experimental-sqlite）。
+实现进展（2026-11-24，agent-tree 阶段 1，提交 a3c88ff）：目录 〈工作区〉/agent-tree（独立 git 仓库），纯 Node 24 ESM、无外部依赖、node:sqlite（本机 24.22.3 无需 --experimental-sqlite）。
 
 ### 文件
 

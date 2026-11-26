@@ -2,7 +2,7 @@
 
 ## 新插件「打断等待」
 
-（`D:\Projects\Deepseek_Harness_Workspace\dsh-job-wait`，包 `@local/dsh-job-wait` v1.0.0，desktop profile bundle，行 id `job-wait` / entry `include:job-wait`，`install_bundle` → `application: applied`、`warnings: []`；
+（`〈工作区〉/dsh-job-wait`，包 `@local/dsh-job-wait` v1.0.0，desktop profile bundle，行 id `job-wait` / entry `include:job-wait`，`install_bundle` → `application: applied`、`warnings: []`；
 
 无 Config、无 Agent 工具，只有 Host 侧一段包装 + 一个 UI 按钮）：用户要求「让用户能手动打断后台任务的等待，并保持后台任务继续运行」。
 

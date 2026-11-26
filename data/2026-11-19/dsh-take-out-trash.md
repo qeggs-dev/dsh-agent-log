@@ -16,13 +16,13 @@
 
 ③链接（junction）先 `realpath`，真实路径出工作区则计入 `skipped` 且不下探。
 
-**实测（2026-11-19）**：锚定 `^D:\\...\\trash-pattern-test\\` 预演命中 3 项；`[.]log$` 加锚点命中 2 个 .log；真实删除只动 .log，`.txt` 未动，回收站 `$I` 两条且 `$R` 存在；
+**实测（2026-11-19）**：锚定 `^〈本机路径〉` 预演命中 3 项；`[.]log$` 加锚点命中 2 个 .log；真实删除只动 .log，`.txt` 未动，回收站 `$I` 两条且 `$R` 存在；并集预演（`paths` + 模式）命中 2 项且去重正确；
 
-并集预演（`paths` + 模式）命中 2 项且去重正确；无锚定模式在重启后报 100000 上限并给出“以字面绝对目录开头”的提示。24 项单测全过。
+无锚定模式在重启后报 100000 上限并给出“以字面绝对目录开头”的提示。24 项单测全过。
 
 ### 调用方注意
 
-参数值就是正则源码，**不要再额外 JSON 转义**——直接在参数里写 `\\` 表示一个分隔符（本次因为多写了一层转义，前缀变成 `D:\\\\Projects…`，结果匹配 0 项，白跑一轮）；点号建议写 `[.]` 而不是 `\.`，避免和转义层数纠缠。
+参数值就是正则源码，**不要再额外 JSON 转义**——直接在参数里写 `\\` 表示一个分隔符（本次因为多写了一层转义，前缀变成 `〈本机路径〉`，结果匹配 0 项，白跑一轮）；点号建议写 `[.]` 而不是 `\.`，避免和转义层数纠缠。
 
 ### 清理
 
@@ -50,7 +50,7 @@
 
 **实测（2026-11-19）**：`base_path: .tmp/base-check` + `[.]log$` 预演 2 项、真删 2 项且 `.txt` 未动；
 
-工作区外 `base_path: D:\Projects\DSH_Normal_Workspace\take-out-trash-base` 预演 1 项且标“outside the workspace”，真调用**确实弹出审批**（会话日志 `approval/asked` + `approval/decided=allowed-once`，reason 含 `pattern /[.]log$/i in base_path …`）；
+工作区外 `base_path: 〈第二工作区〉/take-out-trash-base` 预演 1 项且标“outside the workspace”，真调用**确实弹出审批**（会话日志 `approval/asked` + `approval/decided=allowed-once`，reason 含 `pattern /[.]log$/i in base_path …`）；
 
 27 项单测全过。测试条目已从回收站清除，临时目录（工作区内外）均已删除。
 

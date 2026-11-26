@@ -1,8 +1,8 @@
 <!-- 20261117-004 -->
 
-## **change-style 插件（2026-11-17，`D
+## **change-style 插件（2026-11-17，`〈工…
 
-\Projects\Deepseek_Harness_Workspace\dsh_plugins\change-style`，包 `@local/dsh-change-style` v1.0.0，desktop profile 行 id `change-style`）**：Host-only，只注册工具 `change_style`。
+**change-style 插件（2026-11-17，`〈工作区〉/dsh_plugins/change-style`，包 `@local/dsh-change-style` v1.0.0，desktop profile 行 id `change-style`）**：Host-only，只注册工具 `change_style`。
 
 **`description` 必填（R-005）**；**`style` 可选，省略 `style` 即读取当前外观枚举**（`action: "read"`，不写、不审批），传 `style: light|dark|system` 则切换（`action: "switch"`）。
 

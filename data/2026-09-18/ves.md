@@ -1,14 +1,14 @@
 <!-- 20260918-001 -->
 
-## VES（Virtual Environment System）源码位于 `D
+## VES（Virtual Environment System）源…
 
-\Projects\Python\VES`，入口脚本 `ves.py`，是一个用 Python 3.14 编写的虚拟环境管理交互式 CLI；其虚拟环境基目录默认为 `D:\Projects\Deepseek_Harness_Workspace\envs`
+VES（Virtual Environment System）源码位于 `〈项目目录〉/Python/VES`，入口脚本 `ves.py`，是一个用 Python 3.14 编写的虚拟环境管理交互式 CLI；其虚拟环境基目录默认为 `〈工作区〉/envs`
 
 <!-- 20260918-002 -->
 
 ## 启动 VES 用工作区根目录的 `ves.bat`，该批处理等价…
 
-启动 VES 用工作区根目录的 `ves.bat`，该批处理等价于执行 `python D:\Projects\Python\VES\ves.py`；工作区里只有这个启动器，没有 VES 源码
+启动 VES 用工作区根目录的 `ves.bat`，该批处理等价于执行 `python 〈项目目录〉/Python/VES/ves.py`；工作区里只有这个启动器，没有 VES 源码
 
 <!-- 20260918-003 -->
 
@@ -68,4 +68,4 @@ VES 的环境基目录取 `Path.cwd() / "envs"`，所以必须在工作区根目
 
 ## VES 未捕获的异常会先把 traceback 写到 `trac…
 
-VES 未捕获的异常会先把 traceback 写到 `traceback/[%Y-%m-%d-%H-%M-%S]_Traceback.txt`（相对 cwd，父目录不存在则自动创建）再向上抛；这是排查 VES 内部异常的第一现场，`D:\Projects\Python\VES\traceback\` 下已有实例文件
+VES 未捕获的异常会先把 traceback 写到 `traceback/[%Y-%m-%d-%H-%M-%S]_Traceback.txt`（相对 cwd，父目录不存在则自动创建）再向上抛；这是排查 VES 内部异常的第一现场，`〈项目目录〉/Python/VES/traceback/` 下已有实例文件

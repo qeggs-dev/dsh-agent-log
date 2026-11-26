@@ -48,7 +48,7 @@ RPE 核对的四条运行版事实（0.2.1-rc.3，`cordis_inspect_query` + 包 R
 
 ## RPE M0a/M0b 已交付并装机
 
-（`D:\Projects\Deepseek_Harness_Workspace\rpe`，包 `@local/dsh-rpe` 0.1.0，desktop profile 的 bundle；preset 行 `preset-rpe` / `config.id: rpe` / 显示名「角色扮演」/ order 19）。
+（`〈工作区〉/rpe`，包 `@local/dsh-rpe` 0.1.0，desktop profile 的 bundle；preset 行 `preset-rpe` / `config.id: rpe` / 显示名「角色扮演」/ order 19）。
 
 ### M0a
 

@@ -2,7 +2,7 @@
 
 ## 插件「继续 / 默许」
 
-（`D:\Projects\Deepseek_Harness_Workspace\dsh-continue-task`，包 `@local/dsh-continue-task` v1.0.0，desktop profile bundle，行 id `continue-task` / entry `include:continue-task`，`application: applied`、无 warning）：`id:20261023-039` 那个已删除的 **dsh-continue-button** 的正确重做——当初靠 MutationObserver 改 composer 的 Send 按钮导致主线程死循环、界面冻结；
+（`〈工作区〉/dsh-continue-task`，包 `@local/dsh-continue-task` v1.0.0，desktop profile bundle，行 id `continue-task` / entry `include:continue-task`，`application: applied`、无 warning）：`id:20261023-039` 那个已删除的 **dsh-continue-button** 的正确重做——当初靠 MutationObserver 改 composer 的 Send 按钮导致主线程死循环、界面冻结；
 
 这次**完全不做 DOM 装饰**，改为在槽位 `conversation.input.left`（id `continue-task`、order 20，紧挨 session-bridge 的 `session-id-copy` order 10）注册**左右分体的一个控件**：左「继续」（接着做，正文明确写「**不回答**你问过的问题」）、右「默许」（接受上次提问/方案，只批准已提出过的东西，没有待决事项就必须一句话说明、不许硬造）。
 

@@ -2,7 +2,7 @@
 
 ## 界面端口镜像：扫码后需电脑确认 + 可记住设备
 
-（插件已迁到 `D:\Projects\Deepseek_Harness_Workspace\dsh_plugins\dsh-ui-port-mirror`，独立 git 仓库）。
+（插件已迁到 `〈工作区〉/dsh_plugins/dsh-ui-port-mirror`，独立 git 仓库）。
 
 ### 扫码只算「提出连接」
 
