@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-10-10",
+  "weekday": "周六",
+  "entries": 4,
+  "overview": "data/2026-10-10/overview.svg",
+  "projects": [
+    {
+      "name": "DSH Agent Preset",
+      "body": "data/2026-10-10/dsh-agent-preset.md",
+      "entries": 3,
+      "ids": [
+        "20261010-002",
+        "20261010-006",
+        "20261010-007"
+      ],
+      "keywords": [
+        "preset",
+        "chat",
+        "order",
+        "patch",
+        "profile",
+        "append"
+      ]
+    },
+    {
+      "name": "QQBot 本地生成服务（绘图 API）",
+      "body": "data/2026-10-10/qqbot-api.md",
+      "entries": 1,
+      "ids": [
+        "20261010-005"
+      ],
+      "keywords": [
+        "alpha",
+        "background",
+        "lanczos",
+        "mask",
+        "model_id",
+        "qqbot"
+      ]
+    }
+  ]
+}

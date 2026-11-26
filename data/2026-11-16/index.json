@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-11-16",
+  "weekday": "周一",
+  "entries": 7,
+  "overview": "data/2026-11-16/overview.svg",
+  "projects": [
+    {
+      "name": "离线导航地图（Android）",
+      "body": "data/2026-11-16/android.md",
+      "entries": 2,
+      "ids": [
+        "20261116-001",
+        "20261116-002"
+      ],
+      "keywords": [
+        "android",
+        "离线地图",
+        "轨迹采集",
+        "地图共享",
+        "存储策略",
+        "算法"
+      ]
+    },
+    {
+      "name": "DSH 插件：整屏截图（dsh-screenshot）",
+      "body": "data/2026-11-16/dsh-dsh-screenshot.md",
+      "entries": 1,
+      "ids": [
+        "20261116-003"
+      ],
+      "keywords": [
+        "allwindows",
+        "dsh-screenshot",
+        "git",
+        "printwindow",
+        "windows",
+        "多窗口"
+      ]
+    },
+    {
+      "name": "决策",
+      "body": "data/2026-11-16/section.md",
+      "entries": 2,
+      "ids": [
+        "20261116-004",
+        "20261116-013"
+      ],
+      "keywords": [
+        "agents.md",
+        "dsh-ssh",
+        "fork",
+        "rules",
+        "ssh",
+        "凭据"
+      ]
+    },
+    {
+      "name": "DSH 插件：Agent 循环暂停（dsh-agent-stop）",
+      "body": "data/2026-11-16/dsh-agent-dsh-agent-stop.md",
+      "entries": 1,
+      "ids": [
+        "20261116-008"
+      ],
+      "keywords": [
+        "agent-loop",
+        "dsh-agent-stop",
+        "plugin",
+        "pre-step",
+        "ui",
+        "会话"
+      ]
+    },
+    {
+      "name": "DSH 插件：JS 库缓存（dsh-lib-cache）",
+      "body": "data/2026-11-16/dsh-js-dsh-lib-cache.md",
+      "entries": 1,
+      "ids": [
+        "20261116-009"
+      ],
+      "keywords": [
+        "lib-cache",
+        "npm",
+        "registry",
+        "semver",
+        "unpkg",
+        "插件"
+      ]
+    }
+  ]
+}

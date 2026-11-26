@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-10-30",
+  "weekday": "周五",
+  "entries": 4,
+  "overview": "data/2026-10-30/overview.svg",
+  "projects": [
+    {
+      "name": "DSH 插件：JS 库缓存（dsh-lib-cache）",
+      "body": "data/2026-10-30/dsh-js-dsh-lib-cache.md",
+      "entries": 4,
+      "ids": [
+        "20261030-001",
+        "20261030-002",
+        "20261030-005",
+        "20261030-007"
+      ],
+      "keywords": [
+        "dsh-lib-cache",
+        "host",
+        "bundle",
+        "desktop",
+        "dsh-mermaid",
+        "profile"
+      ]
+    }
+  ]
+}

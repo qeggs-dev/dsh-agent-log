@@ -4,6 +4,12 @@
 
 用户要做「真正使用迭代算法的本地浏览器小游戏」，题材为自然生存——主角生物自己适应玩家创造的环境规则、同时扩大种群；分发目标是 GitHub Pages。落在 `D:\Projects\Deepseek_Harness_Workspace\evo-world\`（独立 git 仓库，初始提交 50083d3）。形态：纯静态 ESM，无框架、无构建、零运行时依赖（`npm run serve` 起 4173）；测试用 `node --test --test-isolation=none "tests/*.test.js"`——**普通 `node --test` 会因 spawn EPERM 失败**（沙箱不允许管道 stdio 的子进程）。机制：每 tick 对全种群跑「6 点采样觅食→进食→代谢扣能量→饿死/老死→能量过阈值繁殖（邻居在 4 格内即均匀交叉，否则自体克隆，再按 mutationRate 高斯点突变，子代代数 +1）」；7 个基因 speed/size/efficiency/tempOpt/tempTol/toxRes/sense，代谢成本=基础+移动(v²)+体型+感知+抗毒+耐温幅度+0.05×超出舒适区度数的平方+1.2×toxin×(1-抗毒)，食物能量 10/单位。调参结论：80×56 网格、`FOOD_REGEN=0.003` 时默认承载约 350~400 只，食物被啃到均值 0.03~0.05 属放牧式平衡而非 bug（承载力由再生通量决定，不由食物存量决定）；`FOOD_REGEN` 取 0.01 会让种群一路顶到上限。视觉：生物颜色 = 最适温度（蓝 98,162,255 → 金 255,208,100 → 橙红 255,86,58，刻意避开绿色），世界底色压成近黑的温度染色，否则 20°C 时绿生物与绿食物糊成一片。验证：33 项测试全绿，含升温 20→38°C 后平均最适温度必须 +8°C 且贴近新气候、降温必须跟随、毒素升到 0.7 后平均抗毒 >0.5、食物 2.2× 种群显著更大、同种子逐位复现；真实 Edge 里升温 34°C 跑 2600 tick 得 opt 33~36、毒素 0.8 得抗毒 0.48~0.88、降到 2°C 得 opt 0.9~7.4。工具：`scripts/probe.js` 打印剧变下的性状轨迹用于调参；`scripts/shot.js` 用 headless Edge + CDP 截图并驱动滑杆/按钮验证接线（本机 `np_exec`/`np_screenshot` 的 playwright 渲染器报 `Cannot read properties of undefined (reading 'includes')`，沙箱内直接启 Edge 又因 Mojo 通道/权限 0x5 失败，必须在 danger-full-access 下跑）。未完成：尚未部署到 GitHub Pages（缺仓库与推送通道）。
 
+<!-- 20261126-008 -->
+
+## 待办（evo-world，紧接 id
+
+20261126-007）：①部署到 GitHub Pages——站点已备好（相对路径、`.nojekyll`、无构建），但缺仓库与推送通道；本机在会话工作区里 git push 会被沙箱挡，须用 super_workspace_exec（见 id:20261125-014 / R-058），或用用户给的仓库地址。②用户确认后才做的可选后续：存档与续玩、捕食者与多物种、音效与成就、移动端画布手势。
+
 <!-- 20261126-009 -->
 
 ## evo-world v3：两界 + 信息素 + 饮食基因（2026-11-26，取代三界版）

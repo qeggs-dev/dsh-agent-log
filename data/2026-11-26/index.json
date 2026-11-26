@@ -3,7 +3,7 @@
   "generator": "build_data.py 3.0.0",
   "date": "2026-11-26",
   "weekday": "周四",
-  "entries": 6,
+  "entries": 10,
   "overview": "data/2026-11-26/overview.svg",
   "projects": [
     {
@@ -23,37 +23,68 @@
       ]
     },
     {
+      "name": "手机 Agent App（代理树）",
+      "body": "data/2026-11-26/agent-app.md",
+      "entries": 1,
+      "ids": [
+        "20261126-002"
+      ],
+      "keywords": [
+        "i18n",
+        "todo",
+        "ui"
+      ]
+    },
+    {
+      "name": "DSH 插件：差异编辑（diff-edit）",
+      "body": "data/2026-11-26/dsh-diff-edit.md",
+      "entries": 1,
+      "ids": [
+        "20261126-003"
+      ],
+      "keywords": [
+        "diff-edit",
+        "diffEdit",
+        "jsdiff",
+        "patch_diff",
+        "plugin",
+        "reverse"
+      ]
+    },
+    {
+      "name": "决策",
+      "body": "data/2026-11-26/section.md",
+      "entries": 2,
+      "ids": [
+        "20261126-004",
+        "20261126-005"
+      ],
+      "keywords": [
+        "agents.md",
+        "规则",
+        "关键词",
+        "单元测试",
+        "开发规范",
+        "搜索"
+      ]
+    },
+    {
       "name": "演化沙盒（evo-world）",
       "body": "data/2026-11-26/evo-world.md",
-      "entries": 3,
+      "entries": 4,
       "ids": [
         "20261126-007",
+        "20261126-008",
         "20261126-009",
         "20261126-010"
       ],
       "keywords": [
         "evo-world",
+        "github-pages",
         "游戏",
         "遗传算法",
         "canvas",
-        "cdp",
-        "github-pages"
-      ]
-    },
-    {
-      "name": "维度音游（rhythm-dims）",
-      "body": "data/2026-11-26/rhythm-dims.md",
-      "entries": 1,
-      "ids": [
-        "20261126-011"
-      ],
-      "keywords": [
-        "4d",
-        "canvas",
-        "hypercube",
-        "rhythm-dims",
-        "rhythm-game",
-        "web-audio"
+        "cdp"
       ]
     },
     {

@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-11-19",
+  "weekday": "周四",
+  "entries": 6,
+  "overview": "data/2026-11-19/overview.svg",
+  "projects": [
+    {
+      "name": "DSH 插件：官方协议切换（official-protocol-switch）",
+      "body": "data/2026-11-19/dsh-official-protocol-switch.md",
+      "entries": 1,
+      "ids": [
+        "20261119-001"
+      ],
+      "keywords": [
+        "bundle",
+        "deepseek-official",
+        "dsh-plugin",
+        "llm-stream",
+        "official-protocol-switch",
+        "pi-ai"
+      ]
+    },
+    {
+      "name": "Aurora Chat",
+      "body": "data/2026-11-19/aurora-chat.md",
+      "entries": 1,
+      "ids": [
+        "20261119-003"
+      ],
+      "keywords": [
+        "aurora-chat",
+        "分发",
+        "定位",
+        "宣发",
+        "用户反馈",
+        "需求"
+      ]
+    },
+    {
+      "name": "memory-system-kit",
+      "body": "data/2026-11-19/memory-system-kit.md",
+      "entries": 1,
+      "ids": [
+        "20261119-004"
+      ],
+      "keywords": [
+        "dsh-sqlite",
+        "install.py",
+        "memory-system-kit",
+        "memory.db",
+        "skill-bundle",
+        "sqlite"
+      ]
+    },
+    {
+      "name": "DSH 插件：正则路径筛选（dsh-regex-paths）",
+      "body": "data/2026-11-19/dsh-dsh-regex-paths.md",
+      "entries": 1,
+      "ids": [
+        "20261119-005"
+      ],
+      "keywords": [
+        "dsh-regex-paths",
+        "dsh_plugins",
+        "match_paths",
+        "plugin",
+        "regex",
+        "插件"
+      ]
+    },
+    {
+      "name": "DSH 插件：回收站删除（take-out-trash）",
+      "body": "data/2026-11-19/dsh-take-out-trash.md",
+      "entries": 2,
+      "ids": [
+        "20261119-006",
+        "20261119-007"
+      ],
+      "keywords": [
+        "dsh-plugin",
+        "path_pattern",
+        "take-out-trash",
+        "批量删除",
+        "base_path",
+        "dry_run"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-09-18",
+  "weekday": "周五",
+  "entries": 25,
+  "overview": "data/2026-09-18/overview.svg",
+  "projects": [
+    {
+      "name": "VES",
+      "body": "data/2026-09-18/ves.md",
+      "entries": 11,
+      "ids": [
+        "20260918-001",
+        "20260918-002",
+        "20260918-003",
+        "20260918-004",
+        "20260918-005",
+        "20260918-033",
+        "20260918-034",
+        "20260918-035",
+        "20260918-036",
+        "20260918-037",
+        "20260918-038"
+      ],
+      "keywords": [
+        "ves",
+        "ves.bat",
+        "python",
+        "envs",
+        "create",
+        "exit"
+      ]
+    },
+    {
+      "name": "net 环境与操作手台",
+      "body": "data/2026-09-18/net.md",
+      "entries": 12,
+      "ids": [
+        "20260918-024",
+        "20260918-025",
+        "20260918-026",
+        "20260918-027",
+        "20260918-028",
+        "20260918-029",
+        "20260918-030",
+        "20260918-031",
+        "20260918-032",
+        "20260918-039",
+        "20260918-040",
+        "20260918-042"
+      ],
+      "keywords": [
+        "orjson",
+        "pydantic",
+        "venv",
+        "probe",
+        "python",
+        "ascii"
+      ]
+    },
+    {
+      "name": "决策",
+      "body": "data/2026-09-18/section.md",
+      "entries": 1,
+      "ids": [
+        "20260918-041"
+      ],
+      "keywords": [
+        "envs",
+        "import",
+        "python",
+        "venv",
+        "ves"
+      ]
+    },
+    {
+      "name": "待办",
+      "body": "data/2026-09-18/section-2.md",
+      "entries": 1,
+      "ids": [
+        "20260918-020"
+      ],
+      "keywords": [
+        "doctor",
+        "dsh_starter.py",
+        "dsh_starter.py.orig",
+        "dsh_temp_root",
+        "log_dir"
+      ]
+    }
+  ]
+}

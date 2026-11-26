@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-10-15",
+  "weekday": "周四",
+  "entries": 4,
+  "overview": "data/2026-10-15/overview.svg",
+  "projects": [
+    {
+      "name": "用户真正想做的项目：带身份和注册表的 shell 作业控制",
+      "body": "data/2026-10-15/shell.md",
+      "entries": 2,
+      "ids": [
+        "20261015-006",
+        "20261015-007"
+      ],
+      "keywords": [
+        "shell",
+        "agent",
+        "dsh",
+        "pid",
+        "python",
+        "tool"
+      ]
+    },
+    {
+      "name": "决策",
+      "body": "data/2026-10-15/section.md",
+      "entries": 2,
+      "ids": [
+        "20261015-008",
+        "20261015-009"
+      ],
+      "keywords": [
+        "agent",
+        "python",
+        "append",
+        "dsh",
+        "hmr",
+        "mvp"
+      ]
+    }
+  ]
+}

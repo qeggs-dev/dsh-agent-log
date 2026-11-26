@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-11-02",
+  "weekday": "周一",
+  "entries": 1,
+  "overview": "data/2026-11-02/overview.svg",
+  "projects": [
+    {
+      "name": "dlcore（Go 多来源分片下载内核）",
+      "body": "data/2026-11-02/dlcore-go.md",
+      "entries": 1,
+      "ids": [
+        "20261102-001"
+      ],
+      "keywords": [
+        "active",
+        "adv1",
+        "core",
+        "dlcore",
+        "sha256",
+        "status"
+      ]
+    }
+  ]
+}

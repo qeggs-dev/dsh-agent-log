@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-11-22",
+  "weekday": "周日",
+  "entries": 4,
+  "overview": "data/2026-11-22/overview.svg",
+  "projects": [
+    {
+      "name": "DSH 插件：自定义标签页（dsh-new-page）",
+      "body": "data/2026-11-22/dsh-dsh-new-page.md",
+      "entries": 2,
+      "ids": [
+        "20261122-001",
+        "20261122-003"
+      ],
+      "keywords": [
+        "dsh-new-page",
+        "cookie",
+        "gdi",
+        "koffi",
+        "代理",
+        "全页截图"
+      ]
+    },
+    {
+      "name": "聊天记录工坊（mock_chatui）",
+      "body": "data/2026-11-22/mock_chatui.md",
+      "entries": 1,
+      "ids": [
+        "20261122-002"
+      ],
+      "keywords": [
+        "canvas",
+        "chatlog-mock",
+        "context-menu",
+        "i18n",
+        "localstorage",
+        "mock_chatui"
+      ]
+    },
+    {
+      "name": "DSH 插件：审批拦截（approval-intercept）",
+      "body": "data/2026-11-22/dsh-approval-intercept.md",
+      "entries": 1,
+      "ids": [
+        "20261122-006"
+      ],
+      "keywords": [
+        "approval",
+        "approval-intercept",
+        "dsh",
+        "notice",
+        "plugin",
+        "restart"
+      ]
+    }
+  ]
+}

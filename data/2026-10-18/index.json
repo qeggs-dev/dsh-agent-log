@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-10-18",
+  "weekday": "周日",
+  "entries": 6,
+  "overview": "data/2026-10-18/overview.svg",
+  "projects": [
+    {
+      "name": "DSH Agent Preset",
+      "body": "data/2026-10-18/dsh-agent-preset.md",
+      "entries": 1,
+      "ids": [
+        "20261018-002"
+      ],
+      "keywords": [
+        "collab",
+        "deepseek-ai",
+        "dsh",
+        "patch",
+        "preset",
+        "profile"
+      ]
+    },
+    {
+      "name": "DataServer（QQBot 静态数据服务）",
+      "body": "data/2026-10-18/dataserver-qqbot.md",
+      "entries": 1,
+      "ids": [
+        "20261018-001"
+      ],
+      "keywords": [
+        "dataserver",
+        "delete",
+        "python",
+        "qqbot",
+        "venv",
+        "write"
+      ]
+    },
+    {
+      "name": "桌面版窗口尺寸（dsh-window-keeper）",
+      "body": "data/2026-10-18/dsh-window-keeper.md",
+      "entries": 4,
+      "ids": [
+        "20261018-003",
+        "20261018-004",
+        "20261018-006",
+        "20261018-005"
+      ],
+      "keywords": [
+        "dsh-window-keeper",
+        "dsh",
+        "host",
+        "electron",
+        "win32",
+        "app.asar"
+      ]
+    }
+  ]
+}

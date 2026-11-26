@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-11-01",
+  "weekday": "周日",
+  "entries": 7,
+  "overview": "data/2026-11-01/overview.svg",
+  "projects": [
+    {
+      "name": "DSH Agent Preset",
+      "body": "data/2026-11-01/dsh-agent-preset.md",
+      "entries": 3,
+      "ids": [
+        "20261101-002",
+        "20261101-011",
+        "20261101-012"
+      ],
+      "keywords": [
+        "preset",
+        "bundle",
+        "desktop",
+        "host",
+        "profile",
+        "agent"
+      ]
+    },
+    {
+      "name": "DSH 插件：pwsh_dotenv / bash_dotenv（独立工具）",
+      "body": "data/2026-11-01/dsh-pwsh_dotenv-bash_dotenv.md",
+      "entries": 3,
+      "ids": [
+        "20261101-006",
+        "20261101-007",
+        "20261101-008"
+      ],
+      "keywords": [
+        "pwsh",
+        "pwsh_dotenv",
+        "hmr",
+        "patch",
+        "active",
+        "bundle"
+      ]
+    },
+    {
+      "name": "决策",
+      "body": "data/2026-11-01/section.md",
+      "entries": 1,
+      "ids": [
+        "20261101-010"
+      ],
+      "keywords": [
+        "app.asar",
+        "checkout",
+        "dsh",
+        "hmr",
+        "pwsh"
+      ]
+    }
+  ]
+}

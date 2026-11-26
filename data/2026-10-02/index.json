@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-10-02",
+  "weekday": "周五",
+  "entries": 6,
+  "overview": "data/2026-10-02/overview.svg",
+  "projects": [
+    {
+      "name": "DSH Agent Preset",
+      "body": "data/2026-10-02/dsh-agent-preset.md",
+      "entries": 5,
+      "ids": [
+        "20261002-002",
+        "20261002-003",
+        "20261002-006",
+        "20261002-010",
+        "20261002-011"
+      ],
+      "keywords": [
+        "preset",
+        "collab",
+        "patch",
+        "qqbot",
+        "ace",
+        "acl"
+      ]
+    },
+    {
+      "name": "待办",
+      "body": "data/2026-10-02/section.md",
+      "entries": 1,
+      "ids": [
+        "20261002-005"
+      ],
+      "keywords": [
+        "ace",
+        "app.asar",
+        "checkout",
+        "dsh",
+        "qqbot"
+      ]
+    }
+  ]
+}

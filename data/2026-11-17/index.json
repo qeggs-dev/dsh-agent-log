@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-11-17",
+  "weekday": "周二",
+  "entries": 5,
+  "overview": "data/2026-11-17/overview.svg",
+  "projects": [
+    {
+      "name": "决策",
+      "body": "data/2026-11-17/section.md",
+      "entries": 1,
+      "ids": [
+        "20261117-002"
+      ],
+      "keywords": [
+        "call_code",
+        "fastapi",
+        "main",
+        "main_doc",
+        "pybatch",
+        "pyserver"
+      ]
+    },
+    {
+      "name": "Session Utils",
+      "body": "data/2026-11-17/session-utils.md",
+      "entries": 1,
+      "ids": [
+        "20261117-003"
+      ],
+      "keywords": [
+        "dsh",
+        "session-utils",
+        "session_create",
+        "session_title",
+        "title"
+      ]
+    },
+    {
+      "name": "DSH 插件：外观样式（change-style）",
+      "body": "data/2026-11-17/dsh-change-style.md",
+      "entries": 1,
+      "ids": [
+        "20261117-004"
+      ],
+      "keywords": [
+        "approval",
+        "change-style",
+        "dsh_plugins",
+        "settings",
+        "ui-theme",
+        "外观"
+      ]
+    },
+    {
+      "name": "DSH 插件：通知卡片（notice）",
+      "body": "data/2026-11-17/dsh-notice.md",
+      "entries": 1,
+      "ids": [
+        "20261117-005"
+      ],
+      "keywords": [
+        "dsh-plugin",
+        "notice",
+        "theme",
+        "tool",
+        "ui",
+        "浮层"
+      ]
+    },
+    {
+      "name": "dsh-super-workspace",
+      "body": "data/2026-11-17/dsh-super-workspace.md",
+      "entries": 1,
+      "ids": [
+        "20261117-010"
+      ],
+      "keywords": [
+        "ctx.inject",
+        "dsh-super-workspace",
+        "工具",
+        "插件",
+        "菜单"
+      ]
+    }
+  ]
+}

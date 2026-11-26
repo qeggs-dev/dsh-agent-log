@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-10-20",
+  "weekday": "周二",
+  "entries": 10,
+  "overview": "data/2026-10-20/overview.svg",
+  "projects": [
+    {
+      "name": "PCML（Py Console Minecraft Launcher）",
+      "body": "data/2026-10-20/pcml-py-console-minecraft-launcher.md",
+      "entries": 10,
+      "ids": [
+        "20261020-001",
+        "20261020-002",
+        "20261020-003",
+        "20261020-004",
+        "20261020-005",
+        "20261020-007",
+        "20261020-008",
+        "20261020-009",
+        "20261020-010",
+        "20261020-006"
+      ],
+      "keywords": [
+        "minecraft",
+        "pcml",
+        "sha1",
+        "async",
+        "cache",
+        "download"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-10-19",
+  "weekday": "周一",
+  "entries": 8,
+  "overview": "data/2026-10-19/overview.svg",
+  "projects": [
+    {
+      "name": "mod-audit（Minecraft 整合包冲突分析器）",
+      "body": "data/2026-10-19/mod-audit-minecraft.md",
+      "entries": 8,
+      "ids": [
+        "20261019-001",
+        "20261019-002",
+        "20261019-003",
+        "20261019-004",
+        "20261019-005",
+        "20261019-006",
+        "20261019-007",
+        "20261019-008"
+      ],
+      "keywords": [
+        "mod-audit",
+        "forge",
+        "neoforge",
+        "clientversion",
+        "desktop",
+        "electron"
+      ]
+    }
+  ]
+}

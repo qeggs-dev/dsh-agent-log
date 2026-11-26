@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-11-13",
+  "weekday": "周五",
+  "entries": 8,
+  "overview": "data/2026-11-13/overview.svg",
+  "projects": [
+    {
+      "name": "Session Utils",
+      "body": "data/2026-11-13/session-utils.md",
+      "entries": 3,
+      "ids": [
+        "20261113-001",
+        "20261113-002",
+        "20261113-003"
+      ],
+      "keywords": [
+        "dsh",
+        "session-utils",
+        "agent-message",
+        "approval",
+        "callback",
+        "cordis-plugin"
+      ]
+    },
+    {
+      "name": "DSH 插件：插件批量管理（plugins-manager）",
+      "body": "data/2026-11-13/dsh-plugins-manager.md",
+      "entries": 1,
+      "ids": [
+        "20261113-004"
+      ],
+      "keywords": [
+        "cordis",
+        "dsh-plugins-manager",
+        "fuse.js",
+        "lib-cache",
+        "plugin-manager",
+        "plugins-manager"
+      ]
+    },
+    {
+      "name": "AD Downloader（adl）",
+      "body": "data/2026-11-13/ad-downloader-adl.md",
+      "entries": 1,
+      "ids": [
+        "20261113-005"
+      ],
+      "keywords": [
+        "ad-downloader",
+        "adl",
+        "electron",
+        "hash校验",
+        "typescript",
+        "下载器"
+      ]
+    },
+    {
+      "name": "DSH 插件：TODO 列表（dsh-todo-list）",
+      "body": "data/2026-11-13/dsh-todo-dsh-todo-list.md",
+      "entries": 1,
+      "ids": [
+        "20261113-008"
+      ],
+      "keywords": [
+        "cordis",
+        "dsh-plugin",
+        "plugin-data",
+        "session",
+        "todo-list",
+        "tools"
+      ]
+    },
+    {
+      "name": "DSH 插件：SQLite 数据库（dsh-sqlite）",
+      "body": "data/2026-11-13/dsh-sqlite-dsh-sqlite.md",
+      "entries": 1,
+      "ids": [
+        "20261113-009"
+      ],
+      "keywords": [
+        "description",
+        "dsh-sqlite",
+        "reason",
+        "sqlite",
+        "参数",
+        "工具"
+      ]
+    },
+    {
+      "name": "DSH 插件：回收站删除（take-out-trash）",
+      "body": "data/2026-11-13/dsh-take-out-trash.md",
+      "entries": 1,
+      "ids": [
+        "20261113-010"
+      ],
+      "keywords": [
+        "cross-platform",
+        "dsh-plugin",
+        "recycle-bin",
+        "sandbox",
+        "take-out-trash",
+        "trash"
+      ]
+    }
+  ]
+}

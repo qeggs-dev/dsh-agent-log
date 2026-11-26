@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-11-18",
+  "weekday": "周三",
+  "entries": 10,
+  "overview": "data/2026-11-18/overview.svg",
+  "projects": [
+    {
+      "name": "DSLike Chat",
+      "body": "data/2026-11-18/dslike-chat.md",
+      "entries": 4,
+      "ids": [
+        "20261118-001",
+        "20261118-003",
+        "20261118-004",
+        "20261118-006"
+      ],
+      "keywords": [
+        "dslike-chat",
+        "样式包",
+        "aurora",
+        "compaction",
+        "cover",
+        "deepseek-api"
+      ]
+    },
+    {
+      "name": "DSH 插件：Token 总用量（dsh-usage-total）",
+      "body": "data/2026-11-18/dsh-token-dsh-usage-total.md",
+      "entries": 1,
+      "ids": [
+        "20261118-005"
+      ],
+      "keywords": [
+        "client-plugin",
+        "composer",
+        "dsh-usage-total",
+        "plugin",
+        "subagent",
+        "token"
+      ]
+    },
+    {
+      "name": "Aurora Chat",
+      "body": "data/2026-11-18/aurora-chat.md",
+      "entries": 3,
+      "ids": [
+        "20261118-007",
+        "20261118-011",
+        "20261118-013"
+      ],
+      "keywords": [
+        "aurora-chat",
+        "android",
+        "app-icon",
+        "builtin-style-pack",
+        "rebrand",
+        "动效"
+      ]
+    },
+    {
+      "name": "DSH 插件：子智能体广播（subagent-broadcast）",
+      "body": "data/2026-11-18/dsh-subagent-broadcast.md",
+      "entries": 1,
+      "ids": [
+        "20261118-008"
+      ],
+      "keywords": [
+        "broadcast",
+        "dsh-plugin",
+        "subagent",
+        "subagent-broadcast",
+        "tool",
+        "插件"
+      ]
+    },
+    {
+      "name": "决策",
+      "body": "data/2026-11-18/section.md",
+      "entries": 1,
+      "ids": [
+        "20261118-010"
+      ],
+      "keywords": [
+        "approval",
+        "dsh-ssh",
+        "full-access",
+        "permission",
+        "plugin",
+        "ssh"
+      ]
+    }
+  ]
+}

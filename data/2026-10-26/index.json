@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-10-26",
+  "weekday": "周一",
+  "entries": 16,
+  "overview": "data/2026-10-26/overview.svg",
+  "projects": [
+    {
+      "name": "子代理接缝：权限与创建窗口（机制记录）",
+      "body": "data/2026-10-26/section.md",
+      "entries": 1,
+      "ids": [
+        "20261026-008"
+      ],
+      "keywords": [
+        "append",
+        "danger-full-access",
+        "index.js",
+        "preset",
+        "sessionid"
+      ]
+    },
+    {
+      "name": "DSH 插件：会话桥接（dsh-session-bridge）",
+      "body": "data/2026-10-26/dsh-dsh-session-bridge.md",
+      "entries": 3,
+      "ids": [
+        "20261026-011",
+        "20261026-012",
+        "20261026-010"
+      ],
+      "keywords": [
+        "dsh-session-bridge",
+        "host",
+        "sessionid",
+        "agent",
+        "boolean",
+        "bundle"
+      ]
+    },
+    {
+      "name": "DSH 插件：受限会话（dsh-scoped-session）",
+      "body": "data/2026-10-26/dsh-dsh-scoped-session.md",
+      "entries": 1,
+      "ids": [
+        "20261026-009"
+      ],
+      "keywords": [
+        "bundle",
+        "desktop",
+        "dsh",
+        "dsh-scoped-session",
+        "host",
+        "profile"
+      ]
+    },
+    {
+      "name": "RPE（Role Play Engine，DSH 插件）",
+      "body": "data/2026-10-26/rpe-role-play-engine-dsh.md",
+      "entries": 10,
+      "ids": [
+        "20261026-001",
+        "20261026-002",
+        "20261026-003",
+        "20261026-004",
+        "20261026-005",
+        "20261026-006",
+        "20261026-013",
+        "20261026-027",
+        "20261026-020",
+        "20261026-021"
+      ],
+      "keywords": [
+        "engine",
+        "rpe",
+        "agent",
+        "bundle",
+        "cordis",
+        "include"
+      ]
+    },
+    {
+      "name": "Active memory（DSH 插件）",
+      "body": "data/2026-10-26/active-memory-dsh.md",
+      "entries": 1,
+      "ids": [
+        "20261026-028"
+      ],
+      "keywords": [
+        "active",
+        "agent",
+        "bundle",
+        "desktop",
+        "include",
+        "profile"
+      ]
+    }
+  ]
+}

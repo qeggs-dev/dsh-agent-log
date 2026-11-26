@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-11-07",
+  "weekday": "周六",
+  "entries": 4,
+  "overview": "data/2026-11-07/overview.svg",
+  "projects": [
+    {
+      "name": "DSH Agent Preset",
+      "body": "data/2026-11-07/dsh-agent-preset.md",
+      "entries": 3,
+      "ids": [
+        "20261107-001",
+        "20261107-002",
+        "20261107-004"
+      ],
+      "keywords": [
+        "bundle",
+        "preset",
+        "profile",
+        "chat",
+        "desktop",
+        "patch"
+      ]
+    },
+    {
+      "name": "DSH 插件：可读预设（dsh-readable-preset）",
+      "body": "data/2026-11-07/dsh-dsh-readable-preset.md",
+      "entries": 1,
+      "ids": [
+        "20261107-003"
+      ],
+      "keywords": [
+        "body",
+        "css",
+        "deepseek-ai",
+        "dsh",
+        "dsh-readable-preset",
+        "token"
+      ]
+    }
+  ]
+}

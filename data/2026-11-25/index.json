@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-11-25",
+  "weekday": "周三",
+  "entries": 12,
+  "overview": "data/2026-11-25/overview.svg",
+  "projects": [
+    {
+      "name": "手机 Agent App（代理树）",
+      "body": "data/2026-11-25/agent-app.md",
+      "entries": 8,
+      "ids": [
+        "20261125-002",
+        "20261125-003",
+        "20261125-004",
+        "20261125-005",
+        "20261125-006",
+        "20261125-007",
+        "20261125-008",
+        "20261125-009"
+      ],
+      "keywords": [
+        "agent-tree",
+        "implementation",
+        "loop",
+        "playbook",
+        "1.1",
+        "acceptance"
+      ]
+    },
+    {
+      "name": "DSH 插件：自定义标签页（dsh-new-page）",
+      "body": "data/2026-11-25/dsh-dsh-new-page.md",
+      "entries": 3,
+      "ids": [
+        "20261125-010",
+        "20261125-011",
+        "20261125-012"
+      ],
+      "keywords": [
+        "dsh-new-page",
+        "renderer",
+        "webview",
+        "ctx.shell",
+        "electron",
+        "guest-lease"
+      ]
+    },
+    {
+      "name": "mod-audit",
+      "body": "data/2026-11-25/mod-audit.md",
+      "entries": 1,
+      "ids": [
+        "20261125-013"
+      ],
+      "keywords": [
+        "bugfix",
+        "mod-audit",
+        "postmessage",
+        "structured-clone",
+        "worker"
+      ]
+    }
+  ]
+}

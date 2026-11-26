@@ -1,0 +1,5 @@
+<!-- 20261120-003 -->
+
+## dsh-relay 按用户给的协议重写为 v0.2（提交 551…
+
+dsh-relay 按用户给的协议重写为 v0.2（提交 55134f4；协议唯一来源 dsh_plugins/dsh-relay/docs/PROTOCOL.md）。核心是事件驱动：WSS 只走控制与事件，数据走 HTTPS 由客户端主动拉取。服务端 server/ 是 Go（手写 RFC6455，唯一外部依赖 x/crypto/argon2 已 vendor；41 条测试 + race 全过；admin user add/list/revoke；Dockerfile + docker-compose + 数据锁；审计与 mailbox.json/files.json）。客户端 13 个工具、57 条测试（node tests/run.mjs），登录用本机 ed25519 签名 challenge，私钥在 identity.json（0600），房间密码存 DSH 凭据库不进配置；配置 baseUrl（https 数据面）与 wsUrl（wss 控制面）二选一即可，另一个自动派生（baseUrl 追加 /v1/ws 换 wss）。一个 DSH 只在一个房间，可多会话监听；收到消息时 running 用 sessionController.prompt mode=steer 插话，空闲用 queue；同一 message.id 不重复投递。文件内容寻址：客户端先算 sha256，begin 命中即 deduped 不传字节；服务端 complete 时自己再算一次并以其哈希存储与索引；分片 ≤10MiB、单文件 ≤100MiB、总量 20GiB、保留 7 天；下载 GET /v1/files/<id> 带 1 小时会话令牌。离线消息按用户名+房间存 24h/200 条，rejoin 补投带 offline:true。房间自助创建、创建者即管理员。真实联调 tests/integration/relay-e2e.mjs 对 Go 服务端全通：登录、建房/进房、在线状态、私聊、广播、文件上传+去重+拉取校验、离线补投。已知未验证：Docker 镜像未本地构建（本机无 Docker）、真实 CA 证书、多实例。已 install_bundle 的 profile 里仍是旧模块代际，需重启 DSH 才加载 v0.2。

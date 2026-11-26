@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-10-29",
+  "weekday": "周四",
+  "entries": 2,
+  "overview": "data/2026-10-29/overview.svg",
+  "projects": [
+    {
+      "name": "DSH 插件：会话包（dsh-session-package）",
+      "body": "data/2026-10-29/dsh-dsh-session-package.md",
+      "entries": 1,
+      "ids": [
+        "20261029-002"
+      ],
+      "keywords": [
+        "bundle",
+        "desktop",
+        "dsh-session-package",
+        "host",
+        "node",
+        "profile"
+      ]
+    },
+    {
+      "name": "DSH 插件：继续任务（dsh-continue-task）",
+      "body": "data/2026-10-29/dsh-dsh-continue-task.md",
+      "entries": 1,
+      "ids": [
+        "20261029-001"
+      ],
+      "keywords": [
+        "agent",
+        "bundle",
+        "desktop",
+        "dsh-continue-task",
+        "patch",
+        "profile"
+      ]
+    }
+  ]
+}

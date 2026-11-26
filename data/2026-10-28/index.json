@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-10-28",
+  "weekday": "周三",
+  "entries": 1,
+  "overview": "data/2026-10-28/overview.svg",
+  "projects": [
+    {
+      "name": "DataServer（QQBot 静态数据服务）",
+      "body": "data/2026-10-28/dataserver-qqbot.md",
+      "entries": 1,
+      "ids": [
+        "20261028-003"
+      ],
+      "keywords": [
+        "content",
+        "dataserver",
+        "nonebot",
+        "range",
+        "read",
+        "workspace"
+      ]
+    }
+  ]
+}

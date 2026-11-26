@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "generator": "build_data.py 3.0.0",
-  "updated": "2026-11-26T22:14:12+08:00",
+  "updated": "2026-11-26T22:27:06+08:00",
   "latest": {
     "id": "20261126-012",
     "date": "2026-11-26",
@@ -11,20 +11,733 @@
     {
       "date": "2026-11-26",
       "weekday": "周四",
-      "entries": 6,
-      "sections": 4,
+      "entries": 10,
+      "sections": 6,
       "index": "data/2026-11-26/index.json",
       "keywords": [
         "canvas",
-        "4d",
+        "agents.md",
         "cdp",
+        "diff-edit",
+        "diffEdit",
         "dsh-plugin",
         "evo-world",
         "github-pages",
         "html游戏",
-        "hypercube",
-        "image-delta",
-        "image-diff"
+        "i18n"
+      ]
+    },
+    {
+      "date": "2026-11-25",
+      "weekday": "周三",
+      "entries": 12,
+      "sections": 3,
+      "index": "data/2026-11-25/index.json",
+      "keywords": [
+        "1.1",
+        "acceptance",
+        "agent-tree",
+        "bugfix",
+        "ctx.shell",
+        "dsh-new-page",
+        "electron",
+        "guest-lease",
+        "implementation",
+        "loop"
+      ]
+    },
+    {
+      "date": "2026-11-24",
+      "weekday": "周二",
+      "entries": 25,
+      "sections": 5,
+      "index": "data/2026-11-24/index.json",
+      "keywords": [
+        "android",
+        "skill",
+        "sqlite",
+        "agent-tree",
+        "apk",
+        "apply",
+        "dsh",
+        "dsh-general-plugins",
+        "dsh-sqlite",
+        "dump"
+      ]
+    },
+    {
+      "date": "2026-11-23",
+      "weekday": "周一",
+      "entries": 4,
+      "sections": 2,
+      "index": "data/2026-11-23/index.json",
+      "keywords": [
+        "canvas",
+        "dsh-new-page",
+        "dsh-ssh",
+        "edge",
+        "ssh",
+        "vars",
+        "凭据",
+        "变量",
+        "弹窗",
+        "截图"
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "weekday": "周日",
+      "entries": 4,
+      "sections": 3,
+      "index": "data/2026-11-22/index.json",
+      "keywords": [
+        "approval",
+        "approval-intercept",
+        "canvas",
+        "chatlog-mock",
+        "context-menu",
+        "cookie",
+        "dsh",
+        "dsh-new-page",
+        "gdi",
+        "i18n"
+      ]
+    },
+    {
+      "date": "2026-11-21",
+      "weekday": "周六",
+      "entries": 7,
+      "sections": 3,
+      "index": "data/2026-11-21/index.json",
+      "keywords": [
+        "插件",
+        "cookie",
+        "debian",
+        "docker",
+        "dsh-new-page",
+        "dsh-relay",
+        "e2e",
+        "iframe",
+        "notice",
+        "scratch"
+      ]
+    },
+    {
+      "date": "2026-11-20",
+      "weekday": "周五",
+      "entries": 2,
+      "sections": 2,
+      "index": "data/2026-11-20/index.json",
+      "keywords": [
+        "agent-preset",
+        "dsh-plugin",
+        "dsh-relay",
+        "ed25519",
+        "go",
+        "inject",
+        "persona",
+        "readable-preset",
+        "relay",
+        "steer"
+      ]
+    },
+    {
+      "date": "2026-11-19",
+      "weekday": "周四",
+      "entries": 6,
+      "sections": 5,
+      "index": "data/2026-11-19/index.json",
+      "keywords": [
+        "dsh-plugin",
+        "aurora-chat",
+        "base_path",
+        "bundle",
+        "deepseek-official",
+        "dry_run",
+        "dsh-regex-paths",
+        "dsh-sqlite",
+        "dsh_plugins",
+        "install.py"
+      ]
+    },
+    {
+      "date": "2026-11-18",
+      "weekday": "周三",
+      "entries": 10,
+      "sections": 5,
+      "index": "data/2026-11-18/index.json",
+      "keywords": [
+        "plugin",
+        "subagent",
+        "android",
+        "app-icon",
+        "approval",
+        "aurora",
+        "aurora-chat",
+        "broadcast",
+        "builtin-style-pack",
+        "client-plugin"
+      ]
+    },
+    {
+      "date": "2026-11-17",
+      "weekday": "周二",
+      "entries": 5,
+      "sections": 5,
+      "index": "data/2026-11-17/index.json",
+      "keywords": [
+        "approval",
+        "call_code",
+        "change-style",
+        "ctx.inject",
+        "dsh",
+        "dsh-plugin",
+        "dsh-super-workspace",
+        "dsh_plugins",
+        "fastapi",
+        "main"
+      ]
+    },
+    {
+      "date": "2026-11-16",
+      "weekday": "周一",
+      "entries": 7,
+      "sections": 5,
+      "index": "data/2026-11-16/index.json",
+      "keywords": [
+        "agent-loop",
+        "agents.md",
+        "allwindows",
+        "android",
+        "dsh-agent-stop",
+        "dsh-screenshot",
+        "dsh-ssh",
+        "fork",
+        "git",
+        "lib-cache"
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "weekday": "周日",
+      "entries": 15,
+      "sections": 9,
+      "index": "data/2026-11-15/index.json",
+      "keywords": [
+        "dsh-plugin",
+        "dsh",
+        "install_bundle",
+        "job-wait",
+        "plugin",
+        "skill",
+        "agents.md",
+        "android",
+        "approval",
+        "audit"
+      ]
+    },
+    {
+      "date": "2026-11-14",
+      "weekday": "周六",
+      "entries": 13,
+      "sections": 8,
+      "index": "data/2026-11-14/index.json",
+      "keywords": [
+        "插件",
+        "dsh-plugin",
+        "agents-md",
+        "approval",
+        "backend-resource",
+        "chokidar",
+        "cordis",
+        "dsh-title",
+        "dsh-window-keeper",
+        "dsh_plugins"
+      ]
+    },
+    {
+      "date": "2026-11-13",
+      "weekday": "周五",
+      "entries": 8,
+      "sections": 6,
+      "index": "data/2026-11-13/index.json",
+      "keywords": [
+        "cordis",
+        "dsh-plugin",
+        "ad-downloader",
+        "adl",
+        "agent-message",
+        "approval",
+        "callback",
+        "cordis-plugin",
+        "cross-platform",
+        "description"
+      ]
+    },
+    {
+      "date": "2026-11-12",
+      "weekday": "周四",
+      "entries": 17,
+      "sections": 8,
+      "index": "data/2026-11-12/index.json",
+      "keywords": [
+        "dsh",
+        "host",
+        "产品设计",
+        "少儿编程",
+        "active",
+        "apvts",
+        "backend-resource",
+        "cancelled",
+        "cep",
+        "close"
+      ]
+    },
+    {
+      "date": "2026-11-11",
+      "weekday": "周三",
+      "entries": 5,
+      "sections": 1,
+      "index": "data/2026-11-11/index.json",
+      "keywords": [
+        "assets",
+        "cookie",
+        "dsh-ui-port-mirror",
+        "enabled",
+        "host",
+        "reason"
+      ]
+    },
+    {
+      "date": "2026-11-10",
+      "weekday": "周二",
+      "entries": 3,
+      "sections": 3,
+      "index": "data/2026-11-10/index.json",
+      "keywords": [
+        "dsh",
+        "host",
+        "node",
+        "agent",
+        "assets",
+        "bundle",
+        "canvas",
+        "cordis",
+        "dsh-qqbot",
+        "dsh-screenshot"
+      ]
+    },
+    {
+      "date": "2026-11-07",
+      "weekday": "周六",
+      "entries": 4,
+      "sections": 2,
+      "index": "data/2026-11-07/index.json",
+      "keywords": [
+        "body",
+        "bundle",
+        "chat",
+        "css",
+        "deepseek-ai",
+        "desktop",
+        "dsh",
+        "dsh-readable-preset",
+        "patch",
+        "preset"
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "weekday": "周五",
+      "entries": 4,
+      "sections": 3,
+      "index": "data/2026-11-06/index.json",
+      "keywords": [
+        "host",
+        "agent",
+        "android",
+        "bundle",
+        "chat",
+        "close",
+        "cordis-host",
+        "desktop",
+        "dsh",
+        "dsh-job-wait"
+      ]
+    },
+    {
+      "date": "2026-11-05",
+      "weekday": "周四",
+      "entries": 2,
+      "sections": 1,
+      "index": "data/2026-11-05/index.json",
+      "keywords": [
+        "android",
+        "cordis",
+        "cordis-host",
+        "docs",
+        "dsh",
+        "host"
+      ]
+    },
+    {
+      "date": "2026-11-04",
+      "weekday": "周三",
+      "entries": 8,
+      "sections": 3,
+      "index": "data/2026-11-04/index.json",
+      "keywords": [
+        "cordis",
+        "node",
+        "active",
+        "agent",
+        "android",
+        "available",
+        "compose",
+        "cordis-host",
+        "dsh",
+        "host"
+      ]
+    },
+    {
+      "date": "2026-11-02",
+      "weekday": "周一",
+      "entries": 1,
+      "sections": 1,
+      "index": "data/2026-11-02/index.json",
+      "keywords": [
+        "active",
+        "adv1",
+        "core",
+        "dlcore",
+        "sha256",
+        "status"
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "weekday": "周日",
+      "entries": 7,
+      "sections": 3,
+      "index": "data/2026-11-01/index.json",
+      "keywords": [
+        "bundle",
+        "hmr",
+        "pwsh",
+        "active",
+        "agent",
+        "app.asar",
+        "checkout",
+        "desktop",
+        "dsh",
+        "host"
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "weekday": "周六",
+      "entries": 2,
+      "sections": 1,
+      "index": "data/2026-10-31/index.json",
+      "keywords": [
+        "append",
+        "core",
+        "dataserver",
+        "develop",
+        "hash",
+        "nonebot"
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "weekday": "周五",
+      "entries": 4,
+      "sections": 1,
+      "index": "data/2026-10-30/index.json",
+      "keywords": [
+        "bundle",
+        "desktop",
+        "dsh-lib-cache",
+        "dsh-mermaid",
+        "host",
+        "profile"
+      ]
+    },
+    {
+      "date": "2026-10-29",
+      "weekday": "周四",
+      "entries": 2,
+      "sections": 2,
+      "index": "data/2026-10-29/index.json",
+      "keywords": [
+        "bundle",
+        "desktop",
+        "profile",
+        "agent",
+        "dsh-continue-task",
+        "dsh-session-package",
+        "host",
+        "node",
+        "patch"
+      ]
+    },
+    {
+      "date": "2026-10-28",
+      "weekday": "周三",
+      "entries": 1,
+      "sections": 1,
+      "index": "data/2026-10-28/index.json",
+      "keywords": [
+        "content",
+        "dataserver",
+        "nonebot",
+        "range",
+        "read",
+        "workspace"
+      ]
+    },
+    {
+      "date": "2026-10-27",
+      "weekday": "周二",
+      "entries": 2,
+      "sections": 1,
+      "index": "data/2026-10-27/index.json",
+      "keywords": [
+        "close",
+        "copy",
+        "core",
+        "dataserver",
+        "delete",
+        "workspace"
+      ]
+    },
+    {
+      "date": "2026-10-26",
+      "weekday": "周一",
+      "entries": 16,
+      "sections": 5,
+      "index": "data/2026-10-26/index.json",
+      "keywords": [
+        "bundle",
+        "agent",
+        "desktop",
+        "host",
+        "include",
+        "profile",
+        "sessionid",
+        "active",
+        "append",
+        "boolean"
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "weekday": "周日",
+      "entries": 4,
+      "sections": 2,
+      "index": "data/2026-10-25/index.json",
+      "keywords": [
+        "agent",
+        "core",
+        "dataserver",
+        "desktop",
+        "develop",
+        "dsh",
+        "dsh-agent-bus",
+        "glob",
+        "host",
+        "kind"
+      ]
+    },
+    {
+      "date": "2026-10-23",
+      "weekday": "周五",
+      "entries": 10,
+      "sections": 6,
+      "index": "data/2026-10-23/index.json",
+      "keywords": [
+        "repeater-backend",
+        "agent",
+        "chat",
+        "patch",
+        "profile",
+        "body",
+        "break",
+        "bundle",
+        "deepseek-ai",
+        "deepseek_harness.py"
+      ]
+    },
+    {
+      "date": "2026-10-22",
+      "weekday": "周四",
+      "entries": 15,
+      "sections": 1,
+      "index": "data/2026-10-22/index.json",
+      "keywords": [
+        "cookie",
+        "core",
+        "electron",
+        "exit",
+        "node",
+        "requester"
+      ]
+    },
+    {
+      "date": "2026-10-21",
+      "weekday": "周三",
+      "entries": 34,
+      "sections": 3,
+      "index": "data/2026-10-21/index.json",
+      "keywords": [
+        "core",
+        "downloader",
+        "electron",
+        "mcdl",
+        "sha1",
+        "adl",
+        "adv1",
+        "dest",
+        "download",
+        "node"
+      ]
+    },
+    {
+      "date": "2026-10-20",
+      "weekday": "周二",
+      "entries": 10,
+      "sections": 1,
+      "index": "data/2026-10-20/index.json",
+      "keywords": [
+        "async",
+        "cache",
+        "download",
+        "minecraft",
+        "pcml",
+        "sha1"
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "weekday": "周一",
+      "entries": 8,
+      "sections": 1,
+      "index": "data/2026-10-19/index.json",
+      "keywords": [
+        "clientversion",
+        "desktop",
+        "electron",
+        "forge",
+        "mod-audit",
+        "neoforge"
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "weekday": "周日",
+      "entries": 6,
+      "sections": 3,
+      "index": "data/2026-10-18/index.json",
+      "keywords": [
+        "dsh",
+        "app.asar",
+        "collab",
+        "dataserver",
+        "deepseek-ai",
+        "delete",
+        "dsh-window-keeper",
+        "electron",
+        "host",
+        "patch"
+      ]
+    },
+    {
+      "date": "2026-10-15",
+      "weekday": "周四",
+      "entries": 4,
+      "sections": 2,
+      "index": "data/2026-10-15/index.json",
+      "keywords": [
+        "agent",
+        "dsh",
+        "python",
+        "append",
+        "hmr",
+        "mvp",
+        "pid",
+        "shell",
+        "tool"
+      ]
+    },
+    {
+      "date": "2026-10-10",
+      "weekday": "周六",
+      "entries": 4,
+      "sections": 2,
+      "index": "data/2026-10-10/index.json",
+      "keywords": [
+        "alpha",
+        "append",
+        "background",
+        "chat",
+        "lanczos",
+        "mask",
+        "model_id",
+        "order",
+        "patch",
+        "preset"
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "weekday": "周五",
+      "entries": 6,
+      "sections": 2,
+      "index": "data/2026-10-02/index.json",
+      "keywords": [
+        "ace",
+        "qqbot",
+        "acl",
+        "app.asar",
+        "checkout",
+        "collab",
+        "dsh",
+        "patch",
+        "preset"
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "weekday": "周四",
+      "entries": 9,
+      "sections": 1,
+      "index": "data/2026-10-01/index.json",
+      "keywords": [
+        "chat",
+        "deepseek-ai",
+        "patch",
+        "persona",
+        "preset",
+        "profile"
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "weekday": "周五",
+      "entries": 25,
+      "sections": 4,
+      "index": "data/2026-09-18/index.json",
+      "keywords": [
+        "python",
+        "envs",
+        "venv",
+        "ves",
+        "ascii",
+        "create",
+        "doctor",
+        "dsh_starter.py",
+        "dsh_starter.py.orig",
+        "dsh_temp_root"
       ]
     }
   ]

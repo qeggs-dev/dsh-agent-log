@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-11-10",
+  "weekday": "周二",
+  "entries": 3,
+  "overview": "data/2026-11-10/overview.svg",
+  "projects": [
+    {
+      "name": "dsh-qqbot（腾讯官方的 QQ 接入插件）",
+      "body": "data/2026-11-10/dsh-qqbot-qq.md",
+      "entries": 1,
+      "ids": [
+        "20261110-001"
+      ],
+      "keywords": [
+        "cordis",
+        "dsh",
+        "dsh-qqbot",
+        "host",
+        "node",
+        "profile"
+      ]
+    },
+    {
+      "name": "dsh-ui-port-mirror（界面端口镜像）",
+      "body": "data/2026-11-10/dsh-ui-port-mirror.md",
+      "entries": 1,
+      "ids": [
+        "20261110-007"
+      ],
+      "keywords": [
+        "assets",
+        "canvas",
+        "dsh-ui-port-mirror",
+        "rgba",
+        "sha256",
+        "vendor"
+      ]
+    },
+    {
+      "name": "DSH 插件：整屏截图（dsh-screenshot）",
+      "body": "data/2026-11-10/dsh-dsh-screenshot.md",
+      "entries": 1,
+      "ids": [
+        "20261110-004"
+      ],
+      "keywords": [
+        "agent",
+        "bundle",
+        "dsh",
+        "dsh-screenshot",
+        "host",
+        "node"
+      ]
+    }
+  ]
+}

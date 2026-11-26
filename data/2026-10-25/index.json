@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-10-25",
+  "weekday": "周日",
+  "entries": 4,
+  "overview": "data/2026-10-25/overview.svg",
+  "projects": [
+    {
+      "name": "DataServer（QQBot 静态数据服务）",
+      "body": "data/2026-10-25/dataserver-qqbot.md",
+      "entries": 2,
+      "ids": [
+        "20261025-003",
+        "20261025-004"
+      ],
+      "keywords": [
+        "dataserver",
+        "list",
+        "workspace",
+        "core",
+        "develop",
+        "glob"
+      ]
+    },
+    {
+      "name": "dsh-agent-bus",
+      "body": "data/2026-10-25/dsh-agent-bus.md",
+      "entries": 2,
+      "ids": [
+        "20261025-001",
+        "20261025-002"
+      ],
+      "keywords": [
+        "dsh-agent-bus",
+        "agent",
+        "desktop",
+        "dsh",
+        "host",
+        "kind"
+      ]
+    }
+  ]
+}

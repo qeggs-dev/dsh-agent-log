@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-11-06",
+  "weekday": "周五",
+  "entries": 4,
+  "overview": "data/2026-11-06/overview.svg",
+  "projects": [
+    {
+      "name": "Cordis 宿主 App（Android 端 agent 运行时）",
+      "body": "data/2026-11-06/cordis-app-android-agent.md",
+      "entries": 2,
+      "ids": [
+        "20261106-001",
+        "20261106-002"
+      ],
+      "keywords": [
+        "android",
+        "cordis-host",
+        "token",
+        "close",
+        "header",
+        "host"
+      ]
+    },
+    {
+      "name": "DSH 插件：后台任务等待控制（dsh-job-wait）",
+      "body": "data/2026-11-06/dsh-dsh-job-wait.md",
+      "entries": 1,
+      "ids": [
+        "20261106-003"
+      ],
+      "keywords": [
+        "agent",
+        "bundle",
+        "desktop",
+        "dsh-job-wait",
+        "host",
+        "profile"
+      ]
+    },
+    {
+      "name": "DSH 插件：可读预设（dsh-readable-preset）",
+      "body": "data/2026-11-06/dsh-dsh-readable-preset.md",
+      "entries": 1,
+      "ids": [
+        "20261106-004"
+      ],
+      "keywords": [
+        "chat",
+        "dsh",
+        "dsh-readable-preset",
+        "host",
+        "include",
+        "node"
+      ]
+    }
+  ]
+}

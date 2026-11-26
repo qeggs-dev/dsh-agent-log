@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-10-01",
+  "weekday": "周四",
+  "entries": 9,
+  "overview": "data/2026-10-01/overview.svg",
+  "projects": [
+    {
+      "name": "DSH Agent Preset",
+      "body": "data/2026-10-01/dsh-agent-preset.md",
+      "entries": 9,
+      "ids": [
+        "20261001-004",
+        "20261001-005",
+        "20261001-006",
+        "20261001-014",
+        "20261001-020",
+        "20261001-015",
+        "20261001-016",
+        "20261001-017",
+        "20261001-018"
+      ],
+      "keywords": [
+        "preset",
+        "patch",
+        "persona",
+        "deepseek-ai",
+        "profile",
+        "chat"
+      ]
+    }
+  ]
+}

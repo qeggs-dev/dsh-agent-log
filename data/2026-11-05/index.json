@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-11-05",
+  "weekday": "周四",
+  "entries": 2,
+  "overview": "data/2026-11-05/overview.svg",
+  "projects": [
+    {
+      "name": "Cordis 宿主 App（Android 端 agent 运行时）",
+      "body": "data/2026-11-05/cordis-app-android-agent.md",
+      "entries": 2,
+      "ids": [
+        "20261105-012",
+        "20261105-015"
+      ],
+      "keywords": [
+        "android",
+        "cordis-host",
+        "cordis",
+        "docs",
+        "dsh",
+        "host"
+      ]
+    }
+  ]
+}

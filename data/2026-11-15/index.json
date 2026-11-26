@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-11-15",
+  "weekday": "周日",
+  "entries": 15,
+  "overview": "data/2026-11-15/overview.svg",
+  "projects": [
+    {
+      "name": "决策",
+      "body": "data/2026-11-15/section.md",
+      "entries": 3,
+      "ids": [
+        "20261115-002",
+        "20261115-007",
+        "20261115-009"
+      ],
+      "keywords": [
+        "agents.md",
+        "audit",
+        "background-jobs",
+        "dsh",
+        "dsh-ssh",
+        "host-key"
+      ]
+    },
+    {
+      "name": "Session Utils",
+      "body": "data/2026-11-15/session-utils.md",
+      "entries": 3,
+      "ids": [
+        "20261115-003",
+        "20261115-010",
+        "20261115-011"
+      ],
+      "keywords": [
+        "dsh",
+        "session-utils",
+        "job-wait",
+        "session_wait",
+        "waitcontrol",
+        "deadlock"
+      ]
+    },
+    {
+      "name": "DSH 插件：后台任务等待控制（dsh-job-wait）",
+      "body": "data/2026-11-15/dsh-dsh-job-wait.md",
+      "entries": 1,
+      "ids": [
+        "20261115-004"
+      ],
+      "keywords": [
+        "dsh-plugin",
+        "job-wait",
+        "provider",
+        "sleep",
+        "wait_agent"
+      ]
+    },
+    {
+      "name": "DSH 插件：开发者控制台（dsh-developer-console）",
+      "body": "data/2026-11-15/dsh-dsh-developer-console.md",
+      "entries": 1,
+      "ids": [
+        "20261115-005"
+      ],
+      "keywords": [
+        "approval",
+        "developer-console",
+        "dsh-plugin",
+        "eval",
+        "page-console",
+        "sse"
+      ]
+    },
+    {
+      "name": "dsh-ui-port-mirror（界面端口镜像）",
+      "body": "data/2026-11-15/dsh-ui-port-mirror.md",
+      "entries": 1,
+      "ids": [
+        "20261115-006"
+      ],
+      "keywords": [
+        "dist",
+        "dsh-ui-port-mirror",
+        "install_bundle",
+        "pnpm",
+        "skill",
+        "打包"
+      ]
+    },
+    {
+      "name": "DSH 插件：回收站删除（take-out-trash）",
+      "body": "data/2026-11-15/dsh-take-out-trash.md",
+      "entries": 1,
+      "ids": [
+        "20261115-008"
+      ],
+      "keywords": [
+        "compliance",
+        "description",
+        "dsh-plugin",
+        "purpose",
+        "r-005",
+        "r-006"
+      ]
+    },
+    {
+      "name": "DSH 插件：差异编辑（diff-edit）",
+      "body": "data/2026-11-15/dsh-diff-edit.md",
+      "entries": 1,
+      "ids": [
+        "20261115-012"
+      ],
+      "keywords": [
+        "diff-edit",
+        "dsh_plugins",
+        "jsdiff",
+        "lib-cache",
+        "plugin",
+        "tool"
+      ]
+    },
+    {
+      "name": "dsh-opener（开屏动画）",
+      "body": "data/2026-11-15/dsh-opener.md",
+      "entries": 1,
+      "ids": [
+        "20261115-014"
+      ],
+      "keywords": [
+        "dsh-opener",
+        "install_bundle",
+        "packaging",
+        "plugin",
+        "skill",
+        "tgz"
+      ]
+    },
+    {
+      "name": "离线导航地图（Android）",
+      "body": "data/2026-11-15/android.md",
+      "entries": 3,
+      "ids": [
+        "20261115-015",
+        "20261115-016",
+        "20261115-017"
+      ],
+      "keywords": [
+        "android",
+        "离线地图",
+        "交互设计",
+        "地图共享",
+        "轨迹采集"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-11-20",
+  "weekday": "周五",
+  "entries": 2,
+  "overview": "data/2026-11-20/overview.svg",
+  "projects": [
+    {
+      "name": "DSH 插件：可读预设（dsh-readable-preset）",
+      "body": "data/2026-11-20/dsh-dsh-readable-preset.md",
+      "entries": 1,
+      "ids": [
+        "20261120-001"
+      ],
+      "keywords": [
+        "agent-preset",
+        "dsh-plugin",
+        "inject",
+        "persona",
+        "readable-preset",
+        "system-prompt"
+      ]
+    },
+    {
+      "name": "DSH 插件：远端中继（dsh-relay）",
+      "body": "data/2026-11-20/dsh-dsh-relay.md",
+      "entries": 1,
+      "ids": [
+        "20261120-003"
+      ],
+      "keywords": [
+        "dsh-relay",
+        "ed25519",
+        "go",
+        "relay",
+        "steer",
+        "websocket"
+      ]
+    }
+  ]
+}

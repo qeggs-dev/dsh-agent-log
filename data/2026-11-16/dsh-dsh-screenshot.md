@@ -1,0 +1,5 @@
+<!-- 20261116-003 -->
+
+## `capture_screen` 增加多窗口模式，并按工作区规则…
+
+`capture_screen` 增加多窗口模式，并按工作区规则 R-005 改造调用描述。**多窗口**：新参数 `allWindows: true`（必须配 `pid`/`name`）枚举该进程/映像的所有可见顶层窗口，每个窗口各存一张 PNG（脚本 `-AllWindows`；`path` 此时是目录，默认 `screenshots/<YYYYMMDD-HHmmss>/`，文件名 `window-01.png`…；最多 20 个，超出记 `truncated: true`）；最小化或「拒绝 WM_PRINT 且被遮挡」的窗口跳过并写进 `skipped`，桌面/任务栏（`Progman`/`WorkerW`/`Shell_TrayWnd`/`Shell_SecondaryTrayWnd`，按 `GetClassName`）被过滤。C# 侧新增 `Consider`/`Ranked`/`FindWindowsForPids`/`FindWindowsByName`，截取逻辑抽成 `Capture-OneWindow` 供单/多窗口共用。**描述参数**：按 R-005 把必填参数从 `reason` 改名为 `description`（空/纯空白、换行等控制字符、超 500 字符都拒绝），审批卡显示「目的：…」，工具结果首行 `Purpose: …`。**实测**：`-ImageName explorer -AllWindows -Cursor` 得到 3 张（gdl/dist/Filebrowser；跳过 3 个最小化窗口，Program Manager 被过滤），单窗口模式未回归。插件目录 `dsh_plugins/dsh-screenshot` 已是 git 仓库并提交 `619a009`。**端到端验收（2026-11-16 04:41，重启后）**：工具 schema 已含 `description`（必填）与 `allWindows`；`capture_screen({ description, name: 'explorer', allWindows: true })` 返回 `Purpose:` 行 + 4 个窗口（dsh-desktop-shell/gdl/dist/Filebrowser，均 1809×892，目录 `screenshots/20261116-043459/`）+ 跳过 3 个最小化窗口（Viburnum/dist/Download）。

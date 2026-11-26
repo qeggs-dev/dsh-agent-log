@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-11-24",
+  "weekday": "周二",
+  "entries": 25,
+  "overview": "data/2026-11-24/overview.svg",
+  "projects": [
+    {
+      "name": "DSH 插件：SQLite 数据库（dsh-sqlite）",
+      "body": "data/2026-11-24/dsh-sqlite-dsh-sqlite.md",
+      "entries": 1,
+      "ids": [
+        "20261124-001"
+      ],
+      "keywords": [
+        "apply",
+        "dsh-sqlite",
+        "dump",
+        "export",
+        "import",
+        "sqlite"
+      ]
+    },
+    {
+      "name": "DSH 插件：常规插件设置（dsh-general-plugins）",
+      "body": "data/2026-11-24/dsh-dsh-general-plugins.md",
+      "entries": 1,
+      "ids": [
+        "20261124-002"
+      ],
+      "keywords": [
+        "dsh-general-plugins",
+        "generalplugins",
+        "settings.section",
+        "ui",
+        "插件",
+        "设置页"
+      ]
+    },
+    {
+      "name": "DSH 插件：环境预设（environment-preset）",
+      "body": "data/2026-11-24/dsh-environment-preset.md",
+      "entries": 1,
+      "ids": [
+        "20261124-003"
+      ],
+      "keywords": [
+        "env_preset",
+        "environment-preset",
+        "package_env",
+        "skill",
+        "unpack_env",
+        "zip"
+      ]
+    },
+    {
+      "name": "手机本地 Harness（DSH Mobile）",
+      "body": "data/2026-11-24/harness-dsh-mobile.md",
+      "entries": 1,
+      "ids": [
+        "20261124-005"
+      ],
+      "keywords": [
+        "android",
+        "apk",
+        "dsh",
+        "mobile",
+        "node",
+        "termux"
+      ]
+    },
+    {
+      "name": "手机 Agent App（代理树）",
+      "body": "data/2026-11-24/agent-app.md",
+      "entries": 21,
+      "ids": [
+        "20261124-008",
+        "20261124-009",
+        "20261124-010",
+        "20261124-011",
+        "20261124-012",
+        "20261124-013",
+        "20261124-014",
+        "20261124-015",
+        "20261124-016",
+        "20261124-017",
+        "20261124-018",
+        "20261124-019",
+        "20261124-020",
+        "20261124-021",
+        "20261124-022",
+        "20261124-023",
+        "20261124-024",
+        "20261124-025",
+        "20261124-026",
+        "20261124-027",
+        "20261124-028"
+      ],
+      "keywords": [
+        "agent-tree",
+        "skill",
+        "workspace",
+        "android",
+        "sqlite",
+        "v1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-11-12",
+  "weekday": "周四",
+  "entries": 17,
+  "overview": "data/2026-11-12/overview.svg",
+  "projects": [
+    {
+      "name": "DSH 插件：后台任务等待控制（dsh-job-wait）",
+      "body": "data/2026-11-12/dsh-dsh-job-wait.md",
+      "entries": 2,
+      "ids": [
+        "20261112-002",
+        "20261112-003"
+      ],
+      "keywords": [
+        "active",
+        "dsh-job-wait",
+        "host",
+        "cancelled",
+        "exit",
+        "install_bundle"
+      ]
+    },
+    {
+      "name": "DSH 插件：整屏截图（dsh-screenshot）",
+      "body": "data/2026-11-12/dsh-dsh-screenshot.md",
+      "entries": 2,
+      "ids": [
+        "20261112-001",
+        "20261112-019"
+      ],
+      "keywords": [
+        "dsh-screenshot",
+        "danger-full-access",
+        "dsh",
+        "electron",
+        "node",
+        "printwindow"
+      ]
+    },
+    {
+      "name": "DSH 插件：后台资源管理（backend-resource）",
+      "body": "data/2026-11-12/dsh-backend-resource.md",
+      "entries": 3,
+      "ids": [
+        "20261112-006",
+        "20261112-008",
+        "20261112-007"
+      ],
+      "keywords": [
+        "backend-resource",
+        "close",
+        "host",
+        "create",
+        "desktop",
+        "dsh"
+      ]
+    },
+    {
+      "name": "决策",
+      "body": "data/2026-11-12/section.md",
+      "entries": 4,
+      "ids": [
+        "20261112-009",
+        "20261112-014",
+        "20261112-025",
+        "20261112-027"
+      ],
+      "keywords": [
+        "产品设计",
+        "少儿编程",
+        "形态决策",
+        "编译器",
+        "datapack",
+        "minecraft"
+      ]
+    },
+    {
+      "name": "QQBot 后端主服务（Backend/develop core）",
+      "body": "data/2026-11-12/qqbot-backend-develop-core.md",
+      "entries": 1,
+      "ids": [
+        "20261112-015"
+      ],
+      "keywords": [
+        "fastapi",
+        "qqbot",
+        "repeater",
+        "sub_agent",
+        "代码事实"
+      ]
+    },
+    {
+      "name": "dsh-ui-port-mirror（界面端口镜像）",
+      "body": "data/2026-11-12/dsh-ui-port-mirror.md",
+      "entries": 1,
+      "ids": [
+        "20261112-016"
+      ],
+      "keywords": [
+        "cordis",
+        "qrcode",
+        "ui-plugin",
+        "端口镜像"
+      ]
+    },
+    {
+      "name": "Premiere 音频工具（pr-audio）",
+      "body": "data/2026-11-12/premiere-pr-audio.md",
+      "entries": 3,
+      "ids": [
+        "20261112-021",
+        "20261112-022",
+        "20261112-023"
+      ],
+      "keywords": [
+        "pr-audio",
+        "premiere",
+        "vst3",
+        "apvts",
+        "cep",
+        "frida"
+      ]
+    },
+    {
+      "name": "待办",
+      "body": "data/2026-11-12/section-2.md",
+      "entries": 1,
+      "ids": [
+        "20261112-026"
+      ],
+      "keywords": [
+        "产品设计",
+        "少儿编程",
+        "待办"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-11-14",
+  "weekday": "周六",
+  "entries": 13,
+  "overview": "data/2026-11-14/overview.svg",
+  "projects": [
+    {
+      "name": "决策",
+      "body": "data/2026-11-14/section.md",
+      "entries": 3,
+      "ids": [
+        "20261114-008",
+        "20261114-011",
+        "20261114-014"
+      ],
+      "keywords": [
+        "approval",
+        "dsh-plugin",
+        "ssh",
+        "agents-md",
+        "rules",
+        "settings"
+      ]
+    },
+    {
+      "name": "DSH 插件：后台任务等待控制（dsh-job-wait）",
+      "body": "data/2026-11-14/dsh-dsh-job-wait.md",
+      "entries": 1,
+      "ids": [
+        "20261114-009"
+      ],
+      "keywords": [
+        "dsh-plugin",
+        "job-wait",
+        "terminal",
+        "wait_agent",
+        "重启"
+      ]
+    },
+    {
+      "name": "DSH 插件：文件看门狗（watchdog）",
+      "body": "data/2026-11-14/dsh-watchdog.md",
+      "entries": 1,
+      "ids": [
+        "20261114-017"
+      ],
+      "keywords": [
+        "backend-resource",
+        "chokidar",
+        "dsh_plugins",
+        "fs.watch",
+        "watchdog",
+        "插件"
+      ]
+    },
+    {
+      "name": "桌面版窗口尺寸（dsh-window-keeper）",
+      "body": "data/2026-11-14/dsh-window-keeper.md",
+      "entries": 1,
+      "ids": [
+        "20261114-018"
+      ],
+      "keywords": [
+        "dsh-window-keeper",
+        "hmr",
+        "koffi",
+        "插件",
+        "状态文件",
+        "窗口"
+      ]
+    },
+    {
+      "name": "MC Downloader（mcdl）",
+      "body": "data/2026-11-14/mc-downloader-mcdl.md",
+      "entries": 3,
+      "ids": [
+        "20261114-026",
+        "20261114-027",
+        "20261114-028"
+      ],
+      "keywords": [
+        "mcdl",
+        "打包",
+        "electron",
+        "gdl",
+        "release",
+        "工作区"
+      ]
+    },
+    {
+      "name": "MC 裸机（Minecraft appliance）",
+      "body": "data/2026-11-14/mc-minecraft-appliance.md",
+      "entries": 2,
+      "ids": [
+        "20261114-029",
+        "20261114-030"
+      ],
+      "keywords": []
+    },
+    {
+      "name": "dsh-ui-port-mirror（界面端口镜像）",
+      "body": "data/2026-11-14/dsh-ui-port-mirror.md",
+      "entries": 1,
+      "ids": [
+        "20261114-031"
+      ],
+      "keywords": [
+        "https",
+        "qrcode",
+        "remember",
+        "审批",
+        "端口镜像"
+      ]
+    },
+    {
+      "name": "会话标题（dsh-title）",
+      "body": "data/2026-11-14/dsh-title.md",
+      "entries": 1,
+      "ids": [
+        "20261114-033"
+      ],
+      "keywords": [
+        "cordis",
+        "dsh-title",
+        "session-title",
+        "title",
+        "会话标题",
+        "插件"
+      ]
+    }
+  ]
+}

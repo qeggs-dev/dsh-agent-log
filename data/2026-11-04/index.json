@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-11-04",
+  "weekday": "周三",
+  "entries": 8,
+  "overview": "data/2026-11-04/overview.svg",
+  "projects": [
+    {
+      "name": "Cordis 宿主 App（Android 端 agent 运行时）",
+      "body": "data/2026-11-04/cordis-app-android-agent.md",
+      "entries": 6,
+      "ids": [
+        "20261104-001",
+        "20261104-003",
+        "20261104-007",
+        "20261104-008",
+        "20261104-009",
+        "20261104-010"
+      ],
+      "keywords": [
+        "android",
+        "cordis",
+        "node",
+        "active",
+        "host",
+        "sha256"
+      ]
+    },
+    {
+      "name": "DSH Agent Preset",
+      "body": "data/2026-11-04/dsh-agent-preset.md",
+      "entries": 1,
+      "ids": [
+        "20261104-006"
+      ],
+      "keywords": [
+        "available",
+        "cordis-host",
+        "preset",
+        "super_workspace.json",
+        "super_workspace_exec",
+        "userdata"
+      ]
+    },
+    {
+      "name": "决策",
+      "body": "data/2026-11-04/section.md",
+      "entries": 1,
+      "ids": [
+        "20261104-002"
+      ],
+      "keywords": [
+        "agent",
+        "compose",
+        "cordis",
+        "dsh",
+        "node"
+      ]
+    }
+  ]
+}

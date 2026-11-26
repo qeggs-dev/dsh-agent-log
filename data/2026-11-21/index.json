@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-11-21",
+  "weekday": "周六",
+  "entries": 7,
+  "overview": "data/2026-11-21/overview.svg",
+  "projects": [
+    {
+      "name": "DSH 插件：远端中继（dsh-relay）",
+      "body": "data/2026-11-21/dsh-dsh-relay.md",
+      "entries": 1,
+      "ids": [
+        "20261121-001"
+      ],
+      "keywords": [
+        "debian",
+        "docker",
+        "dsh-relay",
+        "e2e",
+        "scratch",
+        "tls"
+      ]
+    },
+    {
+      "name": "DSH 插件：自定义标签页（dsh-new-page）",
+      "body": "data/2026-11-21/dsh-dsh-new-page.md",
+      "entries": 5,
+      "ids": [
+        "20261121-002",
+        "20261121-003",
+        "20261121-004",
+        "20261121-006",
+        "20261121-007"
+      ],
+      "keywords": [
+        "dsh-new-page",
+        "插件",
+        "标签页",
+        "设置页",
+        "cookie",
+        "iframe"
+      ]
+    },
+    {
+      "name": "subagent-access",
+      "body": "data/2026-11-21/subagent-access.md",
+      "entries": 1,
+      "ids": [
+        "20261121-005"
+      ],
+      "keywords": [
+        "notice",
+        "subagent-access",
+        "子代理",
+        "审批",
+        "插件",
+        "权限"
+      ]
+    }
+  ]
+}

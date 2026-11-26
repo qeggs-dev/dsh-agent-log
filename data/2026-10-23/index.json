@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-10-23",
+  "weekday": "周五",
+  "entries": 10,
+  "overview": "data/2026-10-23/overview.svg",
+  "projects": [
+    {
+      "name": "DSH Agent Preset",
+      "body": "data/2026-10-23/dsh-agent-preset.md",
+      "entries": 2,
+      "ids": [
+        "20261023-037",
+        "20261023-038"
+      ],
+      "keywords": [
+        "patch",
+        "preset",
+        "profile",
+        "agent",
+        "chat",
+        "deepseek-ai"
+      ]
+    },
+    {
+      "name": "DSH 插件：temp 目录根（dsh-temp-root）",
+      "body": "data/2026-10-23/dsh-temp-dsh-temp-root.md",
+      "entries": 3,
+      "ids": [
+        "20261023-034",
+        "20261023-035",
+        "20261023-036"
+      ],
+      "keywords": [
+        "bundle",
+        "dsh-temp-root",
+        "patch",
+        "profile",
+        "desktop",
+        "import"
+      ]
+    },
+    {
+      "name": "Requester（HTTP 编排客户端）",
+      "body": "data/2026-10-23/requester-http.md",
+      "entries": 1,
+      "ids": [
+        "20261023-020"
+      ],
+      "keywords": [
+        "body",
+        "exit",
+        "request",
+        "requester",
+        "smoke",
+        "undefined"
+      ]
+    },
+    {
+      "name": "Repeater 后端插件（repeater-backend）",
+      "body": "data/2026-10-23/repeater-repeater-backend.md",
+      "entries": 1,
+      "ids": [
+        "20261023-032"
+      ],
+      "keywords": [
+        "dsh_home",
+        "enabled",
+        "repeater-backend",
+        "stat",
+        "tmp-live",
+        "workspace.json"
+      ]
+    },
+    {
+      "name": "决策",
+      "body": "data/2026-10-23/section.md",
+      "entries": 2,
+      "ids": [
+        "20261023-027",
+        "20261023-030"
+      ],
+      "keywords": [
+        "chat",
+        "repeater-backend",
+        "agent",
+        "dsh",
+        "python",
+        "qqbot"
+      ]
+    },
+    {
+      "name": "待办",
+      "body": "data/2026-10-23/section-2.md",
+      "entries": 1,
+      "ids": [
+        "20261023-031"
+      ],
+      "keywords": [
+        "break",
+        "deepseek_harness.py",
+        "plugin_manager",
+        "repeater-backend",
+        "token"
+      ]
+    }
+  ]
+}

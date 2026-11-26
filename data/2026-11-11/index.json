@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
+  "date": "2026-11-11",
+  "weekday": "周三",
+  "entries": 5,
+  "overview": "data/2026-11-11/overview.svg",
+  "projects": [
+    {
+      "name": "dsh-ui-port-mirror（界面端口镜像）",
+      "body": "data/2026-11-11/dsh-ui-port-mirror.md",
+      "entries": 5,
+      "ids": [
+        "20261110-009",
+        "20261110-010",
+        "20261111-001",
+        "20261111-004",
+        "20261111-005"
+      ],
+      "keywords": [
+        "dsh-ui-port-mirror",
+        "host",
+        "cookie",
+        "enabled",
+        "reason",
+        "assets"
+      ]
+    }
+  ]
+}
