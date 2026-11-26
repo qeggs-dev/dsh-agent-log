@@ -17,3 +17,21 @@ AGENTS.md 已新增「检索前先列关键词（强制）」一节，rules 表�
 ### 目的
 
 提升开发效率、减少反复修复。AGENTS.md 已新增 §开发规范（强制），rules 表新增 R-061。
+
+<!-- 20261126-014 -->
+
+## 决策（2026-11-26，取代 20261126-013）
+
+公开边界改为**白名单表 `entry_public`**，不放 `entries` 列、也不用「敏感等级」。
+
+### 规则一句话
+
+**写进这张表 = 这条可以公开，表里没有 = 不公开**——敏感的内容根本不进表，所以既没有 `level=1`、也没有「未判定」中间态，失败方向恒为「更保守」。列：`entry_id`（主键，指向 `entries.id`）、`note`（为什么可公开）、`approved_by` / `approved_at`。
+
+**撤回 = `DELETE` 这一行**，这是全库唯一允许 `DELETE` 的表（它的逆操作就是删除，且删了只会更保守）。导出只读视图 `v_public_entries`（已列入白名单且 `status = 'active'`）。
+
+口径（R-063）：凭据 / 密钥 / token、内网地址与拓扑、账号与第三方身份、硬件型号与序列号、主机名与用户目录、个人状况 → 不写进白名单；普通项目路径（`〈项目目录〉/...`）不算敏感。迁移记 `schema_migrations` v7，`meta.schema_version = 7`；
+
+同日先做的 `entries.sensitive` 列（v5）与 `entry_sensitivity` 判定表（v6）均已回滚 / 移除，三份备份在 `.tmp/`（`MEMORY.pre-sensitive-20261126.db`、`MEMORY.pre-sensitivity-table-20261126.db`、`MEMORY.pre-public-whitelist-20261126.db`）。
+
+白名单当前为空，第一行由用户决定。

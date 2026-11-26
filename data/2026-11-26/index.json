@@ -3,7 +3,7 @@
   "generator": "build_data.py 3.2.0",
   "date": "2026-11-26",
   "weekday": "周四",
-  "entries": 10,
+  "entries": 12,
   "overview": "data/2026-11-26/overview.svg",
   "items": [
     {
@@ -32,6 +32,11 @@
       "project": "决策"
     },
     {
+      "id": "20261126-014",
+      "title": "决策（2026-11-26，取代 20261126-013）",
+      "project": "决策"
+    },
+    {
       "id": "20261126-007",
       "title": "演化沙盒 evo-world 新建（2026-11-26）",
       "project": "演化沙盒（evo-world）"
@@ -50,6 +55,11 @@
       "id": "20261126-010",
       "title": "evo-world 食物网平衡（2026-11-26，承 id:20261126-009）",
       "project": "演化沙盒（evo-world）"
+    },
+    {
+      "id": "20261126-011",
+      "title": "维度音游 rhythm-dims 新建（2026-11-26）",
+      "project": "维度音游（rhythm-dims）"
     },
     {
       "id": "20261126-012",
@@ -106,18 +116,19 @@
     {
       "name": "决策",
       "body": "data/2026-11-26/section.md",
-      "entries": 2,
+      "entries": 3,
       "ids": [
         "20261126-004",
-        "20261126-005"
+        "20261126-005",
+        "20261126-014"
       ],
       "keywords": [
         "agents.md",
         "规则",
-        "关键词",
-        "单元测试",
-        "开发规范",
-        "搜索"
+        "schema",
+        "sqlite",
+        "公开",
+        "关键词"
       ]
     },
     {
@@ -137,6 +148,22 @@
         "遗传算法",
         "canvas",
         "cdp"
+      ]
+    },
+    {
+      "name": "维度音游（rhythm-dims）",
+      "body": "data/2026-11-26/rhythm-dims.md",
+      "entries": 1,
+      "ids": [
+        "20261126-011"
+      ],
+      "keywords": [
+        "4d",
+        "canvas",
+        "hypercube",
+        "rhythm-dims",
+        "rhythm-game",
+        "web-audio"
       ]
     },
     {

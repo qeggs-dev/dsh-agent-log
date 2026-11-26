@@ -1,22 +1,23 @@
 {
   "schemaVersion": 4,
   "generator": "build_data.py 3.2.0",
-  "updated": "2026-11-26T23:05:25+08:00",
+  "updated": "2026-11-27T00:00:51+08:00",
   "latest": {
-    "id": "20261126-012",
+    "id": "20261126-014",
     "date": "2026-11-26",
-    "project": "变形拼图（morph-puzzle）"
+    "project": "决策"
   },
   "search": "search.json",
   "days": [
     {
       "date": "2026-11-26",
       "weekday": "周四",
-      "entries": 10,
-      "sections": 6,
+      "entries": 12,
+      "sections": 7,
       "index": "data/2026-11-26/index.json",
       "keywords": [
         "canvas",
+        "4d",
         "agents.md",
         "cdp",
         "diff-edit",
@@ -24,8 +25,7 @@
         "dsh-plugin",
         "evo-world",
         "github-pages",
-        "html游戏",
-        "i18n"
+        "html游戏"
       ]
     },
     {
