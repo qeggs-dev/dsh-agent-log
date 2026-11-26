@@ -15,6 +15,67 @@ const $day = document.getElementById('day');
 const $updated = document.getElementById('updated');
 const $latest = document.getElementById('latest');
 
+// ---------------------------------------------------------------- 设置与主题
+// 主题四档：yellow 是 :root 默认，paper / dark 覆盖变量，system 跟随系统。
+
+const THEME_KEY = 'devlog-theme';
+const THEMES = [
+  ['yellow', '笔记本'],
+  ['paper', '纸白'],
+  ['dark', '深色'],
+  ['system', '跟随系统'],
+];
+
+const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+const $settingsBtn = document.getElementById('settingsBtn');
+const $settings = document.getElementById('settings');
+const $themes = document.getElementById('themes');
+
+let themeChoice = 'yellow';
+
+function resolveTheme(name) {
+  if (name === 'system') return darkQuery.matches ? 'dark' : 'paper';
+  return name;
+}
+
+function applyTheme(name) {
+  themeChoice = name;
+  const resolved = resolveTheme(name);
+  if (resolved === 'yellow') delete document.documentElement.dataset.theme;
+  else document.documentElement.dataset.theme = resolved;
+  localStorage.setItem(THEME_KEY, name);
+  for (const btn of $themes.querySelectorAll('button')) {
+    btn.setAttribute('aria-pressed', String(btn.dataset.theme === name));
+  }
+}
+
+for (const [name, label] of THEMES) {
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.dataset.theme = name;
+  btn.textContent = label;
+  btn.addEventListener('click', () => applyTheme(name));
+  $themes.append(btn);
+}
+
+const savedTheme = localStorage.getItem(THEME_KEY);
+applyTheme(THEMES.some(([name]) => name === savedTheme) ? savedTheme : 'yellow');
+
+function toggleSettings(open) {
+  $settings.hidden = !open;
+  $settingsBtn.setAttribute('aria-expanded', String(open));
+}
+
+$settingsBtn.addEventListener('click', () => toggleSettings($settings.hidden));
+
+darkQuery.addEventListener('change', () => {
+  if (themeChoice === 'system') applyTheme('system');
+});
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !$settings.hidden) toggleSettings(false);
+});
+
 function fsGet(url) {
   if (!FS) return undefined;
   const key = url.split('?')[0];

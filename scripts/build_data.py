@@ -164,7 +164,7 @@ def overview_svg(date: str, projects: list[dict]) -> str:
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{OVERVIEW_W}" height="{height}" '
         f'viewBox="0 0 {OVERVIEW_W} {height}" role="img" '
         f'font-family="system-ui, -apple-system, Segoe UI, Microsoft YaHei, sans-serif">',
-        f'<text x="0" y="20" font-size="14" font-weight="600" fill="#6b7280">'
+        f'<text x="0" y="20" font-size="14" font-weight="600" fill="#8a7a64">'
         f'{html.escape(date)} · {weekday_cn(date)} · {len(projects)} 个板块 / {total} 条</text>',
     ]
     for i, p in enumerate(projects):
@@ -172,16 +172,16 @@ def overview_svg(date: str, projects: list[dict]) -> str:
         name = p["name"] if len(p["name"]) <= 18 else p["name"][:17] + "…"
         width = max(4, round(bar_max * p["entries"] / max_n))
         out.append(
-            f'<text x="0" y="{y + 13}" font-size="12" fill="#6b7280">'
+            f'<text x="0" y="{y + 13}" font-size="12" fill="#8a7a64">'
             f'{html.escape(name)}</text>'
         )
         out.append(
             f'<rect x="{OVERVIEW_LABEL}" y="{y + 2}" width="{width}" height="12" rx="3" '
-            f'fill="#2f6feb" opacity="0.85"/>'
+            f'fill="#e8a800" opacity="0.7"/>'
         )
         out.append(
             f'<text x="{OVERVIEW_LABEL + width + 8}" y="{y + 13}" font-size="11" '
-            f'fill="#9aa1ab">{p["entries"]} 条</text>'
+            f'fill="#b3a48c">{p["entries"]} 条</text>'
         )
     out.append("</svg>")
     return "\n".join(out) + "\n"

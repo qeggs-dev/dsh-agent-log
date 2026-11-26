@@ -9,9 +9,17 @@
 <body>
 <aside id="sidebar">
   <header>
-    <h1>工作区日志</h1>
+    <div class="brand">
+      <h1>工作区日志</h1>
+      <button id="settingsBtn" type="button" aria-expanded="false" title="设置">⚙</button>
+    </div>
     <p id="latest" class="muted">加载中…</p>
     <p id="updated" class="muted"></p>
+    <div id="settings" class="settings" hidden>
+      <p class="settings-title">主题</p>
+      <div id="themes" class="themes"></div>
+      <p class="settings-note">设置保存在本机浏览器；主题没有「关闭」项，随时可换。</p>
+    </div>
   </header>
   <nav id="days" aria-label="日期"></nav>
 </aside>
