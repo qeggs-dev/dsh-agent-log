@@ -22,6 +22,8 @@ const $main = document.getElementById('main');
 const $updated = document.getElementById('updated');
 const $latest = document.getElementById('latest');
 const $search = document.getElementById('searchInput');
+const $search2 = document.getElementById('searchInput2');
+const $searches = [$search, $search2];
 
 // ---------------------------------------------------------------- 设置与主题
 // 主题四档：yellow 是 :root 默认，paper / dark 覆盖变量，system 跟随系统。
@@ -316,7 +318,7 @@ async function route() {
     // 导航时退出搜索态，第二栏回到当天条目
     if (state.query) {
       state.query = '';
-      $search.value = '';
+      for (const input of $searches) input.value = '';
     }
 
     const date = datePart || state.index.days[0].date;
@@ -351,7 +353,7 @@ window.addEventListener('keydown', (e) => {
     $search.focus();
     return;
   }
-  if (document.activeElement === $search) return;
+  if ($searches.includes(document.activeElement)) return;
   if (!state.current) return;
   const step = e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? -1
     : (e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : 0);
@@ -362,25 +364,30 @@ window.addEventListener('keydown', (e) => {
   if (j >= 0 && j < items.length) location.hash = `#/${state.day.index.date}/${items[j].id}`;
 });
 
-$search.addEventListener('input', async () => {
-  state.query = $search.value;
-  if (state.query.trim()) {
-    try {
-      await ensureSearch();
-    } catch (err) {
-      showError(err);
-      return;
+for (const input of $searches) {
+  input.addEventListener('input', async () => {
+    state.query = input.value;
+    if (state.query.trim()) {
+      try {
+        await ensureSearch();
+      } catch (err) {
+        showError(err);
+        return;
+      }
     }
-  }
-  if (state.day) renderEntries();
-});
+    for (const other of $searches) {
+      if (other !== input) other.value = state.query;
+    }
+    if (state.day) renderEntries();
+  });
 
-$search.addEventListener('keydown', (e) => {
-  if (e.key !== 'Escape') return;
-  $search.value = '';
-  state.query = '';
-  if (state.day) renderEntries();
-  $search.blur();
-});
+  input.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    state.query = '';
+    for (const other of $searches) other.value = '';
+    if (state.day) renderEntries();
+    input.blur();
+  });
+}
 
 route();

@@ -543,3 +543,27 @@ code {
 
 /* hidden 属性要压过组件自己的 display */
 [hidden] { display: none !important; }
+
+/* ---------- 滚动条跟随主题 ---------- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--binding) transparent;
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--binding);
+  border: 3px solid transparent;
+  background-clip: content-box;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+  background-clip: content-box;
+}
+::-webkit-scrollbar-corner { background: transparent; }
+
+/* ---------- 最左栏的全局搜索 ---------- */
+.search-wrap { margin: 12px 0 8px; }
+#sidebar .search-input { margin: 0; width: 100%; }
