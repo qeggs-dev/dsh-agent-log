@@ -326,7 +326,8 @@ section.project h3::before {
   color: var(--muted);
 }
 
-.item p { margin: 0 0 .6em; }
+.item { line-height: 1.9; }
+.item p { margin: 0 0 1.05em; }
 .item p:last-child { margin-bottom: 0; }
 
 .item ul { margin: .3em 0 .7em; padding-left: 1.3em; }
