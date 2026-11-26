@@ -87,13 +87,20 @@ function renderDay() {
       `<span class="chip">${index.projects.length} 个板块 · ${index.entries} 条</span></div>`
   );
 
+  if (index.overview) {
+    parts.push(
+      `<img class="overview" src="${escapeHtml(index.overview)}" alt="当日概览" loading="lazy">`
+    );
+  }
+
   index.projects.forEach((project, i) => {
     const kw = (project.keywords || [])
       .map((k) => `<span>${escapeHtml(k)}</span>`)
       .join('');
+    const base = project.body.slice(0, project.body.lastIndexOf('/') + 1);
     parts.push(`<section class="project"><h3>${escapeHtml(project.name)}</h3>`);
     if (kw) parts.push(`<div class="kw">${kw}</div>`);
-    parts.push(renderMarkdown(bodies[i]));
+    parts.push(renderMarkdown(bodies[i], { base }));
     parts.push('</section>');
   });
 

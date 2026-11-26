@@ -212,3 +212,43 @@ strong { font-weight: 600; }
 .item li { margin: .15em 0; }
 .item a { color: var(--accent); }
 .item strong { font-weight: 600; }
+
+/* ---- 排版增强：标题 / 概览图 / 正文配图 ---- */
+.overview {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 28px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+}
+
+.item h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 6px;
+  letter-spacing: .01em;
+}
+
+.item h5, .item h6 {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 10px 0 4px;
+  color: var(--muted);
+}
+
+.item img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+section.project + section.project { margin-top: 40px; }
+.item img {
+  max-height: 460px;
+  width: auto;
+}

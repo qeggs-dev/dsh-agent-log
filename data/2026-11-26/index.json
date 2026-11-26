@@ -1,9 +1,10 @@
 {
-  "schemaVersion": 2,
-  "generator": "build_data.py 2.1.0",
+  "schemaVersion": 3,
+  "generator": "build_data.py 3.0.0",
   "date": "2026-11-26",
   "weekday": "周四",
   "entries": 7,
+  "overview": "data/2026-11-26/overview.svg",
   "projects": [
     {
       "name": "DSH 插件：图片差异对比（image-delta）",
