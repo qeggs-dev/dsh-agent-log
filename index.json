@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 2,
+  "generator": "build_data.py 2.1.0",
+  "updated": "2026-11-26T21:28:29+08:00",
+  "latest": {
+    "id": "20261126-012",
+    "date": "2026-11-26",
+    "project": "变形拼图（morph-puzzle）"
+  },
+  "days": [
+    {
+      "date": "2026-11-26",
+      "weekday": "周四",
+      "entries": 7,
+      "sections": 5,
+      "index": "data/2026-11-26/index.json",
+      "keywords": [
+        "canvas",
+        "4d",
+        "agent-tree",
+        "android",
+        "apk",
+        "cdp",
+        "dsh-plugin",
+        "evo-world",
+        "github-pages",
+        "html游戏"
+      ]
+    }
+  ]
+}

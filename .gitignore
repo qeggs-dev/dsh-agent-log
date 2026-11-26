@@ -1,0 +1,9 @@
+# 构建产物：本地双击预览用，不进仓库（Pages 直接读 index.html）
+preview.html
+
+# 生成过程中的临时文件
+*.tmp
+
+# Python
+__pycache__/
+*.pyc

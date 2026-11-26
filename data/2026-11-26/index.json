@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 2,
+  "generator": "build_data.py 2.1.0",
+  "date": "2026-11-26",
+  "weekday": "周四",
+  "entries": 7,
+  "projects": [
+    {
+      "name": "DSH 插件：图片差异对比（image-delta）",
+      "body": "data/2026-11-26/dsh-image-delta.md",
+      "entries": 1,
+      "ids": [
+        "20261126-001"
+      ],
+      "keywords": [
+        "dsh-plugin",
+        "image-delta",
+        "image-diff",
+        "read_image_delta",
+        "screenshots",
+        "sharp"
+      ]
+    },
+    {
+      "name": "手机 Agent App（代理树）",
+      "body": "data/2026-11-26/agent-app.md",
+      "entries": 1,
+      "ids": [
+        "20261126-006"
+      ],
+      "keywords": [
+        "agent-tree",
+        "android",
+        "apk",
+        "node",
+        "vivo",
+        "webview"
+      ]
+    },
+    {
+      "name": "演化沙盒（evo-world）",
+      "body": "data/2026-11-26/evo-world.md",
+      "entries": 3,
+      "ids": [
+        "20261126-007",
+        "20261126-009",
+        "20261126-010"
+      ],
+      "keywords": [
+        "evo-world",
+        "游戏",
+        "遗传算法",
+        "canvas",
+        "cdp",
+        "github-pages"
+      ]
+    },
+    {
+      "name": "维度音游（rhythm-dims）",
+      "body": "data/2026-11-26/rhythm-dims.md",
+      "entries": 1,
+      "ids": [
+        "20261126-011"
+      ],
+      "keywords": [
+        "4d",
+        "canvas",
+        "hypercube",
+        "rhythm-dims",
+        "rhythm-game",
+        "web-audio"
+      ]
+    },
+    {
+      "name": "变形拼图（morph-puzzle）",
+      "body": "data/2026-11-26/morph-puzzle.md",
+      "entries": 1,
+      "ids": [
+        "20261126-012"
+      ],
+      "keywords": [
+        "canvas",
+        "html游戏",
+        "morph-puzzle",
+        "单文件",
+        "变形",
+        "拼图"
+      ]
+    }
+  ]
+}
