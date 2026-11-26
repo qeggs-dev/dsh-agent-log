@@ -18,7 +18,7 @@
   --title-font: Georgia, "Songti SC", "SimSun", serif;
 }
 
-[data-theme="paper"] {
+:root[data-theme="paper"] {
   --bg: #fbfbfa;
   --bg-2: #f6f6f4;
   --panel: #ffffff;
@@ -34,7 +34,7 @@
   --shadow: 0 1px 2px rgba(20, 30, 50, .05), 0 8px 22px rgba(20, 30, 50, .05);
 }
 
-[data-theme="dark"] {
+:root[data-theme="dark"] {
   --bg: #1b1813;
   --bg-2: #14110d;
   --panel: #241f18;
@@ -153,6 +153,13 @@ body {
 }
 
 .themes button:hover { border-color: var(--accent); }
+
+/* 每个按钮预先展示对应主题的纸色 */
+.themes button[data-theme="yellow"] { background: #ffefc2; color: #6b4f00; }
+.themes button[data-theme="paper"] { background: #f6f6f4; color: #23282e; }
+.themes button[data-theme="dark"] { background: #2c2620; color: #ecdfc8; border-color: #4a4034; }
+.themes button[data-theme="system"] { background: var(--chip); color: var(--muted); }
+
 .themes button[aria-pressed="true"] {
   background: var(--accent);
   border-color: var(--accent);
