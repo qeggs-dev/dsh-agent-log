@@ -111,12 +111,14 @@ def build() -> pathlib.Path:
 
 def self_test() -> None:
     html = build().read_text(encoding="utf-8")
+    js = bundle_js()
     assert '<link rel="stylesheet" href="assets/' not in html, "CSS 没内联"
     assert 'src="assets/app.js"' not in html, "JS 没内联"
     assert "__DEVLOG_FS__" in html, "数据没有内联"
-    assert "import {" not in html, "ES module 的 import 没去掉"
-    assert "renderMarkdown" in html and "export function" not in html, "JS 合并有问题"
-    assert "resolveSrc" in html, "渲染器没有一起打包"
+    # 正文数据里出现 import / export 字样是正常的技术笔记，只对打包后的脚本断言
+    assert "import " not in js, "ES module 的 import 没去掉"
+    assert "renderMarkdown" in js and "export function" not in js, "JS 合并有问题"
+    assert "resolveSrc" in js, "渲染器没有一起打包"
     # 图片必须变成 data URI，不能留相对路径（预览没有 HTTP 根）
     assert "data:image/" in html or not IMAGE_RE.search(html), "图片没有内联"
     print("self-test ok")
