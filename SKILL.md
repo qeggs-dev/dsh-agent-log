@@ -17,7 +17,7 @@ data/<date>/index.json     当日索引：projects[] → 正文链接、ids、�
 data/<date>/<slug>.md      正文：每条一个 `## 标题`，条目 id 藏在 HTML 注释里
 data/<date>/<slug>-*.png   正文配图，与 md 同目录，md 用相对路径引用
 data/<date>/overview.svg   当日概览图（各板块条目数）
-assets/{app.js,markdown.js,style.css}   外壳（固定，不随数据变）
+assets/{app.js,markdown.js,style.css,logo.svg}   外壳（固定，不随数据变）
 scripts/build_data.py      生成器（格式契约的唯一实现）
 scripts/build-preview.py   打成单文件 preview.html
 tests/markdown.test.mjs    渲染器测试

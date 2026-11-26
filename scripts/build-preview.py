@@ -107,6 +107,12 @@ def build() -> pathlib.Path:
         ),
     )
 
+    logo = ROOT / "assets" / "logo.svg"
+    if logo.exists():
+        uri = data_uri(logo)
+        html = html.replace('href="assets/logo.svg"', f'href="{uri}"')
+        html = html.replace('src="assets/logo.svg"', f'src="{uri}"')
+
     out = ROOT / "preview.html"
     out.write_text(html, encoding="utf-8")
     return out
@@ -117,6 +123,7 @@ def self_test() -> None:
     js = bundle_js()
     assert '<link rel="stylesheet" href="assets/' not in html, "CSS 没内联"
     assert 'src="assets/app.js"' not in html, "JS 没内联"
+    assert 'assets/logo.svg' not in html, "logo 没内联"
     assert "__DEVLOG_FS__" in html, "数据没有内联"
     # 正文数据里出现 import / export 字样是正常的技术笔记，只对打包后的脚本断言
     assert "import " not in js, "ES module 的 import 没去掉"

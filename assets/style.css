@@ -87,10 +87,18 @@ body {
 
 .brand {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 10px;
+  align-items: center;
+  gap: 9px;
 }
+
+.brand .logo {
+  width: 24px;
+  height: 24px;
+  flex: none;
+  display: block;
+}
+
+#settingsBtn { margin-left: auto; }
 
 #sidebar h1 {
   font-family: var(--title-font);

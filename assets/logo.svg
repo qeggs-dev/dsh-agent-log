@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="工作区日志">
+  <rect x="6" y="6" width="52" height="52" rx="13" fill="#FFF6DF" stroke="#4A3F35" stroke-width="5"/>
+  <path d="M39 6h13v21l-6.5-5-6.5 5z" fill="#E8A800"/>
+  <g stroke="#4A3F35" stroke-width="5.5" stroke-linecap="round">
+    <path d="M16 33h18"/>
+    <path d="M16 42h26"/>
+    <path d="M16 51h14"/>
+  </g>
+</svg>
