@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "generator": "build_data.py 3.0.0",
-  "updated": "2026-11-26T21:52:08+08:00",
+  "updated": "2026-11-26T22:14:12+08:00",
   "latest": {
     "id": "20261126-012",
     "date": "2026-11-26",
@@ -11,35 +11,20 @@
     {
       "date": "2026-11-26",
       "weekday": "周四",
-      "entries": 7,
-      "sections": 5,
+      "entries": 6,
+      "sections": 4,
       "index": "data/2026-11-26/index.json",
       "keywords": [
         "canvas",
         "4d",
-        "agent-tree",
-        "android",
-        "apk",
         "cdp",
         "dsh-plugin",
         "evo-world",
         "github-pages",
-        "html游戏"
-      ]
-    },
-    {
-      "date": "2026-11-16",
-      "weekday": "周一",
-      "entries": 1,
-      "sections": 1,
-      "index": "data/2026-11-16/index.json",
-      "keywords": [
-        "desktop",
-        "dsh",
-        "dsh-desktop-shell",
-        "electron",
-        "nvm",
-        "ubuntu"
+        "html游戏",
+        "hypercube",
+        "image-delta",
+        "image-diff"
       ]
     }
   ]

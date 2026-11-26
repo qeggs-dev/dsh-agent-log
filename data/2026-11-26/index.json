@@ -3,7 +3,7 @@
   "generator": "build_data.py 3.0.0",
   "date": "2026-11-26",
   "weekday": "周四",
-  "entries": 7,
+  "entries": 6,
   "overview": "data/2026-11-26/overview.svg",
   "projects": [
     {
@@ -20,22 +20,6 @@
         "read_image_delta",
         "screenshots",
         "sharp"
-      ]
-    },
-    {
-      "name": "手机 Agent App（代理树）",
-      "body": "data/2026-11-26/agent-app.md",
-      "entries": 1,
-      "ids": [
-        "20261126-006"
-      ],
-      "keywords": [
-        "agent-tree",
-        "android",
-        "apk",
-        "node",
-        "vivo",
-        "webview"
       ]
     },
     {

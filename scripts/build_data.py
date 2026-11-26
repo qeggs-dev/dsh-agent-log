@@ -382,6 +382,13 @@ def cmd_build(db_path: str, date: str | None, ids: list[str] | None,
         for src, dst in copies:
             copy_file(src, dst)
         dump_json(target / "index.json", index)
+
+        # 重生成会清掉该日目录里不再属于本次输出的文件（撤销白名单后不留残影）
+        keep = set(files) | {dst.name for _, dst in copies} | {"index.json"}
+        for stale in target.iterdir():
+            if stale.is_file() and stale.name not in keep:
+                stale.unlink()
+
         print(f"{day}: {len(index['projects'])} 个板块 / {index['entries']} 条 / "
               f"{len(copies)} 张图")
 
