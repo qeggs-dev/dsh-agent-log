@@ -2,4 +2,10 @@
 
 ## 决策
 
-**给 DSH 已有工具「加参数」时，优先另开一个独立工具**，不改官方工具、不重打包 `app.asar`、也不改源码 checkout（checkout 是 0.1.0-rc.5，用户日常跑桌面 0.2.0-rc.2，改了当场没用）。理由：官方工具没有扩展点，唯一缝是拦注册，但那要包内部原型、依赖 `defineTool` 的闭包细节，还可能被 HMR 挂载顺序反噬；独立工具只依赖公开 seam（`ctx.shell.resolve/execute` 的 `request.env` + `ctx.shellEnv.collect`），沙箱/截断/超时/取消都留给执行器，升级面最小。代价（可接受）：模型多一个近似工具，靠工具描述写清「何时用它、何时用 `pwsh`」。
+**给 DSH 已有工具「加参数」时，优先另开一个独立工具**，不改官方工具、不重打包 `app.asar`、也不改源码 checkout（checkout 是 0.1.0-rc.5，用户日常跑桌面 0.2.0-rc.2，改了当场没用）。
+
+### 理由
+
+官方工具没有扩展点，唯一缝是拦注册，但那要包内部原型、依赖 `defineTool` 的闭包细节，还可能被 HMR 挂载顺序反噬；
+
+独立工具只依赖公开 seam（`ctx.shell.resolve/execute` 的 `request.env` + `ctx.shellEnv.collect`），沙箱/截断/超时/取消都留给执行器，升级面最小。代价（可接受）：模型多一个近似工具，靠工具描述写清「何时用它、何时用 `pwsh`」。

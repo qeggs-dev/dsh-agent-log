@@ -14,7 +14,9 @@
 
 ## VES 启动后进入 `>` 交互提示符，`help` 打印全部命令
 
-create、chbase、ifr、shell、repl、install、uninstall、copy、cmdls、freeze、list、remove、delete、print、title、set_var、set_const、get_var、remove_var、set_var_from_ret、set_const_from_ret、jump、je、jne、jlt、jgt、jle、jge、jt、jf、execute、recursive、help、exit；完整 help 输出实录见附件
+create、chbase、ifr、shell、repl、install、uninstall、copy、cmdls、freeze、list、remove、delete、print、title、set_var、set_const、get_var、remove_var、set_var_from_ret、set_const_from_ret、jump、je、jne、jlt、jgt、jle、jge、jt、jf、execute、recursive、help、exit；
+
+完整 help 输出实录见附件
 
 <!-- 20260918-004 -->
 
@@ -32,7 +34,9 @@ create、chbase、ifr、shell、repl、install、uninstall、copy、cmdls、free
 
 ## VES 支持命令行模式
 
-`ves.bat <command> [args...]` 直接执行单条命令（`ves.py` 取 `sys.argv[1:]`、把首个 token 小写后按命令表分派），这是无 TTY 环境下真正可用的入口；`ves.bat create net`、`ves.bat install net <包名>`、`ves.bat list` 均按此执行，无须进入 REPL
+`ves.bat <command> [args...]` 直接执行单条命令（`ves.py` 取 `sys.argv[1:]`、把首个 token 小写后按命令表分派），这是无 TTY 环境下真正可用的入口；
+
+`ves.bat create net`、`ves.bat install net <包名>`、`ves.bat list` 均按此执行，无须进入 REPL
 
 <!-- 20260918-034 -->
 
@@ -44,7 +48,9 @@ create、chbase、ifr、shell、repl、install、uninstall、copy、cmdls、free
 
 ## VES 的进程退出码不可信
 
-失败往往只打印 `Error: ...` 而进程仍以 0 退出（实测 `ves.bat install no-such-env pydantic` 报 WinError 2 却 exit=0；因为 `_install_cli` 无 return、`main()` 又丢弃 `match_cmd` 的返回值）。判断成败要看输出里的 `Exit code: N` 统计行（由 `print_run_statistics=True` 打印，仅在该命令**确实**启动了子进程时才有）或直接调 pip 复查；只有 `remove` 这类抛未捕获异常的路径才会非零退出
+失败往往只打印 `Error: ...` 而进程仍以 0 退出（实测 `ves.bat install no-such-env pydantic` 报 WinError 2 却 exit=0；因为 `_install_cli` 无 return、`main()` 又丢弃 `match_cmd` 的返回值）。
+
+判断成败要看输出里的 `Exit code: N` 统计行（由 `print_run_statistics=True` 打印，仅在该命令**确实**启动了子进程时才有）或直接调 pip 复查；只有 `remove` 这类抛未捕获异常的路径才会非零退出
 
 <!-- 20260918-036 -->
 

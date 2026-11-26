@@ -2,4 +2,22 @@
 
 ## 可读预设 1.1.0：加载时把预设的 persona 提示词作为上下文注入
 
-（`dsh_plugins/dsh-readable-preset`，原 1.0.2，commit `feat: inject the loaded preset's persona prompt as context`）。`load_agent_preset` 重绑组装成功后三步：①`compositionInventory()` 确认目标预设**自己声明了启用中的 `@deepseek-ai/dsh-persona` 行**（`moduleName === PERSONA_PLUGIN && enabled === true`）——否则装配出来的 persona 段落是部署级全局 persona，不能当成本预设的提示词；②`systemPrompt.assemble({ agent, scope: agent })` 读重绑后的装配，`scope` 直接传 **agent 实例**（agent-loop 用 `createScope(loopCtx, this)` 把 agent 当 scope key，见 `dsh-agent-loop/lib/index.js` 的 `this.scope = createScope(loopCtx, this)`），取 `deployment:persona-prefix` / `deployment:persona-suffix` 两段、按 `assembly.variables` 插值 `{{model}}` 之类、拼起来并按 60000 字符截断；③`agent.inject(createUserMessage({ content, source: { kind:'readable-preset', form:'notice', summary } }))` 投递 **user 角色**消息，正文 `[readable-preset] …` + `<persona-prompt>…</persona-prompt>`。`agent.inject` = `send(msg,'next-step',false)`，落会话日志 `agent/inbox/spliced`，**在下一个被接纳的 step 进上下文、不唤醒空闲会话**；replay/fork 能重建，工具结果被修剪也不影响。失败一律不抛：预设没有自己的 persona / 提示词为空 / 装配读不出 / 投递失败 → 工具结果里写一行原因（声明全文仍在工具结果里）。同时补上 R-005：三个工具都加**必填 `description` 参数**（Schema required + `requireDescription()` 双校验：缺参/空值/控制字符/超 500 字符拒绝），结果首行 `Purpose: …`。验证（改 `index.js` 必须先 `restart_dsh` 换模块代次）：子代理两次端到端，加载 `minimal` 注入 46 字符，`<persona-prompt>` 内文 `You are a helpful software engineer assistant.`，消息紧跟在工具结果之后出现在下一步上下文；`unload` 回到 cordis 正常。当时 profile 只有 4 个预设（standard/ptc/minimal/cordis）。
+（`dsh_plugins/dsh-readable-preset`，原 1.0.2，commit `feat: inject the loaded preset's persona prompt as context`）。
+
+`load_agent_preset` 重绑组装成功后三步：①`compositionInventory()` 确认目标预设**自己声明了启用中的 `@deepseek-ai/dsh-persona` 行**（`moduleName === PERSONA_PLUGIN && enabled === true`）——否则装配出来的 persona 段落是部署级全局 persona，不能当成本预设的提示词；
+
+②`systemPrompt.assemble({ agent, scope: agent })` 读重绑后的装配，`scope` 直接传 **agent 实例**（agent-loop 用 `createScope(loopCtx, this)` 把 agent 当 scope key，见 `dsh-agent-loop/lib/index.js` 的 `this.scope = createScope(loopCtx, this)`），取 `deployment:persona-prefix` / `deployment:persona-suffix` 两段、按 `assembly.variables` 插值 `{{model}}` 之类、拼起来并按 60000 字符截断；
+
+③`agent.inject(createUserMessage({ content, source: { kind:'readable-preset', form:'notice', summary } }))` 投递 **user 角色**消息，正文 `[readable-preset] …` + `<persona-prompt>…</persona-prompt>`。
+
+`agent.inject` = `send(msg,'next-step',false)`，落会话日志 `agent/inbox/spliced`，**在下一个被接纳的 step 进上下文、不唤醒空闲会话**；replay/fork 能重建，工具结果被修剪也不影响。
+
+### 失败一律不抛
+
+预设没有自己的 persona / 提示词为空 / 装配读不出 / 投递失败 → 工具结果里写一行原因（声明全文仍在工具结果里）。
+
+同时补上 R-005：三个工具都加**必填 `description` 参数**（Schema required + `requireDescription()` 双校验：缺参/空值/控制字符/超 500 字符拒绝），结果首行 `Purpose: …`。
+
+验证（改 `index.js` 必须先 `restart_dsh` 换模块代次）：子代理两次端到端，加载 `minimal` 注入 46 字符，`<persona-prompt>` 内文 `You are a helpful software engineer assistant.`，消息紧跟在工具结果之后出现在下一步上下文；
+
+`unload` 回到 cordis 正常。当时 profile 只有 4 个预设（standard/ptc/minimal/cordis）。

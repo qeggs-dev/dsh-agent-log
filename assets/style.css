@@ -568,3 +568,14 @@ code {
 /* ---------- 最左栏的全局搜索 ---------- */
 .search-wrap { margin: 12px 0 8px; }
 #sidebar .search-input { margin: 0; width: 100%; }
+
+/* 条目内的小标题（生成器把 `**实测**：` 这类提升成 ### ） */
+.item h5 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 1.15em 0 .3em;
+  letter-spacing: .01em;
+}
+.item h5:first-child { margin-top: 0; }
+.item h5::before { content: "▸ "; color: var(--accent); }

@@ -2,4 +2,26 @@
 
 ## 新项目（2026-11-24 用户选定）
 
-手机本地 Harness —— 在 Android App 内直接跑真实 DSH 0.2.2-rc.5，不是重写 Harness，也不是遥控电脑。用途：先自用，架构上给产品化留口（用户二选一明确）。已核实的事实：①DSH CLI engines 要求 Node ≥24.9.0；桌面运行时 Node 24.21.0（resources/runtime/versions.json）。②Termux nodejs-lts 24.22.3 aarch64 是可直接在 Android 跑的 bionic PIE（interp=/system/bin/linker64，46MB），依赖 libz.so.1、libcares、libsqlite3、libcrypto.so.3、libssl.so.3、libicui18n/libicuuc.so.79、libc++_shared（libc/libm/libdl 用系统的），RUNPATH 指向 /data/data/com.termux/files/usr/lib，所以这些 .so 必须随 APK 带并置于 LD_LIBRARY_PATH。③DSH 的 web profile 只由 @deepseek-ai/dsh-base + @deepseek-ai/dsh-web-app 两个 bundle 组成，web UI 由 dsh-host-webserver + dsh-web-frontend 提供；Electron 只是桌面壳，宿主本身是纯 Node（desktop-host/lib/cli.js 用 ELECTRON_RUN_AS_NODE 跑 CLI）。④Android 10+ 禁止从 app 数据目录 exec 可执行文件，native 可执行必须放 nativeLibraryDir（.so 名可执行）或 targetSdk 28；共享库可从数据目录用 LD_LIBRARY_PATH 加载。⑤主要原生缺口：sharp（libvips 无 Android 预编译；attachment-local 是惰性 requireSharp，只有图片入库才需要）、@vscode/ripgrep（需 arm64 rg）、node-pty（可先不用，DSH bash 工具走 child_process）、koffi（只在 Windows 路径动态 import，不影响 Android）。⑥DSH 的 agent 工具在 web profile 里挂在 preset 上（standard/cordis/ptc），Android 需要自己的 mobile preset，把 pwsh 换成 sh/bash、搜索换成自带 rg。代码拟放 G:\work\projects\dsh-mobile（第三工作区，构建需要完全权限），当前 spike 产物在 .tmp\mobile-spike。
+手机本地 Harness —— 在 Android App 内直接跑真实 DSH 0.2.2-rc.5，不是重写 Harness，也不是遥控电脑。
+
+### 用途
+
+先自用，架构上给产品化留口（用户二选一明确）。
+
+### 已核实的事实
+
+①DSH CLI engines 要求 Node ≥24.9.0；桌面运行时 Node 24.21.0（resources/runtime/versions.json）。
+
+②Termux nodejs-lts 24.22.3 aarch64 是可直接在 Android 跑的 bionic PIE（interp=/system/bin/linker64，46MB），依赖 libz.so.1、libcares、libsqlite3、libcrypto.so.3、libssl.so.3、libicui18n/libicuuc.so.79、libc++_shared（libc/libm/libdl 用系统的），RUNPATH 指向 /data/data/com.termux/files/usr/lib，所以这些 .so 必须随 APK 带并置于 LD_LIBRARY_PATH。
+
+③DSH 的 web profile 只由 @deepseek-ai/dsh-base + @deepseek-ai/dsh-web-app 两个 bundle 组成，web UI 由 dsh-host-webserver + dsh-web-frontend 提供；
+
+Electron 只是桌面壳，宿主本身是纯 Node（desktop-host/lib/cli.js 用 ELECTRON_RUN_AS_NODE 跑 CLI）。
+
+④Android 10+ 禁止从 app 数据目录 exec 可执行文件，native 可执行必须放 nativeLibraryDir（.so 名可执行）或 targetSdk 28；共享库可从数据目录用 LD_LIBRARY_PATH 加载。⑤主要原生缺口：sharp（libvips 无 Android 预编译；
+
+attachment-local 是惰性 requireSharp，只有图片入库才需要）、@vscode/ripgrep（需 arm64 rg）、node-pty（可先不用，DSH bash 工具走 child_process）、koffi（只在 Windows 路径动态 import，不影响 Android）。
+
+⑥DSH 的 agent 工具在 web profile 里挂在 preset 上（standard/cordis/ptc），Android 需要自己的 mobile preset，把 pwsh 换成 sh/bash、搜索换成自带 rg。
+
+代码拟放 G:\work\projects\dsh-mobile（第三工作区，构建需要完全权限），当前 spike 产物在 .tmp\mobile-spike。

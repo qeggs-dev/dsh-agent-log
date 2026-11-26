@@ -2,10 +2,74 @@
 
 ## 承 20261106-003：插件加上 sleep 桥
 
-（仍然是同一个 `@local/dsh-job-wait`，没有新包）。用户要求「当环境中安装并启用了 sleep 插件时，通过插件接口取消 sleep」。做法：**不碰别人的工具**，只用那个插件自己公开的接口 —— `ctx.inject(['sleepControl'], …)` 跟踪可用性（sleep 插件没装/没启用时这段整体不存在，其余功能照常），`active()` 把 `sleepControl.active()` 的条目并进来并标 `kind: 'sleep'`，取消调 `sleepControl.cancel(id, reason)`（被取消的 sleep 按 sleep 插件自己的语义**正常返回** `cancelled: true` + 实测 waitedMs + cancelReason），卸载时**只**释放自己包住的 job 等待、绝不动别人还在跑的 sleep。state 响应新增 `sleepAvailable`，cancel 响应改成 `{ ok, cancelled, byKind: { job, sleep } }`，条目统一带 `kind: 'job' | 'sleep'`。**顺带查明一件直接影响按钮覆盖面的事**：`pwsh` / `bash` 的**每条前台命令本身就是一个 job**，工具在 `registry.wait(id, timeoutMs, owner)` 上等它（`dsh-tool-pwsh/lib/index.js:399-464`，`timeoutMs` 默认 120000），所以「自己会话里莫名出现 120s 等待」其实就是自己刚跑的那条命令；打断它走的是同一条「还没结束」分支 → 返回 `kind: "promoted"` + jobId，**命令转后台继续跑**（与超时 promote 同一分支），正是想要的效果，因此**不需要按调用者过滤**。**生效方式**：Host 模块被进程缓存，改 `index.js` 必须**重启 App**（`install_bundle` 只对新包热生效；重启后 state 才出现 `sleepAvailable` / `kind`）。**验证**：`tests/sleep-bridge.test.mjs` **7/7 全绿**（假 ctx + 假 jobs + 假 sleepControl；命令 `node --test --test-isolation=none`，沙箱里不带 isolation 会 `spawn EPERM`），覆盖「无 sleep 插件空态 / sleep 并入与取消 / 按会话过滤 / job 等待打断后返回 running / `byKind` 拆分 / 跨源拒绝 / 卸载不动 sleep」；线上端到端：子会话 `sleep(120000)` → 外部 `POST /job-wait/cancel` → **216 ms** 返回，`cancelled: true`、`cancelReason: "sleep-bridge self-test"`、无报错，`byKind {job:0, sleep:1}`，同会话 sleep 残留 0。**未验证**：按钮视觉与真人点击（无浏览器控制）。
+（仍然是同一个 `@local/dsh-job-wait`，没有新包）。用户要求「当环境中安装并启用了 sleep 插件时，通过插件接口取消 sleep」。
+
+### 做法
+
+**不碰别人的工具**，只用那个插件自己公开的接口 —— `ctx.inject(['sleepControl'], …)` 跟踪可用性（sleep 插件没装/没启用时这段整体不存在，其余功能照常），`active()` 把 `sleepControl.active()` 的条目并进来并标 `kind: 'sleep'`，取消调 `sleepControl.cancel(id, reason)`（被取消的 sleep 按 sleep 插件自己的语义**正常返回** `cancelled: true` + 实测 waitedMs + cancelReason），卸载时**只**释放自己包住的 job 等待、绝不动别人还在跑的 sleep。
+
+state 响应新增 `sleepAvailable`，cancel 响应改成 `{ ok, cancelled, byKind: { job, sleep } }`，条目统一带 `kind: 'job' | 'sleep'`。
+
+### 顺带查明一件直接影响按钮覆盖面的事
+
+`pwsh` / `bash` 的**每条前台命令本身就是一个 job**，工具在 `registry.wait(id, timeoutMs, owner)` 上等它（`dsh-tool-pwsh/lib/index.js:399-464`，`timeoutMs` 默认 120000），所以「自己会话里莫名出现 120s 等待」其实就是自己刚跑的那条命令；
+
+打断它走的是同一条「还没结束」分支 → 返回 `kind: "promoted"` + jobId，**命令转后台继续跑**（与超时 promote 同一分支），正是想要的效果，因此**不需要按调用者过滤**。
+
+### 生效方式
+
+Host 模块被进程缓存，改 `index.js` 必须**重启 App**（`install_bundle` 只对新包热生效；重启后 state 才出现 `sleepAvailable` / `kind`）。
+
+### 验证
+
+`tests/sleep-bridge.test.mjs` **7/7 全绿**（假 ctx + 假 jobs + 假 sleepControl；
+
+命令 `node --test --test-isolation=none`，沙箱里不带 isolation 会 `spawn EPERM`），覆盖「无 sleep 插件空态 / sleep 并入与取消 / 按会话过滤 / job 等待打断后返回 running / `byKind` 拆分 / 跨源拒绝 / 卸载不动 sleep」；
+
+### 线上端到端
+
+子会话 `sleep(120000)` → 外部 `POST /job-wait/cancel` → **216 ms** 返回，`cancelled: true`、`cancelReason: "sleep-bridge self-test"`、无报错，`byKind {job:0, sleep:1}`，同会话 sleep 残留 0。
+
+### 未验证
+
+按钮视觉与真人点击（无浏览器控制）。
 
 <!-- 20261112-003 -->
 
 ## sleep 插件（`@local/dsh-tool-sleep`）加上生命周期钩子
 
-（用户明确授权「可以修改 sleep 插件」）。`sleepControl` 从 `active/cancel/cancelAll` 扩成再加 **`on(type, listener) → unsubscribe` / `off(type, listener) → boolean`**，三个事件：**`enter`**（开始等待，校验后、起定时器前）、**`cancel`**（被别的插件通过 cancel/cancelAll 结束）、**`exit`**（离开等待，**总是最后一个**；定时器到、被取消、或调用方自己的 tool-call abort 三种都发）。取消顺序固定 `enter → cancel → exit`；`exit` 带 `cancelled`/`cancelReason`（被取消时），tool-call abort 时带 `aborted: true`（该调用按错误收尾、没有结果）；`id` 与 `active()`/`cancel(id)` 是同一个句柄。**监听器同步跑在工具调用里，抛错只 `console.warn` 并被忽略**（不settle、不延迟、不改变返回值），卸载时先 `cancelAll('plugin unloading')` 再清空所有 listener。**消费方**：`dsh-job-wait` 顺带订阅三个钩子、把计数放进 `GET /job-wait/state` 的 `sleepEvents: {enter, exit, cancel}`（纯诊断，按钮本身读 `active()`）。**验证**：`dsh-tool-sleep/tests/hooks.test.mjs` **10/10 全绿**（假 ctx + 假 tools.register；覆盖 enter/exit 正常路径、cancel 顺序与 reason、tool-call abort 的 `aborted`、ms=0、clamp 目标值、未知事件/非函数监听器报错、退订（disposer 与 off 两种）、抛错监听器不影响 sleep、卸载清 listener、cancelAll 计数）；`dsh-job-wait` 测试同步加到 **8/8**（新增「钩子被订阅/计数/退订」一项）。**线上端到端**（重启后）：子会话 `sleep(120000)` → 等待中 `sleepEvents {enter:1, exit:0, cancel:0}` → 外部 cancel → `byKind {job:0, sleep:1}`、`{enter:1, exit:1, cancel:1}`，sleep 在 **1247 ms** 返回「实测等待 1247 ms（请求 120000 ms，偏差 -118753 ms）；已被插件取消（hook live test）」，正常返回无报错。**一条运行时事实**：`cordis_inspect_query` 的 `Service` catalog **不含插件自己 `ctx.provide` 的服务**（查 `sleepControl` 报 `no catalogued Service named "sleepControl"`），要确认这类服务的线上形状只能靠行为探测。**生效方式**：仍是改 Host 源码必须重启 App。
+（用户明确授权「可以修改 sleep 插件」）。
+
+`sleepControl` 从 `active/cancel/cancelAll` 扩成再加 **`on(type, listener) → unsubscribe` / `off(type, listener) → boolean`**，三个事件：**`enter`**（开始等待，校验后、起定时器前）、**`cancel`**（被别的插件通过 cancel/cancelAll 结束）、**`exit`**（离开等待，**总是最后一个**；
+
+定时器到、被取消、或调用方自己的 tool-call abort 三种都发）。取消顺序固定 `enter → cancel → exit`；
+
+`exit` 带 `cancelled`/`cancelReason`（被取消时），tool-call abort 时带 `aborted: true`（该调用按错误收尾、没有结果）；`id` 与 `active()`/`cancel(id)` 是同一个句柄。
+
+**监听器同步跑在工具调用里，抛错只 `console.warn` 并被忽略**（不settle、不延迟、不改变返回值），卸载时先 `cancelAll('plugin unloading')` 再清空所有 listener。
+
+### 消费方
+
+`dsh-job-wait` 顺带订阅三个钩子、把计数放进 `GET /job-wait/state` 的 `sleepEvents: {enter, exit, cancel}`（纯诊断，按钮本身读 `active()`）。
+
+### 验证
+
+`dsh-tool-sleep/tests/hooks.test.mjs` **10/10 全绿**（假 ctx + 假 tools.register；
+
+覆盖 enter/exit 正常路径、cancel 顺序与 reason、tool-call abort 的 `aborted`、ms=0、clamp 目标值、未知事件/非函数监听器报错、退订（disposer 与 off 两种）、抛错监听器不影响 sleep、卸载清 listener、cancelAll 计数）；
+
+`dsh-job-wait` 测试同步加到 **8/8**（新增「钩子被订阅/计数/退订」一项）。
+
+### 线上端到端
+
+重启后：子会话 `sleep(120000)` → 等待中 `sleepEvents {enter:1, exit:0, cancel:0}` → 外部 cancel → `byKind {job:0, sleep:1}`、`{enter:1, exit:1, cancel:1}`，sleep 在 **1247 ms** 返回「实测等待 1247 ms（请求 120000 ms，偏差 -118753 ms）；
+
+已被插件取消（hook live test）」，正常返回无报错。
+
+### 一条运行时事实
+
+`cordis_inspect_query` 的 `Service` catalog **不含插件自己 `ctx.provide` 的服务**（查 `sleepControl` 报 `no catalogued Service named "sleepControl"`），要确认这类服务的线上形状只能靠行为探测。
+
+### 生效方式
+
+仍是改 Host 源码必须重启 App。

@@ -2,4 +2,34 @@
 
 ## 可读预设「列出预设是空的／一直加载中」已修
 
-（源目录 `D:\Projects\Deepseek_Harness_Workspace\dsh-readable-preset`，版本 1.0.1）。**症状**：点标题栏 `+` 只在按钮下方出现一条约 320px 宽、几像素高的圆角细边，看起来像空面板或永远「加载中」。**先排除了 Host 侧**：本会话 `list_agent_presets` 正常返回 10 个预设（standard/ptc/minimal/cordis/chat/collab/discuss/gossip/investigate/inquiry），`GET /readable-preset/presets` 返回 `ok:true`，`GET /readable-preset/state?sessionId=…` 返回 `{"ok":true,"baseline":"cordis","current":"cordis"}`，`Slots.listSubTree('conversation.session.header.actions')` 里 `readable-preset` occupant 仍 `active`。**根因**：DSH 0.2.2-rc.1 的会话标题栏把该插槽包在 `.an3WzG_titleCluster` 里，该类同时有 `overflow: clip`、渐隐 `mask-image`，外层 `.an3WzG_titleRow` 还有 `container-type: inline-size`；插件的浮层用 `position: fixed` 渲染在原地，于是被这个只占标题行高度的容器裁掉，内容其实早已渲染完——槽位文档本身也写着 “overlays must portal”。**修法**（`client.js`）：浮层改用 `require('react-dom').createPortal(menu, document.body)` 投到页面 body（`react-dom` 在平台 seed `staticModules` 里，与 `react`/`react-dom/client`/`zod` 同级，动态插件可 require；拿不到时退回原地渲染）；外部点击判定改为同时看 `rootRef` 与 `menuRef`；滚动时关闭（滚动名单自身除外）；视口下方空间不足时翻到按钮上方并按可用高度设 `maxHeight`；三个 Host 请求统一挂 `AbortSignal.timeout(15000)`，名单失败/超时在浮层里显示错误 + 「重试」，不再无限「加载中」。**验证**：用户实测点 `+` 后列表正常显示；重载方式为 `plugin_manager set_plugin include:readable-preset` 关→开（无需重启 App），改后 `node --check` 通过。**可复用教训**：给 DSH 会话标题栏/工具栏写浮层时必须 portal；这几层容器上的 `overflow: clip` / `mask-image` / `container-type` 组合会让 `position: fixed` 的浮层照样被裁。
+（源目录 `D:\Projects\Deepseek_Harness_Workspace\dsh-readable-preset`，版本 1.0.1）。
+
+### 症状
+
+点标题栏 `+` 只在按钮下方出现一条约 320px 宽、几像素高的圆角细边，看起来像空面板或永远「加载中」。
+
+### 先排除了 Host 侧
+
+本会话 `list_agent_presets` 正常返回 10 个预设（standard/ptc/minimal/cordis/chat/collab/discuss/gossip/investigate/inquiry），`GET /readable-preset/presets` 返回 `ok:true`，`GET /readable-preset/state?sessionId=…` 返回 `{"ok":true,"baseline":"cordis","current":"cordis"}`，`Slots.listSubTree('conversation.session.header.actions')` 里 `readable-preset` occupant 仍 `active`。
+
+### 根因
+
+DSH 0.2.2-rc.1 的会话标题栏把该插槽包在 `.an3WzG_titleCluster` 里，该类同时有 `overflow: clip`、渐隐 `mask-image`，外层 `.an3WzG_titleRow` 还有 `container-type: inline-size`；
+
+插件的浮层用 `position: fixed` 渲染在原地，于是被这个只占标题行高度的容器裁掉，内容其实早已渲染完——槽位文档本身也写着 “overlays must portal”。
+
+### 修法
+
+`client.js`：浮层改用 `require('react-dom').createPortal(menu, document.body)` 投到页面 body（`react-dom` 在平台 seed `staticModules` 里，与 `react`/`react-dom/client`/`zod` 同级，动态插件可 require；
+
+拿不到时退回原地渲染）；外部点击判定改为同时看 `rootRef` 与 `menuRef`；滚动时关闭（滚动名单自身除外）；视口下方空间不足时翻到按钮上方并按可用高度设 `maxHeight`；
+
+三个 Host 请求统一挂 `AbortSignal.timeout(15000)`，名单失败/超时在浮层里显示错误 + 「重试」，不再无限「加载中」。
+
+### 验证
+
+用户实测点 `+` 后列表正常显示；重载方式为 `plugin_manager set_plugin include:readable-preset` 关→开（无需重启 App），改后 `node --check` 通过。
+
+### 可复用教训
+
+给 DSH 会话标题栏/工具栏写浮层时必须 portal；这几层容器上的 `overflow: clip` / `mask-image` / `container-type` 组合会让 `position: fixed` 的浮层照样被裁。

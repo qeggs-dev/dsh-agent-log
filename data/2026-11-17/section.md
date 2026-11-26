@@ -2,8 +2,66 @@
 
 ## 决策（2026-11-17，用户要求「子进程改为进程池管理，这样…
 
-决策（2026-11-17，用户要求「子进程改为进程池管理，这样父进程可以直接原生下派任务」）：PyServer v3，把单 worker 换成 **worker 池**（承 20261114-022）。形态：`Pool` = worker 列表 + 命名空间亲和（`namespace -> worker`）+ 容量 `workers`（默认 2，1–8，patch 与设置页都有）。`acquire()` 在事件循环里、两段 await 之间完成「选 worker + 置 busy」，所以不需要锁；无命名空间的运行取任意空闲 worker，有命名空间的固定回它的创建者；全都忙 → 409 Busy（不排队）。取消语义随之变好：超时只杀**那一个** worker，`lostNamespaces` 只列它持有的命名空间，其他 worker 的命名空间不受影响；池按需补员（懒：只有一个任务时不会为了凑数再 spawn）。**为什么不用 ProcessPoolExecutor**：①超时要按任务杀进程，杀掉池里的 worker 会让 executor 进 broken；②命名空间存在具体进程内存里，必须按进程寻址，executor 没有这个能力。所以自建池，帧协议不变（code object 仍以 marshal bytes 走），协议版本升到 3。结果里加了 `workerPid`；`pyexec` 的 `isConcurrencySafe` 改为 true（独立运行可并行，同名命名空间仍会被 Busy 拒）。测试 14 项全过；新增「池」测试：两个 600 ms 运行用 `Promise.all` 并发，实测 elapsed < 1100 ms 且两个 `workerPid` 不同；两个命名空间并行落在不同 worker；杀掉 alpha 的 worker 只丢 alpha，beta 的 `workerPid` 不变；alpha 重建后落在存活的那个空闲 worker 上（所以断言是 running=1 而不是回到 2）。**实机注意**：一条消息里发的两个 `pyexec` 被 DSH **顺序执行**（两次都落在同一个 worker 56996，pylist 记 2 次运行）——即 DSH 侧当前不会把同一条消息里的多次工具调用并发下发，所以池的并行收益主要落在「多会话同时调用」与将来批处理，服务端并行由测试证明。提交 d824620。
+决策（2026-11-17，用户要求「子进程改为进程池管理，这样父进程可以直接原生下派任务」）：PyServer v3，把单 worker 换成 **worker 池**（承 20261114-022）。
 
-【同日追加：pybatch】用户要求「合并成一个调用，这样工具解析时就可以并行处理」（因为实测 DSH 会把一条消息里的多次工具调用串行执行）。新增第六个工具 `pybatch`：一次调用带 1–8 条 `{uuid, namespace?, reset?, timeoutMs?}`，服务端 `POST /batch` 用 `asyncio.gather` 同时下派，**per-item 结果**（Busy / UnknownCode 只落在那一条上，不整批失败），按请求顺序返回；一次审批覆盖整批（卡片列出每条 #N 的行数与编译理由），未知 UUID 在弹卡之前就失败。超过 `workers` 的条目返回 Busy 而不是排队。pyexec 与 pybatch 共用同一套结果 schema/mapper，避免两边漂移。协议版本升到 4。实机：同一条 pybatch 里两个 600 ms 运行分别落在 worker 59164 / 59080（两者都 ~600 ms，即真正重叠），第三条返回 `Busy: all 2 workers are running something; ... or raise the plugin's 'workers' setting`。提交 d9bd3e4。测试 14 项全过（含 batch 并行、单池 Busy、混合批次不整批失败）。
+### 形态
 
-【同日追加：main(args) 契约 + main_doc + call_code】用户要求：①执行时直接找 `main` 函数运行、接受传入的 args 列表；②编译时必填 `main_doc` 告诉 DSH 需要传什么参数；③执行环境注入 `call_code`（向服务器请求把 args 交给指定 id 的 code 执行）。实现：①`pycompile` 用 `ast` 检查顶层同步 `def main`，缺失回 422 `NoMain`、`async def main` 回 422 `AsyncMain`（call_code 是阻塞的，async 无收益），`main_doc` 必填（≤1000 字符，允许换行）随条目存储并由 `/codes`、`pylist` 返回；②`/exec`、`/batch` 增加 `args` 列表，`def main(): ...` 允许无参调用；返回值作为 `result`（能 JSON 就 JSON，否则 repr）+ `resultType` 回报；③命名空间语义改成「模块加载一次、之后只调 main」（worker 用 `loaded` 记 `(namespace, codeId)`），`reset` 清空并丢弃加载记录；④`call_code` 是注入命名空间的闭包，走**嵌套帧**：worker 运行中把 `{'mode':'call_code'}` 写进同一根管道，服务器在等运行结果时处理它（`exchange` / `answer_nested`），用另一个 worker 执行后回帧；嵌套运行固定用全新命名空间、默认超时；深度上限 4（`MAX_CALL_DEPTH`）；池只有 1 个 worker 时嵌套如实回 Busy 而不是死锁。协议版本 5。测试 15 项全过（新增：main 契约 / NoMain / AsyncMain / main_doc 必填、args 与 result、命名空间“加载一次”语义、call_code 成功、单池时嵌套回 Busy、深度上限）。实机：`pycompile` 结果里有 `main(args) expects: …`；`pyexec args=[1,2,3,4]` → `result (dict) {"total": 10, "count": 4}`；call_code 嵌套返回 40、外层 45；无 main 的模块被拒且未缓存。提交 060a349。**这是破坏性契约变更**：按旧「脚本」编译的条目（无 main）不再能编译。
+`Pool` = worker 列表 + 命名空间亲和（`namespace -> worker`）+ 容量 `workers`（默认 2，1–8，patch 与设置页都有）。`acquire()` 在事件循环里、两段 await 之间完成「选 worker + 置 busy」，所以不需要锁；
+
+无命名空间的运行取任意空闲 worker，有命名空间的固定回它的创建者；全都忙 → 409 Busy（不排队）。
+
+### 取消语义随之变好
+
+超时只杀**那一个** worker，`lostNamespaces` 只列它持有的命名空间，其他 worker 的命名空间不受影响；池按需补员（懒：只有一个任务时不会为了凑数再 spawn）。
+
+**为什么不用 ProcessPoolExecutor**：①超时要按任务杀进程，杀掉池里的 worker 会让 executor 进 broken；②命名空间存在具体进程内存里，必须按进程寻址，executor 没有这个能力。
+
+所以自建池，帧协议不变（code object 仍以 marshal bytes 走），协议版本升到 3。结果里加了 `workerPid`；`pyexec` 的 `isConcurrencySafe` 改为 true（独立运行可并行，同名命名空间仍会被 Busy 拒）。测试 14 项全过；
+
+新增「池」测试：两个 600 ms 运行用 `Promise.all` 并发，实测 elapsed < 1100 ms 且两个 `workerPid` 不同；两个命名空间并行落在不同 worker；杀掉 alpha 的 worker 只丢 alpha，beta 的 `workerPid` 不变；
+
+alpha 重建后落在存活的那个空闲 worker 上（所以断言是 running=1 而不是回到 2）。
+
+### 实机注意
+
+一条消息里发的两个 `pyexec` 被 DSH **顺序执行**（两次都落在同一个 worker 56996，pylist 记 2 次运行）——即 DSH 侧当前不会把同一条消息里的多次工具调用并发下发，所以池的并行收益主要落在「多会话同时调用」与将来批处理，服务端并行由测试证明。提交 d824620。
+
+【同日追加：pybatch】用户要求「合并成一个调用，这样工具解析时就可以并行处理」（因为实测 DSH 会把一条消息里的多次工具调用串行执行）。
+
+新增第六个工具 `pybatch`：一次调用带 1–8 条 `{uuid, namespace?, reset?, timeoutMs?}`，服务端 `POST /batch` 用 `asyncio.gather` 同时下派，**per-item 结果**（Busy / UnknownCode 只落在那一条上，不整批失败），按请求顺序返回；
+
+一次审批覆盖整批（卡片列出每条 #N 的行数与编译理由），未知 UUID 在弹卡之前就失败。超过 `workers` 的条目返回 Busy 而不是排队。pyexec 与 pybatch 共用同一套结果 schema/mapper，避免两边漂移。协议版本升到 4。
+
+### 实机
+
+同一条 pybatch 里两个 600 ms 运行分别落在 worker 59164 / 59080（两者都 ~600 ms，即真正重叠），第三条返回 `Busy: all 2 workers are running something; ... or raise the plugin's 'workers' setting`。
+
+提交 d9bd3e4。测试 14 项全过（含 batch 并行、单池 Busy、混合批次不整批失败）。
+
+【同日追加：main(args) 契约 + main_doc + call_code】用户要求：①执行时直接找 `main` 函数运行、接受传入的 args 列表；②编译时必填 `main_doc` 告诉 DSH 需要传什么参数；
+
+③执行环境注入 `call_code`（向服务器请求把 args 交给指定 id 的 code 执行）。
+
+### 实现
+
+①`pycompile` 用 `ast` 检查顶层同步 `def main`，缺失回 422 `NoMain`、`async def main` 回 422 `AsyncMain`（call_code 是阻塞的，async 无收益），`main_doc` 必填（≤1000 字符，允许换行）随条目存储并由 `/codes`、`pylist` 返回；
+
+②`/exec`、`/batch` 增加 `args` 列表，`def main(): ...` 允许无参调用；返回值作为 `result`（能 JSON 就 JSON，否则 repr）+ `resultType` 回报；
+
+③命名空间语义改成「模块加载一次、之后只调 main」（worker 用 `loaded` 记 `(namespace, codeId)`），`reset` 清空并丢弃加载记录；
+
+④`call_code` 是注入命名空间的闭包，走**嵌套帧**：worker 运行中把 `{'mode':'call_code'}` 写进同一根管道，服务器在等运行结果时处理它（`exchange` / `answer_nested`），用另一个 worker 执行后回帧；嵌套运行固定用全新命名空间、默认超时；
+
+深度上限 4（`MAX_CALL_DEPTH`）；池只有 1 个 worker 时嵌套如实回 Busy 而不是死锁。协议版本 5。
+
+测试 15 项全过（新增：main 契约 / NoMain / AsyncMain / main_doc 必填、args 与 result、命名空间“加载一次”语义、call_code 成功、单池时嵌套回 Busy、深度上限）。
+
+### 实机
+
+`pycompile` 结果里有 `main(args) expects: …`；`pyexec args=[1,2,3,4]` → `result (dict) {"total": 10, "count": 4}`；call_code 嵌套返回 40、外层 45；无 main 的模块被拒且未缓存。
+
+提交 060a349。
+
+### 这是破坏性契约变更
+
+按旧「脚本」编译的条目（无 main）不再能编译。

@@ -2,4 +2,22 @@
 
 ## mock_chatui（聊天记录工坊）
 
-项目位于 D:\Projects\Deepseek_Harness_Workspace\mock_chatui。多页静态网页：index.html 空壳工作台 + chat.html 聊天页 + editor.html 编辑页，共用 css/app.css 与 js/core.js、render.js、ui.js；数据存 localStorage（mock_chatui:dataset:v1），结构为 OneBot 12 事件/消息段 + 本地 files 表（图片 dataUrl、语音/文件元数据），聊天名/群号/成员数仅在 sessions 外层，qq.face 为扩展消息段。交互：聊天页输入框左侧选角色、直接发送，长按输入框进详细编辑；右上角菜单开角色池，左上角返回键（或标题/齿轮）开设置侧栏；编辑页左侧聊天页展示，右侧角色池 + 详细编辑器（桌面并排，窄屏变抽屉/全屏浮层）。导出用 Canvas 重绘 PNG（720/1080/1440 宽，可选标题栏/状态栏），全程不联网。dist/ 为内联 CSS/JS 的单文件构建（node tools/build-single.mjs）。已用 Edge headless 截图与 DSH np 页实测：直接发送、拖拽角色插入、消息段增删、撤销/重做、导入导出、localStorage 跨页共享、QQ/微信深浅色与 PNG 导出。（项目于 2026-11-22 改名为 mock_chatui；旧 chatlog-mock:* 数据键在启动时一次性迁移到 mock_chatui:*）多语言（2026-11-22）：新增 js/i18n.js（zh/en，零依赖），工作台顶栏与设置抽屉可切换，语言键 mock_chatui:lang；静态/动态界面、日期分隔、通知、校验与 Canvas 导出随语言切换，用户聊天内容不翻译；QQ 表情英文名在 CM.FACE_EN。右键 / 长按菜单（2026-11-22）：消息画布、消息流行和角色卡片支持桌面右键与触屏长按 520ms；消息菜单含详细编辑、复制文本、复制、上移、下移、删除；角色菜单含设为发送身份、插入消息、编辑角色、删除角色；桌面跟随指针，手机底部动作面板，Esc / 点外部关闭；输入框保留长按详细编辑，桌面右键输入框使用系统文本菜单。
+项目位于 D:\Projects\Deepseek_Harness_Workspace\mock_chatui。
+
+### 多页静态网页
+
+index.html 空壳工作台 + chat.html 聊天页 + editor.html 编辑页，共用 css/app.css 与 js/core.js、render.js、ui.js；
+
+数据存 localStorage（mock_chatui:dataset:v1），结构为 OneBot 12 事件/消息段 + 本地 files 表（图片 dataUrl、语音/文件元数据），聊天名/群号/成员数仅在 sessions 外层，qq.face 为扩展消息段。
+
+### 交互
+
+聊天页输入框左侧选角色、直接发送，长按输入框进详细编辑；右上角菜单开角色池，左上角返回键（或标题/齿轮）开设置侧栏；编辑页左侧聊天页展示，右侧角色池 + 详细编辑器（桌面并排，窄屏变抽屉/全屏浮层）。导出用 Canvas 重绘 PNG（720/1080/1440 宽，可选标题栏/状态栏），全程不联网。
+
+dist/ 为内联 CSS/JS 的单文件构建（node tools/build-single.mjs）。已用 Edge headless 截图与 DSH np 页实测：直接发送、拖拽角色插入、消息段增删、撤销/重做、导入导出、localStorage 跨页共享、QQ/微信深浅色与 PNG 导出。
+
+（项目于 2026-11-22 改名为 mock_chatui；旧 chatlog-mock:* 数据键在启动时一次性迁移到 mock_chatui:*）多语言（2026-11-22）：新增 js/i18n.js（zh/en，零依赖），工作台顶栏与设置抽屉可切换，语言键 mock_chatui:lang；
+
+静态/动态界面、日期分隔、通知、校验与 Canvas 导出随语言切换，用户聊天内容不翻译；QQ 表情英文名在 CM.FACE_EN。右键 / 长按菜单（2026-11-22）：消息画布、消息流行和角色卡片支持桌面右键与触屏长按 520ms；消息菜单含详细编辑、复制文本、复制、上移、下移、删除；
+
+角色菜单含设为发送身份、插入消息、编辑角色、删除角色；桌面跟随指针，手机底部动作面板，Esc / 点外部关闭；输入框保留长按详细编辑，桌面右键输入框使用系统文本菜单。

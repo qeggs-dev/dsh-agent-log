@@ -2,4 +2,24 @@
 
 ## 新增并安装 `@local/subagent-access`（`…
 
-新增并安装 `@local/subagent-access`（`dsh_plugins/subagent-access/`，desktop profile 已 link 并在 bundles 里选中）。模型面向文本按 R-006 用英文，审批/notice 卡片用中文。三个能力：①`subagent_access(target, level, description, keep_access)`：修改一个子代理的沙箱权限位，先经用户审批（displayReason zh/en 卡片），只往那个子代理自己的会话日志追加一条 `sandbox/mode`，不改它的 approval 策略（仍为 never）；默认 `keep_access=false` → 它下一段工作结束（`running→idle` 的第一次）自动恢复原级别，当前空闲不算；自动恢复只在本进程内有效，DSH 重启后不补做；连续临时授权沿用第一次的基线，且不覆盖更新的改动。②`create_access_subagent(task, level, name?, keep_access?, description)`：创建子代理并同时授权，审批在创建前；目标级别等于它会继承的级别（父会话 override ?? 部署默认）时不弹卡、不写权限；走 `ctx.subagents.startActivation({provider:'spawn', delivery:'parent'})`，与 `subagent` 同一条接缝、同一深度预算，拒绝时什么都不创建。③子代理审批拦截：delegation 在 `agents.create` 的 `setup` 回调里无条件写入 `approval/policy: never`，而 `session/created` 比它更早——2026-11-21 第一次实现就是在 `session/created` 抬升被覆盖，子代理重试越权时仍被秒拒。正确时机是 `agent/created`（delegation 种子之后、第一轮之前），抬升是幂等的（已是 ask 就不写），恢复会话重复触发无害。抬成 `ask` 后用 prepend 抢占 `approval/request`，改发 notice 卡片（允许一次／拒绝）；点卡片本体（只是跳转）不算决定，会再问一次、最多两次；超时（默认 300s）或回合中断按取消；没有 notice 插件时整条机制关闭（策略保持 never）。实跑（notice-probe-2，越权写 G:\work\projects\_subagent-access-notice-test.txt）：确实弹出「子代理请求审批」卡片、300s 未作答 → 卡片超时、请求按 cancelled、写入保持被拒、文件未创建（fail-closed 验证通过）；「允许一次 → 真正写入」也已实跑（notice-probe-3：用户点「允许一次」后数秒内获批，文件写入成功、内容核对为 notice-test-ok，随后移入回收站）。44 个单测覆盖两个工具、自动恢复控制器与 notice 分支（假宿主）。
+新增并安装 `@local/subagent-access`（`dsh_plugins/subagent-access/`，desktop profile 已 link 并在 bundles 里选中）。模型面向文本按 R-006 用英文，审批/notice 卡片用中文。
+
+### 三个能力
+
+①`subagent_access(target, level, description, keep_access)`：修改一个子代理的沙箱权限位，先经用户审批（displayReason zh/en 卡片），只往那个子代理自己的会话日志追加一条 `sandbox/mode`，不改它的 approval 策略（仍为 never）；
+
+默认 `keep_access=false` → 它下一段工作结束（`running→idle` 的第一次）自动恢复原级别，当前空闲不算；自动恢复只在本进程内有效，DSH 重启后不补做；连续临时授权沿用第一次的基线，且不覆盖更新的改动。
+
+②`create_access_subagent(task, level, name?, keep_access?, description)`：创建子代理并同时授权，审批在创建前；目标级别等于它会继承的级别（父会话 override ?? 部署默认）时不弹卡、不写权限；
+
+走 `ctx.subagents.startActivation({provider:'spawn', delivery:'parent'})`，与 `subagent` 同一条接缝、同一深度预算，拒绝时什么都不创建。
+
+③子代理审批拦截：delegation 在 `agents.create` 的 `setup` 回调里无条件写入 `approval/policy: never`，而 `session/created` 比它更早——2026-11-21 第一次实现就是在 `session/created` 抬升被覆盖，子代理重试越权时仍被秒拒。
+
+正确时机是 `agent/created`（delegation 种子之后、第一轮之前），抬升是幂等的（已是 ask 就不写），恢复会话重复触发无害。抬成 `ask` 后用 prepend 抢占 `approval/request`，改发 notice 卡片（允许一次／拒绝）；
+
+点卡片本体（只是跳转）不算决定，会再问一次、最多两次；超时（默认 300s）或回合中断按取消；没有 notice 插件时整条机制关闭（策略保持 never）。
+
+实跑（notice-probe-2，越权写 G:\work\projects\_subagent-access-notice-test.txt）：确实弹出「子代理请求审批」卡片、300s 未作答 → 卡片超时、请求按 cancelled、写入保持被拒、文件未创建（fail-closed 验证通过）；
+
+「允许一次 → 真正写入」也已实跑（notice-probe-3：用户点「允许一次」后数秒内获批，文件写入成功、内容核对为 notice-test-ok，随后移入回收站）。44 个单测覆盖两个工具、自动恢复控制器与 notice 分支（假宿主）。

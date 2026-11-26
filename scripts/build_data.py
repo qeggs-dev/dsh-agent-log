@@ -117,12 +117,68 @@ def top_keywords(tags: list[str], limit: int = 6) -> list[str]:
     return [k for k, _ in ordered[:limit]]
 
 
+LABEL_RE = re.compile(
+    r"^\*\*(?P<label>[^*\n]{2,18})\*\*\s*(?:（(?P<note>[^）]{0,40})）)?\s*[：:]\s*"
+)
+PLAIN_LABEL_RE = re.compile(r"^(?P<label>[A-Za-z\u4e00-\u9fff][A-Za-z0-9\u4e00-\u9fff_-]{1,7})[：:]\s*")
+BAD_LABEL_CHARS = "/\\.…*（）()`"
+
+
+def take_label(sentence: str) -> tuple[str | None, str]:
+    """句首的 `**小标题**：` 或 `短标签：` → (标签, 正文)；不像标签就返回 (None, 原句)。"""
+    for rx in (LABEL_RE, PLAIN_LABEL_RE):
+        m = rx.match(sentence)
+        if not m:
+            continue
+        label = m.group("label").strip()
+        note = (m.groupdict().get("note") or "").strip()
+        rest = sentence[m.end():].strip()
+        if len(rest) < 8 or not label:
+            continue
+        if any(ch in label for ch in BAD_LABEL_CHARS):
+            continue
+        if label[0] in "①②③④⑤⑥⑦⑧⑨⑩":
+            continue
+        body = f"{note}：{rest}" if note else rest
+        return label, body
+    return None, sentence
+
+
+def reflow(text: str, width: int = 160) -> str:
+    """把堆成一行的长段落重新分段、并把句首小标题提升成 `### 标题`（只排版，不改字）。"""
+    out = []
+    for para in (p.strip() for p in re.split(r"\n{2,}", text)):
+        if not para:
+            continue
+        if "\n" in para:  # 已经是多行的段落不重排，避免破坏作者自己的换行
+            out.append(para)
+            continue
+        buf = ""
+        for sent in re.findall(r"[^。！？；]*[。！？；]?", para):
+            if not sent.strip():
+                continue
+            label, rest = take_label(sent.strip())
+            if label:
+                if buf:
+                    out.append(buf)
+                out.append(f"### {label}")
+                buf = rest
+            elif buf and len(buf) + len(sent) > width:
+                out.append(buf)
+                buf = sent
+            else:
+                buf += sent
+        if buf:
+            out.append(buf)
+    return "\n\n".join(out)
+
+
 def entry_block(item: dict, images: list[str]) -> str:
     """一条条目 → Markdown：隐藏的 id 注释 + 标题 + 正文 + 相对链接的配图。"""
     title, body = split_title(item["content"])
     parts = [f"<!-- {item['id']} -->", f"## {title}"]
     if body:
-        parts.append(body)
+        parts.append(reflow(body))
     for alt, rel in images:
         parts.append(f"![{alt}]({rel})")
     return "\n\n".join(parts)
@@ -548,6 +604,19 @@ def self_test() -> int:
     items = iter_md_items(md)
     assert [i for i, _ in items] == ["20261126-001", "20261126-002"], items
     assert item_title_body(items[0][1]) == ("标题一", "正文一"), item_title_body(items[0][1])
+
+    # 长段落重排：只加换行、不改字
+    assert reflow("短句。") == "短句。"
+    long_para = "甲" * 100 + "。" + "乙" * 100 + "。" + "丙" * 100 + "。"
+    parts = reflow(long_para).split("\n\n")
+    assert len(parts) >= 2 and "".join(parts) == long_para, parts
+    # 句首小标题提升成独立的 ### 标题
+    assert reflow("前一句。**实测**：这是足够长的正文内容，用来验证标题提升。") == (
+        "前一句。\n\n### 实测\n\n这是足够长的正文内容，用来验证标题提升。"
+    )
+    label, body = take_label("**实测**（宿主内）：这里是一段足够长的正文内容。")
+    assert label == "实测" and body.startswith("宿主内："), (label, body)
+    assert take_label("普通的一句话，没有标签。")[0] is None
 
     print("self-test ok")
     return 0
