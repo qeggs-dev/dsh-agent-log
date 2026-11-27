@@ -1,14 +1,33 @@
 {
   "schemaVersion": 4,
   "generator": "build_data.py 3.2.0",
-  "updated": "2026-11-27T00:00:51+08:00",
+  "updated": "2026-11-28T00:00:40+08:00",
   "latest": {
-    "id": "20261126-014",
-    "date": "2026-11-26",
-    "project": "决策"
+    "id": "20261127-007",
+    "date": "2026-11-27",
+    "project": "MC /fill 分包器（mc-fill-pack）"
   },
   "search": "search.json",
   "days": [
+    {
+      "date": "2026-11-27",
+      "weekday": "周五",
+      "entries": 3,
+      "sections": 3,
+      "index": "data/2026-11-27/index.json",
+      "keywords": [
+        "abi",
+        "sdk",
+        "32768",
+        "datapack",
+        "fill",
+        "flipper",
+        "gui",
+        "html",
+        "libffi",
+        "mc"
+      ]
+    },
     {
       "date": "2026-11-26",
       "weekday": "周四",

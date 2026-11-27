@@ -1,9 +1,53 @@
 {
   "schemaVersion": 4,
   "generator": "build_data.py 3.2.0",
-  "updated": "2026-11-27T00:00:51+08:00",
-  "count": 343,
+  "updated": "2026-11-28T00:00:40+08:00",
+  "count": 346,
   "entries": [
+    {
+      "d": "2026-11-27",
+      "i": "20261127-003",
+      "p": "RawCall（OS API 手动调用台）",
+      "t": "RawCall 项目新建（2026-11-27，从「软件层面的…",
+      "k": [
+        "abi",
+        "flipper",
+        "gui",
+        "rawcall",
+        "sdk",
+        "win32"
+      ],
+      "x": "RawCall 项目新建（2026-11-27，从「软件层面的 Flipper Zero」逐步收敛而来）。 ### 定位 在运行时手动调用任意动态库的导出函数，参数一律按 64 位整数/指针传递，核心不做类型解释——即「把操作系统暴露的标准接口统一到一个内存工作台上」。落点 〈工作区〉/rawcall（独立 git 仓库，初始提交 20620a8，44 个文件）。 ### 四层 core/（C 写的 rawcall.dll，唯一 ABI 真源）、gui/（Rust + egui 0.29 桌面应用，默认前端）、sdk/{python,java,javascript}/（薄绑定，共用 docs/CONTRACT.md 的 13 个概念命名）、docs/CONTRACT.md（跨语言契约）。 ### 全部已实测 C 冒烟读到 68620898304 字节真实内存、只依赖 KERNEL32+msvcrt；GUI --selftest OK 且窗口渲染已截图确认；Python 39 项 unittest 全绿；Java 用 JDK21 FFM preview 端到端通过； JS koffi 3.3.8 + node:test 12 项全绿。 ### 核心约束 只支持整数/指针参数（最多 12 个），不支持浮点/结构体 by value/可变参数；不做安全护栏（用户 2026-11-27 明确「用这个软件的人默认他知道自己在干什么」，因此不做权限分级、不做确认框），但健壮性仍要做（参数校验与崩溃隔离不是安全策略）；Windows x64 优先，32 位不支持。 两种工作模式（用户同日定）：直接运行（对当前进程操作）与子进程运行（隔离；因为地址空间隔离，父进程只能传结构化描述，不能传裸指针）。 ### 待办 子进程模式未实现、DSH 插件另建仓库、GUI 目前是英文界面（egui 默认字体无中文）。"
+    },
+    {
+      "d": "2026-11-27",
+      "i": "20261127-004",
+      "p": "决策",
+      "t": "决策（2026-11-27，rawcall 的三条架构选择）",
+      "k": [
+        "abi",
+        "libffi",
+        "sdk",
+        "契约",
+        "调用约定"
+      ],
+      "x": "①**不用 libffi，C 核心用 switch 穷举参数个数**：x64 Windows 只有一种调用约定（前 4 个整数参数进 RCX/RDX/R8/R9，其余压栈），而本项目只传整数与指针（用户的设计风格是「像 C 一样直接定义内存数据并传给系统 API」），指针与整数在 ABI 层没有区别，所以 `((uint64_t(*)(uint64_t,...))p)(a0,...)` 一个 switch 就够。 libffi 只在浮点参数、结构体 by value、可变参数时才必要，Win32 基础 API 里这三样都少见。这是全项目最大的复杂度削减：不构建 libffi、不用 vcpkg、不受 MSVC/MinGW 混用影响。 ②**三语言 SDK 共用 CONTRACT.md 的 13 个概念命名**：loadLibrary/unloadLibrary/resolve/alloc/free/zero/readU8..U64/writeU8..U64/readBytes/writeBytes/writeUtf16/call/lastError； 命名一致但大小写按语言规范（Python snake_case、Java/JS camelCase），允许资源管理形态差异（Python with、Java AutoCloseable、JS dispose），禁止发明同义词、禁止合并概念（alloc 与 zero 分开）。 ③**C 核心只做四件事**（加载/卸载、解析符号、内存与标量读写、按 ABI 调用），任何协议知识/类型系统/签名数据库都不进这一层；因此签名从「地基」降级为「可选增强」，因为定位就是使用者自己知道参数是什么。 验收链路固定为 GlobalMemoryStatusEx（load→resolve→alloc(64)→write_u32(0,64)→call→read_u64(8)>0），它同时验证句柄、符号、分配、写、调用、读回、释放，且 dwLength 填错会直接失败（结构体布局错误会暴露）。"
+    },
+    {
+      "d": "2026-11-27",
+      "i": "20261127-007",
+      "p": "MC /fill 分包器（mc-fill-pack）",
+      "t": "工作区 mc-fill-pack/（2026-11-27 建）",
+      "k": [
+        "32768",
+        "datapack",
+        "fill",
+        "html",
+        "mc",
+        "minecraft"
+      ],
+      "x": "Minecraft `/fill` 指令体积检查与超限分包的单文件网页工具，用户需求原话「填入一个 MC 的 fill 命令 → 检查体积是否过大 → 合法就判定合法 → 过大就输出一个指令包文件」。成品 `dist/fill-checker.html`（约 65 KB，无外部依赖，双击可用，file:// 可跑）； 逻辑在 `src/` 按模块拆（util/coords/parser/geometry/splitter/commands/planner/crc32/zip/datapack/ui/main），`build.mjs` 把 ES 模块内联成单文件并做 `vm.Script` 语法检查与注入完整性检查（曾因 `String.replace` 把 `$'` 当替换模式、把模板尾巴插进脚本，故注入必须用函数式替换）。 判定默认上限 32768（Java/基岩一致，界面可改）；纯绝对/纯相对体积与执行位置无关，混合坐标按「基准坐标」展开，`^` 明确拒绝； 超限时选「切完块数最少」的轴贪心切分，每块 ≤ 上限且不重不漏（node:test 65 项，含逐方块覆盖校验），产出带 pack.mcmeta 的 .zip（1.21 用单数 `function/`，旧版 `functions/`，pack_format 表内置）； 可选每 tick N 条 schedule 分批，此时把 `~` 展开成绝对坐标（schedule 会改变执行位置）。 ### 已知限制 hollow/outline 拆开会改变外观（有警告）、不校验方块 ID、基岩版语义有差异。 ### 测试 `node --test --test-isolation=none \"tests/*.test.mjs\"`。"
+    },
     {
       "d": "2026-11-26",
       "i": "20261126-001",

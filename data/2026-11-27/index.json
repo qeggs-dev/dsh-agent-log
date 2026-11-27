@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.2.0",
+  "date": "2026-11-27",
+  "weekday": "周五",
+  "entries": 3,
+  "overview": "data/2026-11-27/overview.svg",
+  "items": [
+    {
+      "id": "20261127-003",
+      "title": "RawCall 项目新建（2026-11-27，从「软件层面的…",
+      "project": "RawCall（OS API 手动调用台）"
+    },
+    {
+      "id": "20261127-004",
+      "title": "决策（2026-11-27，rawcall 的三条架构选择）",
+      "project": "决策"
+    },
+    {
+      "id": "20261127-007",
+      "title": "工作区 mc-fill-pack/（2026-11-27 建）",
+      "project": "MC /fill 分包器（mc-fill-pack）"
+    }
+  ],
+  "projects": [
+    {
+      "name": "RawCall（OS API 手动调用台）",
+      "body": "data/2026-11-27/rawcall-os-api.md",
+      "entries": 1,
+      "ids": [
+        "20261127-003"
+      ],
+      "keywords": [
+        "abi",
+        "flipper",
+        "gui",
+        "rawcall",
+        "sdk",
+        "win32"
+      ]
+    },
+    {
+      "name": "决策",
+      "body": "data/2026-11-27/section.md",
+      "entries": 1,
+      "ids": [
+        "20261127-004"
+      ],
+      "keywords": [
+        "abi",
+        "libffi",
+        "sdk",
+        "契约",
+        "调用约定"
+      ]
+    },
+    {
+      "name": "MC /fill 分包器（mc-fill-pack）",
+      "body": "data/2026-11-27/mc-fill-mc-fill-pack.md",
+      "entries": 1,
+      "ids": [
+        "20261127-007"
+      ],
+      "keywords": [
+        "32768",
+        "datapack",
+        "fill",
+        "html",
+        "mc",
+        "minecraft"
+      ]
+    }
+  ]
+}
