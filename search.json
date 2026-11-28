@@ -1,9 +1,128 @@
 {
   "schemaVersion": 4,
   "generator": "build_data.py 3.2.0",
-  "updated": "2026-11-28T00:00:40+08:00",
-  "count": 346,
+  "updated": "2026-11-29T00:01:08+08:00",
+  "count": 353,
   "entries": [
+    {
+      "d": "2026-11-28",
+      "i": "20261128-001",
+      "p": "决策",
+      "t": "规则（2026-11-26 提出、2026-11-28 修正并补充去重）",
+      "k": [
+        "agents.md",
+        "approval",
+        "cordis",
+        "dsh_plugins",
+        "get_access_token",
+        "image-chat-background"
+      ],
+      "x": "**搜索记忆前先查关键词表**——①先查询一次库中已存在的全部关键词，并去重：忽略大小写、空白与 `-`/`_`/`.` 差异，同一组保留条目数最多的写法（如保留 `agents.md`、合并 `agents-md`），去重后约 1000 个 / 8k 余字符； ②再从词表里挑出本次要用的关键词（3–8 个起步，专有名词、动作词、约束词、中英文同义）列出来，列时再去重一次；③最后才按第 0 步查 `rules` / `entries`。列出本次关键词这一步保留，但必须在关键词表查询之后，顺序不能颠倒。取代 20261126-004（原理解只写了列词、漏了先查词表与去重）。 AGENTS.md §检索前先查关键词表（强制），rules 行 R-066（R-060 归档）。"
+    },
+    {
+      "d": "2026-11-28",
+      "i": "20261128-002",
+      "p": "决策",
+      "t": "决策（2026-11-28，用户要求「新增插件 session-…",
+      "k": [
+        "agents.md",
+        "approval",
+        "cordis",
+        "dsh_plugins",
+        "get_access_token",
+        "image-chat-background"
+      ],
+      "x": "决策（2026-11-28，用户要求「新增插件 session-access-token」：模型调用 get_access_token 申请一个时长并说明原因，审批通过后在给定时长内自动通过审批；用户补充「自己会拦截所有非自己的审批，并判断会话是否能自动判定」； 撤销入口选 GUI 倒计时 chip，上限在设置页可选、默认 6 小时）：新增 `@local/session-access-token`（工作区 `dsh_plugins/session-access-token`，独立 git 仓库，初始提交 4c78822，已 install_bundle 进 desktop profile，application: applied，两个工具在本会话实测可用）。 ### 形态 Host 注册 get_access_token / revoke_access_token；`approval/request` 瀑布监听（prepend）拦截除 get_access_token 外的每个审批请求，按发起会话查内存授权表，命中返回 allowed-once； 授权按会话、只在 Host 进程内存、不写会话日志不落盘；danger-full-access 会话直接返回 unnecessary；超过上限的申请不弹卡、结果里回报上限；同一会话再次申请替换旧授权（审批卡写明旧授权剩余时间，结果里 replaced=true）。 上限默认 360 分钟（可存 5–1440，页面档位 30/60/180/360/480/720/1440），设置页写 `$DSH_HOME/plugin-data/session-access-token/settings.json`。 ### Client `conversation.input.left` 倒计时 chip（点击 POST /revoke 立即撤销）+ `settings.section` 设置页；Host 路由用 connection.requestRejection 做浏览器准入。 单测 14 条通过（node --test --test-isolation=none）。 ### 验证 5 分钟授权卡批准后，带 danger-full-access 的 pwsh 调用无卡通过；chip 点击后 activeGrants 归 0、系统提示上下文消失。 ### 注意 两个窗口同时保存设置时，8443 镜像页出现过一次请求挂起（直连 dsh-app 窗口正常）；设置页保存期间按钮禁用，正常单窗口不会并发。 2026-11-28 复核后修复并重启加载：暗色保存按钮改用 button-primary-fill + label-primary-inverted（原来 brand-primary + #fff 在暗色下白上白）、chip 忙态改 aria-disabled 保焦点且 aria-label 与可见文字同步、设置页补 label/首次加载失败重试/「重新读取」真正读盘、同一会话再次申请替换旧授权并在卡片写明旧授权剩余； Client 插槽重启后仍注册（conversation.input.left id access-token order 35，settings.section id access-token order 21）。 设置页在运行中的 GUI 里已打开验证：标题/说明/7 档上限下拉（值 360）/保存与重新读取/状态面板（生效上限 6 小时、默认 6 小时、生效中 1、保存位置）渲染正常，保存按钮白字深底可读；chip 深色主题的实际观感仍未验证。"
+    },
+    {
+      "d": "2026-11-28",
+      "i": "20261128-004",
+      "p": "决策",
+      "t": "聊天背景插件（image-chat-background）的四条取舍（2026-11-28）",
+      "k": [
+        "agents.md",
+        "approval",
+        "cordis",
+        "dsh_plugins",
+        "get_access_token",
+        "image-chat-background"
+      ],
+      "x": "① 素材不做隐式删除。最初实现里「换素材/删预设」会顺手回收不再被引用的文件，结果验证时把刚上传的图片删掉、页面上只剩破图：换一张图看看不能变成永久丢失。现在素材在替换、移除、删预设后一律保留，删除只发生在设置页的显式「清理未使用」（POST /media/prune），且只删当前设置与所有预设都不引用的文件； 状态文件里悬空的 media 引用在加载与写入时都会被丢掉，不会画破图。 ② 「点阵图」定为把**素材本身**渲染成圆点阵（radial-gradient 遮罩切点），不是往画面上叠一层点纹理。 ### 依据是词义与观感 叠点会同时压暗素材与文字对比度，遮罩切点仍然是一张图。 ③ 曝光与亮度分开表达：曝光是乘性（brightness 2^(v/100)），亮度是叠加白/黑蒙版（≤90%）。两者都只在渲染层做，不处理上传的素材文件，原始文件永远保持原样。 ④ 壁纸全局一份、不分会话：状态与素材是插件级数据，切换会话不该换壁纸；多窗口不同步轮询，只在窗口重新获得焦点/可见时重新读状态（避免每秒请求）。 ### 验证观察 真实照片或视频当背景时，浅色主题下深色文字对比度会明显下降，需要用户自己用亮度/曝光（或浅色素材）调；设置页的预览与聊天区共用同一段渲染代码，所以调参时看到的就是最终效果。"
+    },
+    {
+      "d": "2026-11-28",
+      "i": "20261128-007",
+      "p": "决策",
+      "t": "决策（2026-11-28，用户改主意）",
+      "k": [
+        "agents.md",
+        "approval",
+        "cordis",
+        "dsh_plugins",
+        "get_access_token",
+        "image-chat-background"
+      ],
+      "x": "MC 机器人不做模组，改做协议客户端（真客户端 + Lua 脚本）。 ### 理由 模组要装服务端、只能进装了 mod 的服；协议客户端零安装、能进任意服、可挂 VPS。 ### 代价 失去服务端特权、每个克隆体要一个账号、反作弊会查。 ### 分工两部分 管理 WebUI + 主服务（语言不限，选 Node 因为 mineflayer 没有等价物）。脚本语言定 Lua（用户熟悉），架构两层：宿主侧只提供底层原语（客户端能做的动作与感知），组合包用 Lua 写、只能调原语但可导出新接口，沙箱不暴露 io/os/debug 保证绕不过去。 承 id:20261125-001（用户本就不想装 mod）。"
+    },
+    {
+      "d": "2026-11-28",
+      "i": "20261128-003",
+      "p": "DSH 插件：聊天背景（image-chat-background）",
+      "t": "image-chat-background（@local/image-chat-background 0.1.0）新建并安装",
+      "k": [
+        "dsh_plugins",
+        "image-chat-background",
+        "单元测试",
+        "壁纸",
+        "聊天背景",
+        "设置页"
+      ],
+      "x": "用户要求「在设置页面里自定义一个视频或图片，样式含点阵图、曝光(正负)、亮度(正负)、九宫格对齐，视频内容也可以放图片，可存成预设下一次快速切换」。目录 `〈工作区〉/dsh_plugins/image-chat-background`（独立 git 仓库、4 个提交、无构建步骤）。 ### 结构 宿主 `index.js` + `lib/config.js`（纯设置模型/归一化/预设匹配）、`lib/media.js`（文件头嗅探、扩展名→MIME、Range 解析）、`lib/http.js`（JSON/上传流/带 Range 的文件响应/写入口）、`lib/store.js`（state.json 原子写 + media 目录）； 浏览器半 `client.js` 单文件（`window.__ModuleLoader__` 工厂，无 import），含壁纸层、设置页与预设 UI。 ### 入口 `settings.section` id `image-chat-background`、order 21，另注册 `settings.section.icon`；文案走 `ctx.locale.register('imageChatBackground', {zh,en})`。 ### 壁纸怎么贴上去 宿主没有给聊天区背景留 slot，层挂在 `[data-conversation-content]` 的第一个子节点，并给该节点 `isolation:isolate`，层 `position:absolute;inset:0;z-index:-1;pointer-events:none` 才能既盖住底色又落在消息之下； 会话切换重建节点时用 MutationObserver 重新挂载，卸载时移除层并还原 isolation。 ### 样式映射 曝光 = `filter:brightness(2^(v/100))`；亮度 = 白/黑蒙版（最多 90% 不透明）；九宫格 = `object-position` 的 9 个锚点； 点阵图 = 把**媒体本身**用 `radial-gradient` 遮罩切成圆点（mask-size 3–40px 点距，遮罩半径 5–95% 点径），默认 8px/45%；contain 时用 `--dsw-alias-bg-base` 补边。设置页预览与聊天区共用同一段 DOM 渲染函数，所见即所得。 ### 路由 前缀 `/dsh-image-chat-background`：GET `state`、`file/<name>`（支持 Range，视频可拖动）； POST `config`、`enabled`、`presets/save|apply|delete|rename`、`media`（请求体即文件）、`media/remove`、`media/prune`。读取过宿主 `connection.requestRejection`（浏览器准入）；写路由另判 Origin。 上传按文件头判定真实类型，接受 PNG/JPEG/GIF/WebP/AVIF/MP4/WebM，拒绝 SVG 与伪装 MIME。 ### 存储 `$DSH_HOME/plugin-data/image-chat-background/state.json` + `media/<id>.<ext>`（id 命名、永不原地改写，可长缓存）。替换素材或删除预设都不删文件，只有显式 `media/prune` 才删「当前设置与所有预设都不再引用」的文件。 单文件上限默认 256MB（Config.maxMediaBytes，1MB–2GB）。 ### 验证 39 个单测（`node --test-isolation=none --test \"tests/*.test.mjs\"`）全绿，含设置页组件的一次真实渲染； 真机上传 1.3MB PNG 与现场用 MediaRecorder 录的 WebM，视频静音自动播放（readyState 4）、点阵/对齐/曝光/亮度/填充方式/预设保存与切换都用设置页点击验证；浅色与深色主题各截图看过；插件卡显示中文标题、描述与自绘图标；测试素材与预设已清理、壁纸最终关闭。 安装 `install_bundle` 返回 `application: applied`，宿主改动靠 restart_dsh 生效。 ### 已知限制 壁纸全局一份、不分会话/工作区；跨窗口只在重新获得焦点时同步，不轮询；不注册任何模型工具。"
+    },
+    {
+      "d": "2026-11-28",
+      "i": "20261128-005",
+      "p": "DSH 插件：界面重载（ui-restart）",
+      "t": "新增插件「界面重载」ui-restart（2026-11…",
+      "k": [
+        "dsh-quick-restart",
+        "dsh-ui-restart",
+        "page-action",
+        "quick-restart",
+        "reload",
+        "sse"
+      ],
+      "x": "**新增插件「界面重载」`ui-restart`（2026-11-28，`〈工作区〉/dsh_plugins/ui-restart`，包 `@local/dsh-ui-restart` 1.0.0，bundle 行 id `ui-restart`，desktop profile 已安装、fiber active，独立 git 仓库，提交 60e0f19 → b0473ec → b9bf00a → 869111d； quick-restart 提交 2e8573a → ae29b69 → 6ffa04e）**：两个入口共用 Host 的重载广播，目标是让**所有在线 UI**从 DSH 服务器重新加载（`location.reload()`），不重启 App、不重启 Host 插件。 ①Quick Restart 页面动作：`dsh-quick-restart` 1.3.0 扩展出 `page: { command: 'reload', endpoint?: '/path' }` 契约（不能与 relaunch/restore/control 同时给，command 目前只有 reload，endpoint 必须是同源绝对路径）； 菜单项显示「重新加载界面」+「不重启 App」角标；点击先 `POST endpoint` 让插件广播，再重载当前页，请求失败或 1.5s 超时仍会重载当前页。②`ui_restart` 工具：`description` 必填（R-005）；非 danger-full-access 会话先审批； Host SSE `GET /ui-restart/events` 向所有已连接页面（含其它窗口/标签页与局域网镜像页面）广播 `event: reload`，客户端 EventSource 收到后重载；没有页面订阅时直接报错、不弹审批；`POST /ui-restart/reload` 是菜单项的广播端点。 路由优先用 `connection.requestRejection` 准入。 ### 实测 `/quick-restart/actions` 返回 ui-restart（order 5, page `{command:'reload', endpoint:'/ui-restart/reload'}`）；菜单点击记录到 endpoint POST 且 `navigationType=reload`； `ui_restart` 返回「Reload signal sent to 2 open DSH pages」，随后页面 `navigationType=reload`；之后只剩 1 个页面时同样成功。 ### 测试 quick-restart 31 项 + ui-restart 27 项全过。UX 评审已做，修复了页面动作失败误报「重启失败」（改用「操作失败」/「Action failed」）、菜单描述重复、审批卡未说明所有页面会重载等； P3 遗留：菜单入口藏在「重启 DSH」箭头下，`dsh.client.inject` 仍挂着 settings 客户端（未删，保持已验证的加载路径）。"
+    },
+    {
+      "d": "2026-11-28",
+      "i": "20261128-006",
+      "p": "mcbot（MC 协议机器人）",
+      "t": "mcbot 项目（2026-11-28 建立，工作区 mcbot/）",
+      "k": [
+        "lua",
+        "mcbot",
+        "minecraft",
+        "node",
+        "wasmoon",
+        "webui"
+      ],
+      "x": "MC 协议机器人，不用模组。两部分——主服务（Node 24/ESM，service/，wasmoon 跑 Lua、ws 包提供事件流、node:http 手写路由、v0 为 Mock 传输； 默认 127.0.0.1:8710，token 在 service/data/token.txt）与管理 WebUI（web/，零依赖静态页，由主服务托管）。契约见 mcbot/CONTRACT.md（HTTP 端点、WS 事件、Lua 原语、bot 状态机）。 ### 服务侧实测 无 token 401、带 token 200；建 bot→connect→online 且位置随 tick 变化；坏脚本 400 带行号且不落盘；while true do end 114ms 内变 error 且服务仍响应； 沙箱内 io/os/debug/package/dofile 均为 nil，require 与 coroutine 可用。v0 只有 Mock 传输，v1 接 mineflayer。"
+    },
+    {
+      "d": "2026-11-28",
+      "i": "20261128-008",
+      "p": "SEC:02",
+      "t": "Lua 指令预算实测（2026-11-28，LuaJ 3.0.1）",
+      "k": [
+        "lua",
+        "luaj",
+        "wasmoon",
+        "协程",
+        "沙箱"
+      ],
+      "x": "debug.sethook(f,空串,N) 能掐断 while true do end（error 让 resume 返回 false），但钩子不会继承到新建协程——主线程装钩、脚本自己 coroutine.create 的死循环会真的卡死（4 秒看门狗才退出）；必须在协程自己的线程里装钩才有效。 ### 结论 嵌入 Lua 必须加固 coroutine.create/wrap（新协程启动先装预算钩子），且不把 debug 暴露给脚本，否则 Lua 能卡死服务器这一条不成立。wasmoon（Lua 5.4 wasm）按同一思路，mcbot 用每次 resume 5 万条 VM 指令验证。"
+    },
     {
       "d": "2026-11-27",
       "i": "20261127-003",
@@ -92,31 +211,16 @@
     },
     {
       "d": "2026-11-26",
-      "i": "20261126-004",
-      "p": "决策",
-      "t": "规则（2026-11-26，用户要求「搜索记忆前，先列出所有的关键词」）",
-      "k": [
-        "agents.md",
-        "规则",
-        "schema",
-        "sqlite",
-        "公开",
-        "关键词"
-      ],
-      "x": "**搜索记忆前先列出全部关键词**——无论查 `rules` 表还是 `entries` 表，动手前先把本次要用的关键词完整列出（专有名词、动作词、约束词、中英文同义，通常 3–8 个起步，复杂任务更多），再执行查询；不要边查边想，也不要只凭一个词反复试。 AGENTS.md 已新增「检索前先列关键词（强制）」一节，rules 表新增 R-060。"
-    },
-    {
-      "d": "2026-11-26",
       "i": "20261126-005",
       "p": "决策",
       "t": "规则（2026-11-26，用户要求）",
       "k": [
         "agents.md",
-        "规则",
         "schema",
         "sqlite",
         "公开",
-        "关键词"
+        "单元测试",
+        "开发规范"
       ],
       "x": "**开发规范——模块化优先 + 同步单元测试**。①开发时优先模块化：按职责拆分模块，单一职责、边界清晰、模块间用明确接口组合，不把逻辑堆进巨型文件或函数；修改既有代码时也先看能否落进独立模块。②模块化后同步准备该模块的单元测试：新增或修改功能必须同时给出对应测试，修 bug 先补一个能复现的失败测试再改代码； 测不动通常说明边界没拆干净。③确实无法单测的部分（纯布局、一次性脚本等）要抽成可测逻辑或在回复里说明原因，不静默跳过。 ### 目的 提升开发效率、减少反复修复。AGENTS.md 已新增 §开发规范（强制），rules 表新增 R-061。"
     },
@@ -127,11 +231,11 @@
       "t": "决策（2026-11-26，取代 20261126-013）",
       "k": [
         "agents.md",
-        "规则",
         "schema",
         "sqlite",
         "公开",
-        "关键词"
+        "单元测试",
+        "开发规范"
       ],
       "x": "公开边界改为**白名单表 `entry_public`**，不放 `entries` 列、也不用「敏感等级」。 ### 规则一句话 **写进这张表 = 这条可以公开，表里没有 = 不公开**——敏感的内容根本不进表，所以既没有 `level=1`、也没有「未判定」中间态，失败方向恒为「更保守」。列：`entry_id`（主键，指向 `entries.id`）、`note`（为什么可公开）、`approved_by` / `approved_at`。 **撤回 = `DELETE` 这一行**，这是全库唯一允许 `DELETE` 的表（它的逆操作就是删除，且删了只会更保守）。导出只读视图 `v_public_entries`（已列入白名单且 `status = 'active'`）。 口径（R-063）：凭据 / 密钥 / token、内网地址与拓扑、账号与第三方身份、硬件型号与序列号、主机名与用户目录、个人状况 → 不写进白名单；普通项目路径（`〈项目目录〉/...`）不算敏感。迁移记 `schema_migrations` v7，`meta.schema_version = 7`； 同日先做的 `entries.sensitive` 列（v5）与 `entry_sensitivity` 判定表（v6）均已回滚 / 移除，三份备份在 `.tmp/`（`MEMORY.pre-sensitive-20261126.db`、`MEMORY.pre-sensitivity-table-20261126.db`、`MEMORY.pre-public-whitelist-20261126.db`）。 白名单当前为空，第一行由用户决定。"
     },

@@ -1,14 +1,33 @@
 {
   "schemaVersion": 4,
   "generator": "build_data.py 3.2.0",
-  "updated": "2026-11-28T00:00:40+08:00",
+  "updated": "2026-11-29T00:01:08+08:00",
   "latest": {
-    "id": "20261127-007",
-    "date": "2026-11-27",
-    "project": "MC /fill 分包器（mc-fill-pack）"
+    "id": "20261128-008",
+    "date": "2026-11-28",
+    "project": "SEC:02"
   },
   "search": "search.json",
   "days": [
+    {
+      "date": "2026-11-28",
+      "weekday": "周六",
+      "entries": 8,
+      "sections": 5,
+      "index": "data/2026-11-28/index.json",
+      "keywords": [
+        "dsh_plugins",
+        "image-chat-background",
+        "lua",
+        "wasmoon",
+        "agents.md",
+        "approval",
+        "cordis",
+        "dsh-quick-restart",
+        "dsh-ui-restart",
+        "get_access_token"
+      ]
+    },
     {
       "date": "2026-11-27",
       "weekday": "周五",
@@ -31,7 +50,7 @@
     {
       "date": "2026-11-26",
       "weekday": "周四",
-      "entries": 12,
+      "entries": 11,
       "sections": 7,
       "index": "data/2026-11-26/index.json",
       "keywords": [

@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 4,
+  "generator": "build_data.py 3.2.0",
+  "date": "2026-11-28",
+  "weekday": "周六",
+  "entries": 8,
+  "overview": "data/2026-11-28/overview.svg",
+  "items": [
+    {
+      "id": "20261128-001",
+      "title": "规则（2026-11-26 提出、2026-11-28 修正并补充去重）",
+      "project": "决策"
+    },
+    {
+      "id": "20261128-002",
+      "title": "决策（2026-11-28，用户要求「新增插件 session-…",
+      "project": "决策"
+    },
+    {
+      "id": "20261128-004",
+      "title": "聊天背景插件（image-chat-background）的四条取舍（2026-11-28）",
+      "project": "决策"
+    },
+    {
+      "id": "20261128-007",
+      "title": "决策（2026-11-28，用户改主意）",
+      "project": "决策"
+    },
+    {
+      "id": "20261128-003",
+      "title": "image-chat-background（@local/image-chat-background 0.1.0）新建并安装",
+      "project": "DSH 插件：聊天背景（image-chat-background）"
+    },
+    {
+      "id": "20261128-005",
+      "title": "新增插件「界面重载」ui-restart（2026-11…",
+      "project": "DSH 插件：界面重载（ui-restart）"
+    },
+    {
+      "id": "20261128-006",
+      "title": "mcbot 项目（2026-11-28 建立，工作区 mcbot/）",
+      "project": "mcbot（MC 协议机器人）"
+    },
+    {
+      "id": "20261128-008",
+      "title": "Lua 指令预算实测（2026-11-28，LuaJ 3.0.1）",
+      "project": "SEC:02"
+    }
+  ],
+  "projects": [
+    {
+      "name": "决策",
+      "body": "data/2026-11-28/section.md",
+      "entries": 4,
+      "ids": [
+        "20261128-001",
+        "20261128-002",
+        "20261128-004",
+        "20261128-007"
+      ],
+      "keywords": [
+        "agents.md",
+        "approval",
+        "cordis",
+        "dsh_plugins",
+        "get_access_token",
+        "image-chat-background"
+      ]
+    },
+    {
+      "name": "DSH 插件：聊天背景（image-chat-background）",
+      "body": "data/2026-11-28/dsh-image-chat-background.md",
+      "entries": 1,
+      "ids": [
+        "20261128-003"
+      ],
+      "keywords": [
+        "dsh_plugins",
+        "image-chat-background",
+        "单元测试",
+        "壁纸",
+        "聊天背景",
+        "设置页"
+      ]
+    },
+    {
+      "name": "DSH 插件：界面重载（ui-restart）",
+      "body": "data/2026-11-28/dsh-ui-restart.md",
+      "entries": 1,
+      "ids": [
+        "20261128-005"
+      ],
+      "keywords": [
+        "dsh-quick-restart",
+        "dsh-ui-restart",
+        "page-action",
+        "quick-restart",
+        "reload",
+        "sse"
+      ]
+    },
+    {
+      "name": "mcbot（MC 协议机器人）",
+      "body": "data/2026-11-28/mcbot-mc.md",
+      "entries": 1,
+      "ids": [
+        "20261128-006"
+      ],
+      "keywords": [
+        "lua",
+        "mcbot",
+        "minecraft",
+        "node",
+        "wasmoon",
+        "webui"
+      ]
+    },
+    {
+      "name": "SEC:02",
+      "body": "data/2026-11-28/sec.md",
+      "entries": 1,
+      "ids": [
+        "20261128-008"
+      ],
+      "keywords": [
+        "lua",
+        "luaj",
+        "wasmoon",
+        "协程",
+        "沙箱"
+      ]
+    }
+  ]
+}

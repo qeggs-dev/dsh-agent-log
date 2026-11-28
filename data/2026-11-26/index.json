@@ -3,7 +3,7 @@
   "generator": "build_data.py 3.2.0",
   "date": "2026-11-26",
   "weekday": "周四",
-  "entries": 12,
+  "entries": 11,
   "overview": "data/2026-11-26/overview.svg",
   "items": [
     {
@@ -20,11 +20,6 @@
       "id": "20261126-003",
       "title": "diff-edit 0.2.0：新增 patch_diff 工具与 diffEdit 服务（2026-11-26）",
       "project": "DSH 插件：差异编辑（diff-edit）"
-    },
-    {
-      "id": "20261126-004",
-      "title": "规则（2026-11-26，用户要求「搜索记忆前，先列出所有的关键词」）",
-      "project": "决策"
     },
     {
       "id": "20261126-005",
@@ -116,19 +111,18 @@
     {
       "name": "决策",
       "body": "data/2026-11-26/section.md",
-      "entries": 3,
+      "entries": 2,
       "ids": [
-        "20261126-004",
         "20261126-005",
         "20261126-014"
       ],
       "keywords": [
         "agents.md",
-        "规则",
         "schema",
         "sqlite",
         "公开",
-        "关键词"
+        "单元测试",
+        "开发规范"
       ]
     },
     {
