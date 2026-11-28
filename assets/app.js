@@ -9,6 +9,8 @@ const TITLE = '工作区日志';
 
 // 单文件预览用：preview.html 把整站塞进 __DEVLOG_FS__，省掉 HTTP 服务
 const FS = window.__DEVLOG_FS__ || null;
+const ASSETS = window.__DEVLOG_ASSETS__ || {};
+const LOGO_SRC = ASSETS.logo || 'assets/logo.svg';
 
 const state = { index: null, day: null, current: null, search: null, query: '' };
 const $days = document.getElementById('days');
@@ -220,6 +222,65 @@ function renderResults(query) {
   }
 }
 
+async function renderHome() {
+  const idx = state.index;
+  const days = idx.days || [];
+  const total = days.reduce((n, d) => n + (d.entries || 0), 0);
+
+  document.body.classList.add('is-home');
+  document.title = '工作区日志';
+
+  let recent = [];
+  try {
+    await ensureSearch();
+    recent = (state.search.entries || []).slice(0, 6);
+  } catch (err) {
+    recent = [];
+  }
+
+  const parts = ['<div class="home">'];
+  parts.push(
+    '<div class="home-hero">',
+    `<img class="home-logo" src="${LOGO_SRC}" alt="" width="56" height="56">`,
+    '<div><h1>工作区日志</h1>',
+    '<p class="tagline">每天做了什么，从记忆库里长出来的记录。</p></div>',
+    '</div>',
+    '<div class="stats">',
+    `<span class="stat">${days.length} 天</span>`,
+    `<span class="stat">${total} 条</span>`,
+    `<span class="stat">更新于 ${escapeHtml(formatStamp(idx.updated))}</span>`,
+    '</div>'
+  );
+
+  if (days.length) {
+    parts.push(`<a class="cta" href="#/${days[0].date}">进入日志<span>→</span></a>`);
+  }
+
+  if (recent.length) {
+    parts.push('<h2>最近</h2>');
+    for (const r of recent) {
+      parts.push(
+        `<a class="recent-item" href="#/${r.d}/${r.i}">` +
+          `<span class="d">${escapeHtml(r.d)} · ${escapeHtml(r.p)}</span>` +
+          `<span class="t">${renderInline(r.t)}</span></a>`
+      );
+    }
+  }
+
+  if (days.length) {
+    parts.push('<h2>按日期</h2><div class="day-chips">');
+    for (const d of days.slice(0, 14)) {
+      parts.push(
+        `<a class="day-chip" href="#/${d.date}">${escapeHtml(d.date)}<i>${d.entries}</i></a>`
+      );
+    }
+    parts.push('</div>');
+  }
+
+  parts.push('</div>');
+  $entry.innerHTML = parts.join('');
+}
+
 function renderEntries() {
   const { index, items } = state.day;
 
@@ -328,6 +389,13 @@ async function route() {
       state.query = '';
       for (const input of $searches) input.value = '';
     }
+
+    if (!raw) {
+      await renderHome();
+      return;
+    }
+
+    document.body.classList.remove('is-home');
 
     const date = datePart || state.index.days[0].date;
     if (!state.day || state.day.index.date !== date) {

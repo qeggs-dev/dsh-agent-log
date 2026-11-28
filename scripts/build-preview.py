@@ -94,6 +94,10 @@ def build() -> pathlib.Path:
     files = collect_fs()
 
     payload = json.dumps(files, ensure_ascii=False).replace("<", "\\u003c")
+    assets = {}
+    logo_uri = data_uri(ROOT / "assets" / "logo.svg")
+    if logo_uri:
+        assets["logo"] = logo_uri
 
     html = html.replace(
         '<link rel="stylesheet" href="assets/style.css">',
@@ -103,6 +107,7 @@ def build() -> pathlib.Path:
         '<script type="module" src="assets/app.js"></script>',
         (
             f"<script>window.__DEVLOG_FS__ = {payload};</script>\n"
+            f"<script>window.__DEVLOG_ASSETS__ = {json.dumps(assets, ensure_ascii=False)};</script>\n"
             f'<script type="module">\n{js}\n</script>'
         ),
     )
@@ -125,8 +130,8 @@ def self_test() -> None:
     js = bundle_js()
     assert '<link rel="stylesheet" href="assets/' not in html, "CSS 没内联"
     assert 'src="assets/app.js"' not in html, "JS 没内联"
-    assert 'assets/logo.svg' not in html, "logo 没内联"
-    assert 'assets/favicon.svg' not in html, "favicon 没内联"
+    assert 'href="assets/logo.svg"' not in html and 'src="assets/logo.svg"' not in html, "logo 没内联"
+    assert 'href="assets/favicon.svg"' not in html, "favicon 没内联"
     assert "__DEVLOG_FS__" in html, "数据没有内联"
     # 正文数据里出现 import / export 字样是正常的技术笔记，只对打包后的脚本断言
     assert "import " not in js, "ES module 的 import 没去掉"
